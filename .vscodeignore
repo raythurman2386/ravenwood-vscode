@@ -1,0 +1,11 @@
+.gitignore
+.flag
+*.vsix
+**/*.ts
+tsconfig.json
+dist/hook
+.github
+.husky
+.eslintrc.js
+.eslintignore
+.vscode-test-web

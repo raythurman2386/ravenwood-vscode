@@ -1,0 +1,43 @@
+name: Development Release
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [closed]
+
+jobs:
+  package:
+    name: Package
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [16]
+
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Check out ref
+        uses: actions/checkout@v2
+
+      - name: Install node modules
+        run: npm ci
+
+      - name: Package
+        run: npm run package
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: everforest-dev.vsix
+          path: everforest-*.vsix
+
+      - name: Comment on issue
+        uses: ben-z/actions-comment-on-issue@1.0.2
+        with:
+          message: "This issue has been closed, the fix/feature will be available in the next release.\n\nTo get the update immediately, you can download and install the development version of this extension built by github action:\n\n1. Navigate to the github action page of this repository and click [Development Release](https://github.com/sainnhe/everforest-vscode/actions/workflows/development_release.yml).\n2. Choose the workflow triggered by your issue and download the artifact.\n3. Extract the `.zip` file.\n4. Install from this `.vsix` file: [How to install VS code extension manually? - Stack Overflow](https://stackoverflow.com/questions/37071388/how-can-i-install-visual-studio-code-extensions-offline)"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

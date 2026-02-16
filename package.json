@@ -1,0 +1,224 @@
+{
+  "name": "ravenwood",
+  "displayName": "Ravenwood",
+  "description": "A refined forest theme based on Everforest",
+  "version": "0.1.0",
+  "publisher": "ravenwood",
+  "author": "ravenwood",
+  "homepage": "https://github.com/ravenwood/ravenwood-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravenwood/ravenwood-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravenwood/ravenwood-vscode/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "forest",
+    "ravenwood",
+    "theme"
+  ],
+  "galleryBanner": {
+    "color": "#2f383e",
+    "theme": "dark"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "main": "dist/index-client.js",
+  "browser": "dist/index-web.js",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Ravenwood Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ravenwood-dark.json"
+      },
+      {
+        "label": "Ravenwood Light",
+        "uiTheme": "vs",
+        "path": "./themes/ravenwood-light.json"
+      }
+    ],
+    "configuration": {
+      "title": "Ravenwood",
+      "properties": {
+        "ravenwood.darkContrast": {
+          "type": "string",
+          "default": "medium",
+          "description": "Background contrast for the dark variant.",
+          "enum": [
+            "soft",
+            "medium",
+            "hard"
+          ]
+        },
+        "ravenwood.lightContrast": {
+          "type": "string",
+          "default": "medium",
+          "description": "Background contrast for the light variant.",
+          "enum": [
+            "soft",
+            "medium",
+            "hard"
+          ]
+        },
+        "ravenwood.darkWorkbench": {
+          "type": "string",
+          "default": "material",
+          "description": "Workbench style for the dark variant.",
+          "enum": [
+            "material",
+            "flat",
+            "high-contrast"
+          ]
+        },
+        "ravenwood.lightWorkbench": {
+          "type": "string",
+          "default": "material",
+          "description": "Workbench style for the light variant.",
+          "enum": [
+            "material",
+            "flat",
+            "high-contrast"
+          ]
+        },
+        "ravenwood.darkCursor": {
+          "type": "string",
+          "default": "white",
+          "description": "The cursor color in the dark variant.",
+          "enum": [
+            "white",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "aqua",
+            "blue",
+            "purple"
+          ]
+        },
+        "ravenwood.lightCursor": {
+          "type": "string",
+          "default": "black",
+          "description": "The cursor color in the light variant.",
+          "enum": [
+            "black",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "aqua",
+            "blue",
+            "purple"
+          ]
+        },
+        "ravenwood.darkSelection": {
+          "type": "string",
+          "default": "grey",
+          "description": "The background color of selected text in the dark variant.",
+          "enum": [
+            "grey",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "aqua",
+            "blue",
+            "purple"
+          ]
+        },
+        "ravenwood.lightSelection": {
+          "type": "string",
+          "default": "grey",
+          "description": "The background color of selected text in the light variant.",
+          "enum": [
+            "grey",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "aqua",
+            "blue",
+            "purple"
+          ]
+        },
+        "ravenwood.italicKeywords": {
+          "type": "boolean",
+          "default": false,
+          "description": "Italicize keywords or not."
+        },
+        "ravenwood.italicComments": {
+          "type": "boolean",
+          "default": true,
+          "description": "Italicize comments or not."
+        },
+        "ravenwood.diagnosticTextBackgroundOpacity": {
+          "type": "string",
+          "default": "0%",
+          "markdownDescription": "The opacity of the background color of [diagnostic text](https://code.visualstudio.com/updates/v1_52#_error-background-colors).",
+          "enum": [
+            "0%",
+            "12.5%",
+            "25%",
+            "37.5%",
+            "50%"
+          ]
+        },
+        "ravenwood.highContrast": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to add an additional border around items across the UI to increase the contrast."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "clean": "rimraf dist *.vsix",
+    "compile:ts": "tsc",
+    "compile:themes": "node dist/hook/generateThemes.js",
+    "compile": "npm run clean && npm run compile:ts && npm run compile:themes",
+    "package": "vsce package && git checkout -- themes",
+    "lint": "eslint . --ext .ts",
+    "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix",
+    "*.{js,json,md}": "prettier --write"
+  },
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.14",
+    "@types/vscode": "1.55.0",
+    "@typescript-eslint/eslint-plugin": "5.46.1",
+    "@typescript-eslint/parser": "5.46.1",
+    "@vscode/test-web": "0.0.33",
+    "@vscode/vsce": "^2.15.0",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "8.0.2",
+    "lint-staged": "13.1.0",
+    "prettier": "2.8.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.9.4"
+  }
+}
