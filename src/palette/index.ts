@@ -16,10 +16,10 @@ import { default as lightBackgroundSoft } from "./light/background/soft";
 
 export function getPalette(
   configuration: Configuration,
-  variant: string
+  variant: string,
 ): Palette {
-  let paletteBackground = darkBackgroundMedium;
-  let paletteForeground = darkForeground;
+  let paletteBackground;
+  let paletteForeground;
   if (variant === "dark") {
     paletteForeground = darkForeground;
     switch (
