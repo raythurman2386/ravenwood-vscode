@@ -3,15 +3,15 @@
   "displayName": "Ravenwood",
   "description": "A refined forest theme based on Everforest",
   "version": "0.1.0",
-  "publisher": "ravenwood",
-  "author": "ravenwood",
-  "homepage": "https://github.com/ravenwood/ravenwood-vscode",
+  "publisher": "raythurman2386",
+  "author": "raythurman2386",
+  "homepage": "https://github.com/raythurman2386/ravenwood-vscode",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ravenwood/ravenwood-vscode.git"
+    "url": "https://github.com/raythurman2386/ravenwood-vscode.git"
   },
   "bugs": {
-    "url": "https://github.com/ravenwood/ravenwood-vscode/issues"
+    "url": "https://github.com/raythurman2386/ravenwood-vscode/issues"
   },
   "license": "MIT",
   "keywords": [

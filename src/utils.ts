@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------
- *  Homepage:   https://github.com/sainnhe/ravenwood-vscode
- *  Copyright:  2020 Sainnhe Park <i@sainnhe.dev>
+ *  Homepage:   https://github.com/raythurman2386/ravenwood-vscode
+ *  Copyright:  2026 raythurman2386 <i@sainnhe.dev>
  *  License:    MIT
  *--------------------------------------------------------------*/
 
