@@ -12,9 +12,9 @@ export default {
   bg3: "#f2efdf",
   bg4: "#edeada",
   bg5: "#e8e5d5",
-  grey0: "#a4ad9e",
-  grey1: "#939f91",
-  grey2: "#879686",
+  grey0: "#7a8478",
+  grey1: "#6b7566",
+  grey2: "#5c6658",
   shadow: "#3c474d20",
 };
 
