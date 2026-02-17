@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------
  *  Homepage:   https://github.com/raythurman2386/ravenwood-vscode
- *  Copyright:  2026 raythurman2386 <i@sainnhe.dev>
+ *  Copyright:  2026 raythurman2386 <support@raythurman.dev>
  *  License:    MIT
  *--------------------------------------------------------------*/
 
