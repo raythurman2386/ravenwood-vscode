@@ -203,11 +203,6 @@
     "*.ts": "eslint --fix",
     "*.{js,mjs,json,md}": "prettier --write"
   },
-  "files": [
-    "dist",
-    "themes",
-    "logo.png"
-  ],
   "engines": {
     "vscode": "^1.55.0"
   },
