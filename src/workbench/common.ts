@@ -179,4 +179,29 @@ export function getDiagnosticOpacity(configuration: Configuration) {
   }
 }
 
+export function getWorkbenchVariantColors(palette: Palette, variant: string) {
+  const isDark = variant === "dark";
+  return {
+    mainBg: isDark ? `${palette.bg}` : `${palette.bg2}`,
+    suggestWidgetBg: isDark ? `${palette.bg}` : `${palette.bg3}`,
+    inputValidationBgError: isDark ? `${palette.dimRed}40` : `${palette.bg3}`,
+    inputValidationFgError: isDark ? `${palette.fg}` : `${palette.red}`,
+    inputValidationBgInfo: isDark ? `${palette.dimBlue}40` : `${palette.bg3}`,
+    inputValidationFgInfo: isDark ? `${palette.fg}` : `${palette.blue}`,
+    inputValidationBgWarning: isDark
+      ? `${palette.dimYellow}40`
+      : `${palette.bg3}`,
+    inputValidationFgWarning: isDark ? `${palette.fg}` : `${palette.yellow}`,
+    wordHighlightBg: isDark ? `${palette.bg4}58` : `${palette.bg4}48`,
+    wordHighlightStrongBg: isDark ? `${palette.bg4}b0` : `${palette.bg4}90`,
+    hoverHighlightBg: isDark ? `${palette.bg4}b0` : `${palette.bg4}90`,
+    lineHighlightBg: isDark ? `${palette.bg3}90` : `${palette.bg3}70`,
+    terminalAnsiBlack: isDark ? `${palette.bg2}` : `${palette.fg}`,
+    terminalAnsiBrightBlack: isDark ? `${palette.grey1}` : `${palette.fg}`,
+    terminalAnsiBrightWhite: isDark ? `${palette.fg}` : `${palette.bg2}`,
+    terminalAnsiWhite: isDark ? `${palette.fg}` : `${palette.grey1}`,
+    welcomePageButtonHoverBg: isDark ? `${palette.bg}a0` : `${palette.bg2}a0`,
+  };
+}
+
 // vim: fdm=marker fmr={{{,}}}:
