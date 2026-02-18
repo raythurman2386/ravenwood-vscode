@@ -1605,21 +1605,42 @@
     },
     {
       "name": "Go red",
-      "scope": "keyword.type.go",
+      "scope": "keyword.control.go, keyword.package.go, keyword.import.go, keyword.type.go",
       "settings": {
         "foreground": "#e67e80"
       }
     },
     {
+      "name": "Go orange",
+      "scope": "keyword.var.go, keyword.const.go, keyword.func.go, keyword.struct.go, keyword.interface.go, keyword.map.go, keyword.chan.go, keyword.declaration.go",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Go yellow",
+      "scope": "entity.name.type.go",
+      "settings": {
+        "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "Go green",
+      "scope": "entity.name.function.go, support.function.go",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
       "name": "Go aqua",
-      "scope": "entity.name.package.go",
+      "scope": "entity.name.package.go, entity.name.import.go",
       "settings": {
         "foreground": "#34d399"
       }
     },
     {
       "name": "Go purple",
-      "scope": "keyword.import.go, keyword.package.go",
+      "scope": "constant.language.go, constant.other.placeholder.go",
       "settings": {
         "foreground": "#f472b6"
       }

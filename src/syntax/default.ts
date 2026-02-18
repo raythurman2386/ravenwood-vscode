@@ -1222,21 +1222,44 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // Go{{{
     {
       name: "Go red",
-      scope: "keyword.type.go",
+      scope:
+        "keyword.control.go, keyword.package.go, keyword.import.go, keyword.type.go",
       settings: {
         foreground: palette.red,
       },
     },
     {
+      name: "Go orange",
+      scope:
+        "keyword.var.go, keyword.const.go, keyword.func.go, keyword.struct.go, keyword.interface.go, keyword.map.go, keyword.chan.go, keyword.declaration.go",
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: "Go yellow",
+      scope: "entity.name.type.go",
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: "Go green",
+      scope: "entity.name.function.go, support.function.go",
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
       name: "Go aqua",
-      scope: "entity.name.package.go",
+      scope: "entity.name.package.go, entity.name.import.go",
       settings: {
         foreground: palette.aqua,
       },
     },
     {
       name: "Go purple",
-      scope: "keyword.import.go, keyword.package.go",
+      scope: "constant.language.go, constant.other.placeholder.go",
       settings: {
         foreground: palette.purple,
       },
