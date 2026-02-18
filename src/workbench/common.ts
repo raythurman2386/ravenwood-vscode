@@ -182,7 +182,7 @@ export function getDiagnosticOpacity(configuration: Configuration) {
 export function getWorkbenchVariantColors(palette: Palette, variant: string) {
   const isDark = variant === "dark";
   return {
-    mainBg: isDark ? `${palette.bg}` : `${palette.bg2}`,
+    mainBg: `${palette.bg}`,
     suggestWidgetBg: isDark ? `${palette.bg}` : `${palette.bg3}`,
     inputValidationBgError: isDark ? `${palette.dimRed}40` : `${palette.bg3}`,
     inputValidationFgError: isDark ? `${palette.fg}` : `${palette.red}`,
