@@ -2,7 +2,7 @@
   "name": "ravenwood",
   "displayName": "Ravenwood",
   "description": "A refined forest theme based on Everforest",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "RaymondThurman",
   "author": "raythurman2386",
   "homepage": "https://github.com/raythurman2386/ravenwood-vscode",
@@ -14,6 +14,7 @@
     "url": "https://github.com/raythurman2386/ravenwood-vscode/issues"
   },
   "license": "MIT",
+  "icon": "logo.png",
   "keywords": [
     "forest",
     "ravenwood",
@@ -202,6 +203,11 @@
     "*.ts": "eslint --fix",
     "*.{js,mjs,json,md}": "prettier --write"
   },
+  "files": [
+    "dist",
+    "themes",
+    "logo.png"
+  ],
   "engines": {
     "vscode": "^1.55.0"
   },

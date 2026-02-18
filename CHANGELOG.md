@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2026-02-17
+
+### Added
+
+- Added custom logo to the extension
+- Added icon field to package.json for marketplace display
+- Added files array to properly include logo in package
+
 ## [0.1.1] - 2026-02-17
 
 ### Changed
