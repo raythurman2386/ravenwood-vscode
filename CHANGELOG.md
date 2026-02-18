@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.3] - 2026-02-18
+
+### Added
+- Modular workbench architecture: centralized shared UI logic (selection, cursor, and diagnostic colors) in `src/workbench/common.ts` for better maintainability.
+
+### Changed
+- Refined the "Ravenwood Emerald" palette:
+  - Deepened dark backgrounds for a more immersive forest feel.
+  - Saturated dark mode foregrounds (Green, Yellow, Aqua, Blue, Purple) for better "pop".
+  - Deepened light mode colors to improve cohesion and readability.
+- Standardized workbench UI:
+  - Updated Checkbox, Dropdown, and Widget backgrounds to use consistent palette steps.
+  - Improved input validation contrast for the light variant.
+- Removed the reload prompt: The extension now updates the theme dynamically and silently when configuration changes are detected, providing a more seamless experience.
+- Updated project description and metadata.
+
+### Fixed
+- Fixed critical syntax errors in workbench template strings that resulted in invalid color values.
+- Restored and corrected async theme generation logic in utility classes.
+
 ## [0.1.2] - 2026-02-17
 
 ### Added

@@ -1,8 +1,8 @@
 {
   "name": "ravenwood",
   "displayName": "Ravenwood",
-  "description": "A refined forest theme based on Everforest",
-  "version": "0.1.2",
+  "description": "A refined emerald forest theme for VSCode",
+  "version": "0.1.3",
   "publisher": "RaymondThurman",
   "author": "raythurman2386",
   "homepage": "https://github.com/raythurman2386/ravenwood-vscode",
@@ -197,7 +197,8 @@
     "package": "vsce package && git checkout -- themes",
     "lint": "eslint .",
     "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write 'src/**/*.ts' 'src/**/*.tsx'"
   },
   "lint-staged": {
     "*.ts": "eslint --fix",

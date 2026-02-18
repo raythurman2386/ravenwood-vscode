@@ -5,239 +5,22 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { Palette, Configuration } from "../interface";
+import {
+  getSelectionColors,
+  getCursorColor,
+  getDiagnosticOpacity,
+} from "./common";
 
 export function flatWorkbench(
   palette: Palette,
   configuration: Configuration,
   variant: string,
 ) {
-  let selectionBg: string;
-  let editorSelectionBg: string;
-  let editorSelectionBgHl: string;
-  let cursorFg: string;
-  let diagnosticTextBackgroundOpacity: string;
-  if (variant === "dark") {
-    switch (
-      configuration.darkSelection // {{{
-    ) {
-      case "grey": {
-        selectionBg = `${palette.bg4}e0`;
-        editorSelectionBg = `${palette.bg4}c0`;
-        editorSelectionBgHl = `${palette.bg4}60`;
-        break;
-      }
-      case "red": {
-        selectionBg = `${palette.dimRed}60`;
-        editorSelectionBg = `${palette.dimRed}40`;
-        editorSelectionBgHl = `${palette.dimRed}20`;
-        break;
-      }
-      case "orange": {
-        selectionBg = `${palette.dimOrange}60`;
-        editorSelectionBg = `${palette.dimOrange}40`;
-        editorSelectionBgHl = `${palette.dimOrange}20`;
-        break;
-      }
-      case "yellow": {
-        selectionBg = `${palette.dimYellow}60`;
-        editorSelectionBg = `${palette.dimYellow}40`;
-        editorSelectionBgHl = `${palette.dimYellow}20`;
-        break;
-      }
-      case "green": {
-        selectionBg = `${palette.dimGreen}60`;
-        editorSelectionBg = `${palette.dimGreen}40`;
-        editorSelectionBgHl = `${palette.dimGreen}20`;
-        break;
-      }
-      case "aqua": {
-        selectionBg = `${palette.dimAqua}60`;
-        editorSelectionBg = `${palette.dimAqua}40`;
-        editorSelectionBgHl = `${palette.dimAqua}20`;
-        break;
-      }
-      case "blue": {
-        selectionBg = `${palette.dimBlue}60`;
-        editorSelectionBg = `${palette.dimBlue}40`;
-        editorSelectionBgHl = `${palette.dimBlue}20`;
-        break;
-      }
-      case "purple": {
-        selectionBg = `${palette.dimPurple}60`;
-        editorSelectionBg = `${palette.dimPurple}40`;
-        editorSelectionBgHl = `${palette.dimPurple}20`;
-        break;
-      }
-      default: {
-        selectionBg = `${palette.bg4}e0`;
-        editorSelectionBg = `${palette.bg4}c0`;
-        editorSelectionBgHl = `${palette.bg4}60`;
-      }
-    } // }}}
-    switch (
-      configuration.darkCursor // {{{
-    ) {
-      case "white": {
-        cursorFg = `${palette.fg}`;
-        break;
-      }
-      case "red": {
-        cursorFg = `${palette.red}`;
-        break;
-      }
-      case "orange": {
-        cursorFg = `${palette.orange}`;
-        break;
-      }
-      case "yellow": {
-        cursorFg = `${palette.yellow}`;
-        break;
-      }
-      case "green": {
-        cursorFg = `${palette.green}`;
-        break;
-      }
-      case "aqua": {
-        cursorFg = `${palette.aqua}`;
-        break;
-      }
-      case "blue": {
-        cursorFg = `${palette.blue}`;
-        break;
-      }
-      case "purple": {
-        cursorFg = `${palette.purple}`;
-        break;
-      }
-      default: {
-        cursorFg = `${palette.fg}`;
-      }
-    } // }}}
-  } else {
-    switch (
-      configuration.lightSelection // {{{
-    ) {
-      case "grey": {
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-        break;
-      }
-      case "red": {
-        selectionBg = `${palette.dimRed}60`;
-        editorSelectionBg = `${palette.dimRed}40`;
-        editorSelectionBgHl = `${palette.dimRed}20`;
-        break;
-      }
-      case "orange": {
-        selectionBg = `${palette.dimOrange}60`;
-        editorSelectionBg = `${palette.dimOrange}40`;
-        editorSelectionBgHl = `${palette.dimOrange}20`;
-        break;
-      }
-      case "yellow": {
-        selectionBg = `${palette.dimYellow}60`;
-        editorSelectionBg = `${palette.dimYellow}40`;
-        editorSelectionBgHl = `${palette.dimYellow}20`;
-        break;
-      }
-      case "green": {
-        selectionBg = `${palette.dimGreen}60`;
-        editorSelectionBg = `${palette.dimGreen}40`;
-        editorSelectionBgHl = `${palette.dimGreen}20`;
-        break;
-      }
-      case "aqua": {
-        selectionBg = `${palette.dimAqua}60`;
-        editorSelectionBg = `${palette.dimAqua}40`;
-        editorSelectionBgHl = `${palette.dimAqua}20`;
-        break;
-      }
-      case "blue": {
-        selectionBg = `${palette.dimBlue}60`;
-        editorSelectionBg = `${palette.dimBlue}40`;
-        editorSelectionBgHl = `${palette.dimBlue}20`;
-        break;
-      }
-      case "purple": {
-        selectionBg = `${palette.dimPurple}60`;
-        editorSelectionBg = `${palette.dimPurple}40`;
-        editorSelectionBgHl = `${palette.dimPurple}20`;
-        break;
-      }
-      default: {
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-      }
-    } // }}}
-    switch (
-      configuration.lightCursor // {{{
-    ) {
-      case "black": {
-        cursorFg = `${palette.fg}`;
-        break;
-      }
-      case "red": {
-        cursorFg = `${palette.red}`;
-        break;
-      }
-      case "orange": {
-        cursorFg = `${palette.orange}`;
-        break;
-      }
-      case "yellow": {
-        cursorFg = `${palette.yellow}`;
-        break;
-      }
-      case "green": {
-        cursorFg = `${palette.green}`;
-        break;
-      }
-      case "aqua": {
-        cursorFg = `${palette.aqua}`;
-        break;
-      }
-      case "blue": {
-        cursorFg = `${palette.blue}`;
-        break;
-      }
-      case "purple": {
-        cursorFg = `${palette.purple}`;
-        break;
-      }
-      default: {
-        cursorFg = `${palette.fg}`;
-      }
-    } // }}}
-  }
-  switch (
-    configuration.diagnosticTextBackgroundOpacity // {{{
-  ) {
-    case "0%": {
-      diagnosticTextBackgroundOpacity = "00";
-      break;
-    }
-    case "12.5%": {
-      diagnosticTextBackgroundOpacity = "20";
-      break;
-    }
-    case "25%": {
-      diagnosticTextBackgroundOpacity = "40";
-      break;
-    }
-    case "37.5%": {
-      diagnosticTextBackgroundOpacity = "60";
-      break;
-    }
-    case "50%": {
-      diagnosticTextBackgroundOpacity = "80";
-      break;
-    }
-    default: {
-      diagnosticTextBackgroundOpacity = "00";
-    }
-  } // }}}
+  const { selectionBg, editorSelectionBg, editorSelectionBgHl } =
+    getSelectionColors(palette, configuration, variant);
+  const cursorFg = getCursorColor(palette, configuration, variant);
+  const diagnosticTextBackgroundOpacity = getDiagnosticOpacity(configuration);
+
   const tokens = {
     foreground: `${palette.grey2}`,
     focusBorder: `${palette.bg}00`,
@@ -259,11 +42,13 @@ export function flatWorkbench(
     "button.secondaryBackground": `${palette.bg3}`,
     "button.secondaryForeground": `${palette.fg}`,
     "button.secondaryHoverBackground": `${palette.bg4}`,
-    "checkbox.background": `${palette.bg}`,
+    "checkbox.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "checkbox.foreground": `${palette.orange}`,
     "checkbox.border": `${palette.bg5}`,
     "dropdown.border": `${palette.bg5}`,
-    "dropdown.background": `${palette.bg}`,
+    "dropdown.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "dropdown.foreground": `${palette.grey2}`,
     "input.border": `${palette.bg5}`,
     "input.background": `${palette.bg}00`,
@@ -271,14 +56,20 @@ export function flatWorkbench(
     "input.placeholderForeground": `${palette.grey0}`,
     "inputOption.activeBorder": `${palette.aqua}`,
     "inputValidation.errorBorder": `${palette.red}`,
-    "inputValidation.errorBackground": `${palette.dimRed}`,
-    "inputValidation.errorForeground": `${palette.fg}`,
+    "inputValidation.errorBackground":
+      variant === "dark" ? `${palette.dimRed}40` : `${palette.bg3}`,
+    "inputValidation.errorForeground":
+      variant === "dark" ? `${palette.fg}` : `${palette.red}`,
     "inputValidation.infoBorder": `${palette.blue}`,
-    "inputValidation.infoBackground": `${palette.dimBlue}`,
-    "inputValidation.infoForeground": `${palette.fg}`,
+    "inputValidation.infoBackground":
+      variant === "dark" ? `${palette.dimBlue}40` : `${palette.bg3}`,
+    "inputValidation.infoForeground":
+      variant === "dark" ? `${palette.fg}` : `${palette.blue}`,
     "inputValidation.warningBorder": `${palette.yellow}`,
-    "inputValidation.warningBackground": `${palette.dimYellow}`,
-    "inputValidation.warningForeground": `${palette.fg}`,
+    "inputValidation.warningBackground":
+      variant === "dark" ? `${palette.dimYellow}40` : `${palette.bg3}`,
+    "inputValidation.warningForeground":
+      variant === "dark" ? `${palette.fg}` : `${palette.yellow}`,
     "scrollbar.shadow": `${palette.shadow}`,
     "scrollbarSlider.activeBackground": `${palette.grey2}`,
     "scrollbarSlider.hoverBackground": `${palette.bg5}`,
@@ -427,26 +218,33 @@ export function flatWorkbench(
     "diffEditor.insertedTextBackground": `${palette.dimAqua}30`,
     "diffEditor.removedTextBackground": `${palette.dimRed}30`,
     "diffEditor.diagonalFill": `${palette.bg5}`,
-    "editorSuggestWidget.background": `${palette.bg3}`,
+    "editorSuggestWidget.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg3}`,
     "editorSuggestWidget.foreground": `${palette.fg}`,
     "editorSuggestWidget.highlightForeground": `${palette.green}`,
     "editorSuggestWidget.selectedBackground": `${palette.bg4}`,
-    "editorSuggestWidget.border": `${palette.bg3}`,
-    "editorWidget.background": `${palette.bg}`,
+    "editorSuggestWidget.border":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg3}`,
+    "editorWidget.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "editorWidget.foreground": `${palette.fg}`,
     "editorWidget.border": `${palette.bg5}`,
-    "editorHoverWidget.background": `${palette.bg2}`,
+    "editorHoverWidget.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "editorHoverWidget.border": `${palette.bg4}`,
     "editorGhostText.background": `${palette.bg}00`,
     "editorGhostText.foreground": `${palette.grey0}a0`,
-    "editorMarkerNavigation.background": `${palette.bg2}`,
+    "editorMarkerNavigation.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "editorMarkerNavigationError.background": `${palette.dimRed}80`,
     "editorMarkerNavigationWarning.background": `${palette.dimYellow}80`,
     "editorMarkerNavigationInfo.background": `${palette.dimBlue}80`,
     "peekView.border": `${palette.bg4}`,
-    "peekViewEditor.background": `${palette.bg2}`,
+    "peekViewEditor.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "peekViewEditor.matchHighlightBackground": `${palette.dimYellow}50`,
-    "peekViewEditorGutter.background": `${palette.bg2}`,
+    "peekViewEditorGutter.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "peekViewResult.fileForeground": `${palette.fg}`,
     "peekViewResult.lineForeground": `${palette.grey2}`,
     "peekViewResult.matchHighlightBackground": `${palette.dimYellow}50`,
@@ -454,7 +252,8 @@ export function flatWorkbench(
     "peekViewResult.selectionForeground": `${palette.fg}`,
     "peekViewTitleDescription.foreground": `${palette.fg}`,
     "peekViewTitleLabel.foreground": `${palette.green}`,
-    "peekViewResult.background": `${palette.bg2}`,
+    "peekViewResult.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "peekViewTitle.background": `${palette.bg4}`,
     "pickerGroup.border": `${palette.badge}1a`,
     "terminal.foreground": `${palette.fg}`,
@@ -479,7 +278,8 @@ export function flatWorkbench(
     "terminal.ansiWhite":
       variant === "dark" ? `${palette.fg}` : `${palette.grey1}`,
     "terminal.ansiYellow": `${palette.yellow}`,
-    "debugToolBar.background": `${palette.bg}`,
+    "debugToolBar.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "debugTokenExpression.name": `${palette.blue}`,
     "debugTokenExpression.value": `${palette.green}`,
     "debugTokenExpression.string": `${palette.yellow}`,
@@ -511,10 +311,8 @@ export function flatWorkbench(
     "merge.currentHeaderBackground": `${palette.dimBlue}80`,
     "merge.currentContentBackground": `${palette.dimBlue}40`,
     "merge.border": `${palette.bg}00`,
-    "panel.background": `${palette.bg}`,
-    "panel.border": `${palette.bg0}`,
-    "panelSection.border": `${palette.bg0}`,
-    "panelSectionHeader.background": `${palette.bg}`,
+    "panel.background": variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
+    "panel.border": variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "panelInput.border": `${palette.bg5}`,
     "panelTitle.activeForeground": `${palette.fg}`,
     "panelTitle.activeBorder": `${palette.badge}d0`,
@@ -547,7 +345,7 @@ export function flatWorkbench(
     "menubar.selectionBackground": `${palette.bg}`,
     "menubar.selectionBorder": `${palette.bg}`,
     "menu.foreground": `${palette.grey2}`,
-    "menu.background": `${palette.bg1}`,
+    "menu.background": variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "menu.selectionForeground": `${palette.fg}`,
     "menu.selectionBackground": `${palette.bg}`,
     "gitDecoration.addedResourceForeground": `${palette.green}a0`,
@@ -562,7 +360,8 @@ export function flatWorkbench(
     "notificationCenterHeader.foreground": `${palette.fg}`,
     "notificationCenterHeader.background": `${palette.bg3}`,
     "notifications.foreground": `${palette.fg}`,
-    "notifications.background": `${palette.bg}`,
+    "notifications.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "notificationLink.foreground": `${palette.green}`,
     "notificationsErrorIcon.foreground": `${palette.red}`,
     "notificationsWarningIcon.foreground": `${palette.yellow}`,
@@ -576,35 +375,46 @@ export function flatWorkbench(
     "extensionIcon.verifiedForeground": `${palette.green}`,
     "extensionIcon.preReleaseForeground": `${palette.orange}`,
     "pickerGroup.foreground": `${palette.fg}`,
-    "quickInputTitle.background": `${palette.bg2}`,
+    "quickInputTitle.background":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "keybindingLabel.background": `${palette.bg}00`,
     "keybindingLabel.foreground": `${palette.fg}`,
     "keybindingLabel.border": `${palette.bg1}`,
     "keybindingLabel.bottomBorder": `${palette.bg0}`,
     "keybindingTable.headerBackground": `${palette.bg3}`,
-    "keybindingTable.rowsBackground": `${palette.bg2}`,
+    "keybindingTable.rowsBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "settings.headerForeground": `${palette.grey2}`,
-    "settings.numberInputBackground": `${palette.bg}`,
+    "settings.numberInputBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "settings.numberInputForeground": `${palette.purple}`,
     "settings.numberInputBorder": `${palette.bg5}`,
-    "settings.textInputBackground": `${palette.bg}`,
+    "settings.textInputBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "settings.textInputForeground": `${palette.blue}`,
     "settings.textInputBorder": `${palette.bg5}`,
-    "settings.checkboxBackground": `${palette.bg}`,
+    "settings.checkboxBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "settings.checkboxForeground": `${palette.orange}`,
     "settings.checkboxBorder": `${palette.bg5}`,
-    "settings.dropdownBackground": `${palette.bg}`,
+    "settings.dropdownBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "settings.dropdownForeground": `${palette.aqua}`,
     "settings.dropdownBorder": `${palette.bg5}`,
     "settings.modifiedItemIndicator": `${palette.grey0}`,
-    "settings.focusedRowBackground": `${palette.bg2}`,
-    "settings.rowHoverBackground": `${palette.bg2}`,
+    "settings.focusedRowBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
+    "settings.rowHoverBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "editorLightBulb.foreground": `${palette.yellow}`,
     "editorLightBulbAutoFix.foreground": `${palette.aqua}`,
     "welcomePage.progress.foreground": `${palette.green}`,
-    "welcomePage.tileHoverBackground": `${palette.bg2}`,
-    "welcomePage.buttonBackground": `${palette.bg2}`,
-    "welcomePage.buttonHoverBackground": `${palette.bg2}a0`,
+    "welcomePage.tileHoverBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
+    "welcomePage.buttonBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
+    "welcomePage.buttonHoverBackground":
+      variant === "dark" ? `${palette.bg}a0` : `${palette.bg2}a0`,
     "walkThrough.embeddedEditorBackground": `${palette.bg1}`,
     "breadcrumb.foreground": `${palette.grey1}`,
     "breadcrumb.focusForeground": `${palette.fg}`,
@@ -655,7 +465,8 @@ export function flatWorkbench(
     "ports.iconRunningProcessForeground": `${palette.orange}`,
     "sash.hoverBorder": `${palette.bg4}`,
     "notebook.cellBorderColor": `${palette.bg5}`,
-    "notebook.cellStatusBarItemHoverBackground": `${palette.bg2}`,
+    "notebook.cellStatusBarItemHoverBackground":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "notebook.focusedCellBackground": `${palette.bg}`,
     "notebook.cellHoverBackground": `${palette.bg}`,
     "notebook.outputContainerBackgroundColor": `${palette.bg1}`,
@@ -679,7 +490,8 @@ export function flatWorkbench(
     "gitlens.gutterForegroundColor": `${palette.fg}`,
     "gitlens.gutterUncommittedForegroundColor": `${palette.blue}`,
     "gitlens.trailingLineForegroundColor": `${palette.grey1}`,
-    "gitlens.lineHighlightBackgroundColor": `${palette.bg2}`,
+    "gitlens.lineHighlightBackgroundColor":
+      variant === "dark" ? `${palette.bg}` : `${palette.bg2}`,
     "gitlens.lineHighlightOverviewRulerColor": `${palette.badge}`,
     "gitlens.closedPullRequestIconColor": `${palette.red}`,
     "gitlens.openPullRequestIconColor": `${palette.aqua}`,
@@ -705,6 +517,30 @@ export function flatWorkbench(
     "rust_analyzer.inlayHints.foreground": `${palette.grey0}a0`,
     "rust_analyzer.inlayHints.background": `${palette.bg}00`,
     "rust_analyzer.syntaxTreeBorder": `${palette.red}`,
+    "chat.background": `${palette.bg}`,
+    "chat.foreground": `${palette.fg}`,
+    "chat.requestBackground": `${palette.bg1}`,
+    "chat.requestForeground": `${palette.fg}`,
+    "chat.requestBorder": `${palette.bg}00`,
+    "chat.slashCommandBackground": `${palette.bg2}`,
+    "chat.slashCommandForeground": `${palette.aqua}`,
+    "chat.avatarBackground": `${palette.bg1}`,
+    "chat.avatarForeground": `${palette.fg}`,
+    "inlineChat.background": `${palette.bg1}`,
+    "inlineChat.border": `${palette.bg4}`,
+    "inlineChat.shadow": `${palette.shadow}`,
+    "inlineChatInput.background": `${palette.bg}`,
+    "inlineChatInput.border": `${palette.bg4}`,
+    "inlineChatInput.focusBorder": `${palette.badge}`,
+    "inlineChatInput.placeholderForeground": `${palette.grey0}`,
+    "inlineChatDiff.inserted": `${palette.dimGreen}30`,
+    "inlineChatDiff.removed": `${palette.dimRed}30`,
+    "interactive.background": `${palette.bg}`,
+    "interactive.activeCodeBorder": `${palette.bg4}`,
+    "interactive.inactiveCodeBorder": `${palette.bg}00`,
+    "interactive.requestBackground": `${palette.bg1}`,
+    "quickInput.background": `${palette.bg}`,
+    "quickInput.foreground": `${palette.fg}`,
   };
   if (configuration.highContrast) {
     Object.assign(tokens, {
