@@ -2,26 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.5] - 2026-02-18
-
-### Added
-
-- **Go Syntax Highlighting**: Added comprehensive syntax support for the Go programming language, including specific colors for keywords (`go`, `chan`, `map`), types, functions, and packages to match the Ravenwood palette.
+## [0.2.0] - 2026-02-18
 
 ### Changed
 
-- Bumped version to supersede marketplace conflicts.
-
-## [0.1.4] - 2026-02-18
+- **Major Theme Refresh**: Upgraded to 0.2.0 to mark significant visual improvements and codebase refactoring.
+- **Go Syntax Highlighting**: Added comprehensive syntax support for the Go programming language, including specific colors for keywords (`go`, `chan`, `map`), types, functions, and packages to match the Ravenwood palette.
+- **Light Mode Consistency**: Unified the panel and editor background colors in light mode to remove distracting contrast blocks.
+- **Workbench Architecture**: Modularized workbench logic for better maintainability.
 
 ### Fixed
 
 - **Critical Visual Bug**: Resolved a syntax error in `scrollbarSlider.background` that caused the scrollbar to appear red in dark mode.
-- **Light Mode Consistency**: Unified the panel and editor background colors in light mode to remove distracting contrast blocks.
-
-### Changed
-
-- Refactored `src/workbench/common.ts` to improve maintainability of variant-specific logic.
+- **Build Process**: Resolved build pipeline issues and cleaned up version history.
 
 ## [0.1.3] - 2026-02-18
 
