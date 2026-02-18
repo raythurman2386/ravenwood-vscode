@@ -2,12 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.5] - 2026-02-18
+
+### Added
+
+- **Go Syntax Highlighting**: Added comprehensive syntax support for the Go programming language, including specific colors for keywords (`go`, `chan`, `map`), types, functions, and packages to match the Ravenwood palette.
+
+### Changed
+
+- Bumped version to supersede marketplace conflicts.
+
+## [0.1.4] - 2026-02-18
+
+### Fixed
+
+- **Critical Visual Bug**: Resolved a syntax error in `scrollbarSlider.background` that caused the scrollbar to appear red in dark mode.
+- **Light Mode Consistency**: Unified the panel and editor background colors in light mode to remove distracting contrast blocks.
+
+### Changed
+
+- Refactored `src/workbench/common.ts` to improve maintainability of variant-specific logic.
+
 ## [0.1.3] - 2026-02-18
 
 ### Added
+
 - Modular workbench architecture: centralized shared UI logic (selection, cursor, and diagnostic colors) in `src/workbench/common.ts` for better maintainability.
 
 ### Changed
+
 - Refined the "Ravenwood Emerald" palette:
   - Deepened dark backgrounds for a more immersive forest feel.
   - Saturated dark mode foregrounds (Green, Yellow, Aqua, Blue, Purple) for better "pop".
@@ -19,6 +42,7 @@ All notable changes to this project will be documented in this file.
 - Updated project description and metadata.
 
 ### Fixed
+
 - Fixed critical syntax errors in workbench template strings that resulted in invalid color values.
 - Restored and corrected async theme generation logic in utility classes.
 
