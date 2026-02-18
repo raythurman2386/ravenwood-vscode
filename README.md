@@ -28,6 +28,12 @@ This theme provides some configuration options to customize the appearance.
 - `ravenwood.italicKeywords`: Italicize keywords or not.
 - `ravenwood.italicComments`: Italicize comments or not.
 
+## Contributing
+
+Contributions are welcome! I'd love to hear from you whether it's a bug report, a feature request, or feedback on the colors.
+
+Please note: I am quite colorblind. These colors work nicely for me, but if you notice any oddities, it's likely I just can't see them! I don't usually notice small tweaks, so if something looks "off," please reach out. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
 ## Credits
 
 - Based on [Everforest](https://github.com/sainnhe/everforest) by [sainnhe](https://github.com/sainnhe).
