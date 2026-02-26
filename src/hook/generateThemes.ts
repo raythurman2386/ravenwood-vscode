@@ -1,12 +1,12 @@
-/*---------------------------------------------------------------------------------------------
+/*---------------------------------------------------------------
  *  Homepage:   https://github.com/raythurman2386/ravenwood-vscode
  *  Copyright:  2026 raythurman2386 <support@raythurman.dev>
  *  License:    MIT
- *--------------------------------------------------------------------------------------------*/
+ *--------------------------------------------------------------*/
 
 import * as fs from "fs";
 import { join } from "path";
-import { Configuration } from "../interface";
+import { Configuration, ThemeData } from "../interface";
 import { getWorkbench } from "../workbench";
 import { getSyntax } from "../syntax";
 import { getSemantic } from "../semantic";
@@ -20,13 +20,13 @@ class Utils {
       );
     });
   } // }}}
-  async generate(darkPath: string, lightPath: string, data: any) {
-    // {{{
-    this.writeFile(darkPath, data.dark);
-    this.writeFile(lightPath, data.light);
-  } // }}}
-  getThemeData(configuration: Configuration) {
-    // {{{
+  async generate(darkPath: string, lightPath: string, data: ThemeData) {
+    await Promise.all([
+      this.writeFile(darkPath, data.dark),
+      this.writeFile(lightPath, data.light),
+    ]);
+  }
+  getThemeData(configuration: Configuration): ThemeData {
     return {
       dark: {
         name: "Ravenwood Dark",
@@ -45,9 +45,8 @@ class Utils {
         tokenColors: getSyntax(configuration, "light"),
       },
     };
-  } // }}}
+  }
 }
-
 const utils = new Utils();
 const configuration: Configuration = {
   darkContrast: "medium",
@@ -64,10 +63,15 @@ const configuration: Configuration = {
   highContrast: false,
 };
 
-utils.generate(
-  join(__dirname, "..", "..", "themes", "ravenwood-dark.json"),
-  join(__dirname, "..", "..", "themes", "ravenwood-light.json"),
-  utils.getThemeData(configuration),
-);
+utils
+  .generate(
+    join(__dirname, "..", "..", "themes", "ravenwood-dark.json"),
+    join(__dirname, "..", "..", "themes", "ravenwood-light.json"),
+    utils.getThemeData(configuration),
+  )
+  .catch((err) => {
+    console.error("Failed to generate themes:", err);
+    process.exit(1);
+  });
 
 // vim: fdm=marker fmr={{{,}}}:

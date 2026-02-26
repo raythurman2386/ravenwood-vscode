@@ -7,7 +7,7 @@
 import * as fs from "fs";
 import { join } from "path";
 import { ConfigurationChangeEvent, workspace } from "vscode";
-import { Configuration } from "./interface";
+import { Configuration, ThemeData } from "./interface";
 import { getWorkbench } from "./workbench";
 import { getSyntax } from "./syntax";
 import { getSemantic } from "./semantic";
@@ -59,7 +59,7 @@ export default class Utils {
       configuration.highContrast === false
     );
   } // }}}
-  getThemeData(configuration: Configuration) {
+  getThemeData(configuration: Configuration): ThemeData {
     // {{{
     return {
       dark: {
@@ -98,7 +98,7 @@ export default class Utils {
       );
     });
   } // }}}
-  async generate(darkPath: string, lightPath: string, data: any) {
+  async generate(darkPath: string, lightPath: string, data: ThemeData) {
     // {{{
     await Promise.all([
       this.writeFile(darkPath, data.dark),

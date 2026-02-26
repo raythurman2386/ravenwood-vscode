@@ -55,4 +55,32 @@ export interface Palette {
   badge: string;
 }
 
+export interface ThemeData {
+  dark: {
+    name: string;
+    type: string;
+    semanticHighlighting: boolean;
+    semanticTokenColors: Record<string, string>;
+    colors: Record<string, string>;
+    tokenColors: unknown[];
+  };
+  light: {
+    name: string;
+    type: string;
+    semanticHighlighting: boolean;
+    semanticTokenColors: Record<string, string>;
+    colors: Record<string, string>;
+    tokenColors: unknown[];
+  };
+}
+
+export interface SyntaxRule {
+  name: string;
+  scope: string;
+  settings: {
+    foreground?: string;
+    fontStyle?: string;
+  };
+}
+
 // vim: fdm=marker fmr={{{,}}}:
