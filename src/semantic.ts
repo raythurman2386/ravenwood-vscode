@@ -50,6 +50,16 @@ export function getSemantic(configuration: Configuration, variant: string) {
     "namespace:rust": `${palette.purple}`,
     "selfKeyword:rust": `${palette.purple}`,
     // }}}
+    // Go {{{
+    "namespace:go": `${palette.blue}`,
+    "type:go": `${palette.aqua}`,
+    "struct:go": `${palette.aqua}`,
+    "interface:go": `${palette.aqua}`,
+    "function:go": `${palette.green}`,
+    "method:go": `${palette.green}`,
+    "variable:go": `${palette.blue}`,
+    "parameter:go": `${palette.blue}`,
+    // }}}
   };
 }
 

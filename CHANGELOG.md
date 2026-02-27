@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2026-02-26
+
+### Added
+
+- **Go Semantic Tokens**: Added semantic token support for Go including namespace, type, struct, interface, function, method, variable, and parameter tokens.
+
+### Changed
+
+- **Background Colors**: Fixed inconsistent bg0/bg1/bg values in dark/medium palette - all three were identical (#1a1f1c) and are now distinct (#141814, #1a1f1c, #222822).
+- **Theme Generation**: Fixed async/await bug in generateThemes.ts where Promise.all was not being awaited, causing potential race conditions.
+- **Type Safety**: Added ThemeData and SyntaxRule interfaces for improved TypeScript type safety.
+
+### Fixed
+
+- **Code Quality**: Standardized file header format across all TypeScript source files.
+
 ## [0.2.0] - 2026-02-18
 
 ### Changed
