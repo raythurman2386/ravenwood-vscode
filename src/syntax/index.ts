@@ -4,21 +4,23 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import { Configuration, SyntaxRule } from "../interface";
-import { getPalette } from "../palette";
-import { getDefaultSyntax } from "./default";
-import { getItalicSyntax } from "./italic";
+import type { Configuration, SyntaxRule } from '../interface';
+import { getPalette } from '../palette';
+import { getDefaultSyntax } from './default';
+import { getItalicSyntax } from './italic';
 
+/** Return the TextMate scope rules for a variant, honoring the italicKeywords/italicComments flags. */
 export function getSyntax(
   configuration: Configuration,
   variant: string,
 ): SyntaxRule[] {
   const palette = getPalette(configuration, variant);
+  const italicComments = configuration.italicComments ?? true;
   let syntax: SyntaxRule[];
   if (configuration.italicKeywords === true) {
-    syntax = getItalicSyntax(palette, configuration.italicComments);
+    syntax = getItalicSyntax(palette, italicComments);
   } else {
-    syntax = getDefaultSyntax(palette, configuration.italicComments);
+    syntax = getDefaultSyntax(palette, italicComments);
   }
   return syntax;
 }

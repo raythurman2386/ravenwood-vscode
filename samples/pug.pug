@@ -1,0 +1,14 @@
+//- Pug sample — comprehensive feature coverage.
+//- Highlights: class attr (red), function storage (orange), tag attr (aqua), tags/import (purple).
+
+extends layout
+
+block content
+  main.user-profile
+    h1= user.name
+    ul.roles
+      each role in user.roles
+        li.role #{role}
+    button(onclick="activate()") Activate
+    img(src="logo.png" alt="Logo")
+    a(href="#") Link

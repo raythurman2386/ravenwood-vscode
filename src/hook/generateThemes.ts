@@ -4,74 +4,60 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import * as fs from "fs";
-import { join } from "path";
-import { Configuration, ThemeData } from "../interface";
-import { getWorkbench } from "../workbench";
-import { getSyntax } from "../syntax";
-import { getSemantic } from "../semantic";
+/**
+ * Build-time theme generator. Writes the default dark + light theme JSON
+ * files into the repo's `themes/` directory so they can be packaged with the
+ * extension. Run via `npm run compile:themes`.
+ *
+ * This script MUST NOT import the `vscode` module (it is not available at
+ * build time). It depends only on pure modules: `interface`, `themeData`,
+ * and the palette/workbench/syntax/semantic generators they pull in.
+ */
 
-class Utils {
-  private async writeFile(path: string, data: unknown) {
-    // {{{
-    return new Promise((resolve, reject) => {
-      fs.writeFile(path, JSON.stringify(data, null, 2), (err) =>
-        err ? reject(err) : resolve("Success"),
-      );
-    });
-  } // }}}
-  async generate(darkPath: string, lightPath: string, data: ThemeData) {
-    await Promise.all([
-      this.writeFile(darkPath, data.dark),
-      this.writeFile(lightPath, data.light),
-    ]);
-  }
-  getThemeData(configuration: Configuration): ThemeData {
-    return {
-      dark: {
-        name: "Ravenwood Dark",
-        type: "dark",
-        semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "dark"),
-        colors: getWorkbench(configuration, "dark"),
-        tokenColors: getSyntax(configuration, "dark"),
-      },
-      light: {
-        name: "Ravenwood Light",
-        type: "light",
-        semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "light"),
-        colors: getWorkbench(configuration, "light"),
-        tokenColors: getSyntax(configuration, "light"),
-      },
-    };
-  }
-}
-const utils = new Utils();
+import * as fs from 'node:fs';
+import { join } from 'node:path';
+import type { Configuration } from '../interface';
+import { getThemeData } from '../themeData';
+
 const configuration: Configuration = {
-  darkContrast: "medium",
-  lightContrast: "medium",
-  darkWorkbench: "material",
-  lightWorkbench: "material",
-  darkSelection: "grey",
-  lightSelection: "grey",
-  darkCursor: "white",
-  lightCursor: "black",
+  darkContrast: 'medium',
+  lightContrast: 'medium',
+  darkWorkbench: 'material',
+  lightWorkbench: 'material',
+  darkSelection: 'grey',
+  lightSelection: 'grey',
+  darkCursor: 'white',
+  lightCursor: 'black',
   italicKeywords: false,
   italicComments: true,
-  diagnosticTextBackgroundOpacity: "0%",
+  diagnosticTextBackgroundOpacity: '0%',
   highContrast: false,
 };
 
-utils
-  .generate(
-    join(__dirname, "..", "..", "themes", "ravenwood-dark.json"),
-    join(__dirname, "..", "..", "themes", "ravenwood-light.json"),
-    utils.getThemeData(configuration),
-  )
-  .catch((err) => {
-    console.error("Failed to generate themes:", err);
-    process.exit(1);
-  });
+async function writeFile(path: string, data: unknown): Promise<void> {
+  // {{{
+  await fs.promises.writeFile(path, JSON.stringify(data, null, 2));
+} // }}}
+
+async function generate(
+  darkPath: string,
+  lightPath: string,
+  data: ReturnType<typeof getThemeData>,
+): Promise<void> {
+  // {{{
+  await Promise.all([
+    writeFile(darkPath, data.dark),
+    writeFile(lightPath, data.light),
+  ]);
+} // }}}
+
+generate(
+  join(__dirname, '..', '..', 'themes', 'ravenwood-dark.json'),
+  join(__dirname, '..', '..', 'themes', 'ravenwood-light.json'),
+  getThemeData(configuration),
+).catch((err: unknown) => {
+  console.error('Failed to generate themes:', err);
+  process.exit(1);
+});
 
 // vim: fdm=marker fmr={{{,}}}:

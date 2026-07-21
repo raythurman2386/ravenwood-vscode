@@ -4,54 +4,61 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import { Palette, Configuration } from "../interface";
+import type { Configuration, Palette } from '../interface';
 
+export interface SelectionColors {
+  selectionBg: string;
+  editorSelectionBg: string;
+  editorSelectionBgHl: string;
+}
+
+/** Compute the three selection-background color tokens for a variant based on `darkSelection`/`lightSelection`. */
 export function getSelectionColors(
   palette: Palette,
   configuration: Configuration,
   variant: string,
-) {
+): SelectionColors {
   let selectionBg: string;
   let editorSelectionBg: string;
   let editorSelectionBgHl: string;
-  if (variant === "dark") {
+  if (variant === 'dark') {
     switch (configuration.darkSelection) {
-      case "grey":
+      case 'grey':
         selectionBg = `${palette.bg4}e0`;
         editorSelectionBg = `${palette.bg4}c0`;
         editorSelectionBgHl = `${palette.bg4}60`;
         break;
-      case "red":
+      case 'red':
         selectionBg = `${palette.dimRed}60`;
         editorSelectionBg = `${palette.dimRed}40`;
         editorSelectionBgHl = `${palette.dimRed}20`;
         break;
-      case "orange":
+      case 'orange':
         selectionBg = `${palette.dimOrange}60`;
         editorSelectionBg = `${palette.dimOrange}40`;
         editorSelectionBgHl = `${palette.dimOrange}20`;
         break;
-      case "yellow":
+      case 'yellow':
         selectionBg = `${palette.dimYellow}60`;
         editorSelectionBg = `${palette.dimYellow}40`;
         editorSelectionBgHl = `${palette.dimYellow}20`;
         break;
-      case "green":
+      case 'green':
         selectionBg = `${palette.dimGreen}60`;
         editorSelectionBg = `${palette.dimGreen}40`;
         editorSelectionBgHl = `${palette.dimGreen}20`;
         break;
-      case "aqua":
+      case 'aqua':
         selectionBg = `${palette.dimAqua}60`;
         editorSelectionBg = `${palette.dimAqua}40`;
         editorSelectionBgHl = `${palette.dimAqua}20`;
         break;
-      case "blue":
+      case 'blue':
         selectionBg = `${palette.dimBlue}60`;
         editorSelectionBg = `${palette.dimBlue}40`;
         editorSelectionBgHl = `${palette.dimBlue}20`;
         break;
-      case "purple":
+      case 'purple':
         selectionBg = `${palette.dimPurple}60`;
         editorSelectionBg = `${palette.dimPurple}40`;
         editorSelectionBgHl = `${palette.dimPurple}20`;
@@ -60,127 +67,160 @@ export function getSelectionColors(
         selectionBg = `${palette.bg4}e0`;
         editorSelectionBg = `${palette.bg4}c0`;
         editorSelectionBgHl = `${palette.bg4}60`;
+    }
+  } else if (variant === 'light') {
+    switch (configuration.lightSelection) {
+      case 'grey':
+        selectionBg = `${palette.bg4}c0`;
+        editorSelectionBg = `${palette.bg4}a0`;
+        editorSelectionBgHl = `${palette.bg4}50`;
+        break;
+      case 'red':
+        selectionBg = `${palette.dimRed}60`;
+        editorSelectionBg = `${palette.dimRed}40`;
+        editorSelectionBgHl = `${palette.dimRed}20`;
+        break;
+      case 'orange':
+        selectionBg = `${palette.dimOrange}60`;
+        editorSelectionBg = `${palette.dimOrange}40`;
+        editorSelectionBgHl = `${palette.dimOrange}20`;
+        break;
+      case 'yellow':
+        selectionBg = `${palette.dimYellow}60`;
+        editorSelectionBg = `${palette.dimYellow}40`;
+        editorSelectionBgHl = `${palette.dimYellow}20`;
+        break;
+      case 'green':
+        selectionBg = `${palette.dimGreen}60`;
+        editorSelectionBg = `${palette.dimGreen}40`;
+        editorSelectionBgHl = `${palette.dimGreen}20`;
+        break;
+      case 'aqua':
+        selectionBg = `${palette.dimAqua}60`;
+        editorSelectionBg = `${palette.dimAqua}40`;
+        editorSelectionBgHl = `${palette.dimAqua}20`;
+        break;
+      case 'blue':
+        selectionBg = `${palette.dimBlue}60`;
+        editorSelectionBg = `${palette.dimBlue}40`;
+        editorSelectionBgHl = `${palette.dimBlue}20`;
+        break;
+      case 'purple':
+        selectionBg = `${palette.dimPurple}60`;
+        editorSelectionBg = `${palette.dimPurple}40`;
+        editorSelectionBgHl = `${palette.dimPurple}20`;
+        break;
+      default:
+        selectionBg = `${palette.bg4}c0`;
+        editorSelectionBg = `${palette.bg4}a0`;
+        editorSelectionBgHl = `${palette.bg4}50`;
     }
   } else {
-    switch (configuration.lightSelection) {
-      case "grey":
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-        break;
-      case "red":
-        selectionBg = `${palette.dimRed}60`;
-        editorSelectionBg = `${palette.dimRed}40`;
-        editorSelectionBgHl = `${palette.dimRed}20`;
-        break;
-      case "orange":
-        selectionBg = `${palette.dimOrange}60`;
-        editorSelectionBg = `${palette.dimOrange}40`;
-        editorSelectionBgHl = `${palette.dimOrange}20`;
-        break;
-      case "yellow":
-        selectionBg = `${palette.dimYellow}60`;
-        editorSelectionBg = `${palette.dimYellow}40`;
-        editorSelectionBgHl = `${palette.dimYellow}20`;
-        break;
-      case "green":
-        selectionBg = `${palette.dimGreen}60`;
-        editorSelectionBg = `${palette.dimGreen}40`;
-        editorSelectionBgHl = `${palette.dimGreen}20`;
-        break;
-      case "aqua":
-        selectionBg = `${palette.dimAqua}60`;
-        editorSelectionBg = `${palette.dimAqua}40`;
-        editorSelectionBgHl = `${palette.dimAqua}20`;
-        break;
-      case "blue":
-        selectionBg = `${palette.dimBlue}60`;
-        editorSelectionBg = `${palette.dimBlue}40`;
-        editorSelectionBgHl = `${palette.dimBlue}20`;
-        break;
-      case "purple":
-        selectionBg = `${palette.dimPurple}60`;
-        editorSelectionBg = `${palette.dimPurple}40`;
-        editorSelectionBgHl = `${palette.dimPurple}20`;
-        break;
-      default:
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-    }
+    throw new Error(`Unknown variant: ${variant}`);
   }
   return { selectionBg, editorSelectionBg, editorSelectionBgHl };
 }
 
+/** Resolve the cursor color for a variant based on `darkCursor`/`lightCursor`. */
 export function getCursorColor(
   palette: Palette,
   configuration: Configuration,
   variant: string,
-) {
-  if (variant === "dark") {
+): string {
+  if (variant === 'dark') {
     switch (configuration.darkCursor) {
-      case "white":
+      case 'white':
         return palette.fg;
-      case "red":
+      case 'red':
         return palette.red;
-      case "orange":
+      case 'orange':
         return palette.orange;
-      case "yellow":
+      case 'yellow':
         return palette.yellow;
-      case "green":
+      case 'green':
         return palette.green;
-      case "aqua":
+      case 'aqua':
         return palette.aqua;
-      case "blue":
+      case 'blue':
         return palette.blue;
-      case "purple":
+      case 'purple':
+        return palette.purple;
+      default:
+        return palette.fg;
+    }
+  } else if (variant === 'light') {
+    switch (configuration.lightCursor) {
+      case 'black':
+        return palette.fg;
+      case 'red':
+        return palette.red;
+      case 'orange':
+        return palette.orange;
+      case 'yellow':
+        return palette.yellow;
+      case 'green':
+        return palette.green;
+      case 'aqua':
+        return palette.aqua;
+      case 'blue':
+        return palette.blue;
+      case 'purple':
         return palette.purple;
       default:
         return palette.fg;
     }
   } else {
-    switch (configuration.lightCursor) {
-      case "black":
-        return palette.fg;
-      case "red":
-        return palette.red;
-      case "orange":
-        return palette.orange;
-      case "yellow":
-        return palette.yellow;
-      case "green":
-        return palette.green;
-      case "aqua":
-        return palette.aqua;
-      case "blue":
-        return palette.blue;
-      case "purple":
-        return palette.purple;
-      default:
-        return palette.fg;
-    }
+    throw new Error(`Unknown variant: ${variant}`);
   }
 }
 
-export function getDiagnosticOpacity(configuration: Configuration) {
+/** Map the diagnostic opacity setting to a 2-digit hex alpha string. */
+export function getDiagnosticOpacity(configuration: Configuration): string {
   switch (configuration.diagnosticTextBackgroundOpacity) {
-    case "0%":
-      return "00";
-    case "12.5%":
-      return "20";
-    case "25%":
-      return "40";
-    case "37.5%":
-      return "60";
-    case "50%":
-      return "80";
+    case '0%':
+      return '00';
+    case '12.5%':
+      return '20';
+    case '25%':
+      return '40';
+    case '37.5%':
+      return '60';
+    case '50%':
+      return '80';
     default:
-      return "00";
+      return '00';
   }
 }
 
-export function getWorkbenchVariantColors(palette: Palette, variant: string) {
-  const isDark = variant === "dark";
+export interface WorkbenchVariantColors {
+  mainBg: string;
+  suggestWidgetBg: string;
+  inputValidationBgError: string;
+  inputValidationFgError: string;
+  inputValidationBgInfo: string;
+  inputValidationFgInfo: string;
+  inputValidationBgWarning: string;
+  inputValidationFgWarning: string;
+  wordHighlightBg: string;
+  wordHighlightStrongBg: string;
+  hoverHighlightBg: string;
+  lineHighlightBg: string;
+  terminalAnsiBlack: string;
+  terminalAnsiBrightBlack: string;
+  terminalAnsiBrightWhite: string;
+  terminalAnsiWhite: string;
+  welcomePageButtonHoverBg: string;
+}
+
+/** Compute variant-specific tokens (terminal ANSI, validation, highlights) that depend on dark/light. */
+export function getWorkbenchVariantColors(
+  palette: Palette,
+  variant: string,
+): WorkbenchVariantColors {
+  const isDark = variant === 'dark';
+  if (variant !== 'dark' && variant !== 'light') {
+    throw new Error(`Unknown variant: ${variant}`);
+  }
   return {
     mainBg: `${palette.bg}`,
     suggestWidgetBg: isDark ? `${palette.bg}` : `${palette.bg3}`,

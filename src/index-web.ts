@@ -4,18 +4,22 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import { workspace, window } from "vscode";
+import { type ExtensionContext, window, workspace } from 'vscode';
 
-export function activate() {
-  workspace.onDidChangeConfiguration((event) => {
-    if (event.affectsConfiguration("ravenwood")) {
-      window.showInformationMessage(
-        "Configuration options are currently not available in vscode web.",
-      );
-    }
-  });
+/** Web entry point. Registers a config-change listener that informs the user web cannot regenerate themes. */
+export function activate(context: ExtensionContext): void {
+  context.subscriptions.push(
+    workspace.onDidChangeConfiguration((event) => {
+      if (event.affectsConfiguration('ravenwood')) {
+        window.showInformationMessage(
+          'Configuration options are currently not available in vscode web.',
+        );
+      }
+    }),
+  );
 }
 
-export function deactivate() {}
+/** No-op deactivate; subscriptions are auto-disposed via context.subscriptions. */
+export function deactivate(): void {}
 
 // vim: fdm=marker fmr={{{,}}}:

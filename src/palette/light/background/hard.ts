@@ -4,18 +4,20 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
+import type { Palette } from '../../../interface';
+
 export default {
-  bg0: "#f2efdf",
-  bg1: "#f8f5e4",
-  bg: "#fffbef",
-  bg2: "#f8f5e4",
-  bg3: "#f2efdf",
-  bg4: "#edeada",
-  bg5: "#e8e5d5",
-  grey0: "#7a8478",
-  grey1: "#6b7566",
-  grey2: "#5c6658",
-  shadow: "#3c474d20",
-};
+  bg0: '#f2efdf',
+  bg1: '#f8f5e4',
+  bg: '#fffbef',
+  bg2: '#f8f5e4',
+  bg3: '#f2efdf',
+  bg4: '#edeada',
+  bg5: '#e8e5d5',
+  grey0: '#7a8478',
+  grey1: '#6b7566',
+  grey2: '#5c6658',
+  shadow: '#3c474d20',
+} satisfies Partial<Palette>;
 
 // vim: fdm=marker fmr={{{,}}}:

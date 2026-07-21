@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ravenwood.v1;
+
+// Proto sample — comprehensive feature coverage.
+// Highlights: storage.type (yellow), strings (green), class/message names (aqua).
+
+option go_package = "github.com/raythurman2386/ravenwood/proto/v1";
+
+message User {
+  int64 id = 1;
+  string name = 2;
+  repeated Role roles = 3;
+}
+
+enum Role {
+  ROLE_UNSPECIFIED = 0;
+  ADMIN = 1;
+  USER = 2;
+}
+
+service UserRepo {
+  rpc FindUser(FindUserRequest) returns (FindUserResponse);
+  rpc SaveUser(SaveUserRequest) returns (SaveUserResponse);
+}
+
+message FindUserRequest { int64 id = 1; }
+message FindUserResponse { User user = 1; }

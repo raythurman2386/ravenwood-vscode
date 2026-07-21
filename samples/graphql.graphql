@@ -1,0 +1,39 @@
+# GraphQL sample — comprehensive feature coverage.
+# Highlights: alias (white), type keyword (red), fragment names (purple),
+# support types (yellow), parameters (blue), enum constants (aqua).
+
+type User @auth {
+  id: ID!
+  name: String!
+  roles: [Role!]!
+  createdAt: DateTime
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+input UserFilter {
+  id: ID
+  name: String
+  role: Role
+}
+
+type Query {
+  user(id: ID!): User
+  users(filter: UserFilter, limit: Int = 10): [User!]!
+}
+
+fragment UserFields on User {
+  id
+  name
+  roles
+}
+
+query GetUser($id: ID!) {
+  user(id: $id) {
+    ...UserFields
+    createdAt
+  }
+}

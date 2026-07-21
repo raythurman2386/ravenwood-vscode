@@ -1,0 +1,17 @@
+{
+  "name": "ravenwood",
+  "version": "0.3.0",
+  "keywords": ["forest", "ravenwood", "theme"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Ravenwood Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ravenwood-dark.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vscode": "^1.95.0"
+  }
+}
