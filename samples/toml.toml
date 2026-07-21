@@ -1,0 +1,25 @@
+# TOML sample — comprehensive feature coverage.
+# Highlights: keys (orange), strings (green), booleans (blue), table names (purple).
+
+title = "Ravenwood"
+version = "0.3.0"
+debug = false
+max-retries = 3
+rating = 4.8
+
+[server]
+host = "0.0.0.0"
+port = 8080
+tls = true
+
+[[dependencies]]
+name = "vscode"
+version = "^1.95.0"
+
+[[dependencies]]
+name = "typescript"
+version = "7.0.2"
+
+[[images]]
+ref = "alpine:3.18"
+tag = "latest"

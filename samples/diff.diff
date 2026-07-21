@@ -1,0 +1,22 @@
+diff --git a/src/user.ts b/src/user.ts
+index 1234567..abcdefg 100644
+--- a/src/user.ts
++++ b/src/user.ts
+@@ -1,5 +1,7 @@
+ export class User {
+   id: number;
+-  name: string;
++  name: string;
++  email: string;
++  roles: string[];
+ }
+
+@@ -10,7 +12,7 @@
+   save(user: User): void {
+-    this.cache.set(user.id, user);
++    this.cache.set(user.id, user);
++    this.emit("save", user);
+   }
+ }
+old file
+new file

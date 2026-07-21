@@ -1,0 +1,35 @@
+// SCSS sample — comprehensive feature coverage.
+// Highlights: punctuation (grey), keyframes (orange), interpolation (yellow),
+// strings/values (green), include/use/mixin/extend/import (purple).
+
+@use "sass:color";
+@import "variables";
+
+$bg: #222822;
+$fg: #e8d5b7;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile {
+  background: $bg;
+  color: $fg;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @include flex-center;
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+@keyframes fade-#{"in"} {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

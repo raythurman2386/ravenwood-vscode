@@ -10,6 +10,8 @@
 // 3. utils.getConfiguration()
 // 4. utils.isDefaultConfiguration()
 // 5. generateThemes.ts
+
+/** User-facing configuration options under the `ravenwood.*` namespace. All optional. */
 export interface Configuration {
   darkContrast?: string;
   lightContrast?: string;
@@ -25,6 +27,7 @@ export interface Configuration {
   highContrast?: boolean;
 }
 
+/** The full resolved color palette for a variant × contrast combination. */
 export interface Palette {
   bg0: string;
   bg1: string;
@@ -55,6 +58,7 @@ export interface Palette {
   badge: string;
 }
 
+/** The full theme payload for both dark and light variants, written to themes/*.json. */
 export interface ThemeData {
   dark: {
     name: string;
@@ -62,7 +66,7 @@ export interface ThemeData {
     semanticHighlighting: boolean;
     semanticTokenColors: Record<string, string>;
     colors: Record<string, string>;
-    tokenColors: unknown[];
+    tokenColors: SyntaxRule[];
   };
   light: {
     name: string;
@@ -70,10 +74,11 @@ export interface ThemeData {
     semanticHighlighting: boolean;
     semanticTokenColors: Record<string, string>;
     colors: Record<string, string>;
-    tokenColors: unknown[];
+    tokenColors: SyntaxRule[];
   };
 }
 
+/** A single TextMate token-coloring rule in the `tokenColors` array. */
 export interface SyntaxRule {
   name: string;
   scope: string;

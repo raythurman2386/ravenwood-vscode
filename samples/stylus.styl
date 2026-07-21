@@ -1,0 +1,29 @@
+// Stylus sample — comprehensive feature coverage.
+// Highlights: meta.function (white), function names (yellow).
+
+bg = #222822
+fg = #e8d5b7
+accent = #4ade80
+
+user-profile
+  display flex
+  margin 1.5rem
+  padding 0.75em
+  color fg
+  background linear-gradient(to right, #141814, #2d3830)
+
+  &:hover
+    opacity 0.9
+
+  .name
+    font-weight bold
+
+fade-in()
+  from
+    opacity 0
+  to
+    opacity 1
+
+button[type="submit"]
+  font-family "JetBrains Mono", monospace
+  border-radius 4px

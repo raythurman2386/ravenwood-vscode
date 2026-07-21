@@ -5,8 +5,8 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "monthly"
     ignore:
@@ -15,3 +15,12 @@ updates:
     labels:
       - "security"
       - "dependencies"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    rebase-strategy: "auto"
+    labels:
+      - "security"
+      - "dependencies"
+      - "github-actions"

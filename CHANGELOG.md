@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-07-21
+
+### Added
+
+- **Documentation Pass**: Added `CONFIGURATION.md` (full reference for all 12 settings) and `ARCHITECTURE.md` (module layout, runtime regeneration flow, build-time hook, palette/workbench/syntax walkthrough). Refreshed `README.md` with the 4 previously-missing config options (`darkSelection`, `lightSelection`, `diagnosticTextBackgroundOpacity`, `highContrast`), a requirements note, and a build section. Added JSDoc to every exported function, class, method, and interface in `src/`.
+- **Rust Syntax Expansion**: Expanded Rust TextMate rules from 5 to 9 rules (added functions, macros, lifetimes, types/struct/enum/trait names, `Self`, generic type parameters, constants, control flow keywords, operators). Expanded Rust LSP semantic tokens from 3 to 15 tokens (added `struct`, `enum`, `trait`, `typeAlias`, `function`, `method`, `parameter`, `variable`, `field`, `constant`, `lifetime`, `module`), scoped to `:rust` to match the Go/TS/Python pattern.
+- **Python Syntax Expansion**: Added f-string interpolation, magic/dunder methods, decorator names, type hints, explicit control-flow keywords, and operators. Grew from 4 to 8 rules.
+- **Swift Syntax Expansion**: Added explicit keywords, storage types/operators, type names, functions, class/constant coverage. Grew from 2 to 7 rules.
+- **SQL Syntax Expansion**: Added explicit keywords (CREATE/DROP/ALTER/control), all SQL functions (not just aggregates), table/column names, type names, and variables. Grew from 2 to 5 rules.
+- **Go Generics**: Added `entity.name.type.parameter.go` and `entity.name.type.generic.go` to the Go type rule so post-Go-1.18 generic type parameters render consistently with named types.
+
+### Changed
+
+- **Toolchain Modernization**: Upgraded to TypeScript 7.0.2 (native compiler) and bumped `engines.vscode` to `^1.95.0`. Replaced the `eslint` + `typescript-eslint` + `prettier` stack with **Biome 2.5.x** (Rust-based, single tool for lint + format) because `typescript-eslint` v8 does not support TS 7 and TS 7 ships no programmatic API. Husky upgraded to 9.1.7 (the `prepare` script now runs `husky` instead of `husky install`). `tsconfig.json` now uses `target`/`lib` `es2022`, `strict: true`, `skipLibCheck: true`, and an explicit `types: ["node"]`.
+- **Workbench Refactor**: Extracted the ~95% shared token map from `material.ts`/`flat.ts`/`highContrast.ts` into a new `src/workbench/base.ts`. Each style file is now a thin wrapper that calls `getBaseWorkbenchTokens()` and spreads its specific overrides. The `highContrast` config flag overlay is shared via `applyHighContrastFlag()`.
+- **Build-Time Deduplication**: Removed the duplicated `Utils` class from `src/hook/generateThemes.ts`. Both runtime and build-time now share a single pure `getThemeData()` helper in the new `src/themeData.ts`.
+- **Variant Validation**: Variant-dispatching functions (`getPalette`, `getWorkbench`, `getSelectionColors`, `getCursorColor`, `getWorkbenchVariantColors`) now throw on unknown variants instead of silently falling back to light.
+- **Palette Type Safety**: Each palette export file is annotated `satisfies Partial<Palette>` so misspelled keys fail at compile time.
+- **Explicit Return Types**: All exported functions and methods across `src/` now have explicit return-type annotations.
+
+### Fixed
+
+- **Invalid Theme Colors**: Removed stray `}` characters inside template literals in `flat.ts` (`editorMarkerNavigation{Error,Warning,Info}.background`) and `highContrast.ts` (same three plus `chat.requestBorder`). These produced invalid hex values like `#da636280}` that VS Code would reject.
+- **Unhandled Async**: `index-client.ts` now awaits theme regeneration and surfaces errors via `window.showErrorMessage`. The `onDidChangeConfiguration` subscription is pushed into `context.subscriptions` (was leaked previously). `activate()` now accepts an `ExtensionContext`.
+- **isNewlyInstalled Race**: `Utils.isNewlyInstalled()` is now `async` and awaits the flag-file write before returning, preventing repeated "newly installed" triggers.
+- **italicComments Default**: `getSyntax()` now defaults `italicComments ?? true`, matching the documented default when the config is unset.
+- **tokenColors Typing**: `ThemeData.tokenColors` is now typed `SyntaxRule[]` instead of `unknown[]`.
+- **Dead Syntax Rule**: Removed the "TypeScript blue" rule in `default.ts`/`italic.ts` whose `entity.name.type.module.ts` scope shadowed the earlier "TypeScript white" rule. Also removed the dead "TSX white" rule shadowed by "TSX blue" for the same `.tsx` scope.
+- **Misnamed Syntax Rules**: "Scala grey"/"Scala red" (on `.groovy` scopes) renamed to "Groovy grey"/"Groovy red". "PHP blue" (on `.cpp` scopes) renamed to "C++ blue" and relocated from the PHP section to the C++ section.
+- **Overbroad Scala Scope**: The "Scala yellow" rule used the generic `entity.name.class` scope (no `.scala` suffix), which overrode class colors for ALL languages. Fixed to `entity.name.class.scala`.
+- **Italic-Mode Go Regression**: Restored the missing `Go orange`/`Go yellow`/`Go green` rules in `italic.ts`. Previously Go type names rendered blue in italic mode but yellow in default mode due to the missing `Go yellow` rule.
+- **Modeline Typo**: Fixed `fmr={{{{,}}}}:` → `fmr={{{,}}}:` in `highContrast.ts`.
+
 ## [0.2.2] - 2026-02-26
 
 ### Added

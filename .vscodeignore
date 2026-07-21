@@ -9,3 +9,9 @@ dist/hook
 .eslintrc.js
 .eslintignore
 .vscode-test-web
+samples
+biome.json
+AGENTS.md
+ARCHITECTURE.md
+CONFIGURATION.md
+GEMINI.md

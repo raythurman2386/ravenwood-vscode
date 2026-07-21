@@ -20,7 +20,8 @@ npm run browser       # Run VS Code test web (for browser testing)
 ### Linting
 
 ```bash
-npm run lint          # Run ESLint on entire codebase
+npm run lint          # Biome check (lint + format check)
+npm run format        # Biome format --write
 ```
 
 ### Testing
@@ -35,8 +36,14 @@ npm run browser       # Run VS Code in browser mode for testing
 
 The project uses husky and lint-staged:
 
-- `lint-staged` automatically runs ESLint --fix on _.ts files and Prettier on _.js, _.mjs, _.json, \*.md files
+- `lint-staged` automatically runs `biome check --write` on _.ts, _.js, _.mjs, _.json, _.jsonc, *.md files
 - Run `npm run prepare` to set up husky hooks (usually runs automatically on npm install)
+
+## Toolchain
+
+- **TypeScript 7.0.2** (native compiler) — installed as the single `typescript` package; `npx tsc` uses TS 7. TS 7 ships no programmatic API, so `typescript-eslint` cannot be used; type safety is enforced via `tsc --strict` in `tsconfig.json`.
+- **Biome 2.5.x** (Rust-based) — replaces ESLint + Prettier. Ships its own CST parser, so it works with TS 7 cleanly without depending on the TS programmatic API. Lints and formats in a single tool. Config in `biome.json`. VS Code extension: `biomejs.biome`.
+- **VS Code engine**: `^1.95.0`, `@types/vscode: 1.95.0`.
 
 ## Code Style Guidelines
 
@@ -116,11 +123,11 @@ The project uses Prettier with default settings. Key points:
 - Trailing commas where valid
 - Semicolons required
 
-#### ESLint Integration
+#### Linting Integration
 
-- ESLint is configured with TypeScript support
-- Prettier is integrated via eslint-plugin-prettier
-- Run `npm run lint` to check; lint-staged auto-fixes on commit
+- Biome handles both linting and formatting via `npm run lint` (check) and `npm run format` (write).
+- Type safety is enforced by `tsc --strict` (run as part of `npm run compile`).
+- lint-staged auto-fixes staged files with `biome check --write` on commit.
 
 ### Error Handling
 
@@ -170,11 +177,14 @@ Each palette exports a `Palette` interface with colors like `bg0`, `bg1`, `fg`, 
 | File                         | Purpose                                                      |
 | ---------------------------- | ------------------------------------------------------------ |
 | `src/utils.ts`               | Core utility class for config detection and theme generation |
+| `src/themeData.ts`           | Pure ThemeData builder (shared by runtime + build-time)      |
 | `src/interface.ts`           | TypeScript interfaces for Configuration and Palette          |
 | `src/hook/generateThemes.ts` | Build-time theme generation script                           |
 | `src/palette/index.ts`       | Color palette retrieval                                      |
-| `src/workbench/index.ts`     | Workbench color rules                                        |
-| `src/syntax/index.ts`        | Syntax highlighting rules                                    |
+| `src/workbench/index.ts`     | Workbench style dispatcher                                   |
+| `src/workbench/base.ts`      | Shared base token map + highContrast flag overlay            |
+| `src/workbench/common.ts`    | Selection / cursor / diagnostic / variant color helpers      |
+| `src/syntax/index.ts`        | Syntax highlighting rules dispatcher                         |
 | `src/semantic.ts`            | Semantic token highlighting rules                            |
 | `package.json`               | Extension manifest and npm scripts                           |
 

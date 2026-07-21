@@ -4,37 +4,57 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import { workspace } from "vscode";
-import { join } from "path";
-import Utils from "./utils";
+import { join } from 'node:path';
+import { type ExtensionContext, window, workspace } from 'vscode';
+import Utils from './utils';
 
-export function activate() {
+/** Desktop extension entry point. Registers a config-change listener that regenerates theme JSON files. */
+export async function activate(context: ExtensionContext): Promise<void> {
+  // {{{
   const utils = new Utils();
+  const darkPath = join(__dirname, '..', 'themes', 'ravenwood-dark.json');
+  const lightPath = join(__dirname, '..', 'themes', 'ravenwood-light.json');
 
   // Regenerate theme files when user configuration changes.
-  workspace.onDidChangeConfiguration((event) => {
-    utils.detectConfigChanges(event, () => {
-      utils.generate(
-        join(__dirname, "..", "themes", "ravenwood-dark.json"),
-        join(__dirname, "..", "themes", "ravenwood-light.json"),
-        utils.getThemeData(utils.getConfiguration()),
-      );
-    });
-  });
+  context.subscriptions.push(
+    workspace.onDidChangeConfiguration((event) => {
+      utils.detectConfigChanges(event, async () => {
+        try {
+          await utils.generate(
+            darkPath,
+            lightPath,
+            utils.getThemeData(utils.getConfiguration()),
+          );
+        } catch (err) {
+          window.showErrorMessage(
+            `Ravenwood failed to regenerate theme files: ${String(err)}`,
+          );
+        }
+      });
+    }),
+  );
 
   // Regenerate theme files if it's newly installed but the user settings are not the default.
-  if (
-    utils.isNewlyInstalled() &&
-    !utils.isDefaultConfiguration(utils.getConfiguration())
-  ) {
-    utils.generate(
-      join(__dirname, "..", "themes", "ravenwood-dark.json"),
-      join(__dirname, "..", "themes", "ravenwood-light.json"),
-      utils.getThemeData(utils.getConfiguration()),
-    );
+  const newlyInstalled = await utils.isNewlyInstalled();
+  if (newlyInstalled) {
+    const configuration = utils.getConfiguration();
+    if (!utils.isDefaultConfiguration(configuration)) {
+      try {
+        await utils.generate(
+          darkPath,
+          lightPath,
+          utils.getThemeData(configuration),
+        );
+      } catch (err) {
+        window.showErrorMessage(
+          `Ravenwood failed to regenerate theme files: ${String(err)}`,
+        );
+      }
+    }
   }
-}
+} // }}}
 
-export function deactivate() {}
+/** No-op deactivate; subscriptions are auto-disposed via context.subscriptions. */
+export function deactivate(): void {}
 
 // vim: fdm=marker fmr={{{,}}}:

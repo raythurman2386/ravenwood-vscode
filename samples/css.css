@@ -1,0 +1,38 @@
+/* CSS sample — comprehensive feature coverage. */
+/* Highlights: punctuation (grey), class names (red), units (orange),
+   pseudo-class/element (yellow), strings/values (green), property names (aqua),
+   vendored property (blue), tags/keyframes/selectors (purple). */
+
+:root {
+  --bg: #222822;
+  --fg: #e8d5b7;
+  --accent: #4ade80;
+}
+
+.user-profile {
+  display: flex;
+  margin: 1.5rem;
+  padding: 0.75em;
+  color: var(--fg);
+  background: linear-gradient(to right, #141814, #2d3830);
+}
+
+.user-profile::before {
+  content: "◆";
+  color: var(--accent);
+}
+
+.user-profile:hover {
+  opacity: 0.9;
+  transition: opacity 200ms ease-in-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+button[type="submit"] {
+  font-family: "JetBrains Mono", monospace;
+  border-radius: 4px;
+}
