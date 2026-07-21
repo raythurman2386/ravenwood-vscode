@@ -784,10 +784,50 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // CoffeeScript{{{
     {
+      name: 'CoffeeScript grey',
+      scope:
+        'punctuation.separator.key-value.coffee, punctuation.terminator.statement.coffee',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'CoffeeScript orange',
-      scope: 'storage.type.function.coffee',
+      scope:
+        'storage.type.function.coffee, keyword.operator.new.coffee, storage.modifier.coffee',
       settings: {
         foreground: palette.orange,
+      },
+    },
+    {
+      name: 'CoffeeScript red',
+      scope:
+        'keyword.control.class.coffee, keyword.control.conditional.coffee, keyword.control.loop.coffee',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'CoffeeScript green',
+      scope:
+        'string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'CoffeeScript aqua',
+      scope: 'entity.name.class.coffee, variable.other.readwrite.class.coffee',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'CoffeeScript purple',
+      scope: 'constant.language.boolean.coffee, constant.language.null.coffee',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
@@ -1535,6 +1575,38 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Lua{{{
     {
+      name: 'Lua grey',
+      scope:
+        'punctuation.separator.field.lua, punctuation.parameters.definition.lua, punctuation.separator.arguments.lua',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Lua red',
+      scope:
+        'keyword.control.lua, keyword.control.conditional.lua, keyword.control.loop.lua, keyword.control.return.lua',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Lua orange',
+      scope: 'storage.type.lua, keyword.operator.lua',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Lua green',
+      scope:
+        'string.quoted.single.lua, string.quoted.double.lua, punctuation.definition.string.begin.lua, punctuation.definition.string.end.lua, support.function.lua',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
       name: 'Lua aqua',
       scope: 'constant.language.lua',
       settings: {
@@ -1543,9 +1615,16 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Lua blue',
-      scope: 'entity.name.class.lua',
+      scope: 'entity.name.class.lua, entity.name.function.lua',
       settings: {
         foreground: palette.blue,
+      },
+    },
+    {
+      name: 'Lua purple',
+      scope: 'constant.numeric.lua, variable.language.self.lua',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
@@ -1651,9 +1730,17 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Julia{{{
     {
+      name: 'Julia grey',
+      scope:
+        'punctuation.separator.inheritance.julia, punctuation.definition.type-parameter.julia',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'Julia red',
       scope:
-        'keyword.control.import.julia, keyword.control.export.julia, keyword.other.julia',
+        'keyword.control.import.julia, keyword.control.export.julia, keyword.control.module.julia, keyword.control.using.julia, keyword.control.if.julia, keyword.control.else.julia, keyword.control.elseif.julia, keyword.control.for.julia, keyword.control.while.julia, keyword.control.return.julia',
       settings: {
         foreground: palette.red,
         fontStyle: 'italic',
@@ -1661,9 +1748,25 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Julia orange',
-      scope: 'keyword.storage.modifier.julia',
+      scope:
+        'keyword.storage.modifier.julia, storage.type.julia, keyword.operator.julia',
       settings: {
         foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Julia yellow',
+      scope: 'entity.name.type.julia, support.type.julia',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Julia green',
+      scope:
+        'string.quoted.single.julia, string.quoted.double.julia, punctuation.definition.string.begin.julia, punctuation.definition.string.end.julia, entity.name.function.julia, support.function.julia',
+      settings: {
+        foreground: palette.green,
       },
     },
     {
@@ -1675,7 +1778,8 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Julia purple',
-      scope: 'support.function.macro.julia',
+      scope:
+        'support.function.macro.julia, constant.numeric.julia, variable.language.julia',
       settings: {
         foreground: palette.purple,
       },
@@ -1690,10 +1794,57 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'Elm grey',
+      scope: 'punctuation.separator.pipe.elm, punctuation.definition.list.elm',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Elm red',
+      scope:
+        'keyword.control.module.elm, keyword.control.import.elm, keyword.control.exposing.elm, keyword.control.if.elm, keyword.control.then.elm, keyword.control.else.elm, keyword.control.case.elm, keyword.control.let.elm, keyword.control.in.elm',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Elm orange',
+      scope:
+        'keyword.operator.arrow.elm, keyword.operator.big-arrow.elm, keyword.operator.pipe.elm',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
       name: 'Elm yellow',
-      scope: 'storage.type.elm',
+      scope: 'storage.type.elm, entity.name.type.elm, support.type.elm',
       settings: {
         foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Elm green',
+      scope:
+        'string.quoted.single.elm, string.quoted.double.elm, punctuation.definition.string.begin.elm, punctuation.definition.string.end.elm',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'Elm aqua',
+      scope: 'entity.name.function.elm, support.function.elm',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Elm purple',
+      scope:
+        'constant.language.elm, constant.other.elm, entity.name.type.constructor.elm',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
@@ -1805,27 +1956,107 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'OCaml grey',
+      scope:
+        'punctuation.separator.pipe.ocaml, punctuation.definition.list.ocaml, punctuation.separator.semicolon.ocaml',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'OCaml red',
+      scope:
+        'keyword.control.module.ocaml, keyword.control.sig.ocaml, keyword.control.struct.ocaml, keyword.control.open.ocaml, keyword.control.match.ocaml, keyword.control.with.ocaml, keyword.control.try.ocaml',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
       name: 'OCaml orange',
-      scope: 'keyword.other.ocaml',
+      scope:
+        'keyword.other.ocaml, keyword.operator.ocaml, keyword.other.arrow.ocaml',
       settings: {
         foreground: palette.orange,
       },
     },
     {
+      name: 'OCaml yellow',
+      scope: 'storage.type.ocaml, entity.name.type.ocaml, support.type.ocaml',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'OCaml green',
+      scope:
+        'string.quoted.double.ocaml, punctuation.definition.string.begin.ocaml, punctuation.definition.string.end.ocaml',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
       name: 'OCaml aqua',
-      scope: 'constant.language.variant.ocaml',
+      scope: 'constant.language.variant.ocaml, entity.name.function.ocaml',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'OCaml purple',
+      scope: 'constant.numeric.ocaml, entity.name.module.ocaml',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
     // Perl{{{
     {
+      name: 'Perl grey',
+      scope:
+        'punctuation.separator.array.perl, punctuation.separator.hash.perl, punctuation.section.block.perl',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'Perl red',
-      scope: 'storage.type.sub.perl, storage.type.declare.routine.perl',
+      scope:
+        'storage.type.sub.perl, storage.type.declare.routine.perl, keyword.control.package.perl, keyword.control.use.perl',
       settings: {
         foreground: palette.red,
         fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Perl orange',
+      scope:
+        'keyword.operator.assignement.perl, keyword.operator.string.perl, storage.modifier.perl',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Perl green',
+      scope:
+        'string.quoted.single.perl, string.quoted.double.perl, punctuation.definition.string.begin.perl, punctuation.definition.string.end.perl, string.regexp.perl, string.regexp.modifier.perl',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'Perl aqua',
+      scope: 'entity.name.function.perl, variable.other.subroutine.perl',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Perl purple',
+      scope:
+        'constant.language.perl, variable.language.perl, variable.other.predefined.perl, keyword.control.constant.perl',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
@@ -2090,10 +2321,48 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // {{{Tmux
     {
+      name: 'Tmux grey',
+      scope:
+        'punctuation.separator.key-value.tmux, punctuation.definition.string.begin.tmux, punctuation.definition.string.end.tmux',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Tmux red',
+      scope: 'keyword.control.tmux, support.function.tmux',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Tmux orange',
+      scope: 'keyword.other.option.tmux, support.constant.option.tmux',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
       name: 'Tmux green',
-      scope: 'constant.language.tmux, constant.numeric.tmux',
+      scope:
+        'constant.language.tmux, constant.numeric.tmux, string.quoted.double.tmux, string.quoted.single.tmux',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'Tmux aqua',
+      scope: 'entity.name.function.tmux, variable.function.tmux',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Tmux purple',
+      scope: 'variable.other.tmux, punctuation.definition.variable.tmux',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}

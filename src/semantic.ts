@@ -48,6 +48,52 @@ export function getSemantic(
     'intrinsic:python': `${palette.purple}`,
     'module:python': `${palette.blue}`,
     'class:python': `${palette.aqua}`,
+    'function:python': `${palette.green}`,
+    'method:python': `${palette.green}`,
+    'parameter:python': `${palette.blue}`,
+    'variable:python': `${palette.fg}`,
+    'decorator:python': `${palette.yellow}`,
+    'enumMember:python': `${palette.blue}`,
+    'namespace:python': `${palette.purple}`,
+    // }}}
+    // Java {{{
+    'class:java': `${palette.aqua}`,
+    'interface:java': `${palette.aqua}`,
+    'enum:java': `${palette.purple}`,
+    'enumMember:java': `${palette.blue}`,
+    'namespace:java': `${palette.purple}`,
+    'typeParameter:java': `${palette.purple}`,
+    'function:java': `${palette.green}`,
+    'method:java': `${palette.green}`,
+    'parameter:java': `${palette.blue}`,
+    'variable:java': `${palette.fg}`,
+    'property:java': `${palette.aqua}`,
+    // }}}
+    // C# {{{
+    'class:csharp': `${palette.aqua}`,
+    'interface:csharp': `${palette.aqua}`,
+    'enum:csharp': `${palette.purple}`,
+    'enumMember:csharp': `${palette.blue}`,
+    'namespace:csharp': `${palette.purple}`,
+    'typeParameter:csharp': `${palette.purple}`,
+    'function:csharp': `${palette.green}`,
+    'method:csharp': `${palette.green}`,
+    'parameter:csharp': `${palette.blue}`,
+    'variable:csharp': `${palette.fg}`,
+    'property:csharp': `${palette.aqua}`,
+    // }}}
+    // C++ {{{
+    'class:cpp': `${palette.aqua}`,
+    'struct:cpp': `${palette.aqua}`,
+    'enum:cpp': `${palette.purple}`,
+    'enumMember:cpp': `${palette.blue}`,
+    'namespace:cpp': `${palette.purple}`,
+    'typeParameter:cpp': `${palette.purple}`,
+    'function:cpp': `${palette.green}`,
+    'method:cpp': `${palette.green}`,
+    'parameter:cpp': `${palette.blue}`,
+    'variable:cpp': `${palette.fg}`,
+    'field:cpp': `${palette.aqua}`,
     // }}}
     // Rust {{{
     'macro:rust': `${palette.aqua}`,
@@ -75,6 +121,9 @@ export function getSemantic(
     'method:go': `${palette.green}`,
     'variable:go': `${palette.blue}`,
     'parameter:go': `${palette.blue}`,
+    'field:go': `${palette.aqua}`,
+    'constant:go': `${palette.purple}`,
+    'typeParameter:go': `${palette.purple}`,
     // }}}
   };
 }

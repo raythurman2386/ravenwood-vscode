@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2026-07-21
+
+### Added
+
+- **Semantic Token Expansion**: Added LSP semantic token mappings for **Java** (11 tokens: class, interface, enum, enumMember, namespace, typeParameter, function, method, parameter, variable, property), **C#** (11 tokens: same set), and **C++** (12 tokens: class, struct, enum, enumMember, namespace, typeParameter, function, method, parameter, variable, field). Expanded **Python** from 3 to 10 tokens (added function, method, parameter, variable, decorator, enumMember, namespace). Expanded **Go** from 8 to 11 tokens (added field, constant, typeParameter).
+- **Syntax Rule Expansion**: Expanded TextMate rules for 7 previously thin-coverage languages: **CoffeeScript** (1→6 rules), **Perl** (1→6), **Elm** (2→8), **Lua** (2→7), **OCaml** (3→8), **Julia** (4→7), and **Tmux** (1→6). Both `default.ts` and `italic.ts` updated in sync.
+- **Dart Sample**: Added `samples/dart.dart` covering classes, enums, generics, annotations, and string interpolation — the only language with syntax rules but no sample file.
+
 ## [0.3.0] - 2026-07-21
 
 ### Added

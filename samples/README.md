@@ -40,6 +40,7 @@ One representative file per language covered by the Ravenwood theme. Open any of
 | `elm.elm` | Elm | type aliases, ADTs |
 | `purescript.purs` | PureScript | effects, Maybe |
 | `coffeescript.coffee` | CoffeeScript | classes, fat arrows |
+| `dart.dart` | Dart | classes, enums, generics, annotations |
 
 ## Markup & Config
 

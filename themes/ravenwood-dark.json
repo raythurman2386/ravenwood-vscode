@@ -26,6 +26,46 @@
     "intrinsic:python": "#f472b6",
     "module:python": "#22d3ee",
     "class:python": "#34d399",
+    "function:python": "#4ade80",
+    "method:python": "#4ade80",
+    "parameter:python": "#22d3ee",
+    "variable:python": "#e8d5b7",
+    "decorator:python": "#fbbf24",
+    "enumMember:python": "#22d3ee",
+    "namespace:python": "#f472b6",
+    "class:java": "#34d399",
+    "interface:java": "#34d399",
+    "enum:java": "#f472b6",
+    "enumMember:java": "#22d3ee",
+    "namespace:java": "#f472b6",
+    "typeParameter:java": "#f472b6",
+    "function:java": "#4ade80",
+    "method:java": "#4ade80",
+    "parameter:java": "#22d3ee",
+    "variable:java": "#e8d5b7",
+    "property:java": "#34d399",
+    "class:csharp": "#34d399",
+    "interface:csharp": "#34d399",
+    "enum:csharp": "#f472b6",
+    "enumMember:csharp": "#22d3ee",
+    "namespace:csharp": "#f472b6",
+    "typeParameter:csharp": "#f472b6",
+    "function:csharp": "#4ade80",
+    "method:csharp": "#4ade80",
+    "parameter:csharp": "#22d3ee",
+    "variable:csharp": "#e8d5b7",
+    "property:csharp": "#34d399",
+    "class:cpp": "#34d399",
+    "struct:cpp": "#34d399",
+    "enum:cpp": "#f472b6",
+    "enumMember:cpp": "#22d3ee",
+    "namespace:cpp": "#f472b6",
+    "typeParameter:cpp": "#f472b6",
+    "function:cpp": "#4ade80",
+    "method:cpp": "#4ade80",
+    "parameter:cpp": "#22d3ee",
+    "variable:cpp": "#e8d5b7",
+    "field:cpp": "#34d399",
     "macro:rust": "#34d399",
     "namespace:rust": "#f472b6",
     "selfKeyword:rust": "#f472b6",
@@ -48,7 +88,10 @@
     "function:go": "#4ade80",
     "method:go": "#4ade80",
     "variable:go": "#22d3ee",
-    "parameter:go": "#22d3ee"
+    "parameter:go": "#22d3ee",
+    "field:go": "#34d399",
+    "constant:go": "#f472b6",
+    "typeParameter:go": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",
@@ -1197,10 +1240,45 @@
       }
     },
     {
+      "name": "CoffeeScript grey",
+      "scope": "punctuation.separator.key-value.coffee, punctuation.terminator.statement.coffee",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
       "name": "CoffeeScript orange",
-      "scope": "storage.type.function.coffee",
+      "scope": "storage.type.function.coffee, keyword.operator.new.coffee, storage.modifier.coffee",
       "settings": {
         "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "CoffeeScript red",
+      "scope": "keyword.control.class.coffee, keyword.control.conditional.coffee, keyword.control.loop.coffee",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "CoffeeScript green",
+      "scope": "string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "CoffeeScript aqua",
+      "scope": "entity.name.class.coffee, variable.other.readwrite.class.coffee",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "CoffeeScript purple",
+      "scope": "constant.language.boolean.coffee, constant.language.null.coffee",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
@@ -1855,6 +1933,34 @@
       }
     },
     {
+      "name": "Lua grey",
+      "scope": "punctuation.separator.field.lua, punctuation.parameters.definition.lua, punctuation.separator.arguments.lua",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Lua red",
+      "scope": "keyword.control.lua, keyword.control.conditional.lua, keyword.control.loop.lua, keyword.control.return.lua",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Lua orange",
+      "scope": "storage.type.lua, keyword.operator.lua",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Lua green",
+      "scope": "string.quoted.single.lua, string.quoted.double.lua, punctuation.definition.string.begin.lua, punctuation.definition.string.end.lua, support.function.lua",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
       "name": "Lua aqua",
       "scope": "constant.language.lua",
       "settings": {
@@ -1863,9 +1969,16 @@
     },
     {
       "name": "Lua blue",
-      "scope": "entity.name.class.lua",
+      "scope": "entity.name.class.lua, entity.name.function.lua",
       "settings": {
         "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Lua purple",
+      "scope": "constant.numeric.lua, variable.language.self.lua",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
@@ -1953,17 +2066,38 @@
       }
     },
     {
+      "name": "Julia grey",
+      "scope": "punctuation.separator.inheritance.julia, punctuation.definition.type-parameter.julia",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
       "name": "Julia red",
-      "scope": "keyword.control.import.julia, keyword.control.export.julia",
+      "scope": "keyword.control.import.julia, keyword.control.export.julia, keyword.control.module.julia, keyword.control.using.julia, keyword.control.if.julia, keyword.control.else.julia, keyword.control.elseif.julia, keyword.control.for.julia, keyword.control.while.julia, keyword.control.return.julia",
       "settings": {
         "foreground": "#e67e80"
       }
     },
     {
       "name": "Julia orange",
-      "scope": "keyword.storage.modifier.julia",
+      "scope": "keyword.storage.modifier.julia, storage.type.julia, keyword.operator.julia",
       "settings": {
         "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Julia yellow",
+      "scope": "entity.name.type.julia, support.type.julia",
+      "settings": {
+        "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "Julia green",
+      "scope": "string.quoted.single.julia, string.quoted.double.julia, punctuation.definition.string.begin.julia, punctuation.definition.string.end.julia, entity.name.function.julia, support.function.julia",
+      "settings": {
+        "foreground": "#4ade80"
       }
     },
     {
@@ -1975,7 +2109,7 @@
     },
     {
       "name": "Julia purple",
-      "scope": "support.function.macro.julia",
+      "scope": "support.function.macro.julia, constant.numeric.julia, variable.language.julia",
       "settings": {
         "foreground": "#f472b6"
       }
@@ -1988,10 +2122,52 @@
       }
     },
     {
+      "name": "Elm grey",
+      "scope": "punctuation.separator.pipe.elm, punctuation.definition.list.elm",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Elm red",
+      "scope": "keyword.control.module.elm, keyword.control.import.elm, keyword.control.exposing.elm, keyword.control.if.elm, keyword.control.then.elm, keyword.control.else.elm, keyword.control.case.elm, keyword.control.let.elm, keyword.control.in.elm",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Elm orange",
+      "scope": "keyword.operator.arrow.elm, keyword.operator.big-arrow.elm, keyword.operator.pipe.elm",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
       "name": "Elm yellow",
-      "scope": "storage.type.elm",
+      "scope": "storage.type.elm, entity.name.type.elm, support.type.elm",
       "settings": {
         "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "Elm green",
+      "scope": "string.quoted.single.elm, string.quoted.double.elm, punctuation.definition.string.begin.elm, punctuation.definition.string.end.elm",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "Elm aqua",
+      "scope": "entity.name.function.elm, support.function.elm",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Elm purple",
+      "scope": "constant.language.elm, constant.other.elm, entity.name.type.constructor.elm",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
@@ -2086,24 +2262,94 @@
       }
     },
     {
+      "name": "OCaml grey",
+      "scope": "punctuation.separator.pipe.ocaml, punctuation.definition.list.ocaml, punctuation.separator.semicolon.ocaml",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "OCaml red",
+      "scope": "keyword.control.module.ocaml, keyword.control.sig.ocaml, keyword.control.struct.ocaml, keyword.control.open.ocaml, keyword.control.match.ocaml, keyword.control.with.ocaml, keyword.control.try.ocaml",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
       "name": "OCaml orange",
-      "scope": "keyword.other.ocaml",
+      "scope": "keyword.other.ocaml, keyword.operator.ocaml, keyword.other.arrow.ocaml",
       "settings": {
         "foreground": "#e69875"
       }
     },
     {
+      "name": "OCaml yellow",
+      "scope": "storage.type.ocaml, entity.name.type.ocaml, support.type.ocaml",
+      "settings": {
+        "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "OCaml green",
+      "scope": "string.quoted.double.ocaml, punctuation.definition.string.begin.ocaml, punctuation.definition.string.end.ocaml",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
       "name": "OCaml aqua",
-      "scope": "constant.language.variant.ocaml",
+      "scope": "constant.language.variant.ocaml, entity.name.function.ocaml",
       "settings": {
         "foreground": "#34d399"
       }
     },
     {
+      "name": "OCaml purple",
+      "scope": "constant.numeric.ocaml, entity.name.module.ocaml",
+      "settings": {
+        "foreground": "#f472b6"
+      }
+    },
+    {
+      "name": "Perl grey",
+      "scope": "punctuation.separator.array.perl, punctuation.separator.hash.perl, punctuation.section.block.perl",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
       "name": "Perl red",
-      "scope": "storage.type.sub.perl, storage.type.declare.routine.perl",
+      "scope": "storage.type.sub.perl, storage.type.declare.routine.perl, keyword.control.package.perl, keyword.control.use.perl",
       "settings": {
         "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Perl orange",
+      "scope": "keyword.operator.assignement.perl, keyword.operator.string.perl, storage.modifier.perl",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Perl green",
+      "scope": "string.quoted.single.perl, string.quoted.double.perl, punctuation.definition.string.begin.perl, punctuation.definition.string.end.perl, string.regexp.perl, string.regexp.modifier.perl",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "Perl aqua",
+      "scope": "entity.name.function.perl, variable.other.subroutine.perl",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Perl purple",
+      "scope": "constant.language.perl, variable.language.perl, variable.other.predefined.perl, keyword.control.constant.perl",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
@@ -2338,10 +2584,45 @@
       }
     },
     {
+      "name": "Tmux grey",
+      "scope": "punctuation.separator.key-value.tmux, punctuation.definition.string.begin.tmux, punctuation.definition.string.end.tmux",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Tmux red",
+      "scope": "keyword.control.tmux, support.function.tmux",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Tmux orange",
+      "scope": "keyword.other.option.tmux, support.constant.option.tmux",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
       "name": "Tmux green",
-      "scope": "constant.language.tmux, constant.numeric.tmux",
+      "scope": "constant.language.tmux, constant.numeric.tmux, string.quoted.double.tmux, string.quoted.single.tmux",
       "settings": {
         "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "Tmux aqua",
+      "scope": "entity.name.function.tmux, variable.function.tmux",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Tmux purple",
+      "scope": "variable.other.tmux, punctuation.definition.variable.tmux",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
