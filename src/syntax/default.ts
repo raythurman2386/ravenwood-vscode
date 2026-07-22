@@ -582,6 +582,29 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'SASS red',
+      scope:
+        'keyword.control.at-rule.if.scss, keyword.control.at-rule.else.scss, keyword.control.at-rule.for.scss, keyword.control.at-rule.each.scss, keyword.control.at-rule.while.scss, keyword.control.at-rule.return.scss, keyword.control.at-rule.warn.scss, keyword.control.at-rule.error.scss, keyword.control.at-rule.debug.scss',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'SASS aqua',
+      scope:
+        'keyword.control.at-rule.function.scss, keyword.control.at-rule.at-root.scss, keyword.control.at-rule.content.scss',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'SASS blue',
+      scope: 'variable.other.readwrite.scss',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
       name: 'SASS purple',
       scope:
         'keyword.control.at-rule.include.scss, keyword.control.at-rule.use.scss, keyword.control.at-rule.mixin.scss, keyword.control.at-rule.extend.scss, keyword.control.at-rule.import.scss',

@@ -1,6 +1,7 @@
 // SCSS sample — comprehensive feature coverage.
 // Highlights: punctuation (grey), keyframes (orange), interpolation (yellow),
-// strings/values (green), include/use/mixin/extend/import (purple).
+// strings/values (green), include/use/mixin/extend/import (purple),
+// control flow (red), directives (aqua), variables (blue).
 
 @use "sass:color";
 @import "variables";
@@ -8,10 +9,18 @@
 $bg: #222822;
 $fg: #e8d5b7;
 
+@function rem($px) {
+  @return calc($px / 16 * 1rem);
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin themed {
+  @content;
 }
 
 .user-profile {
@@ -26,7 +35,33 @@ $fg: #e8d5b7;
 
   .name {
     font-weight: bold;
+    font-size: rem(16);
   }
+
+  @if $bg == #222822 {
+    border: 1px solid #444;
+  } @else {
+    border: 1px solid #ccc;
+  }
+
+  @for $i from 1 through 3 {
+    .item-#{$i} {
+      z-index: $i;
+    }
+  }
+
+  @each $prop, $val in (margin, padding) {
+    #{$prop}: 0;
+  }
+
+  @include themed {
+    background: $fg;
+    color: $bg;
+  }
+}
+
+@at-root .wrapper {
+  display: grid;
 }
 
 @keyframes fade-#{"in"} {
