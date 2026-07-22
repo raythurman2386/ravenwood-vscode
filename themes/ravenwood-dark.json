@@ -2539,6 +2539,27 @@
       }
     },
     {
+      "name": "GraphQL grey",
+      "scope": "punctuation.definition.type.graphql, punctuation.separator.graphql",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "GraphQL orange",
+      "scope": "keyword.operator.graphql",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "GraphQL green",
+      "scope": "entity.name.function.graphql, support.type.field.graphql",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
       "name": "Makefile orange",
       "scope": "entity.name.function.target.makefile",
       "settings": {
