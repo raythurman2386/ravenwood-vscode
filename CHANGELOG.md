@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.3] - 2026-07-22
+
+### Added
+- add .agents/skills/ravenwood for cross-agent context + dependency audit in nightly release
+
+### Other
+- docs: reference .agents/skills/ravenwood in AGENTS.md
+
 ## [0.3.2] - 2026-07-22
 
 ### Fixed
