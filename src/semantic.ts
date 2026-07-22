@@ -125,6 +125,12 @@ export function getSemantic(
     'constant:go': `${palette.purple}`,
     'typeParameter:go': `${palette.purple}`,
     // }}}
+    // Elm {{{
+    'type:elm': `${palette.aqua}`,
+    'typeAlias:elm': `${palette.aqua}`,
+    'function:elm': `${palette.green}`,
+    'module:elm': `${palette.purple}`,
+    // }}}
   };
 }
 
