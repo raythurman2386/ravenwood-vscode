@@ -1,0 +1,189 @@
+name: Nightly Release
+
+on:
+  schedule:
+    # 2:00 AM UTC every day (9:00 PM CT)
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  nightly-release:
+    runs-on: ubuntu-latest
+    if: github.repository == 'raythurman2386/ravenwood-vscode'
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Get last tag and current version
+        id: last
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          echo "last_tag=$LAST_TAG" >> "$GITHUB_OUTPUT"
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "current_version=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
+          if [ -n "$LAST_TAG" ]; then
+            COMMIT_COUNT=$(git rev-list "$LAST_TAG"..HEAD --count)
+          else
+            COMMIT_COUNT=$(git rev-list HEAD --count)
+          fi
+          echo "commit_count=$COMMIT_COUNT" >> "$GITHUB_OUTPUT"
+          echo "Last tag: $LAST_TAG"
+          echo "Current version: $CURRENT_VERSION"
+          echo "Commits since last tag: $COMMIT_COUNT"
+
+      - name: Skip if no new commits
+        if: steps.last.outputs.commit_count == '0'
+        run: |
+          echo "No new commits since last tag (${{ steps.last.outputs.last_tag }}). Skipping release."
+          exit 0
+
+      - name: Bump patch version
+        id: bump
+        run: |
+          OLD_VERSION="${{ steps.last.outputs.current_version }}"
+          # Bump patch: 0.3.1 → 0.3.2
+          IFS='.' read -ra PARTS <<< "$OLD_VERSION"
+          MAJOR="${PARTS[0]}"
+          MINOR="${PARTS[1]}"
+          PATCH="${PARTS[2]}"
+          PATCH=$((PATCH + 1))
+          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Bumping version: $OLD_VERSION → $NEW_VERSION"
+
+          # Update package.json
+          npm version "$NEW_VERSION" --no-git-tag-version --allow-same-version
+
+      - name: Generate changelog
+        run: |
+          LAST_TAG="${{ steps.last.outputs.last_tag }}"
+          NEW_VERSION="${{ steps.bump.new_version }}"
+          TODAY=$(date +%Y-%m-%d)
+
+          # Generate commit list since last tag
+          if [ -n "$LAST_TAG" ]; then
+            COMMITS=$(git log "$LAST_TAG..HEAD" --format="- %s" --no-merges)
+          else
+            COMMITS=$(git log --format="- %s" --no-merges -20)
+          fi
+
+          # Categorize commits
+          ADDED=""
+          CHANGED=""
+          FIXED=""
+          OTHER=""
+
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            # Strip leading "- "
+            msg="${line#- }"
+            # Check for conventional commit prefixes (type: or type(scope):)
+            if echo "$msg" | grep -qiE "^[a-z]+(\([^)]*\))?: "; then
+              type=$(echo "$msg" | sed -E 's/^([a-z]+)(\(.*)?:.*$/\1/')
+              desc=$(echo "$msg" | sed -E 's/^[a-z]+(\([^)]*\))?: //')
+              case "$type" in
+                feat|add)
+                  ADDED="$ADDED\n- $desc"
+                  ;;
+                fix)
+                  FIXED="$FIXED\n- $desc"
+                  ;;
+                refactor|change|update|bump|build)
+                  CHANGED="$CHANGED\n- $desc"
+                  ;;
+                *)
+                  OTHER="$OTHER\n- $msg"
+                  ;;
+              esac
+            else
+              OTHER="$OTHER\n- $msg"
+            fi
+          done <<< "$COMMITS"
+
+          # Build changelog entry
+          ENTRY="## [$NEW_VERSION] - $TODAY\n"
+          if [ -n "$ADDED" ]; then
+            ENTRY="$ENTRY\n### Added$ADDED\n"
+          fi
+          if [ -n "$CHANGED" ]; then
+            ENTRY="$ENTRY\n### Changed$CHANGED\n"
+          fi
+          if [ -n "$FIXED" ]; then
+            ENTRY="$ENTRY\n### Fixed$FIXED\n"
+          fi
+          if [ -n "$OTHER" ]; then
+            ENTRY="$ENTRY\n### Other$OTHER\n"
+          fi
+
+          # Prepend to CHANGELOG.md (after the header)
+          python3 -c "
+          import sys
+          with open('CHANGELOG.md', 'r') as f:
+              content = f.read()
+          # Find the header (first two lines: title + blank line + intro)
+          # Insert new entry after the intro line
+          lines = content.split('\n')
+          # Find the first '## [' entry
+          insert_idx = 0
+          for i, line in enumerate(lines):
+              if line.startswith('## ['):
+                  insert_idx = i
+                  break
+          if insert_idx == 0:
+              # No existing entries, insert after the intro
+              for i, line in enumerate(lines):
+                  if line.strip() == '' and i > 2:
+                      insert_idx = i
+                      break
+          new_entry = '''$(echo -e "$ENTRY")'''
+          lines.insert(insert_idx, new_entry)
+          lines.insert(insert_idx + 1, '')
+          with open('CHANGELOG.md', 'w') as f:
+              f.write('\n'.join(lines))
+          "
+          echo "Changelog updated:"
+          head -30 CHANGELOG.md
+
+      - name: Compile and verify
+        run: |
+          npm ci
+          npm run compile
+          npm run lint
+
+      - name: Commit and tag
+        run: |
+          NEW_VERSION="${{ steps.bump.new_version }}"
+          git add package.json CHANGELOG.md
+          git commit -m "release: v$NEW_VERSION — nightly auto-release"
+          git tag "v$NEW_VERSION"
+          git push origin main
+          git push origin "v$NEW_VERSION"
+          echo "Tagged v$NEW_VERSION and pushed. stable_release.yml will handle publishing."
+
+      - name: Summary
+        run: |
+          echo "### Nightly Release Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Version:** ${{ steps.bump.new_version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Commits since last tag:** ${{ steps.last.outputs.commit_count }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Previous version:** ${{ steps.last.outputs.current_version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "The tag push will trigger stable_release.yml to publish to VS Code Marketplace and Open VSX." >> "$GITHUB_STEP_SUMMARY"
