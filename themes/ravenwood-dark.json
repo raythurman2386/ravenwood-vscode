@@ -91,7 +91,11 @@
     "parameter:go": "#22d3ee",
     "field:go": "#34d399",
     "constant:go": "#f472b6",
-    "typeParameter:go": "#f472b6"
+    "typeParameter:go": "#f472b6",
+    "type:elm": "#34d399",
+    "typeAlias:elm": "#34d399",
+    "function:elm": "#4ade80",
+    "module:elm": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",
