@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.2] - 2026-07-22
+
+### Fixed
+- semantic: add semantic token rules for Elm (#31) (#81)
+
+### Other
+- ci: fix nightly release — use PR merge with admin bypass for branch protection
+- ci: add nightly release workflow — auto version bump, changelog, tag
+
 ## [0.3.1] - 2026-07-21
 
 ### Added
