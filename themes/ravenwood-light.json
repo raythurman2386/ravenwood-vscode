@@ -1097,6 +1097,27 @@
       }
     },
     {
+      "name": "SASS red",
+      "scope": "keyword.control.at-rule.if.scss, keyword.control.at-rule.else.scss, keyword.control.at-rule.for.scss, keyword.control.at-rule.each.scss, keyword.control.at-rule.while.scss, keyword.control.at-rule.return.scss, keyword.control.at-rule.warn.scss, keyword.control.at-rule.error.scss, keyword.control.at-rule.debug.scss",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
+      "name": "SASS aqua",
+      "scope": "keyword.control.at-rule.function.scss, keyword.control.at-rule.at-root.scss, keyword.control.at-rule.content.scss",
+      "settings": {
+        "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "SASS blue",
+      "scope": "variable.other.readwrite.scss",
+      "settings": {
+        "foreground": "#1a6d9e"
+      }
+    },
+    {
       "name": "SASS purple",
       "scope": "keyword.control.at-rule.include.scss, keyword.control.at-rule.use.scss, keyword.control.at-rule.mixin.scss, keyword.control.at-rule.extend.scss, keyword.control.at-rule.import.scss",
       "settings": {
