@@ -2267,6 +2267,28 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.purple,
       },
     },
+    {
+      name: 'GraphQL grey',
+      scope:
+        'punctuation.definition.type.graphql, punctuation.separator.graphql',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'GraphQL orange',
+      scope: 'keyword.operator.graphql',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'GraphQL green',
+      scope: 'entity.name.function.graphql, support.type.field.graphql',
+      settings: {
+        foreground: palette.green,
+      },
+    },
     // }}}
     // {{{Makefile
     {

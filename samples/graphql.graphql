@@ -1,6 +1,7 @@
 # GraphQL sample — comprehensive feature coverage.
 # Highlights: alias (white), type keyword (red), fragment names (purple),
-# support types (yellow), parameters (blue), enum constants (aqua).
+# support types (yellow), parameters (blue), enum constants (aqua),
+# delimiters (grey), operators (orange), function names/fields (green).
 
 type User @auth {
   id: ID!
