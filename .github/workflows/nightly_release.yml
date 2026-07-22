@@ -150,9 +150,29 @@ jobs:
           echo "Changelog updated:"
           head -30 CHANGELOG.md
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Dependency audit
+        id: audit
+        continue-on-error: true
+        run: |
+          echo "## npm audit (vulnerabilities)" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if npm audit 2>&1; then
+            echo "**Vulnerabilities:** 0 found" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "**Vulnerabilities:** found (see audit output above)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Outdated dependencies" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          npm outdated --no-update-notifier 2>&1 | sed 's/^/  /' >> "$GITHUB_STEP_SUMMARY" || echo "  (none)" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
       - name: Compile and verify
         run: |
-          npm ci
           npm run compile
           npm run lint
 
@@ -169,11 +189,10 @@ jobs:
           git push origin "$BRANCH"
 
           # Create PR
+          PR_BODY=$(printf 'Automated nightly release. Bumps version to %s and updates CHANGELOG.md.\n\nThis PR will be auto-merged and tagged to trigger stable_release.yml.\n\nDependency audit: see the workflow run summary for npm audit and outdated packages.' "$NEW_VERSION")
           PR_URL=$(gh pr create \
             --title "release: v$NEW_VERSION — nightly auto-release" \
-            --body "Automated nightly release. Bumps version to $NEW_VERSION and updates CHANGELOG.md.
-
-          This PR will be auto-merged and tagged to trigger stable_release.yml." \
+            --body "$PR_BODY" \
             --head "$BRANCH" \
             --base main \
             --label automated)
