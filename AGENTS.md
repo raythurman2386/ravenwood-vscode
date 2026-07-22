@@ -1,5 +1,9 @@
 # AGENTS.md - Ravenwood VS Code Theme
 
+## Agent Skills
+
+This repo includes a skill at `.agents/skills/ravenwood/SKILL.md` with full architecture, color palette, conventions, and verification checklists. Agents that support the `.agents/skills/` convention (OpenCode, Hermes, Cursor, etc.) should load it automatically. For agents that don't, read that file before working on theme files — it contains the syntax/semantic color mapping rules and common pitfalls that prevent regressions.
+
 ## Project Overview
 
 Ravenwood is a VS Code theme extension that provides a refined emerald forest color scheme. It features dynamic theme generation based on user configuration (contrast levels, workbench styles, cursor colors, italics).
