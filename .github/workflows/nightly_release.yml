@@ -190,7 +190,7 @@ jobs:
           PR_NUMBER=$(gh pr list --head "release/v$NEW_VERSION" --json number --jq '.[0].number')
           echo "Merging PR #$PR_NUMBER..."
 
-          # Merge the PR with admin override (RELEASE_TOKEN has admin rights)
+          # Merge the PR via squash merge
           gh pr merge "$PR_NUMBER" --squash --admin --delete-branch \
             --subject "release: v$NEW_VERSION — nightly auto-release (#$PR_NUMBER)"
 
