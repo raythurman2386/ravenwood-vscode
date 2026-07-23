@@ -179,6 +179,15 @@ export function getSemantic(
     'property:groovy': `${palette.aqua}`,
     'namespace:groovy': `${palette.purple}`,
     // }}}
+    // Lua {{{
+    'class:lua': `${palette.aqua}`,
+    'function:lua': `${palette.green}`,
+    'method:lua': `${palette.green}`,
+    'parameter:lua': `${palette.blue}`,
+    'variable:lua': `${palette.fg}`,
+    'table:lua': `${palette.aqua}`,
+    'property:lua': `${palette.aqua}`,
+    // }}}
   };
 }
 
