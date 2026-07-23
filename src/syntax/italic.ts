@@ -1214,6 +1214,35 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         fontStyle: 'italic',
       },
     },
+    {
+      name: 'Kotlin grey',
+      scope: 'punctuation.accessor.kotlin, punctuation.separator.kotlin',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Kotlin yellow',
+      scope:
+        'string.quoted.double.kotlin, string.quoted.single.kotlin, punctuation.definition.string.begin.kotlin, punctuation.definition.string.end.kotlin, entity.name.type.kotlin, entity.name.type.class.kotlin, entity.name.type.enum.kotlin',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Kotlin green',
+      scope: 'entity.name.function.kotlin, support.function.kotlin',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'Kotlin blue',
+      scope: 'keyword.operator.type.annotation.kotlin',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
     // }}}
     // Scala{{{
     {
