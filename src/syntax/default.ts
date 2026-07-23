@@ -2235,22 +2235,58 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // {{{CMake
     {
+      name: 'CMake grey',
+      scope:
+        'punctuation.definition.comment.cmake, punctuation.section.arguments.begin.cmake, punctuation.section.arguments.end.cmake, punctuation.separator.arguments.cmake',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'CMake red',
+      scope: 'keyword.control.cmake',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'CMake orange',
+      scope: 'keyword.operator.assignment.cmake, storage.type.cmake',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'CMake yellow',
+      scope: 'string.quoted.double.cmake, string.quoted.single.cmake',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
       name: 'CMake green',
-      scope: 'string.source.cmake',
+      scope: 'support.function.cmake, entity.name.function.cmake',
       settings: {
         foreground: palette.green,
       },
     },
     {
       name: 'CMake aqua',
-      scope: 'entity.source.cmake',
+      scope: 'variable.language.cmake',
       settings: {
         foreground: palette.aqua,
       },
     },
     {
+      name: 'CMake blue',
+      scope: 'variable.other.cmake',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
       name: 'CMake purple',
-      scope: 'storage.source.cmake',
+      scope: 'constant.language.cmake, constant.numeric.cmake',
       settings: {
         foreground: palette.purple,
       },
