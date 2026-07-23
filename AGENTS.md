@@ -30,7 +30,13 @@ npm run format        # Biome format --write
 
 ### Testing
 
-This project currently has **no automated tests**. Manual testing can be done using:
+```bash
+npm test              # Node built-in test runner (node:test + tsx)
+```
+
+81 tests across 5 suites: structural (theme JSON shape, hex validation), palette (color values match documented specs), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output).
+
+No automated browser/integration tests. Manual testing:
 
 ```bash
 npm run browser       # Run VS Code in browser mode for testing

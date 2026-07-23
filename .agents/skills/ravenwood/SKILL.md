@@ -109,9 +109,10 @@ See `references/palette.md` for the full color tables. Key rules:
 ## Build, Lint, Test
 
 ```bash
-npm run compile        # Full build: clean → tsc → generate themes
+npm run compile        # Full build: clean -> tsc -> generate themes
 npm run compile:ts     # TypeScript only
 npm run compile:themes # Generate default theme JSONs
+npm test               # 81 tests (structural, palette, sync, scope-safety, build-combos)
 npm run lint           # Biome check (lint + format check)
 npm run format         # Biome format --write
 npm run package        # Package .vsix
@@ -119,7 +120,7 @@ npm run clean          # Remove dist + *.vsix
 npm run browser        # VS Code test web
 ```
 
-No automated tests exist. Verify changes by running `npm run compile && npm run lint`.
+Tests run on every push and PR via CI.
 
 ## Adding a New Language: Syntax + Semantic
 
