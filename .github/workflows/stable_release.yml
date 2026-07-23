@@ -6,6 +6,9 @@ on:
     tags:
       - "*"
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -36,3 +39,14 @@ jobs:
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          RELEASE_NOTES=$(python3 .github/scripts/extract-changelog.py "$TAG")
+          gh release create "$TAG" \
+            --title "Ravenwood $TAG" \
+            --notes "$RELEASE_NOTES" \
+            --verify-tag
