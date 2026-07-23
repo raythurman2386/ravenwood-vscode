@@ -120,7 +120,13 @@
     "parameter:php": "#22d3ee",
     "variable:php": "#e8d5b7",
     "property:php": "#34d399",
-    "namespace:php": "#f472b6"
+    "namespace:php": "#f472b6",
+    "function:clojure": "#4ade80",
+    "method:clojure": "#4ade80",
+    "variable:clojure": "#e8d5b7",
+    "namespace:clojure": "#f472b6",
+    "protocol:clojure": "#34d399",
+    "record:clojure": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",
