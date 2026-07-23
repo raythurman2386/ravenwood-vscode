@@ -2684,21 +2684,21 @@
       "name": "CMake yellow",
       "scope": "string.quoted.double.cmake, string.quoted.single.cmake",
       "settings": {
-        "foreground": "#b08500"
+        "foreground": "#5c7a0c"
       }
     },
     {
       "name": "CMake green",
       "scope": "support.function.cmake, entity.name.function.cmake",
       "settings": {
-        "foreground": "#5c7a0c"
+        "foreground": "#c55e15"
       }
     },
     {
       "name": "CMake aqua",
       "scope": "variable.language.cmake",
       "settings": {
-        "foreground": "#1e7d5a"
+        "foreground": "#b84d94"
       }
     },
     {
