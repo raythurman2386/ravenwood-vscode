@@ -2601,6 +2601,41 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // JSON{{{
     {
+      name: 'JSON red',
+      scope: 'constant.language.json',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'JSON yellow',
+      scope: 'string.quoted.double.json',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'JSON aqua',
+      scope: 'support.type.property-name.json',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'JSON blue',
+      scope: 'storage.type.json',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'JSON purple',
+      scope: 'constant.numeric.json',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
+    {
       name: 'JSON grey',
       scope:
         'punctuation.support.type.property-name.begin.json, punctuation.support.type.property-name.end.json, punctuation.separator.dictionary.key-value.json, punctuation.definition.string.begin.json, punctuation.definition.string.end.json, punctuation.separator.dictionary.pair.json, punctuation.separator.array.json',
