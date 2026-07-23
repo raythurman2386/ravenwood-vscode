@@ -15,7 +15,7 @@ The project is structured to separate color palettes from UI and syntax rules:
 - `src/palette/`: Contains color definitions for `dark` and `light` variants, subdivided by contrast levels (`hard`, `medium`, `soft`).
 - `src/workbench/`: Defines workbench (UI) colors, supporting different styles like `material`, `flat`, and `high-contrast`.
 - `src/syntax/`: Defines syntax highlighting rules, including optional italics for keywords and comments.
-- `src/semantic/`: Defines semantic highlighting rules.
+- `src/semantic.ts`: Defines semantic highlighting rules (LSP token colors).
 - `src/utils.ts`: Core utility class for reading VS Code configuration, detecting changes, and generating theme JSON files.
 - `src/hook/generateThemes.ts`: A build-time script used to generate the initial/default theme files in the `themes/` directory.
 - `themes/`: Contains the generated `ravenwood-dark.json` and `ravenwood-light.json` files. These files are updated by the extension at runtime.
@@ -27,7 +27,8 @@ The project is structured to separate color palettes from UI and syntax rules:
 - `npm run compile`: Cleans the `dist` folder, compiles TypeScript, and generates the default themes. This is the primary build command.
 - `npm run compile:ts`: Compiles TypeScript source files.
 - `npm run compile:themes`: Executes the theme generation hook (`dist/hook/generateThemes.js`).
-- `npm run lint`: Runs ESLint for code quality checks.
+- `npm run lint`: Runs Biome check (lint + format check).
+- `npm run format`: Auto-formats with Biome format --write.
 - `npm run clean`: Removes the `dist` directory and packaged `.vsix` files.
 - `npm run package`: Packages the extension into a `.vsix` file using `vsce`.
 
@@ -42,7 +43,7 @@ The project is structured to separate color palettes from UI and syntax rules:
 3.  **Code Style:**
     - The codebase uses `vim` fold markers (`{{{` and `}}}`) for organization.
     - Strict typing is enforced via TypeScript.
-    - Linting and formatting are handled by ESLint and Prettier (via `lint-staged`).
+    - Linting and formatting are handled by Biome (via `lint-staged`).
 
 ## Contribution Guidelines
 

@@ -91,7 +91,11 @@ The three workbench styles (`material`, `flat`, `highContrast`) share ~95% of th
 
 Two TextMate rule arrays exist: `default.ts` (regular) and `italic.ts` (italic keywords). `getSyntax()` picks one based on `configuration.italicKeywords`. The `italicComments` flag defaults to `true` when unset, matching the documented default.
 
-Rust has the deepest syntax coverage (9 TextMate rules + 15 LSP semantic tokens), followed by Go (6 TextMate + 8 semantic). Python, Swift, SQL, and TypeScript also have expanded coverage with explicit scope rules for modern language features (f-strings, generics, type hints, attributes). Both `default.ts` and `italic.ts` mirror each other in language coverage; the italic variant adds `fontStyle: "italic"` to keyword/declaration rules.
+The theme ships TextMate syntax rules for 35+ languages. Rust has the deepest coverage (9 TextMate rules + 15 LSP semantic tokens), followed by Go (6 TextMate + 11 semantic). Python, TypeScript, Swift, SQL, GraphQL, Dart, and SASS/SCSS also have expanded coverage with explicit scope rules for modern language features (f-strings, generics, type hints, attributes). Both `default.ts` and `italic.ts` mirror each other in language coverage; the italic variant adds `fontStyle: "italic"` to keyword/declaration rules.
+
+## Semantic Tokens
+
+LSP semantic token mappings live in `src/semantic.ts`. Currently covers 11 language IDs: Go, TypeScript, JavaScript, JavaScriptReact, TypeScriptReact, Python, Rust, Java, C#, C++, and Elm. Each language gets a scoped set of token-type to palette-color mappings (e.g., `function:go` maps to `palette.orange`). Token types include `class`, `function`, `method`, `variable`, `parameter`, `property`, `type`, `struct`, `enum`, `module`, `namespace`, `typeParameter`, `decorator`, `macro`, and more.
 
 ## Adding a New Configuration Option
 

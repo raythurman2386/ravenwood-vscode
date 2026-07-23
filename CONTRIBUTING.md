@@ -2,12 +2,6 @@
 
 Thank you for your interest in Ravenwood! I welcome all contributions, from bug reports and feature requests to code changes and design feedback.
 
-## A Note on Colors
-
-Please note: I am quite colorblind. These colors work nicely for me, but if you notice any oddities, it's likely I just can't see them!
-
-I don't usually notice small color tweaks, and while we have a great base from Everforest plus my own initial changes, I'm always open to making things better. If you feel like a color choice looks "off" or lacks contrast, please reach out so we can get things set up with better colors. Your feedback is really helpful in making this theme look great for everyone.
-
 ## How to Contribute
 
 ### Reporting Bugs and Suggestions
@@ -41,7 +35,7 @@ If you'd like to contribute code:
 
 The source is organized into focused modules. See [ARCHITECTURE.md](ARCHITECTURE.md) for the full layout and the runtime theme-regeneration flow. Quick map:
 
-- `src/palette/` — color sources (backgrounds + foregrounds, per variant × contrast)
+- `src/palette/` — color sources (backgrounds + foregrounds, per variant x contrast)
 - `src/workbench/` — UI token rules (base + material/flat/highContrast overrides)
 - `src/syntax/` — TextMate scope rules (default + italic variants)
 - `src/semantic.ts` — LSP semantic token colors
@@ -52,9 +46,12 @@ The source is organized into focused modules. See [ARCHITECTURE.md](ARCHITECTURE
 
 ### Linting & Formatting
 
-- `npm run lint` runs `prettier --check` on `src/**/*.ts` plus `tsc --noEmit` for strict type checking.
-- `npm run format` auto-formats `src/**/*.ts` with Prettier.
-- On commit, `husky` + `lint-staged` automatically Prettier-format staged `.ts`, `.js`, `.mjs`, `.json`, and `.md` files.
+The project uses **Biome 2.5.x** (Rust-based) as a single tool for both linting and formatting, replacing the previous ESLint + Prettier stack.
+
+- `npm run lint` runs `biome check` (lint + format check).
+- `npm run format` auto-formats with `biome format --write`.
+- On commit, `husky` + `lint-staged` automatically run `biome check --write` on staged `.ts`, `.js`, `.mjs`, `.json`, `.jsonc`, and `.md` files.
+- Type safety is enforced by `tsc --strict` (run as part of `npm run compile`).
 
 ### Submitting Pull Requests
 

@@ -39,8 +39,9 @@ npm run package        # Create .vsix (reverts themes/ after packaging)
 ### Linting
 
 ```bash
-npm run lint           # ESLint check
-# Pre-commit: lint-staged auto-fixes *.ts with ESLint, *.{js,mjs,json,md} with Prettier
+npm run lint           # Biome check (lint + format check)
+npm run format         # Biome format --write
+# Pre-commit: lint-staged auto-fixes *.ts, *.js, *.mjs, *.json, *.jsonc, *.md with biome check --write
 ```
 
 ### Testing

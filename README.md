@@ -1,6 +1,6 @@
 # Ravenwood
 
-Ravenwood is a refined forest theme for Visual Studio Code, based on the [Everforest](https://github.com/sainnhe/everforest) color scheme. It features deeper, more saturated emerald greens and richer backgrounds, designed for a comfortable and pleasant coding experience.
+Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the [Everforest](https://github.com/sainnhe/everforest) color scheme. It features deeper, more saturated emerald greens and richer backgrounds, designed for a comfortable and pleasant coding experience.
 
 ## Features
 
@@ -8,7 +8,8 @@ Ravenwood is a refined forest theme for Visual Studio Code, based on the [Everfo
 - **Deep Contrast:** Slightly darker backgrounds to make the emerald tones pop.
 - **Eye Protection:** Maintains the original eye-friendly design of Everforest.
 - **Customizable:** Supports multiple contrast levels, workbench styles, cursor colors, selection colors, and italic options.
-- **Semantic Tokens:** Built-in semantic token support for Go, TypeScript, JavaScript, Python, and Rust.
+- **Semantic Tokens:** Built-in LSP semantic token support for Go, TypeScript, JavaScript, Python, Rust, Java, C#, C++, and Elm.
+- **Syntax Coverage:** 35+ languages with TextMate scope rules, including Rust, Go, Python, Swift, SQL, TypeScript, GraphQL, Dart, SASS/SCSS, Perl, LaTeX, and more.
 - **Dynamic Regeneration:** Theme files regenerate automatically when configuration changes — no reload required.
 
 ## Requirements
@@ -52,9 +53,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow and [ARCHITE
 
 ## Contributing
 
-Contributions are welcome! I'd love to hear from you whether it's a bug report, a feature request, or feedback on the colors.
-
-Please note: I am quite colorblind. These colors work nicely for me, but if you notice any oddities, it's likely I just can't see them! I don't usually notice small tweaks, so if something looks "off," please reach out. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+Contributions are welcome! Whether it's a bug report, a feature request, or feedback on the colors — all feedback is appreciated. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
 ## Credits
 
