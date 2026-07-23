@@ -2260,21 +2260,21 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       name: 'CMake yellow',
       scope: 'string.quoted.double.cmake, string.quoted.single.cmake',
       settings: {
-        foreground: palette.yellow,
+        foreground: palette.green,
       },
     },
     {
       name: 'CMake green',
       scope: 'support.function.cmake, entity.name.function.cmake',
       settings: {
-        foreground: palette.green,
+        foreground: palette.orange,
       },
     },
     {
       name: 'CMake aqua',
       scope: 'variable.language.cmake',
       settings: {
-        foreground: palette.aqua,
+        foreground: palette.purple,
       },
     },
     {
