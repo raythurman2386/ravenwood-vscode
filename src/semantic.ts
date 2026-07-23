@@ -131,6 +131,14 @@ export function getSemantic(
     'function:elm': `${palette.green}`,
     'module:elm': `${palette.purple}`,
     // }}}
+    // Erlang {{{
+    'module:erlang': `${palette.purple}`,
+    'function:erlang': `${palette.green}`,
+    'type:erlang': `${palette.aqua}`,
+    'record:erlang': `${palette.aqua}`,
+    'macro:erlang': `${palette.aqua}`,
+    'variable:erlang': `${palette.fg}`,
+    // }}}
     // F# {{{
     'module:fsharp': `${palette.purple}`,
     'type:fsharp': `${palette.aqua}`,
