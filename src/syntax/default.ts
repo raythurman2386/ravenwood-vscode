@@ -2164,6 +2164,35 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.aqua,
       },
     },
+    {
+      name: 'PowerShell red',
+      scope: 'keyword.control.powershell, keyword.other.powershell',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'PowerShell orange',
+      scope: 'keyword.operator.powershell, storage.type.powershell',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'PowerShell blue',
+      scope:
+        'entity.name.type.powershell, support.type.powershell, entity.name.type.class.powershell',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'PowerShell purple',
+      scope: 'constant.language.powershell, variable.language.powershell',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // GraphQL{{{
     {
