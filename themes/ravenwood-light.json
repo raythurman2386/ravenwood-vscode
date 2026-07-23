@@ -153,6 +153,14 @@
     "class:commonlisp": "#1e7d5a",
     "package:commonlisp": "#b84d94",
     "generic:commonlisp": "#1e7d5a"
+    "class:ruby": "#1e7d5a",
+    "module:ruby": "#b84d94",
+    "function:ruby": "#5c7a0c",
+    "method:ruby": "#5c7a0c",
+    "parameter:ruby": "#1a6d9e",
+    "variable:ruby": "#3d4c53",
+    "constant:ruby": "#b84d94",
+    "namespace:ruby": "#b84d94"
   },
   "colors": {
     "foreground": "#5c6658",

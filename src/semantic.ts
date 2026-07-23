@@ -203,6 +203,15 @@ export function getSemantic(
     'class:commonlisp': `${palette.aqua}`,
     'package:commonlisp': `${palette.purple}`,
     'generic:commonlisp': `${palette.aqua}`,
+    // Ruby {{{
+    'class:ruby': `${palette.aqua}`,
+    'module:ruby': `${palette.purple}`,
+    'function:ruby': `${palette.green}`,
+    'method:ruby': `${palette.green}`,
+    'parameter:ruby': `${palette.blue}`,
+    'variable:ruby': `${palette.fg}`,
+    'constant:ruby': `${palette.purple}`,
+    'namespace:ruby': `${palette.purple}`,
     // }}}
   };
 }
