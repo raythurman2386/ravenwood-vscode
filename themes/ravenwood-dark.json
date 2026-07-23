@@ -146,7 +146,13 @@
     "method:r": "#4ade80",
     "parameter:r": "#22d3ee",
     "variable:r": "#e8d5b7",
-    "namespace:r": "#f472b6"
+    "namespace:r": "#f472b6",
+    "function:commonlisp": "#4ade80",
+    "method:commonlisp": "#4ade80",
+    "variable:commonlisp": "#e8d5b7",
+    "class:commonlisp": "#34d399",
+    "package:commonlisp": "#f472b6",
+    "generic:commonlisp": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",

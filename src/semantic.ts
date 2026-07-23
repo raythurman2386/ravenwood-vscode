@@ -196,6 +196,14 @@ export function getSemantic(
     'variable:r': `${palette.fg}`,
     'namespace:r': `${palette.purple}`,
     // }}}
+    // Common Lisp {{{
+    'function:commonlisp': `${palette.green}`,
+    'method:commonlisp': `${palette.green}`,
+    'variable:commonlisp': `${palette.fg}`,
+    'class:commonlisp': `${palette.aqua}`,
+    'package:commonlisp': `${palette.purple}`,
+    'generic:commonlisp': `${palette.aqua}`,
+    // }}}
   };
 }
 
