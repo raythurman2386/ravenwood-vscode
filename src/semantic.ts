@@ -170,6 +170,15 @@ export function getSemantic(
     'protocol:clojure': `${palette.aqua}`,
     'record:clojure': `${palette.aqua}`,
     // }}}
+    // Groovy {{{
+    'class:groovy': `${palette.aqua}`,
+    'function:groovy': `${palette.green}`,
+    'method:groovy': `${palette.green}`,
+    'parameter:groovy': `${palette.blue}`,
+    'variable:groovy': `${palette.fg}`,
+    'property:groovy': `${palette.aqua}`,
+    'namespace:groovy': `${palette.purple}`,
+    // }}}
   };
 }
 
