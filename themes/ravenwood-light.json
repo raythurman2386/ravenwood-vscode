@@ -2744,6 +2744,34 @@
       }
     },
     {
+      "name": "VimL red",
+      "scope": "keyword.control.viml, keyword.control.function.viml, keyword.control.call.viml, keyword.control.echo.viml, keyword.control.let.viml, keyword.control.try.viml",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
+      "name": "VimL yellow",
+      "scope": "string.quoted.double.viml, string.quoted.single.viml",
+      "settings": {
+        "foreground": "#b08500"
+      }
+    },
+    {
+      "name": "VimL aqua",
+      "scope": "keyword.control.autocmd.viml, keyword.control.augroup.viml, keyword.control.command.viml, keyword.control.highlight.viml, keyword.control.syntax.viml",
+      "settings": {
+        "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "VimL purple",
+      "scope": "constant.language.viml, variable.language.viml",
+      "settings": {
+        "foreground": "#b84d94"
+      }
+    },
+    {
       "name": "Tmux grey",
       "scope": "punctuation.separator.key-value.tmux, punctuation.definition.string.begin.tmux, punctuation.definition.string.end.tmux",
       "settings": {
