@@ -2289,8 +2289,29 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.green,
       },
     },
+    {
+      name: 'GraphQL yellow',
+      scope: 'support.type.graphql',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'GraphQL blue',
+      scope: 'variable.parameter.graphql',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'GraphQL aqua',
+      scope: 'constant.character.enum.graphql',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
     // }}}
-    // {{{Makefile
+    // Makefile{{{
     {
       name: 'Makefile orange',
       scope: 'entity.name.function.target.makefile',
@@ -2313,7 +2334,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     // }}}
-    // {{{CMake
+    // CMake{{{
     {
       name: 'CMake grey',
       scope:
@@ -2374,7 +2395,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     // }}}
-    // {{{VimL
+    // VimL{{{
     {
       name: 'VimL grey',
       scope: 'punctuation.definition.map.viml',
@@ -2436,7 +2457,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     // }}}
-    // {{{Tmux
+    // Tmux{{{
     {
       name: 'Tmux grey',
       scope:
@@ -2483,7 +2504,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     // }}}
-    // {{{Dockerfile
+    // Dockerfile{{{
     {
       name: 'Dockerfile orange',
       scope: 'entity.name.function.package-manager.dockerfile',
@@ -2572,7 +2593,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     // }}}
-    // {{{Git
+    // Git{{{
     {
       name: 'Git red',
       scope:
@@ -2643,29 +2664,6 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'variable.other.sql, variable.parameter.sql',
       settings: {
         foreground: palette.blue,
-      },
-    },
-    // }}}
-    // GraphQL{{{
-    {
-      name: 'GraphQL yellow',
-      scope: 'support.type.graphql',
-      settings: {
-        foreground: palette.yellow,
-      },
-    },
-    {
-      name: 'GraphQL blue',
-      scope: 'variable.parameter.graphql',
-      settings: {
-        foreground: palette.blue,
-      },
-    },
-    {
-      name: 'GraphQL aqua',
-      scope: 'constant.character.enum.graphql',
-      settings: {
-        foreground: palette.aqua,
       },
     },
     // }}}
