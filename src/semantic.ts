@@ -151,6 +151,17 @@ export function getSemantic(
     'module:julia': `${palette.purple}`,
     'macro:julia': `${palette.aqua}`,
     // }}}
+    // PHP {{{
+    'class:php': `${palette.aqua}`,
+    'interface:php': `${palette.aqua}`,
+    'enum:php': `${palette.aqua}`,
+    'function:php': `${palette.green}`,
+    'method:php': `${palette.green}`,
+    'parameter:php': `${palette.blue}`,
+    'variable:php': `${palette.fg}`,
+    'property:php': `${palette.aqua}`,
+    'namespace:php': `${palette.purple}`,
+    // }}}
   };
 }
 
