@@ -2321,6 +2321,36 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.blue,
       },
     },
+    {
+      name: 'VimL red',
+      scope:
+        'keyword.control.viml, keyword.control.function.viml, keyword.control.call.viml, keyword.control.echo.viml, keyword.control.let.viml, keyword.control.try.viml',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'VimL yellow',
+      scope: 'string.quoted.double.viml, string.quoted.single.viml',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'VimL aqua',
+      scope:
+        'keyword.control.autocmd.viml, keyword.control.augroup.viml, keyword.control.command.viml, keyword.control.highlight.viml, keyword.control.syntax.viml',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'VimL purple',
+      scope: 'constant.language.viml, variable.language.viml',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // {{{Tmux
     {
