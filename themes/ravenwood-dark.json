@@ -111,7 +111,16 @@
     "parameter:julia": "#22d3ee",
     "variable:julia": "#e8d5b7",
     "module:julia": "#f472b6",
-    "macro:julia": "#34d399"
+    "macro:julia": "#34d399",
+    "class:php": "#34d399",
+    "interface:php": "#34d399",
+    "enum:php": "#34d399",
+    "function:php": "#4ade80",
+    "method:php": "#4ade80",
+    "parameter:php": "#22d3ee",
+    "variable:php": "#e8d5b7",
+    "property:php": "#34d399",
+    "namespace:php": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",
