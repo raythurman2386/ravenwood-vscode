@@ -126,7 +126,14 @@
     "variable:clojure": "#e8d5b7",
     "namespace:clojure": "#f472b6",
     "protocol:clojure": "#34d399",
-    "record:clojure": "#34d399"
+    "record:clojure": "#34d399",
+    "class:groovy": "#34d399",
+    "function:groovy": "#4ade80",
+    "method:groovy": "#4ade80",
+    "parameter:groovy": "#22d3ee",
+    "variable:groovy": "#e8d5b7",
+    "property:groovy": "#34d399",
+    "namespace:groovy": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",
