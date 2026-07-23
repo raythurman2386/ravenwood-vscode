@@ -104,7 +104,14 @@
     "variable:fsharp": "#3d4c53",
     "property:fsharp": "#1e7d5a",
     "enum:fsharp": "#1e7d5a",
-    "namespace:fsharp": "#b84d94"
+    "namespace:fsharp": "#b84d94",
+    "struct:julia": "#1e7d5a",
+    "function:julia": "#5c7a0c",
+    "method:julia": "#5c7a0c",
+    "parameter:julia": "#1a6d9e",
+    "variable:julia": "#3d4c53",
+    "module:julia": "#b84d94",
+    "macro:julia": "#1e7d5a"
   },
   "colors": {
     "foreground": "#5c6658",
