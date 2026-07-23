@@ -95,7 +95,16 @@
     "type:elm": "#1e7d5a",
     "typeAlias:elm": "#1e7d5a",
     "function:elm": "#5c7a0c",
-    "module:elm": "#b84d94"
+    "module:elm": "#b84d94",
+    "module:fsharp": "#b84d94",
+    "type:fsharp": "#1e7d5a",
+    "function:fsharp": "#5c7a0c",
+    "method:fsharp": "#5c7a0c",
+    "parameter:fsharp": "#1a6d9e",
+    "variable:fsharp": "#3d4c53",
+    "property:fsharp": "#1e7d5a",
+    "enum:fsharp": "#1e7d5a",
+    "namespace:fsharp": "#b84d94"
   },
   "colors": {
     "foreground": "#5c6658",

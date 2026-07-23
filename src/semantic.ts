@@ -131,6 +131,17 @@ export function getSemantic(
     'function:elm': `${palette.green}`,
     'module:elm': `${palette.purple}`,
     // }}}
+    // F# {{{
+    'module:fsharp': `${palette.purple}`,
+    'type:fsharp': `${palette.aqua}`,
+    'function:fsharp': `${palette.green}`,
+    'method:fsharp': `${palette.green}`,
+    'parameter:fsharp': `${palette.blue}`,
+    'variable:fsharp': `${palette.fg}`,
+    'property:fsharp': `${palette.aqua}`,
+    'enum:fsharp': `${palette.aqua}`,
+    'namespace:fsharp': `${palette.purple}`,
+    // }}}
   };
 }
 
