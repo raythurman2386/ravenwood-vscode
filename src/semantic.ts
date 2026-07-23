@@ -162,6 +162,14 @@ export function getSemantic(
     'property:php': `${palette.aqua}`,
     'namespace:php': `${palette.purple}`,
     // }}}
+    // Clojure {{{
+    'function:clojure': `${palette.green}`,
+    'method:clojure': `${palette.green}`,
+    'variable:clojure': `${palette.fg}`,
+    'namespace:clojure': `${palette.purple}`,
+    'protocol:clojure': `${palette.aqua}`,
+    'record:clojure': `${palette.aqua}`,
+    // }}}
   };
 }
 
