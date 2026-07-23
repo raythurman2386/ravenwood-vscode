@@ -142,6 +142,15 @@ export function getSemantic(
     'enum:fsharp': `${palette.aqua}`,
     'namespace:fsharp': `${palette.purple}`,
     // }}}
+    // Julia {{{
+    'struct:julia': `${palette.aqua}`,
+    'function:julia': `${palette.green}`,
+    'method:julia': `${palette.green}`,
+    'parameter:julia': `${palette.blue}`,
+    'variable:julia': `${palette.fg}`,
+    'module:julia': `${palette.purple}`,
+    'macro:julia': `${palette.aqua}`,
+    // }}}
   };
 }
 
