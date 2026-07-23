@@ -139,6 +139,16 @@ export function getSemantic(
     'macro:erlang': `${palette.aqua}`,
     'variable:erlang': `${palette.fg}`,
     // }}}
+    // Elixir {{{
+    'module:elixir': `${palette.purple}`,
+    'function:elixir': `${palette.green}`,
+    'method:elixir': `${palette.green}`,
+    'parameter:elixir': `${palette.blue}`,
+    'variable:elixir': `${palette.fg}`,
+    'struct:elixir': `${palette.aqua}`,
+    'macro:elixir': `${palette.aqua}`,
+    'namespace:elixir': `${palette.purple}`,
+    // }}}
     // F# {{{
     'module:fsharp': `${palette.purple}`,
     'type:fsharp': `${palette.aqua}`,
