@@ -2660,22 +2660,57 @@
       }
     },
     {
+      "name": "CMake grey",
+      "scope": "punctuation.definition.comment.cmake, punctuation.section.arguments.begin.cmake, punctuation.section.arguments.end.cmake, punctuation.separator.arguments.cmake",
+      "settings": {
+        "foreground": "#6b7566"
+      }
+    },
+    {
+      "name": "CMake red",
+      "scope": "keyword.control.cmake",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
+      "name": "CMake orange",
+      "scope": "keyword.operator.assignment.cmake, storage.type.cmake",
+      "settings": {
+        "foreground": "#c55e15"
+      }
+    },
+    {
+      "name": "CMake yellow",
+      "scope": "string.quoted.double.cmake, string.quoted.single.cmake",
+      "settings": {
+        "foreground": "#b08500"
+      }
+    },
+    {
       "name": "CMake green",
-      "scope": "string.source.cmake",
+      "scope": "support.function.cmake, entity.name.function.cmake",
       "settings": {
         "foreground": "#5c7a0c"
       }
     },
     {
       "name": "CMake aqua",
-      "scope": "entity.source.cmake",
+      "scope": "variable.language.cmake",
       "settings": {
         "foreground": "#1e7d5a"
       }
     },
     {
+      "name": "CMake blue",
+      "scope": "variable.other.cmake",
+      "settings": {
+        "foreground": "#1a6d9e"
+      }
+    },
+    {
       "name": "CMake purple",
-      "scope": "storage.source.cmake",
+      "scope": "constant.language.cmake, constant.numeric.cmake",
       "settings": {
         "foreground": "#b84d94"
       }
