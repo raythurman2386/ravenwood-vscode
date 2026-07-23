@@ -140,7 +140,13 @@
     "parameter:lua": "#22d3ee",
     "variable:lua": "#e8d5b7",
     "table:lua": "#34d399",
-    "property:lua": "#34d399"
+    "property:lua": "#34d399",
+    "class:r": "#34d399",
+    "function:r": "#4ade80",
+    "method:r": "#4ade80",
+    "parameter:r": "#22d3ee",
+    "variable:r": "#e8d5b7",
+    "namespace:r": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",

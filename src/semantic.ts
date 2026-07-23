@@ -188,6 +188,14 @@ export function getSemantic(
     'table:lua': `${palette.aqua}`,
     'property:lua': `${palette.aqua}`,
     // }}}
+    // R {{{
+    'class:r': `${palette.aqua}`,
+    'function:r': `${palette.green}`,
+    'method:r': `${palette.green}`,
+    'parameter:r': `${palette.blue}`,
+    'variable:r': `${palette.fg}`,
+    'namespace:r': `${palette.purple}`,
+    // }}}
   };
 }
 
