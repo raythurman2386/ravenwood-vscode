@@ -2244,6 +2244,37 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.aqua,
       },
     },
+    {
+      name: 'PowerShell red',
+      scope: 'keyword.control.powershell, keyword.other.powershell',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'PowerShell orange',
+      scope: 'keyword.operator.powershell, storage.type.powershell',
+      settings: {
+        foreground: palette.orange,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'PowerShell blue',
+      scope:
+        'entity.name.type.powershell, support.type.powershell, entity.name.type.class.powershell',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'PowerShell purple',
+      scope: 'constant.language.powershell, variable.language.powershell',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // GraphQL{{{
     {
