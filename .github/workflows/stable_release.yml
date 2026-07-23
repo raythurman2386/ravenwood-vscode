@@ -44,9 +44,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          TAG="${GITHUB_REF_NAME}"
-          RELEASE_NOTES=$(python3 .github/scripts/extract-changelog.py "$TAG")
-          gh release create "$TAG" \
-            --title "Ravenwood $TAG" \
-            --notes "$RELEASE_NOTES" \
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "Ravenwood ${GITHUB_REF_NAME}" \
+            --generate-notes \
             --verify-tag
