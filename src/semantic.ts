@@ -221,6 +221,7 @@ export function getSemantic(
     'class:commonlisp': `${palette.aqua}`,
     'package:commonlisp': `${palette.purple}`,
     'generic:commonlisp': `${palette.aqua}`,
+    // }}}
     // Ruby {{{
     'class:ruby': `${palette.aqua}`,
     'module:ruby': `${palette.purple}`,
