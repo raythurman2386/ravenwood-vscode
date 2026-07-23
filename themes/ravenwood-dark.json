@@ -133,7 +133,14 @@
     "parameter:groovy": "#22d3ee",
     "variable:groovy": "#e8d5b7",
     "property:groovy": "#34d399",
-    "namespace:groovy": "#f472b6"
+    "namespace:groovy": "#f472b6",
+    "class:lua": "#34d399",
+    "function:lua": "#4ade80",
+    "method:lua": "#4ade80",
+    "parameter:lua": "#22d3ee",
+    "variable:lua": "#e8d5b7",
+    "table:lua": "#34d399",
+    "property:lua": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",
