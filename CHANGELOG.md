@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.4] - 2026-07-23
+
+### Fixed
+- semantic: add semantic token rules for F# (#26) (#87)
+- use gh release create --generate-notes instead of custom script
+- create GitHub Releases on tag push (was publishing to marketplaces only)
+- syntax: expand GraphQL TextMate scopes (currently 6 rules) (#79) (#86)
+- syntax: expand SASS/SCSS TextMate scopes (currently 5 rules) (#80) (#85)
+
+### Other
+- test: add 81-test suite (structural, palette, sync, scope-safety, build-combos) + wire into CI
+- docs: pass — remove colorblind statement, fix outdated toolchain refs, update language coverage
+
 ## [0.3.3] - 2026-07-22
 
 ### Added
