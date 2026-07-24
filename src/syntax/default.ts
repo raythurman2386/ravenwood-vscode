@@ -3011,18 +3011,49 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // TOML{{{
     {
-      name: 'TOML orange',
-      scope: 'keyword.key.toml',
+      name: 'TOML grey',
+      scope:
+        'punctuation.definition.keyValuePair.toml, punctuation.definition.table.toml, punctuation.definition.table.array.toml, punctuation.separator.dot.toml, punctuation.definition.array.begin.toml, punctuation.definition.array.end.toml, punctuation.definition.inline-table.begin.toml, punctuation.definition.inline-table.end.toml',
       settings: {
-        foreground: palette.orange,
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'TOML red',
+      scope: 'keyword.other.toml',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'TOML yellow',
+      scope:
+        'string.quoted.double.basic.line.toml, string.quoted.double.literal.line.toml, string.quoted.triple.basic.line.toml, string.quoted.triple.literal.line.toml',
+      settings: {
+        foreground: palette.yellow,
       },
     },
     {
       name: 'TOML green',
       scope:
-        'string.quoted.single.basic.line.toml, string.quoted.single.literal.line.toml, punctuation.definition.keyValuePair.toml',
+        'string.quoted.single.basic.line.toml, string.quoted.single.literal.line.toml',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'TOML aqua',
+      scope:
+        'constant.numeric.toml, constant.numeric.integer.toml, constant.numeric.float.toml, constant.other.date.toml, constant.other.time.toml',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'TOML orange',
+      scope: 'keyword.key.toml',
+      settings: {
+        foreground: palette.orange,
       },
     },
     {
@@ -3035,7 +3066,7 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'TOML purple',
       scope:
-        'entity.other.attribute-name.table.toml, punctuation.definition.table.toml, entity.other.attribute-name.table.array.toml, punctuation.definition.table.array.toml',
+        'entity.other.attribute-name.table.toml, entity.other.attribute-name.table.array.toml',
       settings: {
         foreground: palette.purple,
       },
