@@ -1483,6 +1483,21 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'PHP grey',
+      scope:
+        'punctuation.terminator.expression.php, punctuation.separator.delimiter.php, punctuation.definition.parameters.begin.php, punctuation.definition.parameters.end.php',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'PHP red',
+      scope: 'keyword.control.php',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
       name: 'PHP orange',
       scope: 'storage.type.trait.php',
       settings: {
@@ -1490,10 +1505,33 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'PHP yellow',
+      scope:
+        'string.quoted.double.php, string.quoted.single.php, punctuation.definition.string.begin.php, punctuation.definition.string.end.php, entity.name.type.php, entity.name.type.class.php, entity.name.type.enum.php',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'PHP green',
+      scope:
+        'entity.name.function.php, support.function.php, meta.function-call.php',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
       name: 'PHP aqua',
       scope: 'constant.language.php, support.other.namespace.php',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'PHP blue',
+      scope: 'variable.other.property.php',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
