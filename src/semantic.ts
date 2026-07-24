@@ -169,6 +169,18 @@ export function getSemantic(
     'module:julia': `${palette.purple}`,
     'macro:julia': `${palette.aqua}`,
     // }}}
+    // Kotlin {{{
+    'class:kotlin': `${palette.aqua}`,
+    'function:kotlin': `${palette.green}`,
+    'method:kotlin': `${palette.green}`,
+    'parameter:kotlin': `${palette.blue}`,
+    'variable:kotlin': `${palette.fg}`,
+    'property:kotlin': `${palette.aqua}`,
+    'enum:kotlin': `${palette.purple}`,
+    'enumMember:kotlin': `${palette.blue}`,
+    'namespace:kotlin': `${palette.purple}`,
+    'typeParameter:kotlin': `${palette.purple}`,
+    // }}}
     // PHP {{{
     'class:php': `${palette.aqua}`,
     'interface:php': `${palette.aqua}`,
