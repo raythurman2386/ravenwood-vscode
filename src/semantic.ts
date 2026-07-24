@@ -284,6 +284,18 @@ export function getSemantic(
     'module:purescript': `${palette.purple}`,
     'class:purescript': `${palette.aqua}`,
     // }}}
+    // Scala {{{
+    'class:scala': `${palette.aqua}`,
+    'trait:scala': `${palette.aqua}`,
+    'object:scala': `${palette.aqua}`,
+    'enum:scala': `${palette.aqua}`,
+    'function:scala': `${palette.green}`,
+    'method:scala': `${palette.green}`,
+    'parameter:scala': `${palette.blue}`,
+    'variable:scala': `${palette.fg}`,
+    'typeParameter:scala': `${palette.purple}`,
+    'namespace:scala': `${palette.purple}`,
+    // }}}
   };
 }
 
