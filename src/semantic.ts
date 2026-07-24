@@ -214,6 +214,16 @@ export function getSemantic(
     'parameter:coffeescript': `${palette.blue}`,
     'variable:coffeescript': `${palette.fg}`,
     // }}}
+    // Dart {{{
+    'class:dart': `${palette.aqua}`,
+    'enum:dart': `${palette.aqua}`,
+    'function:dart': `${palette.green}`,
+    'method:dart': `${palette.green}`,
+    'parameter:dart': `${palette.blue}`,
+    'variable:dart': `${palette.fg}`,
+    'property:dart': `${palette.aqua}`,
+    'typeParameter:dart': `${palette.purple}`,
+    // }}}
     // Groovy {{{
     'class:groovy': `${palette.aqua}`,
     'function:groovy': `${palette.green}`,
