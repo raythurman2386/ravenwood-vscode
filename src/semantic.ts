@@ -296,6 +296,17 @@ export function getSemantic(
     'typeParameter:scala': `${palette.purple}`,
     'namespace:scala': `${palette.purple}`,
     // }}}
+    // Swift {{{
+    'class:swift': `${palette.aqua}`,
+    'struct:swift': `${palette.aqua}`,
+    'enum:swift': `${palette.aqua}`,
+    'protocol:swift': `${palette.aqua}`,
+    'function:swift': `${palette.green}`,
+    'method:swift': `${palette.green}`,
+    'parameter:swift': `${palette.blue}`,
+    'variable:swift': `${palette.fg}`,
+    'property:swift': `${palette.aqua}`,
+    // }}}
   };
 }
 

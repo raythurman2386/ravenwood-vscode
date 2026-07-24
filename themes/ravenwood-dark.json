@@ -224,7 +224,16 @@
     "parameter:scala": "#22d3ee",
     "variable:scala": "#e8d5b7",
     "typeParameter:scala": "#f472b6",
-    "namespace:scala": "#f472b6"
+    "namespace:scala": "#f472b6",
+    "class:swift": "#34d399",
+    "struct:swift": "#34d399",
+    "enum:swift": "#34d399",
+    "protocol:swift": "#34d399",
+    "function:swift": "#4ade80",
+    "method:swift": "#4ade80",
+    "parameter:swift": "#22d3ee",
+    "variable:swift": "#e8d5b7",
+    "property:swift": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",
