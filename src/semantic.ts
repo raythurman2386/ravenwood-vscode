@@ -22,7 +22,17 @@ export function getSemantic(
     'variable.defaultLibrary:javascript': `${palette.purple}`,
     'property.defaultLibrary:javascript': `${palette.purple}`,
     // }}}
-    // JavaScript React {{{
+    // JSX {{{
+    'class:javascriptreact': `${palette.aqua}`,
+    'function:javascriptreact': `${palette.green}`,
+    'method:javascriptreact': `${palette.green}`,
+    'variable:javascriptreact': `${palette.fg}`,
+    'parameter:javascriptreact': `${palette.blue}`,
+    'property:javascriptreact': `${palette.aqua}`,
+    'type:javascriptreact': `${palette.aqua}`,
+    'enum:javascriptreact': `${palette.purple}`,
+    'enumMember:javascriptreact': `${palette.blue}`,
+    'namespace:javascriptreact': `${palette.purple}`,
     'variable.defaultLibrary:javascriptreact': `${palette.purple}`,
     'property.defaultLibrary:javascriptreact': `${palette.purple}`,
     // }}}
