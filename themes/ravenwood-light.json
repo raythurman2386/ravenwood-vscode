@@ -1407,10 +1407,24 @@
       }
     },
     {
-      "name": "Proto yellow",
+      "name": "Proto grey",
+      "scope": "punctuation.definition.proto",
+      "settings": {
+        "foreground": "#6b7566"
+      }
+    },
+    {
+      "name": "Proto red",
+      "scope": "keyword.other.proto",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
+      "name": "Proto orange",
       "scope": "storage.type.proto",
       "settings": {
-        "foreground": "#b08500"
+        "foreground": "#c55e15"
       }
     },
     {
@@ -1422,9 +1436,16 @@
     },
     {
       "name": "Proto aqua",
-      "scope": "entity.name.class.proto, entity.name.class.message.proto",
+      "scope": "entity.name.class.proto, entity.name.class.message.proto, entity.name.type.proto, support.type.proto",
       "settings": {
         "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "Proto purple",
+      "scope": "constant.other.proto",
+      "settings": {
+        "foreground": "#b84d94"
       }
     },
     {

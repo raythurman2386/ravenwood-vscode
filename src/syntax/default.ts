@@ -465,10 +465,24 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Proto{{{
     {
-      name: 'Proto yellow',
+      name: 'Proto grey',
+      scope: 'punctuation.definition.proto',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Proto red',
+      scope: 'keyword.other.proto',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'Proto orange',
       scope: 'storage.type.proto',
       settings: {
-        foreground: palette.yellow,
+        foreground: palette.orange,
       },
     },
     {
@@ -481,9 +495,17 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Proto aqua',
-      scope: 'entity.name.class.proto, entity.name.class.message.proto',
+      scope:
+        'entity.name.class.proto, entity.name.class.message.proto, entity.name.type.proto, support.type.proto',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Proto purple',
+      scope: 'constant.other.proto',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
