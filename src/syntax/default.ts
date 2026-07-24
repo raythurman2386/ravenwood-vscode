@@ -1041,7 +1041,8 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Pug aqua',
-      scope: 'entity.other.attribute-name.tag.pug',
+      scope:
+        'entity.other.attribute-name.tag.pug, entity.name.type.pug, support.type.pug',
       settings: {
         foreground: palette.aqua,
       },
@@ -1051,6 +1052,29 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.tag.pug, storage.type.import.include.pug',
       settings: {
         foreground: palette.purple,
+      },
+    },
+    {
+      name: 'Pug grey',
+      scope:
+        'punctuation.separator.key-value.pug, punctuation.definition.tag.pug, punctuation.definition.string.begin.pug, punctuation.definition.string.end.pug',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Pug yellow',
+      scope:
+        'string.quoted.double.pug, string.quoted.single.pug, string.interpolated.pug',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Pug green',
+      scope: 'entity.name.function.pug, support.function.pug',
+      settings: {
+        foreground: palette.green,
       },
     },
     // }}}
