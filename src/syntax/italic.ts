@@ -2631,7 +2631,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'Makefile grey',
       scope:
-        'punctuation.definition.comment.makefile, punctuation.definition.variable.makefile, punctuation.separator.delimeter.comma.makefile, punctuation.separator.key-value.makefile, punctuation.whitespace.comment.leading.makefile',
+        'punctuation.definition.comment.makefile, punctuation.definition.variable.makefile, punctuation.separator.delimiter.comma.makefile, punctuation.separator.key-value.makefile, punctuation.whitespace.comment.leading.makefile',
       settings: {
         foreground: palette.grey1,
       },
@@ -2667,11 +2667,11 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Makefile aqua',
+      name: 'Makefile orange',
       scope:
-        'support.function.$1.makefile, support.function.target.$1.makefile, meta.scope.function-call.makefile',
+        'support.function.$1.makefile, support.function.target.$1.makefile, meta.function-call.makefile',
       settings: {
-        foreground: palette.aqua,
+        foreground: palette.orange,
         fontStyle: 'italic',
       },
     },
