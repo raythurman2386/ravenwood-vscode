@@ -2953,8 +2953,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // Git{{{
     {
       name: 'Git red',
-      scope:
-        'entity.name.section.group-title.ini, punctuation.definition.entity.ini',
+      scope: 'entity.name.section.group-title.ini',
       settings: {
         foreground: palette.red,
       },
@@ -2967,18 +2966,32 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Git green',
+      name: 'Git yellow',
       scope:
         'string.quoted.double.ini, string.quoted.single.ini, punctuation.definition.string.begin.ini, punctuation.definition.string.end.ini',
       settings: {
-        foreground: palette.green,
+        foreground: palette.yellow,
       },
     },
     {
-      name: 'Git aqua',
+      name: 'Git blue',
       scope: 'keyword.other.definition.ini',
       settings: {
-        foreground: palette.aqua,
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'Git purple',
+      scope: 'constant.language.boolean.ini, constant.numeric.ini',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
+    {
+      name: 'Git grey',
+      scope: 'punctuation.definition.entity.ini',
+      settings: {
+        foreground: palette.grey1,
       },
     },
     // }}}
