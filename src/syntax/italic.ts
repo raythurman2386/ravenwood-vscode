@@ -788,6 +788,29 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'JSX grey',
+      scope:
+        'punctuation.separator.key-value.jsx, punctuation.definition.string.begin.jsx, punctuation.definition.string.end.jsx, punctuation.separator.key-value.js.jsx, punctuation.definition.string.begin.js.jsx, punctuation.definition.string.end.js.jsx',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'JSX orange',
+      scope: 'entity.name.tag.jsx, entity.name.tag.js.jsx',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'JSX yellow',
+      scope:
+        'string.quoted.double.jsx, string.quoted.single.jsx, string.quoted.double.js.jsx, string.quoted.single.js.jsx',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
       name: 'JSX green',
       scope:
         'punctuation.definition.tag.jsx, entity.other.attribute-name.jsx, punctuation.definition.tag.begin.js.jsx, punctuation.definition.tag.end.js.jsx, entity.other.attribute-name.js.jsx',
@@ -850,7 +873,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'TSX grey',
       scope:
-        'keyword.operator.type.annotation.tsx, punctuation.accessor.tsx, punctuation.separator.key-value.tsx',
+        'keyword.operator.type.annotation.tsx, punctuation.accessor.tsx, punctuation.separator.key-value.tsx, punctuation.definition.string.begin.tsx, punctuation.definition.string.end.tsx',
       settings: {
         foreground: palette.grey1,
       },
@@ -861,6 +884,13 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         'punctuation.definition.tag.directive.tsx, entity.other.attribute-name.directive.tsx, punctuation.definition.tag.begin.tsx, punctuation.definition.tag.end.tsx, entity.other.attribute-name.tsx',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'TSX yellow',
+      scope: 'string.quoted.double.tsx, string.quoted.single.tsx',
+      settings: {
+        foreground: palette.yellow,
       },
     },
     {
@@ -890,7 +920,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'TSX orange',
       scope:
-        'storage.type.tsx, storage.type.function.arrow.tsx, storage.type.type.tsx, support.class.component.tsx',
+        'storage.type.tsx, storage.type.function.arrow.tsx, storage.type.type.tsx, support.class.component.tsx, entity.name.tag.tsx',
       settings: {
         foreground: palette.orange,
       },
