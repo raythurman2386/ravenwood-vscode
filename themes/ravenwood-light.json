@@ -3676,8 +3676,29 @@
       }
     },
     {
+      "name": "YAML red",
+      "scope": "keyword.control.flow.yaml, keyword.other.yaml",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
+      "name": "YAML orange",
+      "scope": "storage.type.yaml",
+      "settings": {
+        "foreground": "#c55e15"
+      }
+    },
+    {
+      "name": "YAML yellow",
+      "scope": "string.quoted.double.yaml, string.quoted.single.yaml, punctuation.definition.string.begin.yaml, punctuation.definition.string.end.yaml",
+      "settings": {
+        "foreground": "#b08500"
+      }
+    },
+    {
       "name": "YAML green",
-      "scope": "string.unquoted.plain.out.yaml, string.quoted.single.yaml, string.quoted.double.yaml, punctuation.definition.string.begin.yaml, punctuation.definition.string.end.yaml, string.unquoted.plain.in.yaml, string.unquoted.block.yaml",
+      "scope": "string.unquoted.plain.out.yaml, string.unquoted.plain.in.yaml, string.unquoted.block.yaml",
       "settings": {
         "foreground": "#5c7a0c"
       }
@@ -3687,6 +3708,20 @@
       "scope": "punctuation.definition.anchor.yaml, punctuation.definition.block.sequence.item.yaml",
       "settings": {
         "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "YAML blue",
+      "scope": "entity.name.tag.yaml",
+      "settings": {
+        "foreground": "#1a6d9e"
+      }
+    },
+    {
+      "name": "YAML purple",
+      "scope": "constant.language.yaml",
+      "settings": {
+        "foreground": "#b84d94"
       }
     },
     {
