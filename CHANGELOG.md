@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.5] - 2026-07-24
+
+### Fixed
+- expand Stylus TextMate scopes (currently 2 rules) (#47)
+- expand PHP TextMate scopes (#43)
+- syntax: expand Clojure TextMate scopes (currently 3 rules) (#44)
+- syntax: expand Kotlin TextMate scopes (currently 4 rules) (#46) (#127)
+- syntax: expand PowerShell TextMate scopes (currently 4 rules) (#45) (#126)
+- syntax: consolidate duplicate GraphQL sections and fix fold marker style inconsistency (#107) (#125)
+- syntax: expand VimL TextMate scopes (currently 4 rules) (#48) (#124)
+- correct CMake color mappings per review feedback (#50) (#123)
+- syntax: expand CMake TextMate scopes (currently 3 rules) (#50) (#122)
+- syntax: expand JSON TextMate scopes (currently 3 rules) (#49) (#121)
+- add missing Common Lisp fold marker in semantic.ts
+- semantic: add semantic token rules for Elixir (#22)
+- semantic: add semantic token rules for Erlang (#19) (#98)
+- semantic: add semantic token rules for Ruby (#20) (#97)
+- semantic: add semantic token rules for Common Lisp (#21) (#96)
+- semantic: add semantic token rules for R (#23)
+- semantic: add semantic token rules for Lua (#33)
+- semantic: add semantic token rules for Groovy (#32)
+- semantic: add semantic token rules for Clojure (#30)
+- semantic: add semantic token rules for PHP (#29)
+- semantic: add semantic token rules for Julia (#25)
+
+### Other
+- removed agent skills from being packaged in the vsix build
+
 ## [0.3.4] - 2026-07-23
 
 ### Fixed
