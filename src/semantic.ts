@@ -239,6 +239,15 @@ export function getSemantic(
     'constant:ruby': `${palette.purple}`,
     'namespace:ruby': `${palette.purple}`,
     // }}}
+    // Haskell {{{
+    'class:haskell': `${palette.aqua}`,
+    'type:haskell': `${palette.aqua}`,
+    'function:haskell': `${palette.green}`,
+    'method:haskell': `${palette.green}`,
+    'variable:haskell': `${palette.fg}`,
+    'typeParameter:haskell': `${palette.purple}`,
+    'module:haskell': `${palette.purple}`,
+    // }}}
   };
 }
 
