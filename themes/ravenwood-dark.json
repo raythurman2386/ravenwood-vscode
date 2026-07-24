@@ -191,7 +191,15 @@
     "method:haskell": "#4ade80",
     "variable:haskell": "#e8d5b7",
     "typeParameter:haskell": "#f472b6",
-    "module:haskell": "#f472b6"
+    "module:haskell": "#f472b6",
+    "module:ocaml": "#f472b6",
+    "type:ocaml": "#34d399",
+    "function:ocaml": "#4ade80",
+    "method:ocaml": "#4ade80",
+    "parameter:ocaml": "#22d3ee",
+    "variable:ocaml": "#e8d5b7",
+    "variant:ocaml": "#34d399",
+    "moduleType:ocaml": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",
