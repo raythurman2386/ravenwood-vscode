@@ -179,7 +179,14 @@
     "parameter:ruby": "#1a6d9e",
     "variable:ruby": "#3d4c53",
     "constant:ruby": "#b84d94",
-    "namespace:ruby": "#b84d94"
+    "namespace:ruby": "#b84d94",
+    "class:haskell": "#1e7d5a",
+    "type:haskell": "#1e7d5a",
+    "function:haskell": "#5c7a0c",
+    "method:haskell": "#5c7a0c",
+    "variable:haskell": "#3d4c53",
+    "typeParameter:haskell": "#b84d94",
+    "module:haskell": "#b84d94"
   },
   "colors": {
     "foreground": "#5c6658",
