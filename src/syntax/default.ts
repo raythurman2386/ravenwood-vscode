@@ -2247,6 +2247,37 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.purple,
       },
     },
+    {
+      name: 'Shell grey',
+      scope:
+        'punctuation.definition.logical-expression.shell, punctuation.definition.comment.shell, punctuation.separator.statement.shell, punctuation.separator.pipe.shell',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Shell red',
+      scope:
+        'keyword.control.shell, keyword.control.conditional.shell, keyword.control.loop.shell',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'Shell orange',
+      scope:
+        'keyword.operator.shell, keyword.operator.logical.shell, keyword.operator.assignment.shell, keyword.operator.arithmetic.shell',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Shell aqua',
+      scope: 'keyword.other.shell',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
     // }}}
     // Fish{{{
     {
