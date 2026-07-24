@@ -192,6 +192,34 @@ export function getSemantic(
     'property:php': `${palette.aqua}`,
     'namespace:php': `${palette.purple}`,
     // }}}
+    // Html {{{
+    'tag:html': `${palette.aqua}`,
+    'class:html': `${palette.aqua}`,
+    'type:html': `${palette.aqua}`,
+    'function:html': `${palette.green}`,
+    'method:html': `${palette.green}`,
+    'variable:html': `${palette.blue}`,
+    'parameter:html': `${palette.blue}`,
+    'property:html': `${palette.aqua}`,
+    'namespace:html': `${palette.purple}`,
+    'module:html': `${palette.purple}`,
+    'constant:html': `${palette.purple}`,
+    'macro:html': `${palette.aqua}`,
+    // }}}
+    // Xml {{{
+    'tag:xml': `${palette.aqua}`,
+    'class:xml': `${palette.aqua}`,
+    'type:xml': `${palette.aqua}`,
+    'function:xml': `${palette.green}`,
+    'method:xml': `${palette.green}`,
+    'variable:xml': `${palette.blue}`,
+    'parameter:xml': `${palette.blue}`,
+    'property:xml': `${palette.aqua}`,
+    'namespace:xml': `${palette.purple}`,
+    'module:xml': `${palette.purple}`,
+    'constant:xml': `${palette.purple}`,
+    'macro:xml': `${palette.aqua}`,
+    // }}}
     // Perl {{{
     'package:perl': `${palette.purple}`,
     'function:perl': `${palette.green}`,
