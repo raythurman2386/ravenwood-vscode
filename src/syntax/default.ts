@@ -714,6 +714,38 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.orange,
       },
     },
+    {
+      name: 'JavaScript yellow',
+      scope:
+        'string.quoted.double.js, string.quoted.single.js, string.template.js, punctuation.definition.string.begin.js, punctuation.definition.string.end.js, punctuation.definition.string.template.begin.js, punctuation.definition.string.template.end.js, entity.other.attribute-name.js',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'JavaScript green',
+      scope:
+        'entity.name.function.js, support.function.js, meta.function.js, meta.definition.method.js',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'JavaScript aqua',
+      scope:
+        'keyword.control.import.js, keyword.control.export.js, entity.name.type.module.js, support.module.js',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'JavaScript purple',
+      scope:
+        'constant.language.js, constant.language.boolean.js, constant.language.null.js, constant.language.undefined.js, constant.language.nan.js, variable.language.this.js, variable.language.super.js',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // JSX{{{
     {
