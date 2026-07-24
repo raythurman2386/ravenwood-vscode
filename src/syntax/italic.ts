@@ -3105,9 +3105,33 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'YAML red',
+      scope: 'keyword.control.flow.yaml, keyword.other.yaml',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'YAML orange',
+      scope: 'storage.type.yaml',
+      settings: {
+        foreground: palette.orange,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'YAML yellow',
+      scope:
+        'string.quoted.double.yaml, string.quoted.single.yaml, punctuation.definition.string.begin.yaml, punctuation.definition.string.end.yaml',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
       name: 'YAML green',
       scope:
-        'string.unquoted.plain.out.yaml, string.quoted.single.yaml, string.quoted.double.yaml, punctuation.definition.string.begin.yaml, punctuation.definition.string.end.yaml, string.unquoted.plain.in.yaml, string.unquoted.block.yaml',
+        'string.unquoted.plain.out.yaml, string.unquoted.plain.in.yaml, string.unquoted.block.yaml',
       settings: {
         foreground: palette.green,
       },
@@ -3118,6 +3142,21 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         'punctuation.definition.anchor.yaml, punctuation.definition.block.sequence.item.yaml',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'YAML blue',
+      scope: 'entity.name.tag.yaml',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'YAML purple',
+      scope: 'constant.language.yaml',
+      settings: {
+        foreground: palette.purple,
+        fontStyle: 'italic',
       },
     },
     // }}}
