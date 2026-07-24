@@ -2069,11 +2069,43 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Clojure{{{
     {
+      name: 'Clojure red',
+      scope:
+        'keyword.control.clojure, keyword.control.if.clojure, keyword.control.loop.clojure, keyword.control.try.clojure, keyword.control.throw.clojure, keyword.control.catch.clojure, keyword.control.return.clojure, keyword.control.flow.clojure',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
+      name: 'Clojure orange',
+      scope:
+        'storage.type.def.clojure, storage.type.defn.clojure, storage.type.defrecord.clojure, storage.type.defprotocol.clojure, storage.type.defmethod.clojure, storage.type.deftype.clojure, storage.type.defmulti.clojure, storage.type.defmacro.clojure, storage.type.fn.clojure, storage.type.let.clojure, storage.type.loop.clojure, storage.type.do.clojure, storage.type.when.clojure, storage.type.if.clojure, storage.type.try.clojure, keyword.operator.clojure',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Clojure yellow',
+      scope:
+        'string.regexp.clojure, string.quoted.double.clojure, string.quoted.single.clojure, punctuation.definition.string.begin.clojure, punctuation.definition.string.end.clojure, entity.name.type.class.clojure, entity.name.type.record.clojure, entity.name.type.protocol.clojure',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
       name: 'Clojure green',
       scope:
         'constant.keyword.clojure, support.variable.clojure, meta.definition.variable.clojure',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'Clojure aqua',
+      scope:
+        'meta.preprocessor.clojure, meta.namespace.clojure, keyword.control.require.clojure, keyword.control.import.clojure, keyword.control.use.clojure, keyword.control.refer.clojure, support.function.namespace.clojure',
+      settings: {
+        foreground: palette.aqua,
       },
     },
     {
