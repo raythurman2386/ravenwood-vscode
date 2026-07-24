@@ -522,16 +522,10 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Proto aqua',
-      scope: 'entity.name.class.proto, entity.name.class.message.proto',
+      scope:
+        'entity.name.class.proto, entity.name.class.message.proto, entity.name.type.proto, support.type.proto',
       settings: {
         foreground: palette.aqua,
-      },
-    },
-    {
-      name: 'Proto blue',
-      scope: 'entity.name.type.proto, support.type.proto',
-      settings: {
-        foreground: palette.blue,
       },
     },
     {
