@@ -1407,10 +1407,24 @@
       }
     },
     {
-      "name": "Proto yellow",
+      "name": "Proto grey",
+      "scope": "punctuation.definition.proto",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Proto red",
+      "scope": "keyword.other.proto",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Proto orange",
       "scope": "storage.type.proto",
       "settings": {
-        "foreground": "#fbbf24"
+        "foreground": "#e69875"
       }
     },
     {
@@ -1425,6 +1439,20 @@
       "scope": "entity.name.class.proto, entity.name.class.message.proto",
       "settings": {
         "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Proto blue",
+      "scope": "entity.name.type.proto, support.type.proto",
+      "settings": {
+        "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Proto purple",
+      "scope": "constant.other.proto",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
