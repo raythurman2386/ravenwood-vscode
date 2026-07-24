@@ -1211,10 +1211,59 @@
       }
     },
     {
+      "name": "Stylus grey",
+      "scope": "punctuation.definition.entity.stylus, punctuation.separator.key-value.stylus, punctuation.terminator.rule.stylus, punctuation.separator.list.comma.stylus, punctuation.definition.parameters.begin.stylus, punctuation.definition.parameters.end.stylus",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Stylus red",
+      "scope": "keyword.control.stylus, keyword.control.at-rule.stylus, keyword.control.conditional.stylus",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Stylus orange",
+      "scope": "keyword.other.unit.stylus, keyword.operator.stylus, support.type.vendored.property-name.stylus",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
       "name": "Stylus yellow",
       "scope": "entity.name.function.stylus",
       "settings": {
         "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "Stylus green",
+      "scope": "string.quoted.single.stylus, string.quoted.double.stylus, support.constant.property-value.stylus, constant.numeric.stylus, punctuation.definition.string.begin.stylus, punctuation.definition.string.end.stylus",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "Stylus aqua",
+      "scope": "support.type.property-name.stylus, entity.other.attribute-name.stylus",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Stylus blue",
+      "scope": "variable.other.stylus, support.type.variable.stylus",
+      "settings": {
+        "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Stylus purple",
+      "scope": "entity.name.tag.stylus, entity.other.keyframe-offset.stylus, punctuation.definition.keyword.stylus, keyword.control.at-rule.import.stylus, keyword.control.at-rule.include.stylus, meta.selector.stylus",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
