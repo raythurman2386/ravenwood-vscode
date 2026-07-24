@@ -265,6 +265,13 @@ export function getSemantic(
     'variant:ocaml': `${palette.aqua}`,
     'moduleType:ocaml': `${palette.aqua}`,
     // }}}
+    // PureScript {{{
+    'type:purescript': `${palette.aqua}`,
+    'typeAlias:purescript': `${palette.aqua}`,
+    'function:purescript': `${palette.green}`,
+    'module:purescript': `${palette.purple}`,
+    'class:purescript': `${palette.aqua}`,
+    // }}}
   };
 }
 

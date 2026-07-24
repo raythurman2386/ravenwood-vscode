@@ -199,7 +199,12 @@
     "parameter:ocaml": "#1a6d9e",
     "variable:ocaml": "#3d4c53",
     "variant:ocaml": "#1e7d5a",
-    "moduleType:ocaml": "#1e7d5a"
+    "moduleType:ocaml": "#1e7d5a",
+    "type:purescript": "#1e7d5a",
+    "typeAlias:purescript": "#1e7d5a",
+    "function:purescript": "#5c7a0c",
+    "module:purescript": "#b84d94",
+    "class:purescript": "#1e7d5a"
   },
   "colors": {
     "foreground": "#5c6658",
