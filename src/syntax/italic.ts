@@ -2629,6 +2629,23 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Makefile{{{
     {
+      name: 'Makefile grey',
+      scope:
+        'punctuation.definition.comment.makefile, punctuation.definition.variable.makefile, punctuation.separator.delimiter.comma.makefile, punctuation.separator.key-value.makefile, punctuation.whitespace.comment.leading.makefile',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Makefile red',
+      scope:
+        'keyword.control.include.makefile, keyword.control.vpath.makefile, keyword.control.define.makefile, keyword.control.else.makefile, keyword.control.override.makefile',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
       name: 'Makefile orange',
       scope: 'entity.name.function.target.makefile',
       settings: {
@@ -2647,6 +2664,30 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'meta.scope.prerequisites.makefile',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'Makefile orange',
+      scope:
+        'support.function.$1.makefile, support.function.target.$1.makefile, meta.function-call.makefile',
+      settings: {
+        foreground: palette.orange,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Makefile blue',
+      scope: 'meta.scope.recipe.makefile, meta.scope.target.makefile',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'Makefile purple',
+      scope:
+        'variable.language.makefile, constant.other.placeholder.makefile, constant.character.escape.continuation.makefile',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}

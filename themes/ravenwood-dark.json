@@ -3242,6 +3242,20 @@
       }
     },
     {
+      "name": "Makefile grey",
+      "scope": "punctuation.definition.comment.makefile, punctuation.definition.variable.makefile, punctuation.separator.delimiter.comma.makefile, punctuation.separator.key-value.makefile, punctuation.whitespace.comment.leading.makefile",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Makefile red",
+      "scope": "keyword.control.include.makefile, keyword.control.vpath.makefile, keyword.control.define.makefile, keyword.control.else.makefile, keyword.control.override.makefile",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
       "name": "Makefile orange",
       "scope": "entity.name.function.target.makefile",
       "settings": {
@@ -3260,6 +3274,27 @@
       "scope": "meta.scope.prerequisites.makefile",
       "settings": {
         "foreground": "#4ade80"
+      }
+    },
+    {
+      "name": "Makefile orange",
+      "scope": "support.function.$1.makefile, support.function.target.$1.makefile, meta.function-call.makefile",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Makefile blue",
+      "scope": "meta.scope.recipe.makefile, meta.scope.target.makefile",
+      "settings": {
+        "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Makefile purple",
+      "scope": "variable.language.makefile, constant.other.placeholder.makefile, constant.character.escape.continuation.makefile",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {
