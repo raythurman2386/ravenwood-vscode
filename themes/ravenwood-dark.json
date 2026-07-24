@@ -214,7 +214,17 @@
     "typeAlias:purescript": "#34d399",
     "function:purescript": "#4ade80",
     "module:purescript": "#f472b6",
-    "class:purescript": "#34d399"
+    "class:purescript": "#34d399",
+    "class:scala": "#34d399",
+    "trait:scala": "#34d399",
+    "object:scala": "#34d399",
+    "enum:scala": "#34d399",
+    "function:scala": "#4ade80",
+    "method:scala": "#4ade80",
+    "parameter:scala": "#22d3ee",
+    "variable:scala": "#e8d5b7",
+    "typeParameter:scala": "#f472b6",
+    "namespace:scala": "#f472b6"
   },
   "colors": {
     "foreground": "#9aa79d",
