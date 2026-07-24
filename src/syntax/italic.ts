@@ -2000,10 +2000,33 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // R{{{
     {
+      name: 'R grey',
+      scope:
+        'punctuation.definition.string.begin.r, punctuation.definition.string.end.r, punctuation.separator.arguments.r, punctuation.definition.parameters.r, punctuation.section.scope.r',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'R red',
+      scope: 'keyword.control.r',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
       name: 'R orange',
       scope: 'keyword.other.r',
       settings: {
         foreground: palette.orange,
+      },
+    },
+    {
+      name: 'R yellow',
+      scope: 'string.quoted.double.r, string.quoted.single.r, storage.type.r',
+      settings: {
+        foreground: palette.yellow,
       },
     },
     {
@@ -2018,6 +2041,13 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'constant.language.r',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'R blue',
+      scope: 'support.function.r, variable.parameter.r',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {

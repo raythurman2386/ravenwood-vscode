@@ -2622,10 +2622,31 @@
       }
     },
     {
+      "name": "R grey",
+      "scope": "punctuation.definition.string.begin.r, punctuation.definition.string.end.r, punctuation.separator.arguments.r, punctuation.definition.parameters.r, punctuation.section.scope.r",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "R red",
+      "scope": "keyword.control.r",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
       "name": "R orange",
       "scope": "keyword.other.r",
       "settings": {
         "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "R yellow",
+      "scope": "string.quoted.double.r, string.quoted.single.r, storage.type.r",
+      "settings": {
+        "foreground": "#fbbf24"
       }
     },
     {
@@ -2640,6 +2661,13 @@
       "scope": "constant.language.r",
       "settings": {
         "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "R blue",
+      "scope": "support.function.r, variable.parameter.r",
+      "settings": {
+        "foreground": "#22d3ee"
       }
     },
     {
