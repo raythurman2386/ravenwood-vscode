@@ -2,7 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.3.5] - 2026-07-24
+## [1.0.0] - 2026-07-24
+
+### Added
+
+- **Complete VS Code Theming Coverage**: Added ~240 new workbench color keys covering every major UI surface added in VS Code 1.95–1.125, including:
+  - **Chat / Agent / AI**: `chat.border`, `chat.message*`, `chat.input*`, `chat.codeBlockBackground`, `chatParticipant.*`, `chatStatus.*`, `chatSession.*`, `chatEdit.*`, `agent.*`, `agentDashboard.*`, `simpleChat.*`, `terminalChat.*`, `editorChat.*`
+  - **Editor**: `editorStickyScroll.*`, `editor.foldBackground`, `editor.selectionForeground`, `editorCursor.background`, `editorPane.background`, `editorPlaceholder.*`, `editorOverviewRuler.background`
+  - **Terminal**: `terminal.background`, `terminal.border`, `terminal.selection*`, `terminal.findMatch*`, `terminalCommandGuide.*`, `terminalStickyScroll.*`, `terminal.hoverHighlightBackground`
+  - **Minimap**: `minimap.background`, `minimapSlider.*`
+  - **Breadcrumb**: `breadcrumb.background`, `breadcrumbPicker.background`
+  - **Activity Bar Top**: `activityBarTop.*` (7 keys for the new top bar)
+  - **Inline Edit**: `inlineEdit.*` (16 keys for inline edit suggestions)
+  - **Testing Coverage**: `testing.cover*` (9 keys for code coverage colors)
+  - **Diff Editor**: `diffEditor.move.*`, `diffEditor.inserted/removedLineBackground`, `diffEditorGutter.*`, `diffEditorOverviewRuler.*`
+  - **Multi-Diff Editor**: `multiDiffEditor.*` (3 keys)
+  - **Comments**: `commentsView.*`, `commentThread.*`, `commentThreadRange*` (16 keys)
+  - **Buttons / Inputs**: `button.border`, `button.focus*`, `inputOption.active*`, `inputOption.hoverBackground`
+  - **Lists / Trees**: `list.filterMatch*`, `list.deemphasizedForeground`, `tree.table*`
+  - **Status Bar**: `statusBar.focusBorder`, `statusBarItem.*Hover*`, `statusBarItem.offline*`
+  - **And more**: `multiDiffEditor.*`, `merge.common*`, `gitDecoration.renamedResourceForeground`, `walkthrough.*`, `welcomePage.*`, `menu.*`, `dropdown.listBackground`, `panelSection.*`, `panel.stickyScroll.*`, `sideBar.*`, `debugView.*`, `settings.*`, `extensionButton.*`, `notification*.border`, `editorWidget.resizeBorder`, `notebook.*`, `notebookScrollbarSlider.*`, `editorHoverWidget.highlightForeground`, `editorHoverWidget.statusBarBackground`
+
+- **WCAG Contrast Test Suite**: Added `test/contrast.test.ts` — 168 tests across 7 categories that verify every palette variant meets accessibility thresholds:
+  - Primary text contrast (AA minimum, all variants achieve AAA)
+  - Grey text contrast (AA-large minimum)
+  - Badge contrast on background and foreground
+  - Dim variant integrity (darker and desaturated vs parent)
+  - Foreground tint (not pure white/black)
+  - Background tint (not neutral grey)
+  - Background gradient smoothness
+
+- **Workbench Key Coverage Tests**: Added 5 tests to `test/structural.test.ts` verifying dark/light key parity, minimum key count (≥600), and presence of all critical namespaces.
+
+### Changed
+
+- **Version**: 0.3.5 → 1.0.0 — marking the theme's first stable release with complete VS Code theming coverage
+- **VS Code Engine**: `^1.95.0` → `^1.97.0` — ensuring compatibility with all modern theming keys
+- **@types/vscode**: `1.95.0` → `^1.97.0` — enabling type-safe access to newer color keys
+- **Test Suite**: Grew from 81 to 254 tests across 19 suites, covering structural integrity, palette accuracy, WCAG contrast, scope safety, syntax sync, and build combinations
 
 ### Fixed
 - expand Stylus TextMate scopes (currently 2 rules) (#47)

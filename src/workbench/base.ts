@@ -172,6 +172,7 @@ export function getBaseWorkbenchTokens(
     'editorBracketHighlight.foreground6': `${palette.purple}`,
     'editorBracketHighlight.unexpectedBracket.foreground': `${palette.grey1}`,
     'editorOverviewRuler.border': `${palette.bg}00`,
+    'editorOverviewRuler.background': `${palette.bg}00`,
     'editorOverviewRuler.findMatchForeground': `${palette.dimAqua}`,
     'editorOverviewRuler.rangeHighlightForeground': `${palette.dimAqua}`,
     'editorOverviewRuler.selectionHighlightForeground': `${palette.dimAqua}`,
@@ -216,6 +217,8 @@ export function getBaseWorkbenchTokens(
     'editorWidget.border': `${palette.bg5}`,
     'editorHoverWidget.background': `${workbenchVariantColors.mainBg}`,
     'editorHoverWidget.border': `${palette.bg4}`,
+    'editorHoverWidget.highlightForeground': `${palette.green}`,
+    'editorHoverWidget.statusBarBackground': `${palette.bg3}`,
     'editorGhostText.background': `${palette.bg}00`,
     'editorGhostText.foreground': `${palette.grey0}a0`,
     'editorMarkerNavigation.background': `${workbenchVariantColors.mainBg}`,
@@ -500,6 +503,327 @@ export function getBaseWorkbenchTokens(
     'interactive.activeCodeBorder': `${palette.bg4}`,
     'interactive.inactiveCodeBorder': `${palette.bg}00`,
     'interactive.requestBackground': `${palette.bg1}`,
+
+    // chat.* — extended
+    'chat.border': `${palette.bg5}`,
+    'chat.messageBackground': `${palette.bg1}`,
+    'chat.messageForeground': `${palette.fg}`,
+    'chat.inputBackground': `${palette.bg}`,
+    'chat.inputForeground': `${palette.fg}`,
+    'chat.inputBorder': `${palette.bg5}`,
+    'chat.inputFocusBorder': `${palette.badge}`,
+    'chat.codeBlockBackground': `${palette.bg1}`,
+
+    // chatParticipant.*
+    'chatParticipant.foreground': `${palette.aqua}`,
+    'chatParticipant.background': `${palette.bg2}`,
+    'chatParticipant.border': `${palette.bg}00`,
+
+    // chatStatus.*
+    'chatStatus.foreground': `${palette.grey2}`,
+    'chatStatus.background': `${palette.bg1}`,
+    'chatStatus.border': `${palette.bg}00`,
+    'chatStatus.errorForeground': `${palette.red}`,
+    'chatStatus.warningForeground': `${palette.yellow}`,
+    'chatStatus.infoForeground': `${palette.blue}`,
+
+    // chatSession.*
+    'chatSession.foreground': `${palette.grey2}`,
+    'chatSession.background': `${palette.bg1}`,
+    'chatSession.border': `${palette.bg}00`,
+
+    // chatEdit.*
+    'chatEdit.background': `${palette.bg1}`,
+    'chatEdit.foreground': `${palette.fg}`,
+    'chatEdit.border': `${palette.bg4}`,
+
+    // agent.*
+    'agent.foreground': `${palette.purple}`,
+    'agent.background': `${palette.bg2}`,
+    'agent.border': `${palette.bg}00`,
+
+    // agentDashboard.*
+    'agentDashboard.background': `${palette.bg}`,
+    'agentDashboard.foreground': `${palette.fg}`,
+    'agentDashboard.border': `${palette.bg5}`,
+
+    // simpleChat.*
+    'simpleChat.background': `${palette.bg}`,
+    'simpleChat.foreground': `${palette.fg}`,
+    'simpleChat.border': `${palette.bg5}`,
+    'simpleChat.inputBackground': `${palette.bg}`,
+    'simpleChat.inputForeground': `${palette.fg}`,
+    'simpleChat.inputBorder': `${palette.bg5}`,
+    'simpleChat.inputFocusBorder': `${palette.badge}`,
+
+    // terminalChat.*
+    'terminalChat.background': `${palette.bg}`,
+    'terminalChat.foreground': `${palette.fg}`,
+    'terminalChat.border': `${palette.bg5}`,
+
+    // editorChat.*
+    'editorChat.background': `${palette.bg1}`,
+    'editorChat.foreground': `${palette.fg}`,
+    'editorChat.border': `${palette.bg4}`,
+
+    // editorStickyScroll.*
+    'editorStickyScroll.background': `${palette.bg1}`,
+    'editorStickyScrollHover.background': `${palette.bg2}`,
+    'editorStickyScroll.border': `${palette.bg4}`,
+    'editorStickyScroll.shadow': `${palette.shadow}`,
+
+    // terminal.* — extended
+    'terminal.background': `${palette.bg}`,
+    'terminal.border': `${palette.bg5}`,
+    'terminal.selectionBackground': `${editorSelectionBg}`,
+    'terminal.selectionForeground': `${palette.fg}`,
+    'terminal.findMatchBackground': `${palette.dimOrange}40`,
+    'terminal.findMatchHighlightBackground': `${palette.dimGreen}40`,
+    'terminalCursor.background': `${palette.bg}`,
+    'terminal.dropBackground': `${palette.bg2}80`,
+    'terminal.hoverHighlightBackground': `${palette.bg2}`,
+    'terminalOverviewRuler.findMatchForeground': `${palette.dimAqua}`,
+    'terminalOverviewRuler.cursorForeground': `${cursorFg}`,
+    'terminal.tab.activeBorder': `${palette.badge}d0`,
+
+    // terminalCommandGuide.*
+    'terminalCommandGuide.foreground': `${palette.grey0}`,
+    'terminalCommandGuide.activeForeground': `${palette.grey2}`,
+
+    // terminalStickyScroll.*
+    'terminalStickyScroll.background': `${palette.bg1}`,
+    'terminalStickyScrollHover.background': `${palette.bg2}`,
+
+    // minimap.* — extended
+    'minimap.background': `${palette.bg}00`,
+    'minimapSlider.background': `${palette.bg5}80`,
+    'minimapSlider.hoverBackground': `${palette.bg5}`,
+    'minimapSlider.activeBackground': `${palette.grey2}`,
+
+    // breadcrumb.* — extended
+    'breadcrumb.background': `${palette.bg}`,
+    'breadcrumb.focusBackground': `${palette.bg4}80`,
+    'breadcrumb.activeSelectionBackground': `${palette.bg4}`,
+    'breadcrumbPicker.background': `${workbenchVariantColors.mainBg}`,
+
+    // activityBarTop.*
+    'activityBarTop.background': `${palette.bg}`,
+    'activityBarTop.foreground': `${palette.fg}`,
+    'activityBarTop.border': `${palette.bg5}`,
+    'activityBarTop.dropBackground': `${palette.bg}`,
+    'activityBarTop.inactiveForeground': `${palette.grey1}`,
+    'activityBarTop.activeBorder': `${palette.badge}d0`,
+    'activityBarTop.activeFocusBorder': `${palette.badge}`,
+    'activityBarTop.activeBackground': `${palette.bg}`,
+
+    // inlineEdit.*
+    'inlineEdit.background': `${palette.bg1}`,
+    'inlineEdit.border': `${palette.bg4}`,
+    'inlineEdit.insertedBackground': `${palette.dimGreen}30`,
+    'inlineEdit.removedBackground': `${palette.dimRed}30`,
+    'inlineEdit.insertedTextBackground': `${palette.dimGreen}30`,
+    'inlineEdit.removedTextBackground': `${palette.dimRed}30`,
+    'inlineEdit.insertedTextColor': `${palette.green}`,
+    'inlineEdit.removedTextColor': `${palette.red}`,
+    'inlineEdit.focusedBackground': `${palette.bg1}`,
+    'inlineEdit.focusedBorder': `${palette.badge}`,
+    'inlineEdit.indicator.foreground': `${palette.fg}`,
+    'inlineEdit.indicator.background': `${palette.bg2}`,
+    'inlineEdit.indicator.border': `${palette.bg4}`,
+    'inlineEdit.label.foreground': `${palette.fg}`,
+    'inlineEdit.label.background': `${palette.bg2}`,
+    'inlineEdit.label.border': `${palette.bg4}`,
+
+    // testing.cover* (coverage colors)
+    'testing.coverCountBadgeBackground': `${palette.badge}`,
+    'testing.coveredBackground': `${palette.dimGreen}30`,
+    'testing.coveredBorder': `${palette.green}`,
+    'testing.coveredGutterBackground': `${palette.dimGreen}30`,
+    'testing.uncoveredBackground': `${palette.dimRed}30`,
+    'testing.uncoveredBorder': `${palette.red}`,
+    'testing.uncoveredGutterBackground': `${palette.dimRed}30`,
+    'testing.coveredBranchBackground': `${palette.dimGreen}40`,
+    'testing.uncoveredBranchBackground': `${palette.dimRed}40`,
+
+    // diffEditor.* — extended
+    'diffEditor.border': `${palette.bg4}`,
+    'diffEditor.move.border': `${palette.dimBlue}80`,
+    'diffEditor.moveActive.border': `${palette.blue}`,
+    'diffEditor.insertedLineBackground': `${palette.dimAqua}30`,
+    'diffEditor.removedLineBackground': `${palette.dimRed}30`,
+    'diffEditor.insertedTextBorder': `${palette.dimAqua}`,
+    'diffEditor.removedTextBorder': `${palette.dimRed}`,
+    'diffEditorGutter.insertedLineBackground': `${palette.dimAqua}30`,
+    'diffEditorGutter.removedLineBackground': `${palette.dimRed}30`,
+    'diffEditorOverviewRuler.insertedForeground': `${palette.dimAqua}`,
+    'diffEditorOverviewRuler.removedForeground': `${palette.dimRed}`,
+
+    // multiDiffEditor.*
+    'multiDiffEditor.background': `${palette.bg}`,
+    'multiDiffEditor.border': `${palette.bg5}`,
+    'multiDiffEditor.headerBackground': `${palette.bg1}`,
+
+    // commentsView.*
+    'commentsView.resolvedIcon': `${palette.green}`,
+    'commentsView.unresolvedIcon': `${palette.blue}`,
+    'commentsView.commentLabel': `${palette.fg}`,
+    'commentsView.commentLabelHover': `${palette.fg}`,
+    'commentsView.commentBackground': `${palette.bg1}`,
+    'commentsView.commentBorder': `${palette.bg4}`,
+    'commentsView.commentActionsThread': `${palette.grey2}`,
+    'commentsView.commentActionsItem': `${palette.grey2}`,
+    'commentThread.rangeBorder': `${palette.bg4}`,
+    'commentThread.rangeBackground': `${palette.bg1}`,
+    'commentThread.resolvedIcon': `${palette.green}`,
+    'commentThread.unresolvedIcon': `${palette.blue}`,
+    'commentThread.stickyRangeBorder': `${palette.bg4}`,
+    'commentThread.stickyRangeBackground': `${palette.bg1}`,
+
+    // merge.* — extended
+    'merge.commonContentBackground': `${palette.dimPurple}40`,
+    'merge.commonHeaderBackground': `${palette.dimPurple}80`,
+
+    // gitDecoration.* — extended
+    'gitDecoration.renamedResourceForeground': `${palette.purple}a0`,
+
+    // statusBarItem.offline*
+    'statusBarItem.offlineBackground': `${palette.bg1}`,
+    'statusBarItem.offlineForeground': `${palette.grey2}`,
+    'statusBarItem.offlineHoverBackground': `${palette.bg4}a0`,
+    'statusBarItem.offlineHoverForeground': `${palette.fg}`,
+
+    // walkthrough.* / welcomePage.* — extended
+    'walkthrough.stepTitle.foreground': `${palette.fg}`,
+    'walkthrough.stepBackground': `${palette.bg1}`,
+    'welcomePage.background': `${palette.bg}`,
+    'welcomePage.selectionBackground': `${palette.bg4}80`,
+
+    // menu.* — extended
+    'menu.border': `${palette.bg5}`,
+    'menu.separatorBackground': `${palette.bg4}`,
+    'menu.selectionBorder': `${palette.bg}`,
+
+    // dropdown.* — extended
+    'dropdown.listBackground': `${workbenchVariantColors.mainBg}`,
+
+    // panelSection.*
+    'panelSection.border': `${palette.bg5}`,
+    'panelSection.dropBackground': `${palette.bg2}80`,
+    'panelSectionHeader.background': `${palette.bg1}`,
+    'panelSectionHeader.foreground': `${palette.grey2}`,
+
+    // panel.stickyScroll.*
+    'panel.stickyScroll.background': `${palette.bg1}`,
+    'panel.stickyScroll.border': `${palette.bg4}`,
+    'panel.stickyScroll.shadow': `${palette.shadow}`,
+
+    // sideBar.* — extended
+    'sideBar.border': `${palette.bg}`,
+    'sideBar.dropBackground': `${palette.bg2}80`,
+    'sideBarSectionHeader.border': `${palette.bg}`,
+    'sideBarStickyScroll.background': `${palette.bg1}`,
+    'sideBarStickyScroll.border': `${palette.bg4}`,
+
+    // editor.* — extended
+    'editor.foldBackground': `${palette.bg5}80`,
+    'editor.selectionForeground': `${palette.fg}`,
+    'editorCursor.background': `${palette.bg}`,
+    'editorPane.background': `${palette.bg}`,
+    'editorGroup.emptyBackground': `${palette.bg}`,
+    'editorGroupHeader.tabsBorder': `${palette.bg}`,
+    'editorGroupHeader.border': `${palette.bg}`,
+    'editorPlaceholder.foreground': `${palette.grey0}`,
+    'editorPlaceholder.background': `${palette.bg}`,
+
+    // statusBar.* — extended
+    'statusBar.focusBorder': `${palette.badge}`,
+    'statusBarItem.focusBorder': `${palette.badge}`,
+    'statusBarItem.hoverForeground': `${palette.fg}`,
+    'statusBarItem.compactHoverBackground': `${palette.bg4}a0`,
+    'statusBarItem.remoteHoverBackground': `${palette.bg4}a0`,
+    'statusBarItem.remoteHoverForeground': `${palette.fg}`,
+    'statusBarItem.errorHoverBackground': `${palette.bg4}a0`,
+    'statusBarItem.errorHoverForeground': `${palette.red}`,
+    'statusBarItem.warningHoverBackground': `${palette.bg4}a0`,
+    'statusBarItem.warningHoverForeground': `${palette.yellow}`,
+    'statusBarItem.prominentHoverForeground': `${palette.fg}`,
+
+    // button.* — extended
+    'button.border': `${palette.bg5}`,
+    'button.separator': `${palette.bg}`,
+    'button.secondaryBorder': `${palette.bg5}`,
+    'button.hoverForeground': `${palette.fg}`,
+    'button.focusBorder': `${palette.badge}`,
+    'button.focusBackground': `${palette.badge}`,
+    'button.focusForeground': `${palette.bg}`,
+
+    // inputOption.* — extended
+    'inputOption.activeBackground': `${palette.bg3}`,
+    'inputOption.activeForeground': `${palette.fg}`,
+    'inputOption.hoverBackground': `${palette.bg2}`,
+
+    // list.* / tree.* — extended
+    'list.filterMatchBackground': `${palette.dimAqua}40`,
+    'list.filterMatchBorder': `${palette.aqua}`,
+    'list.deemphasizedForeground': `${palette.grey0}`,
+    'list.focusOutline': `${palette.bg}00`,
+    'list.activeSelectionIconForeground': `${palette.fg}`,
+    'list.inactiveSelectionIconForeground': `${palette.grey2}`,
+    'tree.tableColumnsBorder': `${palette.bg4}`,
+    'tree.tableOddRowsBackground': `${palette.bg1}`,
+
+    // debugView.*
+    'debugView.exceptionLabelBackground': `${palette.red}`,
+    'debugView.exceptionLabelForeground': `${palette.bg}`,
+    'debugView.stateLabelBackground': `${palette.bg3}`,
+    'debugView.stateLabelForeground': `${palette.fg}`,
+    'debugView.valueChangedHighlight': `${palette.yellow}`,
+    'debugExceptionWidget.background': `${palette.bg1}`,
+    'debugExceptionWidget.border': `${palette.red}`,
+
+    // settings.* — extended
+    'settings.sashBorder': `${palette.bg5}`,
+    'settings.headerBorder': `${palette.bg4}`,
+    'settings.settingsHeaderHoverBackground': `${palette.bg2}`,
+
+    // extensionButton.*
+    'extensionButton.background': `${palette.badge}`,
+    'extensionButton.foreground': `${palette.bg}`,
+    'extensionButton.hoverBackground': `${palette.badge}d0`,
+    'extensionButton.separator': `${palette.bg}`,
+    'extensionBadge.background': `${palette.badge}`,
+    'extensionBadge.foreground': `${palette.bg}`,
+
+    // notification*.* — extended
+    'notificationCenter.border': `${palette.bg5}`,
+    'notificationToast.border': `${palette.bg5}`,
+    'notifications.border': `${palette.bg5}`,
+
+    // editorWidget.* — extended
+    'editorWidget.resizeBorder': `${palette.bg4}`,
+
+    // testing.* — extended
+    'testing.peekBorder': `${palette.bg4}`,
+    'testing.peekHeaderBackground': `${palette.bg1}`,
+    'testing.message.error.decorationForeground': `${palette.red}`,
+    'testing.message.error.lineBackground': `${palette.dimRed}20`,
+    'testing.message.info.decorationForeground': `${palette.blue}`,
+    'testing.message.info.lineBackground': `${palette.dimBlue}20`,
+    'testing.messagePeekBorder': `${palette.bg4}`,
+    'testing.messagePeekHeaderBackground': `${palette.bg1}`,
+
+    // notebook.* — extended
+    'notebook.cellInsertionIndicator': `${palette.badge}`,
+    'notebook.outputContainerBorder': `${palette.bg5}`,
+    'notebook.selectedCellBackground': `${palette.bg}`,
+    'notebook.symbolHighlightBackground': `${palette.dimYellow}40`,
+    'notebookScrollbarSlider.background': `${palette.bg5}80`,
+    'notebookScrollbarSlider.hoverBackground': `${palette.bg5}`,
+    'notebookScrollbarSlider.activeBackground': `${palette.grey2}`,
+
+    // activityBar.* — extended
+    'activityBar.activeBackground': `${palette.bg}`,
+
     'quickInput.background': `${palette.bg}`,
     'quickInput.foreground': `${palette.fg}`,
   };

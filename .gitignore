@@ -9,3 +9,4 @@ dist/
 *.vsix
 .flag
 .vscode-test-web
+.hermes/
