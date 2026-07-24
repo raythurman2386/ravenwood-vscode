@@ -195,6 +195,13 @@ export function getSemantic(
     'protocol:clojure': `${palette.aqua}`,
     'record:clojure': `${palette.aqua}`,
     // }}}
+    // CoffeeScript {{{
+    'class:coffeescript': `${palette.aqua}`,
+    'function:coffeescript': `${palette.green}`,
+    'method:coffeescript': `${palette.green}`,
+    'parameter:coffeescript': `${palette.blue}`,
+    'variable:coffeescript': `${palette.fg}`,
+    // }}}
     // Groovy {{{
     'class:groovy': `${palette.aqua}`,
     'function:groovy': `${palette.green}`,
