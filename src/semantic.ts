@@ -180,6 +180,13 @@ export function getSemantic(
     'property:php': `${palette.aqua}`,
     'namespace:php': `${palette.purple}`,
     // }}}
+    // Perl {{{
+    'package:perl': `${palette.purple}`,
+    'function:perl': `${palette.green}`,
+    'method:perl': `${palette.green}`,
+    'variable:perl': `${palette.fg}`,
+    'namespace:perl': `${palette.purple}`,
+    // }}}
     // Clojure {{{
     'function:clojure': `${palette.green}`,
     'method:clojure': `${palette.green}`,
