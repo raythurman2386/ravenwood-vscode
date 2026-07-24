@@ -255,6 +255,13 @@ export function getSemantic(
     'typeParameter:haskell': `${palette.purple}`,
     'module:haskell': `${palette.purple}`,
     // }}}
+    // PureScript {{{
+    'type:purescript': `${palette.aqua}`,
+    'typeAlias:purescript': `${palette.aqua}`,
+    'function:purescript': `${palette.green}`,
+    'module:purescript': `${palette.purple}`,
+    'class:purescript': `${palette.aqua}`,
+    // }}}
   };
 }
 

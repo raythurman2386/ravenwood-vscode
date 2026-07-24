@@ -191,7 +191,12 @@
     "method:haskell": "#4ade80",
     "variable:haskell": "#e8d5b7",
     "typeParameter:haskell": "#f472b6",
-    "module:haskell": "#f472b6"
+    "module:haskell": "#f472b6",
+    "type:purescript": "#34d399",
+    "typeAlias:purescript": "#34d399",
+    "function:purescript": "#4ade80",
+    "module:purescript": "#f472b6",
+    "class:purescript": "#34d399"
   },
   "colors": {
     "foreground": "#9aa79d",
