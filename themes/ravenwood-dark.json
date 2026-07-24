@@ -1909,7 +1909,7 @@
     },
     {
       "name": "Pug aqua",
-      "scope": "entity.other.attribute-name.tag.pug",
+      "scope": "entity.other.attribute-name.tag.pug, entity.name.type.pug, support.type.pug",
       "settings": {
         "foreground": "#34d399"
       }
@@ -1940,13 +1940,6 @@
       "scope": "entity.name.function.pug, support.function.pug",
       "settings": {
         "foreground": "#4ade80"
-      }
-    },
-    {
-      "name": "Pug blue",
-      "scope": "entity.name.type.pug, support.type.pug",
-      "settings": {
-        "foreground": "#22d3ee"
       }
     },
     {

@@ -1078,7 +1078,8 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'Pug aqua',
-      scope: 'entity.other.attribute-name.tag.pug',
+      scope:
+        'entity.other.attribute-name.tag.pug, entity.name.type.pug, support.type.pug',
       settings: {
         foreground: palette.aqua,
       },
@@ -1112,13 +1113,6 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.function.pug, support.function.pug',
       settings: {
         foreground: palette.green,
-      },
-    },
-    {
-      name: 'Pug blue',
-      scope: 'entity.name.type.pug, support.type.pug',
-      settings: {
-        foreground: palette.blue,
       },
     },
     // }}}
