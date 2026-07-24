@@ -248,6 +248,16 @@ export function getSemantic(
     'typeParameter:haskell': `${palette.purple}`,
     'module:haskell': `${palette.purple}`,
     // }}}
+    // OCaml {{{
+    'module:ocaml': `${palette.purple}`,
+    'type:ocaml': `${palette.aqua}`,
+    'function:ocaml': `${palette.green}`,
+    'method:ocaml': `${palette.green}`,
+    'parameter:ocaml': `${palette.blue}`,
+    'variable:ocaml': `${palette.fg}`,
+    'variant:ocaml': `${palette.aqua}`,
+    'moduleType:ocaml': `${palette.aqua}`,
+    // }}}
   };
 }
 
