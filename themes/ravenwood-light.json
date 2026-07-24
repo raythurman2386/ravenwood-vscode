@@ -2651,7 +2651,7 @@
     },
     {
       "name": "R green",
-      "scope": "entity.name.function.r, variable.function.r",
+      "scope": "entity.name.function.r, variable.function.r, support.function.r",
       "settings": {
         "foreground": "#5c7a0c"
       }
@@ -2665,7 +2665,7 @@
     },
     {
       "name": "R blue",
-      "scope": "support.function.r, variable.parameter.r",
+      "scope": "variable.parameter.r",
       "settings": {
         "foreground": "#1a6d9e"
       }

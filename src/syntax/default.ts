@@ -1956,7 +1956,7 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'R green',
-      scope: 'entity.name.function.r, variable.function.r',
+      scope: 'entity.name.function.r, variable.function.r, support.function.r',
       settings: {
         foreground: palette.green,
       },
@@ -1970,7 +1970,7 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'R blue',
-      scope: 'support.function.r, variable.parameter.r',
+      scope: 'variable.parameter.r',
       settings: {
         foreground: palette.blue,
       },
