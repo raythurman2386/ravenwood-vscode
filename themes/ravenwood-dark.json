@@ -3537,7 +3537,7 @@
     },
     {
       "name": "Git red",
-      "scope": "entity.name.section.group-title.ini, punctuation.definition.entity.ini",
+      "scope": "entity.name.section.group-title.ini",
       "settings": {
         "foreground": "#e67e80"
       }
@@ -3550,17 +3550,31 @@
       }
     },
     {
-      "name": "Git green",
+      "name": "Git yellow",
       "scope": "string.quoted.double.ini, string.quoted.single.ini, punctuation.definition.string.begin.ini, punctuation.definition.string.end.ini",
       "settings": {
-        "foreground": "#4ade80"
+        "foreground": "#fbbf24"
       }
     },
     {
-      "name": "Git aqua",
+      "name": "Git blue",
       "scope": "keyword.other.definition.ini",
       "settings": {
-        "foreground": "#34d399"
+        "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Git purple",
+      "scope": "constant.language.boolean.ini, constant.numeric.ini",
+      "settings": {
+        "foreground": "#f472b6"
+      }
+    },
+    {
+      "name": "Git grey",
+      "scope": "punctuation.definition.entity.ini",
+      "settings": {
+        "foreground": "#859289"
       }
     },
     {
