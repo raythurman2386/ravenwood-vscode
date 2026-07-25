@@ -2309,6 +2309,29 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'Erlang orange',
+      scope: 'keyword.operator.erlang, storage.type.erlang',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Erlang aqua',
+      scope:
+        'keyword.control.directive.preprocessor.erlang, entity.name.type.module.erlang, keyword.control.directive.record.erlang, keyword.control.directive.type.erlang, keyword.control.directive.spec.erlang',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Erlang blue',
+      scope:
+        'entity.name.type.erlang, support.type.erlang, keyword.type.erlang',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
       name: 'Erlang purple',
       scope:
         'keyword.control.directive.export.erlang, keyword.control.directive.module.erlang, keyword.control.directive.import.erlang, keyword.control.directive.behaviour.erlang',
