@@ -364,6 +364,18 @@ export function getSemantic(
     'variable:swift': `${palette.fg}`,
     'property:swift': `${palette.aqua}`,
     // }}}
+    // CSS {{{
+    'property:css': `${palette.aqua}`,
+    'variable:css': `${palette.fg}`,
+    'function:css': `${palette.green}`,
+    'method:css': `${palette.green}`,
+    'type:css': `${palette.aqua}`,
+    'class:css': `${palette.aqua}`,
+    'parameter:css': `${palette.blue}`,
+    'namespace:css': `${palette.purple}`,
+    'constant:css': `${palette.purple}`,
+    'keyword:css': `${palette.red}`,
+    // }}}
   };
 }
 
