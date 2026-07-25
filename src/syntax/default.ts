@@ -1303,6 +1303,28 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.purple,
       },
     },
+    {
+      name: 'Java yellow',
+      scope:
+        'string.quoted.double.java, string.quoted.single.java, punctuation.definition.string.begin.java, punctuation.definition.string.end.java, entity.name.type.java, entity.name.type.class.java, entity.name.type.enum.java',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Java green',
+      scope: 'entity.name.function.java, support.function.java',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'Java blue',
+      scope: 'keyword.operator.type.annotation.java',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
     // }}}
     // Kotlin{{{
     {
