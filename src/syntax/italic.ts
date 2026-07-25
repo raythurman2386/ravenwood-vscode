@@ -2056,6 +2056,23 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Haskell{{{
     {
+      name: 'Haskell grey',
+      scope:
+        'punctuation.separator.haskell, punctuation.definition.haskell, punctuation.terminator.haskell',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Haskell red',
+      scope:
+        'keyword.control.haskell, keyword.other.haskell, keyword.operator.haskell',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
       name: 'Haskell orange',
       scope:
         'keyword.other.arrow.haskell, keyword.other.big-arrow.haskell, keyword.other.double-colon.haskell',
@@ -2090,6 +2107,15 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.namespace, meta.preprocessor.haskell',
       settings: {
         foreground: palette.aqua,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Haskell purple',
+      scope:
+        'constant.language.haskell, constant.numeric.haskell, variable.other.haskell',
+      settings: {
+        foreground: palette.purple,
         fontStyle: 'italic',
       },
     },
