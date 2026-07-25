@@ -1361,6 +1361,38 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.purple,
       },
     },
+    {
+      name: 'F# grey',
+      scope:
+        'punctuation.separator.fsharp, punctuation.definition.comment.fsharp',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'F# red',
+      scope: 'keyword.control.fsharp, keyword.other.fsharp',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'F# orange',
+      scope:
+        'storage.type.fsharp, storage.modifier.fsharp, keyword.operator.fsharp',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'F# aqua',
+      scope:
+        'entity.name.type.module.fsharp, entity.name.namespace.fsharp, keyword.other.directive.fsharp',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
     // }}}
     // Java{{{
     {
