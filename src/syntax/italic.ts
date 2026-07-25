@@ -860,7 +860,7 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'TypeScript red',
       scope:
-        'keyword.control.conditional.ts, keyword.control.loop.ts, keyword.control.trycatch.ts, keyword.control.flowcontrol.ts',
+        'keyword.control.conditional.ts, keyword.control.loop.ts, keyword.control.trycatch.ts, keyword.control.flow.ts',
       settings: {
         foreground: palette.red,
         fontStyle: 'italic',

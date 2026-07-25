@@ -1994,7 +1994,7 @@
     },
     {
       "name": "TypeScript red",
-      "scope": "keyword.control.conditional.ts, keyword.control.loop.ts, keyword.control.trycatch.ts, keyword.control.flowcontrol.ts",
+      "scope": "keyword.control.conditional.ts, keyword.control.loop.ts, keyword.control.trycatch.ts, keyword.control.flow.ts",
       "settings": {
         "foreground": "#c03c39"
       }
