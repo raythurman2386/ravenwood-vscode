@@ -1727,6 +1727,21 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         fontStyle: 'italic',
       },
     },
+    {
+      name: 'Go grey',
+      scope:
+        'punctuation.separator.go, punctuation.accessor.go, punctuation.terminator.go, punctuation.definition.string.begin.go, punctuation.definition.string.end.go',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Go blue',
+      scope: 'storage.type.go, keyword.operator.type.annotation.go',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
     // }}}
     // Rust{{{
     {
