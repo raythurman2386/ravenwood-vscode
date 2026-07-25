@@ -3330,10 +3330,31 @@
       }
     },
     {
+      "name": "Lisp grey",
+      "scope": "punctuation.section.parens.lisp, punctuation.definition.comment.lisp",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
       "name": "Lisp red",
       "scope": "storage.type.function-type.lisp",
       "settings": {
         "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Lisp orange",
+      "scope": "keyword.operator.lisp, storage.type.lisp",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Lisp yellow",
+      "scope": "string.quoted.double.lisp, entity.name.type.lisp",
+      "settings": {
+        "foreground": "#fbbf24"
       }
     },
     {
@@ -3348,6 +3369,20 @@
       "scope": "entity.name.function.lisp",
       "settings": {
         "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Lisp blue",
+      "scope": "variable.other.constant.lisp",
+      "settings": {
+        "foreground": "#22d3ee"
+      }
+    },
+    {
+      "name": "Lisp purple",
+      "scope": "constant.language.lisp, constant.keyword.lisp, constant.numeric.lisp",
+      "settings": {
+        "foreground": "#f472b6"
       }
     },
     {

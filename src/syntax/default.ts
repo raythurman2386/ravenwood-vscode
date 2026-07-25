@@ -2306,10 +2306,32 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'Lisp grey',
+      scope:
+        'punctuation.section.parens.lisp, punctuation.definition.comment.lisp',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'Lisp red',
       scope: 'storage.type.function-type.lisp',
       settings: {
         foreground: palette.red,
+      },
+    },
+    {
+      name: 'Lisp orange',
+      scope: 'keyword.operator.lisp, storage.type.lisp',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'Lisp yellow',
+      scope: 'string.quoted.double.lisp, entity.name.type.lisp',
+      settings: {
+        foreground: palette.yellow,
       },
     },
     {
@@ -2324,6 +2346,21 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.function.lisp',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Lisp blue',
+      scope: 'variable.other.constant.lisp',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'Lisp purple',
+      scope:
+        'constant.language.lisp, constant.keyword.lisp, constant.numeric.lisp',
+      settings: {
+        foreground: palette.purple,
       },
     },
     // }}}
