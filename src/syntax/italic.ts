@@ -2787,6 +2787,14 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Fish{{{
     {
+      name: 'Fish grey',
+      scope:
+        'punctuation.section.parens.fish, punctuation.section.brackets.fish, keyword.operator.redirect.fish, punctuation.separator.pipe.fish, punctuation.terminator.fish',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'Fish red',
       scope: 'support.function.builtin.fish',
       settings: {
@@ -2802,11 +2810,11 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Fish blue',
+      name: 'Fish yellow',
       scope:
-        'variable.other.normal.fish, punctuation.definition.variable.fish, variable.other.fixed.fish, variable.other.special.fish',
+        'storage.type.function.fish, storage.type.fish, entity.name.function.fish',
       settings: {
-        foreground: palette.blue,
+        foreground: palette.yellow,
       },
     },
     {
@@ -2815,6 +2823,23 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         'string.quoted.double.fish, punctuation.definition.string.end.fish, punctuation.definition.string.begin.fish, string.quoted.single.fish',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'Fish aqua',
+      scope:
+        'keyword.control.conditional.fish, keyword.control.fish, keyword.other.fish, constant.language.fish',
+      settings: {
+        foreground: palette.aqua,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Fish blue',
+      scope:
+        'variable.other.normal.fish, punctuation.definition.variable.fish, variable.other.fixed.fish, variable.other.special.fish',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
