@@ -3043,6 +3043,20 @@
       }
     },
     {
+      "name": "Haskell grey",
+      "scope": "punctuation.separator.haskell, punctuation.definition.haskell, punctuation.terminator.haskell",
+      "settings": {
+        "foreground": "#6b7566"
+      }
+    },
+    {
+      "name": "Haskell red",
+      "scope": "keyword.control.haskell, keyword.other.haskell, keyword.operator.haskell",
+      "settings": {
+        "foreground": "#c03c39"
+      }
+    },
+    {
       "name": "Haskell orange",
       "scope": "keyword.other.arrow.haskell, keyword.other.big-arrow.haskell, keyword.other.double-colon.haskell",
       "settings": {
@@ -3075,6 +3089,13 @@
       "scope": "entity.name.namespace, meta.preprocessor.haskell",
       "settings": {
         "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "Haskell purple",
+      "scope": "constant.language.haskell, constant.numeric.haskell, variable.other.haskell",
+      "settings": {
+        "foreground": "#b84d94"
       }
     },
     {
