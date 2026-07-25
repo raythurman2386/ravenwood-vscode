@@ -2213,6 +2213,38 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Elixir{{{
     {
+      name: 'Elixir red',
+      scope: 'keyword.control.elixir',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Elixir orange',
+      scope: 'keyword.operator.elixir, storage.type.elixir',
+      settings: {
+        foreground: palette.orange,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'Elixir yellow',
+      scope:
+        'entity.name.type.elixir, string.quoted.double.elixir, string.quoted.single.elixir, punctuation.definition.string.begin.elixir, punctuation.definition.string.end.elixir',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Elixir green',
+      scope:
+        'entity.name.function.elixir, support.function.elixir, entity.name.function.macro.elixir',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
       name: 'Elixir aqua',
       scope:
         'variable.other.readwrite.module.elixir, punctuation.definition.variable.elixir',

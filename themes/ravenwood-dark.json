@@ -3176,6 +3176,34 @@
       }
     },
     {
+      "name": "Elixir red",
+      "scope": "keyword.control.elixir",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "Elixir orange",
+      "scope": "keyword.operator.elixir, storage.type.elixir",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Elixir yellow",
+      "scope": "entity.name.type.elixir, string.quoted.double.elixir, string.quoted.single.elixir, punctuation.definition.string.begin.elixir, punctuation.definition.string.end.elixir",
+      "settings": {
+        "foreground": "#fbbf24"
+      }
+    },
+    {
+      "name": "Elixir green",
+      "scope": "entity.name.function.elixir, support.function.elixir, entity.name.function.macro.elixir",
+      "settings": {
+        "foreground": "#4ade80"
+      }
+    },
+    {
       "name": "Elixir aqua",
       "scope": "variable.other.readwrite.module.elixir, punctuation.definition.variable.elixir",
       "settings": {
