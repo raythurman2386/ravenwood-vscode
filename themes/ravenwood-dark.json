@@ -2371,10 +2371,24 @@
       }
     },
     {
+      "name": "C# grey",
+      "scope": "punctuation.separator.cs, punctuation.terminator.cs, punctuation.accessor.cs",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
       "name": "C# red",
       "scope": "keyword.other.using.cs",
       "settings": {
         "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "C# orange",
+      "scope": "storage.type.cs, storage.modifier.cs, keyword.operator.cs",
+      "settings": {
+        "foreground": "#e69875"
       }
     },
     {
@@ -2396,6 +2410,13 @@
       "scope": "variable.other.object.property.cs",
       "settings": {
         "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "C# blue",
+      "scope": "entity.name.type.cs, entity.name.type.class.cs, entity.name.type.enum.cs, entity.name.type.interface.cs, entity.name.type.struct.cs",
+      "settings": {
+        "foreground": "#22d3ee"
       }
     },
     {

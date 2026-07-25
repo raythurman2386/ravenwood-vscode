@@ -1251,10 +1251,25 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // C#{{{
     {
+      name: 'C# grey',
+      scope:
+        'punctuation.separator.cs, punctuation.terminator.cs, punctuation.accessor.cs',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
       name: 'C# red',
       scope: 'keyword.other.using.cs',
       settings: {
         foreground: palette.red,
+      },
+    },
+    {
+      name: 'C# orange',
+      scope: 'storage.type.cs, storage.modifier.cs, keyword.operator.cs',
+      settings: {
+        foreground: palette.orange,
       },
     },
     {
@@ -1278,6 +1293,14 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       scope: 'variable.other.object.property.cs',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'C# blue',
+      scope:
+        'entity.name.type.cs, entity.name.type.class.cs, entity.name.type.enum.cs, entity.name.type.interface.cs, entity.name.type.struct.cs',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
