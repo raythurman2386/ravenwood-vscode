@@ -940,11 +940,11 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'CoffeeScript green',
+      name: 'CoffeeScript yellow',
       scope:
-        'string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee',
+        'string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee, entity.name.type.coffee',
       settings: {
-        foreground: palette.green,
+        foreground: palette.yellow,
       },
     },
     {
@@ -952,6 +952,13 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.class.coffee, variable.other.readwrite.class.coffee',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'CoffeeScript blue',
+      scope: 'storage.type.coffee',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
