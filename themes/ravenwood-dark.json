@@ -2413,6 +2413,34 @@
       }
     },
     {
+      "name": "F# grey",
+      "scope": "punctuation.separator.fsharp, punctuation.definition.comment.fsharp",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "F# red",
+      "scope": "keyword.control.fsharp, keyword.other.fsharp",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
+      "name": "F# orange",
+      "scope": "storage.type.fsharp, storage.modifier.fsharp, keyword.operator.fsharp",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "F# aqua",
+      "scope": "entity.name.type.module.fsharp, entity.name.namespace.fsharp, keyword.other.directive.fsharp",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
       "name": "Java grey",
       "scope": "punctuation.separator.java, punctuation.separator.period.java",
       "settings": {
