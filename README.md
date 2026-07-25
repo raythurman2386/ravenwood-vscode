@@ -1,5 +1,7 @@
 # Ravenwood
 
+[!["Buy Me A Coffee"](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/raythurman)
+
 Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the [Everforest](https://github.com/sainnhe/everforest) color scheme. It features deeper, more saturated emerald greens and richer backgrounds, designed for a comfortable and pleasant coding experience.
 
 ## Features
