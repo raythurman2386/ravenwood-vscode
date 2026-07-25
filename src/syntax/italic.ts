@@ -2652,9 +2652,16 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Perl green',
+      name: 'Perl yellow',
       scope:
-        'string.quoted.single.perl, string.quoted.double.perl, punctuation.definition.string.begin.perl, punctuation.definition.string.end.perl, string.regexp.perl, string.regexp.modifier.perl',
+        'string.quoted.single.perl, string.quoted.double.perl, punctuation.definition.string.begin.perl, punctuation.definition.string.end.perl, entity.name.type.perl, support.class.perl',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Perl green',
+      scope: 'string.regexp.perl, string.regexp.modifier.perl',
       settings: {
         foreground: palette.green,
       },
@@ -2664,6 +2671,13 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       scope: 'entity.name.function.perl, variable.other.subroutine.perl',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Perl blue',
+      scope: 'storage.type.perl, keyword.operator.type.annotation.perl',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
