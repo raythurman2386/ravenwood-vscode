@@ -1000,11 +1000,35 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'PureScript grey',
+      scope:
+        'punctuation.separator.purescript, punctuation.definition.purescript, punctuation.terminator.purescript',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'PureScript aqua',
+      scope:
+        'keyword.control.import.purescript, keyword.control.module.purescript, meta.preprocessor.purescript',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
       name: 'PureScript orange',
       scope:
         'keyword.other.double-colon.purescript, keyword.other.arrow.purescript, keyword.other.big-arrow.purescript',
       settings: {
         foreground: palette.orange,
+      },
+    },
+    {
+      name: 'PureScript red',
+      scope:
+        'keyword.control.purescript, keyword.other.purescript, keyword.operator.purescript',
+      settings: {
+        foreground: palette.red,
       },
     },
     {
@@ -1017,9 +1041,17 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     {
       name: 'PureScript green',
       scope:
-        'string.quoted.single.purescript, string.quoted.double.purescript, punctuation.definition.string.begin.purescript, punctuation.definition.string.end.purescript, string.quoted.triple.purescript, entity.name.type.purescript',
+        'string.quoted.single.purescript, string.quoted.double.purescript, punctuation.definition.string.begin.purescript, punctuation.definition.string.end.purescript, string.quoted.triple.purescript',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'PureScript blue',
+      scope:
+        'entity.name.type.purescript, storage.type.purescript, support.type.purescript',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
