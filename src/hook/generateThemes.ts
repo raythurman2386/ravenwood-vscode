@@ -36,6 +36,7 @@ const configuration: Configuration = {
 
 async function writeFile(path: string, data: unknown): Promise<void> {
   // {{{
+  await fs.promises.mkdir(join(path, '..'), { recursive: true });
   await fs.promises.writeFile(path, JSON.stringify(data, null, 2));
 } // }}}
 

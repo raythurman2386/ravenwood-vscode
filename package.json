@@ -194,7 +194,7 @@
     "compile:ts": "tsc",
     "compile:themes": "node dist/hook/generateThemes.js",
     "compile": "npm run clean && npm run compile:ts && npm run compile:themes",
-    "package": "vsce package && git checkout -- themes",
+    "package": "vsce package",
     "lint": "biome check",
     "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
     "prepare": "husky",

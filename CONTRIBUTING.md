@@ -26,6 +26,9 @@ If you'd like to contribute code:
     ```bash
     npm run compile
     ```
+
+    > **Note:** The `themes/*.json` files are **build artifacts** — they are gitignored and not checked into the repository. `npm run compile` (specifically the `compile:themes` step) regenerates them from `src/hook/generateThemes.ts`. You must run `npm run compile` after a fresh clone before launching or debugging the extension, otherwise the theme JSONs will be missing.
+
 4.  **Testing changes:**
     - Open this project in VS Code.
     - Press `F5` to launch a new "Extension Development Host" window with your changes active.
