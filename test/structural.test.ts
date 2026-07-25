@@ -137,12 +137,12 @@ describe('Workbench color key coverage', () => {
     assert.deepEqual(darkKeys, lightKeys, 'dark and light key sets must match');
   });
 
-  test('workbench color key count is at least 600', () => {
+  test('workbench color key count is at least 900', () => {
     const { dark } = buildTheme();
     const count = Object.keys(dark.colors).length;
     assert.ok(
-      count >= 600,
-      `expected at least 600 workbench color keys, got ${count}`,
+      count >= 900,
+      `expected at least 900 workbench color keys, got ${count}`,
     );
   });
 
@@ -150,14 +150,13 @@ describe('Workbench color key coverage', () => {
     const { dark } = buildTheme();
     const keys = Object.keys(dark.colors);
     const requiredPrefixes = [
-      'chat.border',
-      'chat.messageBackground',
-      'chat.messageForeground',
-      'chat.inputBackground',
-      'chat.inputForeground',
-      'chat.inputBorder',
-      'chat.inputFocusBorder',
-      'chat.codeBlockBackground',
+      'chat.requestBackground',
+      'chat.requestBorder',
+      'chat.slashCommandBackground',
+      'chat.avatarBackground',
+      'chat.editedFileForeground',
+      'chat.checkpointSeparator',
+      'chat.thinkingShimmer',
       'chatParticipant.',
       'chatStatus.',
       'chatSession.',
@@ -185,12 +184,12 @@ describe('Workbench color key coverage', () => {
       'minimap.background',
       'breadcrumb.background',
       'activityBarTop.background',
-      'inlineEdit.background',
+      'inlineEdit.gutterIndicator.primaryBackground',
       'testing.coveredBackground',
       'testing.uncoveredBackground',
       'diffEditor.move.border',
       'multiDiffEditor.background',
-      'commentsView.commentBackground',
+      'commentsView.resolvedIcon',
       'merge.commonContentBackground',
       'gitDecoration.renamedResourceForeground',
       'statusBarItem.offlineBackground',
@@ -200,7 +199,7 @@ describe('Workbench color key coverage', () => {
       'dropdown.listBackground',
       'panelSection.border',
       'sideBar.border',
-      'editorPlaceholder.foreground',
+      'editor.placeholder.foreground',
       'button.border',
       'inputOption.activeBackground',
       'list.filterMatchBackground',
