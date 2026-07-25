@@ -2998,6 +2998,22 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Dockerfile{{{
     {
+      name: 'Dockerfile grey',
+      scope:
+        'punctuation.definition.string.begin.dockerfile, punctuation.definition.string.end.dockerfile, punctuation.definition.comment.dockerfile',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'Dockerfile red',
+      scope:
+        'keyword.control.dockerfile, keyword.other.special-method.dockerfile, keyword.operator.dockerfile',
+      settings: {
+        foreground: palette.red,
+      },
+    },
+    {
       name: 'Dockerfile orange',
       scope: 'entity.name.function.package-manager.dockerfile',
       settings: {
@@ -3023,6 +3039,13 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       scope: 'constant.character.escape.dockerfile',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Dockerfile blue',
+      scope: 'entity.name.type.dockerfile',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {

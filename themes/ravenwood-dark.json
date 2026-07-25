@@ -3967,6 +3967,20 @@
       }
     },
     {
+      "name": "Dockerfile grey",
+      "scope": "punctuation.definition.string.begin.dockerfile, punctuation.definition.string.end.dockerfile, punctuation.definition.comment.dockerfile",
+      "settings": {
+        "foreground": "#859289"
+      }
+    },
+    {
+      "name": "Dockerfile red",
+      "scope": "keyword.control.dockerfile, keyword.other.special-method.dockerfile, keyword.operator.dockerfile",
+      "settings": {
+        "foreground": "#e67e80"
+      }
+    },
+    {
       "name": "Dockerfile orange",
       "scope": "entity.name.function.package-manager.dockerfile",
       "settings": {
@@ -3992,6 +4006,13 @@
       "scope": "constant.character.escape.dockerfile",
       "settings": {
         "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Dockerfile blue",
+      "scope": "entity.name.type.dockerfile",
+      "settings": {
+        "foreground": "#22d3ee"
       }
     },
     {
