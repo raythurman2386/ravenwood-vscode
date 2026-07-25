@@ -1025,8 +1025,7 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'PureScript red',
-      scope:
-        'keyword.control.purescript, keyword.other.purescript, keyword.operator.purescript',
+      scope: 'keyword.control.purescript, keyword.other.purescript',
       settings: {
         foreground: palette.red,
       },
