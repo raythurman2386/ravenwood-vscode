@@ -1,6 +1,7 @@
 # Fish sample — comprehensive feature coverage.
-# Highlights: builtins (red), unix functions (orange), variables (blue),
-# strings (green), escapes (purple).
+# Highlights: delimiters (grey), builtins (red), unix functions (orange),
+# functions/types (yellow), strings (green), control flow (aqua),
+# variables (blue), escapes (purple).
 
 set MAX_RETRIES 3
 set CACHE_DIR "$HOME/.cache/ravenwood"
