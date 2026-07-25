@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2026-07-25
+
+### Fixed
+- syntax: expand Common Lisp TextMate scopes (currently 4 rules) (#59)
+- syntax: expand Elixir TextMate scopes (currently 3 rules) (#58)
+
 ## [1.1.0] - 2026-07-24
 
 ### Added
