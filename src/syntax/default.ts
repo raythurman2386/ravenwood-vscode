@@ -1139,6 +1139,35 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.aqua,
       },
     },
+    {
+      name: 'C yellow',
+      scope:
+        'string.quoted.double.c, string.quoted.single.c, punctuation.definition.string.begin.c, punctuation.definition.string.end.c',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'C green',
+      scope: 'entity.name.function.c, support.function.c',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'C blue',
+      scope: 'entity.name.type.c, storage.type.c',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
+      name: 'C purple',
+      scope: 'constant.other.c, entity.name.function.preprocessor.c',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // C++{{{
     {
