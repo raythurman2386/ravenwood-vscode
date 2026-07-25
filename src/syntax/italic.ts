@@ -1258,6 +1258,30 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.blue,
       },
     },
+    {
+      name: 'C++ yellow',
+      scope:
+        'string.quoted.double.cpp, string.quoted.single.cpp, punctuation.definition.string.begin.cpp, punctuation.definition.string.end.cpp, constant.character.cpp',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'C++ green',
+      scope:
+        'entity.name.function.cpp, entity.name.function.definition.cpp, support.function.cpp',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'C++ purple',
+      scope:
+        'entity.name.type.parameter.cpp, entity.name.constant.cpp, constant.other.cpp, variable.parameter.template.cpp',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // C#{{{
     {

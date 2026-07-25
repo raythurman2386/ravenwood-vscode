@@ -1,6 +1,7 @@
 // C++ sample — comprehensive feature coverage.
 // Highlights: function calls/params (white), dot-access (grey), directives/namespace (red),
-// pointer-access/angle brackets (orange), members (aqua), access modifiers (blue).
+// pointer-access/angle brackets (orange), members (aqua), access modifiers (blue),
+// strings/char literals (yellow), function names (green), constants/type parameters (purple).
 
 #include <iostream>
 #include <vector>

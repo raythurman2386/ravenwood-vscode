@@ -2343,6 +2343,27 @@
       }
     },
     {
+      "name": "C++ yellow",
+      "scope": "string.quoted.double.cpp, string.quoted.single.cpp, punctuation.definition.string.begin.cpp, punctuation.definition.string.end.cpp, constant.character.cpp",
+      "settings": {
+        "foreground": "#b08500"
+      }
+    },
+    {
+      "name": "C++ green",
+      "scope": "entity.name.function.cpp, entity.name.function.definition.cpp, support.function.cpp",
+      "settings": {
+        "foreground": "#5c7a0c"
+      }
+    },
+    {
+      "name": "C++ purple",
+      "scope": "entity.name.type.parameter.cpp, entity.name.constant.cpp, constant.other.cpp, variable.parameter.template.cpp",
+      "settings": {
+        "foreground": "#b84d94"
+      }
+    },
+    {
       "name": "C# red",
       "scope": "keyword.other.using.cs",
       "settings": {
