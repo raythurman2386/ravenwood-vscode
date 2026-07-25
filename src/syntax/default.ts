@@ -432,19 +432,18 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Html orange',
+      name: 'Html red',
       scope:
         'entity.name.tag.html, entity.name.tag.xml, entity.name.tag.localname.xml',
       settings: {
-        foreground: palette.orange,
+        foreground: palette.red,
       },
     },
     {
-      name: 'Html yellow',
-      scope:
-        'entity.other.attribute-name.html, entity.other.attribute-name.xml, entity.other.attribute-name.localname.xml',
+      name: 'Html orange',
+      scope: 'constant.character.entity.html',
       settings: {
-        foreground: palette.yellow,
+        foreground: palette.orange,
       },
     },
     {
@@ -453,6 +452,21 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         'string.quoted.double.html, string.quoted.single.html, punctuation.definition.string.begin.html, punctuation.definition.string.end.html, punctuation.separator.key-value.html, punctuation.definition.string.begin.xml, punctuation.definition.string.end.xml, string.quoted.double.xml, string.quoted.single.xml, punctuation.definition.tag.begin.html, punctuation.definition.tag.end.html, punctuation.definition.tag.xml, meta.tag.xml, meta.tag.preprocessor.xml, meta.tag.other.html, meta.tag.block.any.html, meta.tag.inline.any.html',
       settings: {
         foreground: palette.green,
+      },
+    },
+    {
+      name: 'Html aqua',
+      scope:
+        'entity.other.attribute-name.html, entity.other.attribute-name.xml, entity.other.attribute-name.localname.xml',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'Html blue',
+      scope: 'entity.name.tag.doctype.html',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
