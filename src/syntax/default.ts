@@ -422,6 +422,29 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.purple,
       },
     },
+    {
+      name: 'LaTex green',
+      scope:
+        'string.other.math.latex, markup.raw.verbatim.latex, meta.group.braces.latex',
+      settings: {
+        foreground: palette.green,
+      },
+    },
+    {
+      name: 'LaTex aqua',
+      scope:
+        'support.function.latex, keyword.control.include.latex, meta.function.environment.latex',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'LaTex blue',
+      scope: 'support.type.latex, entity.name.type.latex',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
     // }}}
     // Html/Xml{{{
     {
