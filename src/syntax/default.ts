@@ -1100,10 +1100,11 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
     // }}}
     // Dart{{{
     {
-      name: 'Dart grey',
-      scope: 'punctuation.dot.dart',
+      name: 'Dart red',
+      scope:
+        'keyword.control.dart, keyword.other.dart, keyword.other.import.dart',
       settings: {
-        foreground: palette.grey1,
+        foreground: palette.red,
       },
     },
     {
@@ -1129,6 +1130,13 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'Dart aqua',
+      scope: 'storage.type.annotation.dart',
+      settings: {
+        foreground: palette.aqua,
+      },
+    },
+    {
       name: 'Dart blue',
       scope: 'variable.language.dart',
       settings: {
@@ -1136,10 +1144,10 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
-      name: 'Dart purple',
-      scope: 'keyword.other.import.dart, storage.type.annotation.dart',
+      name: 'Dart grey',
+      scope: 'punctuation.dot.dart',
       settings: {
-        foreground: palette.purple,
+        foreground: palette.grey1,
       },
     },
     // }}}
