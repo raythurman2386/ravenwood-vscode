@@ -2091,10 +2091,10 @@
       }
     },
     {
-      "name": "CoffeeScript green",
-      "scope": "string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee",
+      "name": "CoffeeScript yellow",
+      "scope": "string.quoted.single.coffee, string.quoted.double.coffee, punctuation.definition.string.begin.coffee, punctuation.definition.string.end.coffee, string.interpolated.coffee, entity.name.type.coffee",
       "settings": {
-        "foreground": "#5c7a0c"
+        "foreground": "#b08500"
       }
     },
     {
@@ -2102,6 +2102,13 @@
       "scope": "entity.name.class.coffee, variable.other.readwrite.class.coffee",
       "settings": {
         "foreground": "#1e7d5a"
+      }
+    },
+    {
+      "name": "CoffeeScript blue",
+      "scope": "storage.type.coffee",
+      "settings": {
+        "foreground": "#1a6d9e"
       }
     },
     {
