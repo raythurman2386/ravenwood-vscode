@@ -105,6 +105,15 @@ export function getSemantic(
     'variable:cpp': `${palette.fg}`,
     'field:cpp': `${palette.aqua}`,
     // }}}
+    // C {{{
+    'function:c': `${palette.green}`,
+    'method:c': `${palette.green}`,
+    'variable:c': `${palette.fg}`,
+    'type:c': `${palette.aqua}`,
+    'macro:c': `${palette.aqua}`,
+    'parameter:c': `${palette.blue}`,
+    'namespace:c': `${palette.purple}`,
+    // }}}
     // Rust {{{
     'macro:rust': `${palette.aqua}`,
     'namespace:rust': `${palette.purple}`,
