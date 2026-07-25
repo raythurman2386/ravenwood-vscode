@@ -852,10 +852,26 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
     },
     {
       name: 'TypeScript grey',
-      scope:
-        'keyword.operator.type.annotation.ts, punctuation.accessor.ts, punctuation.separator.key-value.ts',
+      scope: 'punctuation.accessor.ts, punctuation.separator.key-value.ts',
       settings: {
         foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'TypeScript red',
+      scope:
+        'keyword.control.conditional.ts, keyword.control.loop.ts, keyword.control.trycatch.ts, keyword.control.flowcontrol.ts',
+      settings: {
+        foreground: palette.red,
+        fontStyle: 'italic',
+      },
+    },
+    {
+      name: 'TypeScript yellow',
+      scope:
+        'string.quoted.double.ts, string.quoted.single.ts, string.template.ts, punctuation.definition.string.begin.ts, punctuation.definition.string.end.ts, punctuation.definition.string.template.begin.ts, punctuation.definition.string.template.end.ts, entity.name.type.parameter.ts',
+      settings: {
+        foreground: palette.yellow,
       },
     },
     {
@@ -872,6 +888,13 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
         'entity.name.type.ts, entity.name.type.interface.ts, entity.other.inherited-class.ts, entity.name.type.alias.ts, entity.name.type.class.ts, entity.name.type.enum.ts',
       settings: {
         foreground: palette.aqua,
+      },
+    },
+    {
+      name: 'TypeScript blue',
+      scope: 'keyword.operator.type.annotation.ts',
+      settings: {
+        foreground: palette.blue,
       },
     },
     {
