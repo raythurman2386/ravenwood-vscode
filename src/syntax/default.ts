@@ -3139,6 +3139,28 @@ export function getDefaultSyntax(palette: Palette, italicComments: boolean) {
         foreground: palette.blue,
       },
     },
+    {
+      name: 'SQL grey',
+      scope:
+        'punctuation.definition.statement.terminator.sql, punctuation.separator.sql, punctuation.section.parens.begin.sql, punctuation.section.parens.end.sql',
+      settings: {
+        foreground: palette.grey1,
+      },
+    },
+    {
+      name: 'SQL orange',
+      scope: 'keyword.operator.sql, storage.type.sql',
+      settings: {
+        foreground: palette.orange,
+      },
+    },
+    {
+      name: 'SQL purple',
+      scope: 'constant.numeric.sql, constant.language.sql',
+      settings: {
+        foreground: palette.purple,
+      },
+    },
     // }}}
     // JSON{{{
     {
