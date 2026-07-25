@@ -3023,6 +3023,20 @@ export function getItalicSyntax(palette: Palette, italicComments: boolean) {
       },
     },
     {
+      name: 'Tmux yellow',
+      scope: 'string.unquoted.tmux, variable.parameter.tmux, support.type.tmux',
+      settings: {
+        foreground: palette.yellow,
+      },
+    },
+    {
+      name: 'Tmux blue',
+      scope: 'storage.type.tmux, entity.name.type.tmux',
+      settings: {
+        foreground: palette.blue,
+      },
+    },
+    {
       name: 'Tmux purple',
       scope: 'variable.other.tmux, punctuation.definition.variable.tmux',
       settings: {

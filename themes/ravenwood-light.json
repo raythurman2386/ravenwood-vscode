@@ -3897,6 +3897,20 @@
       }
     },
     {
+      "name": "Tmux yellow",
+      "scope": "string.unquoted.tmux, variable.parameter.tmux, support.type.tmux",
+      "settings": {
+        "foreground": "#b08500"
+      }
+    },
+    {
+      "name": "Tmux blue",
+      "scope": "storage.type.tmux, entity.name.type.tmux",
+      "settings": {
+        "foreground": "#1a6d9e"
+      }
+    },
+    {
       "name": "Tmux purple",
       "scope": "variable.other.tmux, punctuation.definition.variable.tmux",
       "settings": {
