@@ -3267,6 +3267,27 @@
       }
     },
     {
+      "name": "Erlang orange",
+      "scope": "keyword.operator.erlang, storage.type.erlang",
+      "settings": {
+        "foreground": "#e69875"
+      }
+    },
+    {
+      "name": "Erlang aqua",
+      "scope": "keyword.control.directive.preprocessor.erlang, entity.name.type.module.erlang, keyword.control.directive.record.erlang, keyword.control.directive.type.erlang, keyword.control.directive.spec.erlang",
+      "settings": {
+        "foreground": "#34d399"
+      }
+    },
+    {
+      "name": "Erlang blue",
+      "scope": "entity.name.type.erlang, support.type.erlang, keyword.type.erlang",
+      "settings": {
+        "foreground": "#22d3ee"
+      }
+    },
+    {
       "name": "Erlang purple",
       "scope": "keyword.control.directive.export.erlang, keyword.control.directive.module.erlang, keyword.control.directive.import.erlang, keyword.control.directive.behaviour.erlang",
       "settings": {
