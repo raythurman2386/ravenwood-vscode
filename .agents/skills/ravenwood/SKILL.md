@@ -1,7 +1,7 @@
 ---
 name: ravenwood
 description: "Use when developing the Ravenwood VS Code theme extension — adding syntax rules, semantic tokens, workbench colors, palette entries, or modifying the build-time/runtime theme generation pipeline. Provides architecture, conventions, color palette, and verification steps."
-version: 1.0.0
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -112,7 +112,7 @@ See `references/palette.md` for the full color tables. Key rules:
 npm run compile        # Full build: clean -> tsc -> generate themes
 npm run compile:ts     # TypeScript only
 npm run compile:themes # Generate default theme JSONs
-npm test               # 81 tests (structural, palette, sync, scope-safety, build-combos)
+npm test               # 254 tests (structural, palette, contrast, sync, scope-safety, build-combos)
 npm run lint           # Biome check (lint + format check)
 npm run format         # Biome format --write
 npm run package        # Package .vsix

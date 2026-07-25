@@ -34,7 +34,7 @@ npm run format        # Biome format --write
 npm test              # Node built-in test runner (node:test + tsx)
 ```
 
-81 tests across 5 suites: structural (theme JSON shape, hex validation), palette (color values match documented specs), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output).
+254 tests across 19 suites: structural (theme JSON shape, hex validation, workbench key coverage), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output).
 
 No automated browser/integration tests. Manual testing:
 

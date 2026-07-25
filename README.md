@@ -10,6 +10,7 @@ Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the
 - **Customizable:** Supports multiple contrast levels, workbench styles, cursor colors, selection colors, and italic options.
 - **Semantic Tokens:** Built-in LSP semantic token support for Go, TypeScript, JavaScript, Python, Rust, Java, C#, C++, and Elm.
 - **Syntax Coverage:** 35+ languages with TextMate scope rules, including Rust, Go, Python, Swift, SQL, TypeScript, GraphQL, Dart, SASS/SCSS, Perl, LaTeX, and more.
+- **Full Workbench Color Coverage:** 100% of official VS Code workbench theme color keys (910/910) — every UI surface themed, from command center and editor borders to terminal symbol icons and SCM graph.
 - **Dynamic Regeneration:** Theme files regenerate automatically when configuration changes — no reload required.
 
 ## Requirements
