@@ -240,6 +240,18 @@ export function getSemantic(
     'constant:pug': `${palette.purple}`,
     'macro:pug': `${palette.aqua}`,
     // }}}
+    // Proto {{{
+    'class:proto': `${palette.aqua}`,
+    'enum:proto': `${palette.purple}`,
+    'enumMember:proto': `${palette.blue}`,
+    'function:proto': `${palette.green}`,
+    'method:proto': `${palette.green}`,
+    'variable:proto': `${palette.fg}`,
+    'parameter:proto': `${palette.blue}`,
+    'property:proto': `${palette.aqua}`,
+    'type:proto': `${palette.aqua}`,
+    'namespace:proto': `${palette.purple}`,
+    // }}}
     // Html {{{
     'tag:html': `${palette.aqua}`,
     'class:html': `${palette.aqua}`,
