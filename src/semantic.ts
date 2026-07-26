@@ -79,6 +79,11 @@ export function getSemantic(
     'variable:java': `${palette.fg}`,
     'property:java': `${palette.aqua}`,
     // }}}
+    // JSON {{{
+    'property:json': `${palette.aqua}`,
+    'string:json': `${palette.yellow}`,
+    'number:json': `${palette.purple}`,
+    // }}}
     // C# {{{
     'class:csharp': `${palette.aqua}`,
     'interface:csharp': `${palette.aqua}`,
