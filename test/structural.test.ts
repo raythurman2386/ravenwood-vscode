@@ -8,6 +8,8 @@
 // {{{
 
 import assert from 'node:assert/strict';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { describe, test } from 'node:test';
 import { buildTheme, isHex } from './helpers';
 
@@ -221,5 +223,156 @@ describe('Workbench color key coverage', () => {
   });
 });
 
+// --- Realm theme JSON structural validation {{{
+
+const themesDir = path.resolve(__dirname, '..', 'themes');
+
+const realmThemes = [
+  { name: 'asgard', label: 'Ravenwood Asgard', type: 'dark' },
+  { name: 'vanaheim', label: 'Ravenwood Vanaheim', type: 'dark' },
+  { name: 'alfheim', label: 'Ravenwood Alfheim', type: 'light' },
+  { name: 'svartalfheim', label: 'Ravenwood Svartalfheim', type: 'dark' },
+  { name: 'nidavellir', label: 'Ravenwood Nidavellir', type: 'dark' },
+  { name: 'jotunheim', label: 'Ravenwood Jotunheim', type: 'dark' },
+  { name: 'muspelheim', label: 'Ravenwood Muspelheim', type: 'dark' },
+  { name: 'helheim', label: 'Ravenwood Helheim', type: 'dark' },
+];
+
+describe('Realm theme JSON structure', () => {
+  for (const realm of realmThemes) {
+    const filePath = path.join(themesDir, `ravenwood-${realm.name}.json`);
+
+    test(`${realm.name}: theme JSON file exists`, () => {
+      assert.ok(
+        fs.existsSync(filePath),
+        `missing theme file: themes/ravenwood-${realm.name}.json — run npm run compile`,
+      );
+    });
+
+    if (!fs.existsSync(filePath)) continue;
+
+    const theme = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+    test(`${realm.name}: has correct name`, () => {
+      assert.equal(theme.name, realm.label);
+    });
+
+    test(`${realm.name}: has correct type`, () => {
+      assert.equal(theme.type, realm.type);
+    });
+
+    test(`${realm.name}: semanticHighlighting is true`, () => {
+      assert.equal(theme.semanticHighlighting, true);
+    });
+
+    test(`${realm.name}: colors object has ≥900 keys`, () => {
+      assert.ok(
+        Object.keys(theme.colors).length >= 900,
+        `${realm.name}: only ${Object.keys(theme.colors).length} workbench color keys`,
+      );
+    });
+
+    test(`${realm.name}: tokenColors array has ≥100 rules`, () => {
+      assert.ok(
+        Array.isArray(theme.tokenColors) && theme.tokenColors.length >= 100,
+        `${realm.name}: only ${theme.tokenColors?.length} tokenColor rules`,
+      );
+    });
+
+    test(`${realm.name}: all workbench colors are valid hex`, () => {
+      for (const [key, value] of Object.entries(theme.colors)) {
+        assert.ok(
+          isHex(value as string),
+          `${realm.name}: colors.${key} is not valid hex: ${value}`,
+        );
+      }
+    });
+
+    test(`${realm.name}: all semantic token colors are valid hex`, () => {
+      for (const [key, value] of Object.entries(theme.semanticTokenColors)) {
+        assert.ok(
+          isHex(value as string),
+          `${realm.name}: semanticTokenColors.${key} is not valid hex: ${value}`,
+        );
+      }
+    });
+
+    test(`${realm.name}: all tokenColor foregrounds are valid hex`, () => {
+      for (const rule of theme.tokenColors) {
+        if (rule.settings.foreground) {
+          assert.ok(
+            isHex(rule.settings.foreground),
+            `${realm.name}: tokenColor "${rule.name}" foreground is not valid hex: ${rule.settings.foreground}`,
+          );
+        }
+      }
+    });
+
+    test(`${realm.name}: no stray "}" in color values`, () => {
+      for (const [key, value] of Object.entries(theme.colors)) {
+        assert.ok(
+          !(value as string).includes('}'),
+          `${realm.name}: colors.${key} contains stray "}" — template literal bug: ${value}`,
+        );
+      }
+    });
+  }
+});
+
+// --- Package.json contributes.themes vs themes/ consistency {{{
+
+describe('Package.json theme contributions consistency', () => {
+  const pkgPath = path.resolve(__dirname, '..', 'package.json');
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+  const contributedThemes: Array<{ label: string; path: string }> =
+    pkg.contributes?.themes ?? [];
+
+  test('every contributed theme path has a corresponding file in themes/', () => {
+    for (const t of contributedThemes) {
+      const fileName = path.basename(t.path);
+      const fullPath = path.join(themesDir, fileName);
+      assert.ok(
+        fs.existsSync(fullPath),
+        `package.json contributes "${t.label}" → ${t.path}, but file themes/${fileName} does not exist`,
+      );
+    }
+  });
+
+  test('every theme file in themes/ is contributed in package.json', () => {
+    const contributedFiles = new Set(
+      contributedThemes.map((t) => path.basename(t.path)),
+    );
+    const filesOnDisk = fs
+      .readdirSync(themesDir)
+      .filter((f) => f.endsWith('.json'));
+    for (const file of filesOnDisk) {
+      assert.ok(
+        contributedFiles.has(file),
+        `themes/${file} exists but is not listed in package.json contributes.themes`,
+      );
+    }
+  });
+
+  test('all contributed themes have unique labels', () => {
+    const labels = contributedThemes.map((t) => t.label);
+    const dupes = labels.filter((l, i) => labels.indexOf(l) !== i);
+    assert.equal(
+      dupes.length,
+      0,
+      `duplicate theme labels: ${dupes.join(', ')}`,
+    );
+  });
+
+  test('all contributed themes have valid uiTheme values', () => {
+    for (const t of contributedThemes) {
+      assert.ok(
+        t.uiTheme === 'vs-dark' || t.uiTheme === 'vs',
+        `theme "${t.label}" has invalid uiTheme: ${t.uiTheme}`,
+      );
+    }
+  });
+});
+
 // }}}
+
 // vim: fdm=marker fmr={{{,}}}:

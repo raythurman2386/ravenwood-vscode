@@ -13,15 +13,24 @@ src/
 ├── utils.ts             Utils class — config detection, file writing, regeneration
 ├── semantic.ts          LSP semantic token colors
 ├── hook/
-│   └── generateThemes.ts   Build-time script that writes default themes/*.json
+│   └── generateThemes.ts   Build-time script that writes default themes/*.json + 8 realm themes
 ├── palette/
 │   ├── index.ts            getPalette — picks foreground + background by variant × contrast
 │   ├── dark/
 │   │   ├── foreground.ts
 │   │   └── background/{soft,medium,hard}.ts
-│   └── light/
-│       ├── foreground.ts
-│       └── background/{soft,medium,hard}.ts
+│   ├── light/
+│   │   ├── foreground.ts
+│   │   └── background/{soft,medium,hard}.ts
+│   └── realms/
+│       ├── asgard.ts           Dark — golden/majestic (gold, royal purple)
+│       ├── vanaheim.ts        Dark — verdant/fertile (deep greens, earth browns)
+│       ├── alfheim.ts          Light — ethereal/luminous (pastels, silvery whites)
+│       ├── svartalfheim.ts    Dark — subterranean (deep indigos, charcoal)
+│       ├── nidavellir.ts      Dark — forge/industry (amber, molten gold, steel)
+│       ├── jotunheim.ts       Dark — cold/vast (ice blues, frost whites)
+│       ├── muspelheim.ts      Dark — fire/primordial (deep reds, magma, black)
+│       └── helheim.ts         Dark — desolate/muted (muted purples, greys)
 ├── workbench/
 │   ├── index.ts            getWorkbench — dispatches by workbench style
 │   ├── common.ts           shared helpers (selection, cursor, diagnostic, variant colors)
@@ -73,6 +82,12 @@ On activation, `Utils.isNewlyInstalled()` checks for a `.flag` file alongside th
 ## Build-Time Generation
 
 `src/hook/generateThemes.ts` is run by `npm run compile:themes` (part of `npm run compile`). It builds a default `Configuration` (all defaults) and calls the same pure `getThemeData()` helper from `src/themeData.ts`, writing the result into `themes/ravenwood-{dark,light}.json`. This script must **not** import the `vscode` module (it runs under plain Node), which is why the `ThemeData` builder lives in the separate `src/themeData.ts` module rather than in `src/utils.ts`.
+
+### Realm Themes
+
+After generating the base Dark/Light themes, `generateThemes.ts` also generates 8 static realm theme JSONs. Each realm palette lives in `src/palette/realms/<name>.ts` and conforms to the same `Palette` interface used by the base themes. The realm themes are built using the existing `materialWorkbench()`, `getItalicSyntax()`, and `getSemanticFromPalette()` functions directly — bypassing the `getPalette(config, variant)` dispatcher since realms have no user-configurable options.
+
+Realm themes are **static artistic statements**: fixed material workbench style, grey selection, fg cursor, 0% diagnostic opacity, italic keywords + comments. They use the same 971 workbench color keys and full semantic token coverage as the base themes, but are not affected by runtime configuration changes. The `getSemanticFromPalette()` function in `src/semantic.ts` is the palette-direct variant of `getSemantic()` — it accepts a `Palette` directly instead of a `(Configuration, variant)` pair.
 
 ## Palette
 

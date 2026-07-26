@@ -2,7 +2,12 @@
 
 ## Agent Skills
 
-This repo includes a skill at `.agents/skills/ravenwood/SKILL.md` with full architecture, color palette, conventions, and verification checklists. Agents that support the `.agents/skills/` convention (OpenCode, Hermes, Cursor, etc.) should load it automatically. For agents that don't, read that file before working on theme files — it contains the syntax/semantic color mapping rules and common pitfalls that prevent regressions.
+This repo includes two skills under `.agents/skills/`:
+
+- **`ravenwood/SKILL.md`** — Project-specific: architecture, color palette, conventions, build commands, and verification checklists. Read this before working on theme files — it contains the syntax/semantic color mapping rules and common pitfalls that prevent regressions.
+- **`vscode/SKILL.md`** — General VS Code theme extension patterns: palette design, workbench/syntax/semantic token mapping, dynamic vs static theme generation, build pipeline, testing, and publishing. Use when adding new theme architecture or patterns.
+
+Agents that support the `.agents/skills/` convention (OpenCode, Hermes, Cursor, etc.) should load them automatically. For agents that don't, read the relevant file before working on theme files.
 
 ## Project Overview
 
@@ -34,7 +39,7 @@ npm run format        # Biome format --write
 npm test              # Node built-in test runner (node:test + tsx)
 ```
 
-254 tests across 19 suites: structural (theme JSON shape, hex validation, workbench key coverage), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output).
+574 tests across 33 suites: structural (theme JSON shape, hex validation, workbench key coverage, realm JSON validation, package.json consistency), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output), realms (8 realm palettes: validity, contrast, accent distinctness, bg gradient, dim integrity, realm-to-realm distinctness), semantic-workbench (getSemanticFromPalette, language coverage, workbench style isolation).
 
 No automated browser/integration tests. Manual testing:
 
@@ -171,6 +176,7 @@ Colors are defined in `src/palette/`:
 - `src/palette/dark/foreground.ts` - Dark foreground colors
 - `src/palette/light/background/{soft,medium,hard}.ts` - Light variant backgrounds
 - `src/palette/light/foreground.ts` - Light foreground colors
+- `src/palette/realms/` - 8 realm palettes (Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, Helheim)
 - `src/palette/index.ts` - Palette retrieval logic
 
 Each palette exports a `Palette` interface with colors like `bg0`, `bg1`, `fg`, `red`, `orange`, `yellow`, `green`, `aqua`, `blue`, `purple`, and their dim variants.

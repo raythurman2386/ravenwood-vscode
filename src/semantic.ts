@@ -4,15 +4,13 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import type { Configuration } from './interface';
+import type { Configuration, Palette } from './interface';
 import { getPalette } from './palette';
 
-/** Return the semantic-token color map for a variant. Used for LSP-provided tokens. */
-export function getSemantic(
-  configuration: Configuration,
-  variant: string,
+/** Return the semantic-token color map for a palette. Used for LSP-provided tokens. */
+export function getSemanticFromPalette(
+  palette: Palette,
 ): Record<string, string> {
-  const palette = getPalette(configuration, variant);
   return {
     // General {{{
     operatorOverload: `${palette.orange}`,
@@ -517,6 +515,15 @@ export function getSemantic(
     'function:toml': `${palette.green}`,
     // }}}
   };
+}
+
+/** Return the semantic-token color map for a variant. Used for LSP-provided tokens. */
+export function getSemantic(
+  configuration: Configuration,
+  variant: string,
+): Record<string, string> {
+  const palette = getPalette(configuration, variant);
+  return getSemanticFromPalette(palette);
 }
 
 // vim: fdm=marker fmr={{{,}}}:
