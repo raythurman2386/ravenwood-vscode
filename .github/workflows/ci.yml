@@ -38,11 +38,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Test
-        run: npm test
-
       - name: Compile
         run: npm run compile
+
+      - name: Test
+        run: npm test
 
       - name: Package
         run: npm run package
