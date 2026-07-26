@@ -376,6 +376,12 @@ export function getSemantic(
     'typeParameter:scala': `${palette.purple}`,
     'namespace:scala': `${palette.purple}`,
     // }}}
+    // SQL {{{
+    'function:sql': `${palette.green}`,
+    'variable:sql': `${palette.fg}`,
+    'type:sql': `${palette.aqua}`,
+    'parameter:sql': `${palette.blue}`,
+    // }}}
     // Swift {{{
     'class:swift': `${palette.aqua}`,
     'struct:swift': `${palette.aqua}`,
