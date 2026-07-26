@@ -226,6 +226,20 @@ export function getSemantic(
     'property:php': `${palette.aqua}`,
     'namespace:php': `${palette.purple}`,
     // }}}
+    // Pug {{{
+    'tag:pug': `${palette.aqua}`,
+    'class:pug': `${palette.aqua}`,
+    'type:pug': `${palette.aqua}`,
+    'function:pug': `${palette.green}`,
+    'method:pug': `${palette.green}`,
+    'variable:pug': `${palette.fg}`,
+    'parameter:pug': `${palette.blue}`,
+    'property:pug': `${palette.aqua}`,
+    'namespace:pug': `${palette.purple}`,
+    'module:pug': `${palette.purple}`,
+    'constant:pug': `${palette.purple}`,
+    'macro:pug': `${palette.aqua}`,
+    // }}}
     // Html {{{
     'tag:html': `${palette.aqua}`,
     'class:html': `${palette.aqua}`,
