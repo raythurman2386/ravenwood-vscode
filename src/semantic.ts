@@ -256,6 +256,11 @@ export function getSemantic(
     'variable:perl': `${palette.fg}`,
     'namespace:perl': `${palette.purple}`,
     // }}}
+    // Shell {{{
+    'function:shellscript': `${palette.green}`,
+    'variable:shellscript': `${palette.fg}`,
+    'parameter:shellscript': `${palette.blue}`,
+    // }}}
     // PowerShell {{{
     'function:powershell': `${palette.green}`,
     'method:powershell': `${palette.green}`,
