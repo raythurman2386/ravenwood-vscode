@@ -351,6 +351,27 @@ export function getSemantic(
     'table:lua': `${palette.aqua}`,
     'property:lua': `${palette.aqua}`,
     // }}}
+    // Markdown {{{
+    'heading:markdown': `${palette.aqua}`,
+    'emphasis:markdown': `${palette.fg}`,
+    'strong:markdown': `${palette.fg}`,
+    'link:markdown': `${palette.green}`,
+    'code:markdown': `${palette.green}`,
+    'string:markdown': `${palette.yellow}`,
+    'type:markdown': `${palette.aqua}`,
+    'variable:markdown': `${palette.fg}`,
+    'function:markdown': `${palette.green}`,
+    'parameter:markdown': `${palette.blue}`,
+    'property:markdown': `${palette.aqua}`,
+    'namespace:markdown': `${palette.purple}`,
+    'keyword:markdown': `${palette.red}`,
+    'comment:markdown': `${palette.grey0}`,
+    'operator:markdown': `${palette.orange}`,
+    'number:markdown': `${palette.purple}`,
+    'macro:markdown': `${palette.aqua}`,
+    'enumMember:markdown': `${palette.blue}`,
+    'class:markdown': `${palette.aqua}`,
+    // }}}
     // R {{{
     'class:r': `${palette.aqua}`,
     'function:r': `${palette.green}`,
