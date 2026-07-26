@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2026-07-26
+
+### Fixed
+- semantic: add semantic token rules for Fish (#105)
+- semantic: add semantic token rules for Shell/Bash (#104)
+- semantic: add semantic token rules for GraphQL (#103)
+- semantic: add semantic token rules for PowerShell (#102)
+- semantic: add semantic token rules for CSS (#101)
+- semantic: add semantic token rules for C (#100)
+- syntax: expand Dart TextMate scopes (currently 6 rules) (#78)
+- syntax: expand Perl TextMate scopes (currently 6 rules) (#77)
+- syntax: expand LaTeX TextMate scopes (currently 5 rules) (#76)
+- syntax: expand HTML TextMate scopes (currently 5 rules) (#75)
+- syntax: expand PureScript TextMate scopes (currently 5 rules) (#74)
+- syntax: expand Go TextMate scopes (currently 6 rules) (#73)
+- syntax: expand Fish TextMate scopes (currently 5 rules) (#72)
+- expand TypeScript TextMate scopes with red, yellow, and blue categories (#71)
+- expand C# TextMate scopes with grey, orange, and blue categories (#70)
+- expand CoffeeScript TextMate scopes with yellow and blue categories (#69)
+- expand Haskell TextMate scopes with grey, red, and purple categories (#68)
+- expand Erlang TextMate scopes with orange, aqua, and blue categories (#67)
+- expand Dockerfile TextMate scopes with grey, red, and blue categories (#66)
+- expand SQL TextMate scopes with grey, orange, and purple categories (#64)
+- expand F# TextMate scopes with grey, red, orange, and aqua categories (#65)
+- expand C++ TextMate scopes with yellow, green, and purple categories (#63)
+- expand Tmux TextMate scopes with yellow and blue categories (#62)
+- syntax: expand Java TextMate scopes (currently 5 rules) (#61)
+- syntax: expand C TextMate scopes (currently 5 rules) (#60)
+
+### Other
+- chore: updated sponsor and buy me a coffee link
+- chore: untrack generated theme JSON files
+
 ## [1.1.1] - 2026-07-25
 
 ### Fixed
