@@ -144,6 +144,16 @@ export function getSemantic(
     'constant:go': `${palette.purple}`,
     'typeParameter:go': `${palette.purple}`,
     // }}}
+    // GraphQL {{{
+    'type:graphql': `${palette.aqua}`,
+    'variable:graphql': `${palette.fg}`,
+    'function:graphql': `${palette.green}`,
+    'parameter:graphql': `${palette.blue}`,
+    'property:graphql': `${palette.aqua}`,
+    'enum:graphql': `${palette.aqua}`,
+    'enumMember:graphql': `${palette.blue}`,
+    'namespace:graphql': `${palette.purple}`,
+    // }}}
     // Elm {{{
     'type:elm': `${palette.aqua}`,
     'typeAlias:elm': `${palette.aqua}`,
