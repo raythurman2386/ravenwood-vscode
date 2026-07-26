@@ -1,7 +1,7 @@
 ---
 name: ravenwood
 description: "Use when developing the Ravenwood VS Code theme extension — adding syntax rules, semantic tokens, workbench colors, palette entries, or modifying the build-time/runtime theme generation pipeline. Provides architecture, conventions, color palette, and verification steps."
-version: 1.1.0
+version: 2.0.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -43,13 +43,14 @@ User Config → getPalette() → getWorkbench() + getSyntax() + getSemantic() �
 | `src/interface.ts` | TypeScript interfaces: `Configuration`, `Palette`, `ThemeData`, `SyntaxRule` |
 | `src/themeData.ts` | Pure `getThemeData()` builder — shared by runtime + build-time |
 | `src/utils.ts` | `Utils` class — config detection, file writing, regeneration |
-| `src/semantic.ts` | LSP semantic token color mappings |
-| `src/hook/generateThemes.ts` | Build-time script → writes `themes/*.json` |
+| `src/semantic.ts` | LSP semantic token color mappings (`getSemantic` + `getSemanticFromPalette`) |
+| `src/hook/generateThemes.ts` | Build-time script → writes `themes/*.json` (Dark/Light + 8 realm themes) |
 | `src/palette/index.ts` | `getPalette()` — dispatches by variant × contrast |
 | `src/palette/dark/foreground.ts` | Dark foreground + accent colors |
 | `src/palette/dark/background/{soft,medium,hard}.ts` | Dark bg0–bg5, shadow per contrast |
 | `src/palette/light/foreground.ts` | Light foreground + accent colors |
 | `src/palette/light/background/{soft,medium,hard}.ts` | Light bg0–bg5, shadow per contrast |
+| `src/palette/realms/*.ts` | 8 realm palettes (Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, Helheim) — static themes generated at build time |
 | `src/workbench/index.ts` | `getWorkbench()` — dispatches by style |
 | `src/workbench/base.ts` | Shared ~95% token map + highContrast flag overlay |
 | `src/workbench/common.ts` | Selection, cursor, diagnostic, variant color helpers |
@@ -112,7 +113,7 @@ See `references/palette.md` for the full color tables. Key rules:
 npm run compile        # Full build: clean -> tsc -> generate themes
 npm run compile:ts     # TypeScript only
 npm run compile:themes # Generate default theme JSONs
-npm test               # 254 tests (structural, palette, contrast, sync, scope-safety, build-combos)
+npm test               # 574 tests (structural, palette, contrast, sync, scope-safety, build-combos, realms, semantic-workbench)
 npm run lint           # Biome check (lint + format check)
 npm run format         # Biome format --write
 npm run package        # Package .vsix

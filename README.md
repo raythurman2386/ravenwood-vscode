@@ -14,6 +14,7 @@ Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the
 - **Syntax Coverage:** 35+ languages with TextMate scope rules, including Rust, Go, Python, Swift, SQL, TypeScript, GraphQL, Dart, SASS/SCSS, Perl, LaTeX, and more.
 - **Full Workbench Color Coverage:** 100% of official VS Code workbench theme color keys (910/910) — every UI surface themed, from command center and editor borders to terminal symbol icons and SCM graph.
 - **Dynamic Regeneration:** Theme files regenerate automatically when configuration changes — no reload required.
+- **Realm Themes:** 8 additional static themes inspired by Norse cosmology — Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, and Helheim. Each realm is a fixed artistic statement with its own color identity, generated at build time alongside the base Dark/Light themes.
 
 ## Requirements
 
@@ -25,7 +26,7 @@ Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the
 2. Search for `Ravenwood`
 3. Click **Install**
 4. Click **Reload**
-5. File -> Preferences -> Color Theme -> **Ravenwood Dark** (or **Ravenwood Light**)
+5. File -> Preferences -> Color Theme -> **Ravenwood Dark** (or **Ravenwood Light**, or any of the 8 realm themes: **Ravenwood Asgard**, **Ravenwood Vanaheim**, **Ravenwood Alfheim**, **Ravenwood Svartalfheim**, **Ravenwood Nidavellir**, **Ravenwood Jotunheim**, **Ravenwood Muspelheim**, **Ravenwood Helheim**)
 
 ## Configuration
 
