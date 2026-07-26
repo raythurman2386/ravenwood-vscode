@@ -367,6 +367,15 @@ export function getSemantic(
     'package:commonlisp': `${palette.purple}`,
     'generic:commonlisp': `${palette.aqua}`,
     // }}}
+    // reStructuredText {{{
+    'namespace:restructuredtext': `${palette.purple}`,
+    'type:restructuredtext': `${palette.aqua}`,
+    'function:restructuredtext': `${palette.green}`,
+    'parameter:restructuredtext': `${palette.blue}`,
+    'variable:restructuredtext': `${palette.fg}`,
+    'macro:restructuredtext': `${palette.aqua}`,
+    'class:restructuredtext': `${palette.aqua}`,
+    // }}}
     // Ruby {{{
     'class:ruby': `${palette.aqua}`,
     'module:ruby': `${palette.purple}`,
