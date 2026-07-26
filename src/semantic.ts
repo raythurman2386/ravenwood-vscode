@@ -387,6 +387,13 @@ export function getSemantic(
     'variable:swift': `${palette.fg}`,
     'property:swift': `${palette.aqua}`,
     // }}}
+    // Fish {{{
+    'function:fish': `${palette.orange}`,
+    'variable:fish': `${palette.blue}`,
+    'parameter:fish': `${palette.blue}`,
+    'keyword:fish': `${palette.red}`,
+    'constant:fish': `${palette.purple}`,
+    // }}}
     // CSS {{{
     'property:css': `${palette.aqua}`,
     'variable:css': `${palette.fg}`,
