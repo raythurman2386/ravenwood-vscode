@@ -441,6 +441,17 @@ export function getSemantic(
     'class:yaml': `${palette.aqua}`,
     'macro:yaml': `${palette.aqua}`,
     // }}}
+    // TOML {{{
+    'property:toml': `${palette.aqua}`,
+    'string:toml': `${palette.yellow}`,
+    'number:toml': `${palette.purple}`,
+    'keyword:toml': `${palette.red}`,
+    'variable:toml': `${palette.fg}`,
+    'type:toml': `${palette.aqua}`,
+    'namespace:toml': `${palette.purple}`,
+    'parameter:toml': `${palette.blue}`,
+    'function:toml': `${palette.green}`,
+    // }}}
   };
 }
 
