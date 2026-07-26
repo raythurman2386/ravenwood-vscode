@@ -4,15 +4,13 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import type { Configuration } from './interface';
+import type { Configuration, Palette } from './interface';
 import { getPalette } from './palette';
 
-/** Return the semantic-token color map for a variant. Used for LSP-provided tokens. */
-export function getSemantic(
-  configuration: Configuration,
-  variant: string,
+/** Return the semantic-token color map for a palette. Used for LSP-provided tokens. */
+export function getSemanticFromPalette(
+  palette: Palette,
 ): Record<string, string> {
-  const palette = getPalette(configuration, variant);
   return {
     // General {{{
     operatorOverload: `${palette.orange}`,
@@ -388,6 +386,15 @@ export function getSemantic(
     'package:commonlisp': `${palette.purple}`,
     'generic:commonlisp': `${palette.aqua}`,
     // }}}
+    // reStructuredText {{{
+    'namespace:restructuredtext': `${palette.purple}`,
+    'type:restructuredtext': `${palette.aqua}`,
+    'function:restructuredtext': `${palette.green}`,
+    'parameter:restructuredtext': `${palette.blue}`,
+    'variable:restructuredtext': `${palette.fg}`,
+    'macro:restructuredtext': `${palette.aqua}`,
+    'class:restructuredtext': `${palette.aqua}`,
+    // }}}
     // Ruby {{{
     'class:ruby': `${palette.aqua}`,
     'module:ruby': `${palette.purple}`,
@@ -520,6 +527,15 @@ export function getSemantic(
     'function:toml': `${palette.green}`,
     // }}}
   };
+}
+
+/** Return the semantic-token color map for a variant. Used for LSP-provided tokens. */
+export function getSemantic(
+  configuration: Configuration,
+  variant: string,
+): Record<string, string> {
+  const palette = getPalette(configuration, variant);
+  return getSemanticFromPalette(palette);
 }
 
 // vim: fdm=marker fmr={{{,}}}:

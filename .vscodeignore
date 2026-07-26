@@ -2,6 +2,7 @@
 .flag
 *.vsix
 **/*.ts
+**/*.map
 tsconfig.json
 dist/hook
 .github
@@ -10,9 +11,13 @@ dist/hook
 .eslintignore
 .vscode-test-web
 samples
+scripts
 biome.json
 AGENTS.md
 ARCHITECTURE.md
 CONFIGURATION.md
+CONTRIBUTING.md
 GEMINI.md
 .agents
+.hermes
+themes/.gitkeep
