@@ -246,6 +246,14 @@ export function getSemantic(
     'variable:perl': `${palette.fg}`,
     'namespace:perl': `${palette.purple}`,
     // }}}
+    // PowerShell {{{
+    'function:powershell': `${palette.green}`,
+    'method:powershell': `${palette.green}`,
+    'variable:powershell': `${palette.fg}`,
+    'parameter:powershell': `${palette.blue}`,
+    'type:powershell': `${palette.aqua}`,
+    'namespace:powershell': `${palette.purple}`,
+    // }}}
     // Clojure {{{
     'function:clojure': `${palette.green}`,
     'method:clojure': `${palette.green}`,
