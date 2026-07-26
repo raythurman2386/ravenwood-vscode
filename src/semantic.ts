@@ -215,6 +215,14 @@ export function getSemantic(
     'namespace:kotlin': `${palette.purple}`,
     'typeParameter:kotlin': `${palette.purple}`,
     // }}}
+    // LaTex {{{
+    'function:latex': `${palette.green}`,
+    'variable:latex': `${palette.fg}`,
+    'parameter:latex': `${palette.blue}`,
+    'type:latex': `${palette.aqua}`,
+    'namespace:latex': `${palette.purple}`,
+    'macro:latex': `${palette.aqua}`,
+    // }}}
     // PHP {{{
     'class:php': `${palette.aqua}`,
     'interface:php': `${palette.aqua}`,
