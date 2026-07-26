@@ -104,6 +104,7 @@ describe('Semantic token language coverage', () => {
     'elixir',
     'html',
     'xml',
+    'stylus',
   ];
 
   test(`covers all ${expectedLangs.length} expected language IDs`, () => {

@@ -491,6 +491,19 @@ export function getSemanticFromPalette(
     'constant:scss': `${palette.purple}`,
     'keyword:scss': `${palette.red}`,
     // }}}
+    // Stylus {{{
+    'property:stylus': `${palette.aqua}`,
+    'variable:stylus': `${palette.blue}`,
+    'function:stylus': `${palette.yellow}`,
+    'method:stylus': `${palette.green}`,
+    'type:stylus': `${palette.aqua}`,
+    'class:stylus': `${palette.aqua}`,
+    'parameter:stylus': `${palette.blue}`,
+    'namespace:stylus': `${palette.purple}`,
+    'constant:stylus': `${palette.purple}`,
+    'keyword:stylus': `${palette.red}`,
+    'macro:stylus': `${palette.purple}`,
+    // }}}
     // Diff {{{
     'type:diff': `${palette.aqua}`,
     'variable:diff': `${palette.fg}`,
