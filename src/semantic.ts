@@ -424,6 +424,23 @@ export function getSemantic(
     'parameter:diff': `${palette.blue}`,
     'namespace:diff': `${palette.purple}`,
     // }}}
+    // YAML {{{
+    'type:yaml': `${palette.aqua}`,
+    'variable:yaml': `${palette.fg}`,
+    'parameter:yaml': `${palette.blue}`,
+    'property:yaml': `${palette.aqua}`,
+    'namespace:yaml': `${palette.purple}`,
+    'function:yaml': `${palette.green}`,
+    'method:yaml': `${palette.green}`,
+    'keyword:yaml': `${palette.red}`,
+    'string:yaml': `${palette.yellow}`,
+    'number:yaml': `${palette.purple}`,
+    'comment:yaml': `${palette.grey0}`,
+    'operator:yaml': `${palette.orange}`,
+    'enumMember:yaml': `${palette.blue}`,
+    'class:yaml': `${palette.aqua}`,
+    'macro:yaml': `${palette.aqua}`,
+    // }}}
   };
 }
 
