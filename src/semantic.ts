@@ -472,6 +472,18 @@ export function getSemantic(
     'constant:css': `${palette.purple}`,
     'keyword:css': `${palette.red}`,
     // }}}
+    // SASS {{{
+    'property:scss': `${palette.aqua}`,
+    'variable:scss': `${palette.fg}`,
+    'function:scss': `${palette.green}`,
+    'method:scss': `${palette.green}`,
+    'type:scss': `${palette.aqua}`,
+    'class:scss': `${palette.aqua}`,
+    'parameter:scss': `${palette.blue}`,
+    'namespace:scss': `${palette.purple}`,
+    'constant:scss': `${palette.purple}`,
+    'keyword:scss': `${palette.red}`,
+    // }}}
     // Diff {{{
     'type:diff': `${palette.aqua}`,
     'variable:diff': `${palette.fg}`,
