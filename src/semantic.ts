@@ -412,6 +412,13 @@ export function getSemantic(
     'constant:css': `${palette.purple}`,
     'keyword:css': `${palette.red}`,
     // }}}
+    // Diff {{{
+    'type:diff': `${palette.aqua}`,
+    'variable:diff': `${palette.fg}`,
+    'function:diff': `${palette.green}`,
+    'parameter:diff': `${palette.blue}`,
+    'namespace:diff': `${palette.purple}`,
+    // }}}
   };
 }
 
