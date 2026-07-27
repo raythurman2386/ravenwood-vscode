@@ -77,7 +77,7 @@ The `activate()` function receives an `ExtensionContext` and pushes the `onDidCh
 
 ### Newly-Installed Detection
 
-On activation, `Utils.isNewlyInstalled()` checks for a `.flag` file alongside the extension. If absent (first run), it creates the flag and returns `true`. If the user's config is also non-default, themes are regenerated once to honor those settings. Subsequent activations skip this path.
+On activation, `Utils.isNewlyInstalled(context)` uses `ExtensionContext.globalState` to persist the installed version string under the key `ravenwood.installedVersion`. If the stored version differs from the current `package.json` version (first install or upgrade), it updates the stored version and returns `true`. If the user's config is also non-default, themes are regenerated once to honor those settings. Subsequent activations with the same version skip this path.
 
 ## Build-Time Generation
 

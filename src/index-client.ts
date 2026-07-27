@@ -35,7 +35,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   );
 
   // Regenerate theme files if it's newly installed but the user settings are not the default.
-  const newlyInstalled = await utils.isNewlyInstalled();
+  const newlyInstalled = await utils.isNewlyInstalled(context);
   if (newlyInstalled) {
     const configuration = utils.getConfiguration();
     if (!utils.isDefaultConfiguration(configuration)) {
