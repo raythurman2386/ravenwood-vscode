@@ -5,8 +5,11 @@
  *--------------------------------------------------------------*/
 
 import * as fs from 'node:fs';
-import { join } from 'node:path';
-import { type ConfigurationChangeEvent, workspace } from 'vscode';
+import {
+  type ConfigurationChangeEvent,
+  type ExtensionContext,
+  workspace,
+} from 'vscode';
 import type { Configuration, ThemeData } from './interface';
 import { getThemeData } from './themeData';
 
@@ -66,16 +69,17 @@ export default class Utils {
     // {{{
     return getThemeData(configuration);
   } // }}}
-  /** Return true on first activation (when the `.flag` sentinel file is absent) and create the flag. */
-  async isNewlyInstalled(): Promise<boolean> {
+  /** Return true on first activation or after an upgrade (when the stored version differs from the current version). Uses `ExtensionContext.globalState` which persists across extension versions. */
+  async isNewlyInstalled(context: ExtensionContext): Promise<boolean> {
     // {{{
-    const flagPath = join(__dirname, '..', '.flag');
-    if (!fs.existsSync(flagPath)) {
-      await this.writeFile(flagPath, '');
+    const key = 'ravenwood.installedVersion';
+    const currentVersion: string = context.extension.packageJSON.version;
+    const storedVersion: string | undefined = context.globalState.get(key);
+    if (storedVersion !== currentVersion) {
+      await context.globalState.update(key, currentVersion);
       return true;
-    } else {
-      return false;
     }
+    return false;
   } // }}}
   /** Write JSON-serialized data to a path, replacing the file if it exists. */
   private async writeFile(path: string, data: unknown): Promise<void> {

@@ -1,5 +1,4 @@
 .gitignore
-.flag
 *.vsix
 **/*.ts
 **/*.map
