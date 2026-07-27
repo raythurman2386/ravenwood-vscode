@@ -840,7 +840,7 @@ export function getBaseWorkbenchTokens(
 
     // terminal.* — extended
     'terminal.background': `${palette.bg}`,
-    'terminal.border': `${palette.bg5}`,
+    'terminal.border': `${palette.bg}`,
     'terminal.selectionBackground': `${editorSelectionBg}`,
     'terminal.selectionForeground': `${palette.fg}`,
     'terminal.inactiveSelectionBackground': `${editorSelectionBgHl}`,
@@ -852,7 +852,7 @@ export function getBaseWorkbenchTokens(
     'terminalCursor.background': `${palette.bg}`,
     'terminal.dropBackground': `${palette.bg2}80`,
     'terminal.hoverHighlightBackground': `${palette.bg2}`,
-    'terminalOverviewRuler.border': `${palette.bg5}`,
+    'terminalOverviewRuler.border': `${palette.bg}00`,
     'terminalOverviewRuler.findMatchForeground': `${palette.dimAqua}`,
     'terminalOverviewRuler.cursorForeground': `${cursorFg}`,
     'terminal.tab.activeBorder': `${palette.badge}d0`,
