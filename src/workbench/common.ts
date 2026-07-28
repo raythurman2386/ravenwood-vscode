@@ -63,10 +63,15 @@ export function getSelectionColors(
         editorSelectionBg = `${palette.dimPurple}40`;
         editorSelectionBgHl = `${palette.dimPurple}20`;
         break;
-      default:
+      case undefined:
         selectionBg = `${palette.bg4}e0`;
         editorSelectionBg = `${palette.bg4}c0`;
         editorSelectionBgHl = `${palette.bg4}60`;
+        break;
+      default: {
+        const _exhaustive: never = configuration.darkSelection;
+        throw new Error(`Unhandled darkSelection: ${_exhaustive as string}`);
+      }
     }
   } else if (variant === 'light') {
     switch (configuration.lightSelection) {
@@ -110,10 +115,15 @@ export function getSelectionColors(
         editorSelectionBg = `${palette.dimPurple}40`;
         editorSelectionBgHl = `${palette.dimPurple}20`;
         break;
-      default:
+      case undefined:
         selectionBg = `${palette.bg4}c0`;
         editorSelectionBg = `${palette.bg4}a0`;
         editorSelectionBgHl = `${palette.bg4}50`;
+        break;
+      default: {
+        const _exhaustive: never = configuration.lightSelection;
+        throw new Error(`Unhandled lightSelection: ${_exhaustive as string}`);
+      }
     }
   } else {
     throw new Error(`Unknown variant: ${variant}`);
@@ -145,8 +155,12 @@ export function getCursorColor(
         return palette.blue;
       case 'purple':
         return palette.purple;
-      default:
+      case undefined:
         return palette.fg;
+      default: {
+        const _exhaustive: never = configuration.darkCursor;
+        throw new Error(`Unhandled darkCursor: ${_exhaustive as string}`);
+      }
     }
   } else if (variant === 'light') {
     switch (configuration.lightCursor) {
@@ -166,8 +180,12 @@ export function getCursorColor(
         return palette.blue;
       case 'purple':
         return palette.purple;
-      default:
+      case undefined:
         return palette.fg;
+      default: {
+        const _exhaustive: never = configuration.lightCursor;
+        throw new Error(`Unhandled lightCursor: ${_exhaustive as string}`);
+      }
     }
   } else {
     throw new Error(`Unknown variant: ${variant}`);
@@ -187,8 +205,14 @@ export function getDiagnosticOpacity(configuration: Configuration): string {
       return '60';
     case '50%':
       return '80';
-    default:
+    case undefined:
       return '00';
+    default: {
+      const _exhaustive: never = configuration.diagnosticTextBackgroundOpacity;
+      throw new Error(
+        `Unhandled diagnosticTextBackgroundOpacity: ${_exhaustive as string}`,
+      );
+    }
   }
 }
 

@@ -5,25 +5,39 @@
  *--------------------------------------------------------------*/
 
 // To add a new configuration option:
-// 1. Edit package.json
-// 2. Add the configuration option in this interface
-// 3. utils.getConfiguration()
-// 4. utils.isDefaultConfiguration()
-// 5. generateThemes.ts
+// 1. Edit package.json (declares the `enum` constraint for the UI)
+// 2. Add the configuration option to the `Configuration` interface below
+// The type system (union types + `never` exhaustiveness checks in every
+// dispatch site) catches the rest — no manual 5-place checklist required.
+
+export type Contrast = 'soft' | 'medium' | 'hard';
+export type WorkbenchStyle = 'material' | 'flat' | 'high-contrast';
+export type Hue =
+  | 'red'
+  | 'orange'
+  | 'yellow'
+  | 'green'
+  | 'aqua'
+  | 'blue'
+  | 'purple';
+export type DarkCursorColor = 'white' | Hue;
+export type LightCursorColor = 'black' | Hue;
+export type SelectionColor = 'grey' | Hue;
+export type DiagnosticOpacity = '0%' | '12.5%' | '25%' | '37.5%' | '50%';
 
 /** User-facing configuration options under the `ravenwood.*` namespace. All optional. */
 export interface Configuration {
-  darkContrast?: string;
-  lightContrast?: string;
-  darkWorkbench?: string;
-  lightWorkbench?: string;
-  darkSelection?: string;
-  lightSelection?: string;
-  darkCursor?: string;
-  lightCursor?: string;
+  darkContrast?: Contrast;
+  lightContrast?: Contrast;
+  darkWorkbench?: WorkbenchStyle;
+  lightWorkbench?: WorkbenchStyle;
+  darkSelection?: SelectionColor;
+  lightSelection?: SelectionColor;
+  darkCursor?: DarkCursorColor;
+  lightCursor?: LightCursorColor;
   italicKeywords?: boolean;
   italicComments?: boolean;
-  diagnosticTextBackgroundOpacity?: string;
+  diagnosticTextBackgroundOpacity?: DiagnosticOpacity;
   highContrast?: boolean;
 }
 
