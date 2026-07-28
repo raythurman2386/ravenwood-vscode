@@ -7,13 +7,13 @@
 import type { Palette } from '../../../interface';
 
 export default {
-  bg0: '#efebd4',
-  bg1: '#f8f4e8',
-  bg: '#fdf6e3',
-  bg2: '#f4f0d9',
-  bg3: '#efebd4',
-  bg4: '#e6e2cc',
-  bg5: '#e0dcc7',
+  bg0: '#edece1',
+  bg1: '#f1f0e7',
+  bg: '#f5f4ed',
+  bg2: '#e8e7dc',
+  bg3: '#e4e3d8',
+  bg4: '#e0dfd5',
+  bg5: '#dcdbcf',
   grey0: '#7a8478',
   grey1: '#6b7566',
   grey2: '#5c6658',
