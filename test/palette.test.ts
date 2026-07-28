@@ -66,37 +66,37 @@ describe('Light palette (medium contrast)', () => {
   const p = getPalette(mediumConfig, 'light');
 
   test('backgrounds are warm cream, not bright white', () => {
-    assert.equal(p.bg0, '#efebd4');
-    assert.equal(p.bg1, '#f8f4e8');
-    assert.equal(p.bg, '#fdf6e3');
+    assert.equal(p.bg0, '#edece1');
+    assert.equal(p.bg1, '#f1f0e7');
+    assert.equal(p.bg, '#f5f4ed');
     assert.notEqual(p.bg, '#ffffff');
     assert.notEqual(p.bg, '#f5f5f5');
   });
 
-  test('foreground is cool slate, not black', () => {
-    assert.equal(p.fg, '#3d4c53');
+  test('foreground is warm olive, not black', () => {
+    assert.equal(p.fg, '#3f4a45');
     assert.notEqual(p.fg, '#000000');
     assert.notEqual(p.fg, '#333333');
   });
 
   test('accent colors match documented values', () => {
-    assert.equal(p.red, '#c03c39');
-    assert.equal(p.orange, '#c55e15');
-    assert.equal(p.yellow, '#b08500');
-    assert.equal(p.green, '#5c7a0c');
-    assert.equal(p.aqua, '#1e7d5a');
-    assert.equal(p.blue, '#1a6d9e');
-    assert.equal(p.purple, '#b84d94');
+    assert.equal(p.red, '#c92a2a');
+    assert.equal(p.orange, '#c2410c');
+    assert.equal(p.yellow, '#92400e');
+    assert.equal(p.green, '#064e3b');
+    assert.equal(p.aqua, '#0f766e');
+    assert.equal(p.blue, '#2563eb');
+    assert.equal(p.purple, '#c026a3');
   });
 
   test('dim variants exist for all accents', () => {
-    assert.equal(p.dimRed, '#9e2b29');
-    assert.equal(p.dimOrange, '#9e5410');
-    assert.equal(p.dimYellow, '#8f6b00');
-    assert.equal(p.dimGreen, '#4a6210');
-    assert.equal(p.dimAqua, '#1a6347');
-    assert.equal(p.dimBlue, '#145a7a');
-    assert.equal(p.dimPurple, '#8f3d74');
+    assert.equal(p.dimRed, '#9b1c1c');
+    assert.equal(p.dimOrange, '#7c2d12');
+    assert.equal(p.dimYellow, '#6b3a08');
+    assert.equal(p.dimGreen, '#053d29');
+    assert.equal(p.dimAqua, '#134e4a');
+    assert.equal(p.dimBlue, '#1e3a8a');
+    assert.equal(p.dimPurple, '#86198f');
   });
 
   test('shadow alpha is 12% slate', () => {
@@ -104,7 +104,7 @@ describe('Light palette (medium contrast)', () => {
   });
 
   test('badge is green', () => {
-    assert.equal(p.badge, '#6b8a2e');
+    assert.equal(p.badge, '#064e3b');
   });
 });
 
