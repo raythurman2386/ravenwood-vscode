@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2026-07-28
+
+### Fixed
+- Extract base.ts 1110-line monolith into grouped sub-builders + fix hardcoded opacity (#206)
+- Architecture: union-type Configuration, deduplicate syntax rules, add test coverage (#208)
+- migrate isNewlyInstalled to globalState (#203)
+- terminal.border and terminalOverviewRuler.border use visible bg4/bg5 instead of blending bg (#201)
+- visible borders under terminal header and in sidebar on base dark theme (#198)
+
+### Other
+- ci: add npm audit step to CI workflow (#210)
+
 ## [1.2.1] - 2026-07-27
 
 ### Fixed
