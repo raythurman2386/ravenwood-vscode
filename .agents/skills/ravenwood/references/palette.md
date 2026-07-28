@@ -45,13 +45,13 @@
 
 | Token | Soft | Medium | Hard |
 |-------|------|--------|------|
-| bg0 | `#e5dfc5` | `#efebd4` | `#f2efdf` |
-| bg1 | `#eae4ca` | `#f8f4e8` | `#f8f5e4` |
-| bg | `#f3ead3` | `#fdf6e3` | `#fffbef` |
-| bg2 | `#eae4ca` | `#f4f0d9` | `#f8f5e4` |
-| bg3 | `#e5dfc5` | `#efebd4` | `#f2efdf` |
-| bg4 | `#ddd8be` | `#e6e2cc` | `#edeada` |
-| bg5 | `#d8d3ba` | `#e0dcc7` | `#e8e5d5` |
+| bg0 | `#e6e4d5` | `#edece1` | `#f1f0e7` |
+| bg1 | `#eae9de` | `#f1f0e7` | `#f5f4ed` |
+| bg | `#eeece1` | `#f5f4ed` | `#f9f8f3` |
+| bg2 | `#e1dfd2` | `#e8e7dc` | `#edebde` |
+| bg3 | `#dddbcd` | `#e4e3d8` | `#e9e7d9` |
+| bg4 | `#d9d7c9` | `#e0dfd5` | `#e5e3d3` |
+| bg5 | `#d5d3c4` | `#dcdbcf` | `#e1dfd1` |
 | grey0 | `#7a8478` | `#7a8478` | `#7a8478` |
 | grey1 | `#6b7566` | `#6b7566` | `#6b7566` |
 | grey2 | `#5c6658` | `#5c6658` | `#5c6658` |
@@ -61,35 +61,35 @@
 
 | Token | Hex | Description |
 |-------|-----|-------------|
-| fg | `#3d4c53` | Primary text (cool slate) |
-| red | `#c03c39` | Error / keyword |
-| orange | `#c55e15` | Warning / function |
-| yellow | `#b08500` | Constant / string |
-| green | `#5c7a0c` | Success / variable / badge |
-| aqua | `#1e7d5a` | Type / support |
-| blue | `#1a6d9e` | Operator / decorator |
-| purple | `#b84d94` | Special / keyword |
-| dimRed | `#9e2b29` | Muted error |
-| dimOrange | `#9e5410` | Muted warning |
-| dimYellow | `#8f6b00` | Muted constant |
-| dimGreen | `#4a6210` | Muted success |
-| dimAqua | `#1a6347` | Muted type |
-| dimBlue | `#145a7a` | Muted operator |
-| dimPurple | `#8f3d74` | Muted special |
-| badge | `#6b8a2e` | Notification badge |
+| fg | `#3f4a45` | Primary text (warm olive) |
+| red | `#c92a2a` | Error / keyword |
+| orange | `#c2410c` | Warning / function |
+| yellow | `#92400e` | Constant / string |
+| green | `#064e3b` | Success / variable / badge |
+| aqua | `#0f766e` | Type / support |
+| blue | `#2563eb` | Operator / decorator |
+| purple | `#c026a3` | Special / keyword |
+| dimRed | `#9b1c1c` | Muted error |
+| dimOrange | `#7c2d12` | Muted warning |
+| dimYellow | `#6b3a08` | Muted constant |
+| dimGreen | `#053d29` | Muted success |
+| dimAqua | `#134e4a` | Muted type |
+| dimBlue | `#1e3a8a` | Muted operator |
+| dimPurple | `#86198f` | Muted special |
+| badge | `#064e3b` | Notification badge |
 
 ## Syntax Color Mapping Convention
 
 | Syntax category | Palette token | Dark hex | Light hex |
 |----------------|---------------|----------|-----------|
-| Keyword | red | `#e67e80` | `#c03c39` |
-| Function | orange | `#e69875` | `#c55e15` |
-| String / Constant | yellow | `#fbbf24` | `#b08500` |
-| Type | aqua | `#34d399` | `#1e7d5a` |
-| Operator | blue | `#22d3ee` | `#1a6d9e` |
-| Special / Boolean | purple | `#f472b6` | `#b84d94` |
-| Variable | green | `#4ade80` | `#5c7a0c` |
+| Keyword | red | `#e67e80` | `#c92a2a` |
+| Function | orange | `#e69875` | `#c2410c` |
+| String / Constant | yellow | `#fbbf24` | `#92400e` |
+| Type | aqua | `#34d399` | `#0f766e` |
+| Operator | blue | `#22d3ee` | `#2563eb` |
+| Special / Boolean | purple | `#f472b6` | `#c026a3` |
+| Variable | green | `#4ade80` | `#064e3b` |
 | Comment | grey0 | `#7f897d` | `#7a8478` |
 | Dimmed text | grey1 | `#859289` | `#6b7566` |
 | Dark bg (errors) | bg0 | `#141814` | — |
-| Light bg (errors) | bg0 | — | `#efebd4` |
+| Light bg (errors) | bg0 | — | `#edece1` |
