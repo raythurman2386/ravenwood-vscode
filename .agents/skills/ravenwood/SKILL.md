@@ -68,8 +68,8 @@ See `references/palette.md` for the full color tables. Key rules:
 
 - **Backgrounds are olive-tinged, NOT neutral grey.** `#222822` is not `#222222`.
 - **Dark foreground is warm beige** `#e8d5b7` — not white.
-- **Light foreground is cool slate** `#3d4c53` — not black.
-- **Green is the hero accent.** `#4ade80` (dark) / `#5c7a0c` (light) for badges, success, primary CTAs.
+- **Light foreground is warm olive** `#3f4a45` — not black.
+- **Green is the hero accent.** `#4ade80` (dark) / `#064e3b` (light) for badges, success, primary CTAs.
 - **Contrast levels adjust backgrounds only.** Foreground and accent colors stay the same across soft/medium/hard.
 - **Dim variants** exist for every accent — use for secondary UI, not primary semantic meaning.
 - **Shadow alpha differs**: dark `#00000070` (44%), light `#3c474d20` (12%).
