@@ -40,9 +40,11 @@ User Config → getPalette() → getWorkbench() + getSyntax() + getSemantic() �
 
 | Path | Purpose |
 |------|---------|
-| `src/interface.ts` | TypeScript interfaces: `Configuration`, `Palette`, `ThemeData`, `SyntaxRule` |
+| `src/interface.ts` | TypeScript interfaces: `Configuration` (union-typed), `Palette`, `ThemeData`, `SyntaxRule` |
 | `src/themeData.ts` | Pure `getThemeData()` builder — shared by runtime + build-time |
-| `src/utils.ts` | `Utils` class — config detection, file writing, regeneration |
+| `src/utils.ts` | `Utils` class — config detection, file writing, regeneration, validation |
+| `src/validation.ts` | Pure `validateConfig()` — checks enum values, no vscode dependency |
+| `src/fsUtil.ts` | Shared `writeJsonFile()` — used by utils.ts and generateThemes.ts |
 | `src/semantic.ts` | LSP semantic token color mappings (`getSemantic` + `getSemanticFromPalette`) |
 | `src/hook/generateThemes.ts` | Build-time script → writes `themes/*.json` (Dark/Light + 8 realm themes) |
 | `src/palette/index.ts` | `getPalette()` — dispatches by variant × contrast |
@@ -50,16 +52,15 @@ User Config → getPalette() → getWorkbench() + getSyntax() + getSemantic() �
 | `src/palette/dark/background/{soft,medium,hard}.ts` | Dark bg0–bg5, shadow per contrast |
 | `src/palette/light/foreground.ts` | Light foreground + accent colors |
 | `src/palette/light/background/{soft,medium,hard}.ts` | Light bg0–bg5, shadow per contrast |
-| `src/palette/realms/*.ts` | 8 realm palettes (Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, Helheim) — static themes generated at build time |
+| `src/palette/realms/*.ts` | 8 realm palettes — static themes generated at build time |
 | `src/workbench/index.ts` | `getWorkbench()` — dispatches by style |
 | `src/workbench/base.ts` | Shared ~95% token map + highContrast flag overlay |
 | `src/workbench/common.ts` | Selection, cursor, diagnostic, variant color helpers |
 | `src/workbench/material.ts` | Material style (default — no overrides) |
 | `src/workbench/flat.ts` | Flat style — overrides list/sidebar/tab backgrounds |
 | `src/workbench/highContrast.ts` | High-contrast style — overrides + `applyHighContrastFlag()` |
-| `src/syntax/index.ts` | `getSyntax()` — dispatches by italic setting |
-| `src/syntax/default.ts` | Default (upright) TextMate rules |
-| `src/syntax/italic.ts` | Italic variant — comments + keywords in italic |
+| `src/syntax/index.ts` | `getSyntax()` — dispatches to `buildSyntax` with italic flags |
+| `src/syntax/rules.ts` | Canonical `SYNTAX_RULES` array + `buildSyntax()` — single source of truth |
 
 ## Color Palette
 
@@ -113,7 +114,7 @@ See `references/palette.md` for the full color tables. Key rules:
 npm run compile        # Full build: clean -> tsc -> generate themes
 npm run compile:ts     # TypeScript only
 npm run compile:themes # Generate default theme JSONs
-npm test               # 574 tests (structural, palette, contrast, sync, scope-safety, build-combos, realms, semantic-workbench)
+npm test               # 648 tests (structural, palette, contrast, sync, scope-safety, build-combos, realms, semantic-workbench, validation, build-syntax, helpers-workbench, exhaustiveness)
 npm run lint           # Biome check (lint + format check)
 npm run format         # Biome format --write
 npm run package        # Package .vsix
@@ -127,12 +128,14 @@ Tests run on every push and PR via CI.
 
 ### Syntax Rules (TextMate)
 
-1. Read the existing pattern in `src/syntax/default.ts` — find a similar language block
-2. Add rules for both `default.ts` AND `italic.ts` in sync
-3. Each rule maps a TextMate scope (e.g., `entity.name.function.elm`) to a palette color
-4. Color mapping convention: keyword→red, function→orange, string/constant→yellow, type→aqua, operator→blue, special→purple, variable→green, comment→grey0
-5. Add a sample file in `samples/<lang>.<ext>` if one doesn't exist
-6. Run `npm run compile` to verify the theme JSONs regenerate cleanly
+1. Open `src/syntax/rules.ts` — find a similar language block in the `SYNTAX_RULES` array
+2. Add a new rule object with `name`, `scope`, and `settings` (use palette keys like `'red'`, not hex values)
+3. If the rule should be italicized when `italicKeywords` is on, set `italicizeKeywords: true`
+4. If the rule only exists in the italic variant, set `onlyWhenItalicKeywords: true`
+5. If the rule's scope differs between variants, set `italicKeywordsScope` to the italic-variant scope
+6. Color mapping convention: keyword→red, function→green, string/constant→yellow, type→aqua, operator→orange, special→purple, variable→blue, comment→grey0
+7. Add a sample file in `samples/<lang>.<ext>` if one doesn't exist
+8. Run `npm run compile` to verify the theme JSONs regenerate cleanly
 
 ### Semantic Tokens (LSP)
 
@@ -145,31 +148,32 @@ Tests run on every push and PR via CI.
 ### Adding a New Configuration Option
 
 1. `package.json` → add to `contributes.configuration.properties`
-2. `src/interface.ts` → add to `Configuration` interface
-3. `src/utils.ts` → update `getConfiguration()` and `isDefaultConfiguration()`
-4. `src/hook/generateThemes.ts` → include default value for build-time
+2. `src/interface.ts` → add to `Configuration` interface with a proper union type
+3. `src/validation.ts` → if enum-valued, add to the `ALLOWED` array so `validateConfig()` catches typos
+
+The type system (union types + `never` exhaustiveness checks) handles dispatch-site coverage automatically.
 
 ## Common Pitfalls
 
-1. **Missing italic.ts sync** — every syntax rule added to `default.ts` must also go to `italic.ts` (with italic adjustments for keywords/comments). The #1 source of regressions.
+1. **Overbroad scopes** — scope suffixes must include the language ID (e.g., `entity.name.class.scala`, NOT `entity.name.class`). A bare scope overrides ALL languages.
 
-2. **Overbroad scopes** — scope suffixes must include the language ID (e.g., `entity.name.class.scala`, NOT `entity.name.class`). A bare scope overrides ALL languages.
+2. **Shadowed rules** — if two rules match the same scope, the first one wins. Check for existing rules that overlap before adding new ones.
 
-3. **Shadowed rules** — if two rules match the same scope, the first one wins. Check for existing rules that overlap before adding new ones.
+3. **Invalid hex in template literals** — check for stray `}` characters inside backtick strings. These produce invalid hex values like `#da636280}` that VS Code silently rejects.
 
-4. **Invalid hex in template literals** — check for stray `}` characters inside backtick strings. These produce invalid hex values like `#da636280}` that VS Code silently rejects.
+4. **Forgetting `npm run compile:themes`** — the `themes/*.json` files are build artifacts. After palette or workbench changes, regenerate them or the extension ships stale themes.
 
-5. **Forgetting `npm run compile:themes`** — the `themes/*.json` files are build artifacts. After palette or workbench changes, regenerate them or the extension ships stale themes.
+5. **Both variants** — when changing palette colors, update dark AND light together. A change to one without the other creates visual inconsistency.
 
-6. **Both variants** — when changing palette colors, update dark AND light together. A change to one without the other creates visual inconsistency.
+6. **Palette `satisfies` check** — each palette export file uses `satisfies Partial<Palette>`. Misspelled keys fail at compile time, not runtime.
 
-7. **Palette `satisfies` check** — each palette export file uses `satisfies Partial<Palette>`. Misspelled keys fail at compile time, not runtime.
+7. **Missing `validation.ts` ALLOWED entry** — when adding a new enum-valued config option, add it to the `ALLOWED` array in `src/validation.ts`. Otherwise `validateConfig()` won't catch typos for that option.
 
 ## Verification Checklist
 
 - [ ] `npm run compile` succeeds (tsc + theme generation)
 - [ ] `npm run lint` passes (Biome)
-- [ ] Syntax rules added to BOTH `default.ts` and `italic.ts`
+- [ ] New syntax rules added to `src/syntax/rules.ts` with appropriate flags (`italicizeKeywords`, `onlyWhenItalicKeywords`, etc.)
 - [ ] Semantic tokens use language-scoped keys (e.g., `function:elm`, not bare `function`)
 - [ ] No overbroad scopes (all scope strings end with a language suffix)
 - [ ] Sample file exists if a new language was added

@@ -39,7 +39,7 @@ npm run format        # Biome format --write
 npm test              # Node built-in test runner (node:test + tsx)
 ```
 
-574 tests across 33 suites: structural (theme JSON shape, hex validation, workbench key coverage, realm JSON validation, package.json consistency), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (default.ts and italic.ts coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output), realms (8 realm palettes: validity, contrast, accent distinctness, bg gradient, dim integrity, realm-to-realm distinctness), semantic-workbench (getSemanticFromPalette, language coverage, workbench style isolation).
+648 tests across 52 suites: structural (theme JSON shape, hex validation, workbench key coverage, realm JSON validation, package.json consistency), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (buildSyntax default/italic variant coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output), realms (8 realm palettes: validity, contrast, accent distinctness, bg gradient, dim integrity, realm-to-realm distinctness), semantic-workbench (getSemanticFromPalette, language coverage, workbench style isolation), validation (validateConfig catches typos), build-syntax (per-rule flag behavior: italicizeKeywords, onlyWhenItalicKeywords, italicKeywordsScope, italicComments), helpers-workbench (getCursorColor, getSelectionColors, getDiagnosticOpacity), exhaustiveness (never-branch throws on invalid enum values), highContrast flag values.
 
 No automated browser/integration tests. Manual testing:
 
@@ -147,14 +147,12 @@ The project uses Prettier with default settings. Key points:
 ### Error Handling
 
 - Use Promise-based async patterns for file operations
-- Handle errors in callbacks with proper rejection:
+- The shared `writeJsonFile()` in `src/fsUtil.ts` handles directory creation and JSON serialization:
 
 ```typescript
-return new Promise((resolve, reject) => {
-  fs.writeFile(path, JSON.stringify(data, null, 2), (err) =>
-    err ? reject(err) : resolve("Success"),
-  );
-});
+import { writeJsonFile } from './fsUtil';
+
+await writeJsonFile(path, data); // creates parent dir, writes JSON with 2-space indent
 ```
 
 - Always check for existence of files before operations (e.g., `fs.existsSync()`)
@@ -164,9 +162,10 @@ return new Promise((resolve, reject) => {
 When adding a new user-customizable option:
 
 1. **package.json**: Add to `contributes.configuration.properties`
-2. **src/interface.ts**: Add property to `Configuration` interface
-3. **src/utils.ts**: Update `getConfiguration()` and `isDefaultConfiguration()`
-4. **src/hook/generateThemes.ts**: Include default value for build-time generation
+2. **src/interface.ts**: Add property to `Configuration` interface with a proper union type
+3. **src/validation.ts**: If enum-valued, add to the `ALLOWED` array so `validateConfig()` can catch typos
+
+The type system (union types + `never` exhaustiveness checks) handles the rest — no manual 5-place checklist. If the option has variant-specific dispatching, add the branch to the relevant dispatcher.
 
 ### Color Palette Structure
 
@@ -194,13 +193,16 @@ Each palette exports a `Palette` interface with colors like `bg0`, `bg1`, `fg`, 
 | ---------------------------- | ------------------------------------------------------------ |
 | `src/utils.ts`               | Core utility class for config detection and theme generation |
 | `src/themeData.ts`           | Pure ThemeData builder (shared by runtime + build-time)      |
-| `src/interface.ts`           | TypeScript interfaces for Configuration and Palette          |
+| `src/validation.ts`          | Pure validateConfig() — checks enum values, no vscode dep   |
+| `src/fsUtil.ts`              | Shared writeJsonFile() — used by utils.ts and generateThemes  |
+| `src/interface.ts`           | TypeScript interfaces + union types (Configuration, Palette) |
 | `src/hook/generateThemes.ts` | Build-time theme generation script                           |
 | `src/palette/index.ts`       | Color palette retrieval                                      |
 | `src/workbench/index.ts`     | Workbench style dispatcher                                   |
 | `src/workbench/base.ts`      | Shared base token map + highContrast flag overlay            |
 | `src/workbench/common.ts`    | Selection / cursor / diagnostic / variant color helpers      |
-| `src/syntax/index.ts`        | Syntax highlighting rules dispatcher                         |
+| `src/syntax/index.ts`        | Syntax highlighting dispatcher                               |
+| `src/syntax/rules.ts`        | Canonical SYNTAX_RULES array + buildSyntax() — single source |
 | `src/semantic.ts`            | Semantic token highlighting rules                            |
 | `package.json`               | Extension manifest and npm scripts                           |
 
