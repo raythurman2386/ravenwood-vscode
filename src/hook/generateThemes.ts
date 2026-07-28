@@ -14,8 +14,8 @@
  * and the palette/workbench/syntax/semantic generators they pull in.
  */
 
-import * as fs from 'node:fs';
 import { join } from 'node:path';
+import { writeJsonFile } from '../fsUtil';
 import type { Configuration, Palette } from '../interface';
 import alfheim from '../palette/realms/alfheim';
 import asgard from '../palette/realms/asgard';
@@ -26,7 +26,7 @@ import nidavellir from '../palette/realms/nidavellir';
 import svartalfheim from '../palette/realms/svartalfheim';
 import vanaheim from '../palette/realms/vanaheim';
 import { getSemanticFromPalette } from '../semantic';
-import { getItalicSyntax } from '../syntax/italic';
+import { buildSyntax } from '../syntax/rules';
 import { getThemeData } from '../themeData';
 import { materialWorkbench } from '../workbench/material';
 
@@ -45,12 +45,6 @@ const configuration: Configuration = {
   highContrast: false,
 };
 
-async function writeFile(path: string, data: unknown): Promise<void> {
-  // {{{
-  await fs.promises.mkdir(join(path, '..'), { recursive: true });
-  await fs.promises.writeFile(path, JSON.stringify(data, null, 2));
-} // }}}
-
 async function generate(
   darkPath: string,
   lightPath: string,
@@ -58,8 +52,8 @@ async function generate(
 ): Promise<void> {
   // {{{
   await Promise.all([
-    writeFile(darkPath, data.dark),
-    writeFile(lightPath, data.light),
+    writeJsonFile(darkPath, data.dark),
+    writeJsonFile(lightPath, data.light),
   ]);
 } // }}}
 
@@ -110,7 +104,7 @@ const realmConfig: Configuration = {
 function buildRealmTheme(realm: RealmDef): object {
   const variant = realm.isDark ? 'dark' : 'light';
   const workbench = materialWorkbench(realm.palette, realmConfig, variant);
-  const syntax = getItalicSyntax(realm.palette, true);
+  const syntax = buildSyntax(realm.palette, true, true);
   const semantic = getSemanticFromPalette(realm.palette);
 
   return {
@@ -138,7 +132,7 @@ async function generateRealms(): Promise<void> {
         'themes',
         `ravenwood-${realm.name}.json`,
       );
-      await writeFile(filePath, theme);
+      await writeJsonFile(filePath, theme);
       console.log(`✓ Generated themes/ravenwood-${realm.name}.json`);
     }),
   );

@@ -24,8 +24,12 @@ export function getWorkbench(
         return flatWorkbench(palette, configuration, 'dark');
       case 'high-contrast':
         return highContrastWorkbench(palette, configuration, 'dark');
-      default:
+      case undefined:
         return materialWorkbench(palette, configuration, 'dark');
+      default: {
+        const _exhaustive: never = configuration.darkWorkbench;
+        throw new Error(`Unhandled darkWorkbench: ${_exhaustive as string}`);
+      }
     }
   } else if (variant === 'light') {
     switch (configuration.lightWorkbench) {
@@ -35,8 +39,12 @@ export function getWorkbench(
         return flatWorkbench(palette, configuration, 'light');
       case 'high-contrast':
         return highContrastWorkbench(palette, configuration, 'light');
-      default:
+      case undefined:
         return materialWorkbench(palette, configuration, 'light');
+      default: {
+        const _exhaustive: never = configuration.lightWorkbench;
+        throw new Error(`Unhandled lightWorkbench: ${_exhaustive as string}`);
+      }
     }
   } else {
     throw new Error(`Unknown variant: ${variant}`);

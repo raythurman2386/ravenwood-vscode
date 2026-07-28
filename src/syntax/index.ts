@@ -6,23 +6,18 @@
 
 import type { Configuration, SyntaxRule } from '../interface';
 import { getPalette } from '../palette';
-import { getDefaultSyntax } from './default';
-import { getItalicSyntax } from './italic';
+import { buildSyntax } from './rules';
 
 /** Return the TextMate scope rules for a variant, honoring the italicKeywords/italicComments flags. */
 export function getSyntax(
   configuration: Configuration,
   variant: string,
 ): SyntaxRule[] {
+  // {{{
   const palette = getPalette(configuration, variant);
   const italicComments = configuration.italicComments ?? true;
-  let syntax: SyntaxRule[];
-  if (configuration.italicKeywords === true) {
-    syntax = getItalicSyntax(palette, italicComments);
-  } else {
-    syntax = getDefaultSyntax(palette, italicComments);
-  }
-  return syntax;
-}
+  const italicKeywords = configuration.italicKeywords === true;
+  return buildSyntax(palette, italicKeywords, italicComments);
+} // }}}
 
 // vim: fdm=marker fmr={{{,}}}:

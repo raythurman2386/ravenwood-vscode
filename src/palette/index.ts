@@ -42,8 +42,13 @@ export function getPalette(
         paletteBackground = darkBackgroundSoft;
         break;
       }
-      default: {
+      case undefined: {
         paletteBackground = darkBackgroundMedium;
+        break;
+      }
+      default: {
+        const _exhaustive: never = configuration.darkContrast;
+        throw new Error(`Unhandled darkContrast: ${_exhaustive as string}`);
       }
     } // }}}
   } else if (variant === 'light') {
@@ -63,8 +68,13 @@ export function getPalette(
         paletteBackground = lightBackgroundSoft;
         break;
       }
-      default: {
+      case undefined: {
         paletteBackground = lightBackgroundMedium;
+        break;
+      }
+      default: {
+        const _exhaustive: never = configuration.lightContrast;
+        throw new Error(`Unhandled lightContrast: ${_exhaustive as string}`);
       }
     } // }}}
   } else {

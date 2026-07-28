@@ -10,14 +10,12 @@
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
-import type { Palette } from '../src/interface';
 import { getPalette } from '../src/palette';
-import { getDefaultSyntax } from '../src/syntax/default';
-import { getItalicSyntax } from '../src/syntax/italic';
+import { buildSyntax } from '../src/syntax/rules';
 
 const darkPalette = getPalette({}, 'dark');
-const defaultRules = getDefaultSyntax(darkPalette as Palette, true);
-const italicRules = getItalicSyntax(darkPalette as Palette, true);
+const defaultRules = buildSyntax(darkPalette, false, true);
+const italicRules = buildSyntax(darkPalette, true, true);
 const allRules = [...defaultRules, ...italicRules];
 
 /**

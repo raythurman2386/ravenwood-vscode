@@ -68,9 +68,8 @@ src/
 │   ├── flat.ts            Flat style — overrides list/sidebar/tab backgrounds
 │   └── highContrast.ts    High-contrast — darker activity bar / sidebar
 └── syntax/
-    ├── index.ts           getSyntax() — dispatches by italic setting
-    ├── default.ts         Default (upright) TextMate rules
-    └── italic.ts          Italic variant — keywords + comments in italic
+    ├── index.ts           getSyntax() — dispatches to buildSyntax
+    └── rules.ts           Canonical SYNTAX_RULES array + buildSyntax() — single source
 ```
 
 ### Dynamic vs Static Themes
@@ -197,9 +196,16 @@ Some colors depend on dark vs light (terminal ANSI, validation backgrounds, high
 | Special/builtin | purple        | `constant.language`, `variable.language`|
 | Comment         | grey0         | `comment`                                |
 
-### Default + Italic Sync
+### Per-Rule Italic Flags
 
-Maintain two parallel rule arrays: `default.ts` (upright keywords) and `italic.ts` (italic keywords). Every rule in one must exist in the other (with the italic variant adding `fontStyle: "italic"` to keyword/declaration rules). This is the #1 source of regressions — always update both files together.
+A single canonical `SYNTAX_RULES` array in `src/syntax/rules.ts` defines all TextMate rules. Each rule has optional flags controlling behavior under the `italicKeywords` config:
+
+- **`italicizeKeywords: true`** — `fontStyle` gets `"italic"` appended when `italicKeywords` is enabled
+- **`onlyWhenItalicKeywords: true`** — rule only emitted when `italicKeywords` is enabled
+- **`onlyWhenNotItalicKeywords: true`** — rule only emitted when `italicKeywords` is disabled
+- **`italicKeywordsScope: string`** — overrides `scope` when `italicKeywords` is enabled
+
+This replaces the previous two-file design (`default.ts` + `italic.ts`) that required manual sync. Adding a new syntax rule now touches one file, not two.
 
 ### Scope Safety Rules
 
@@ -229,13 +235,13 @@ The `getSemanticFromPalette(palette)` pattern lets both dynamic and static theme
 
 ## Configuration Options
 
-User-configurable options live under `ravenwood.*` in `contributes.configuration.properties`. When adding a new option, update ALL of these:
+User-configurable options live under `ravenwood.*` in `contributes.configuration.properties`. When adding a new option, update these locations:
 
-1. `package.json` — add to `contributes.configuration.properties`
-2. `src/interface.ts` — add to `Configuration` interface
-3. `src/utils.ts` — read it in `getConfiguration()`
-4. `src/utils.ts` — compare it in `isDefaultConfiguration()`
-5. `src/hook/generateThemes.ts` — include its default value for build-time
+1. `package.json` — add to `contributes.configuration.properties` (declares the `enum` constraint for the UI)
+2. `src/interface.ts` — add to `Configuration` interface with a proper union type
+3. `src/validation.ts` — if enum-valued, add to the `ALLOWED` array so `validateConfig()` catches typos
+
+The type system (union types + `never` exhaustiveness checks) handles dispatch-site coverage automatically.
 
 Common options: contrast levels (soft/medium/hard), workbench style (material/flat/high-contrast), cursor color, selection color, italic keywords/comments, diagnostic opacity, high contrast border.
 
@@ -248,9 +254,13 @@ Common options: contrast levels (soft/medium/hard), workbench style (material/fl
 | Structural       | Theme JSON has correct top-level keys, hex validation, workbench key coverage count, dark/light parity |
 | Palette          | Color values match documented specs, dim variants exist and are darker+less saturated than parents |
 | Contrast (WCAG)  | Primary text meets AAA (≥7), grey text meets AA-large (≥3), badge contrast, foreground tint (not pure white/black), background tint (not neutral grey), background gradient smoothness |
-| Sync             | `default.ts` and `italic.ts` have matching language coverage and scopes |
+| Sync             | `buildSyntax` default and italic variants have matching language coverage and scopes |
 | Scope-safety     | All language-specific scopes have a language suffix (no overbroad scopes) |
 | Build-combos     | All N configuration combinations produce valid theme output |
+| Validation       | `validateConfig()` catches typos and invalid enum values |
+| Build-syntax     | Per-rule flag behavior: `italicizeKeywords`, `onlyWhenItalicKeywords`, `italicKeywordsScope`, `italicComments` |
+| Helpers-workbench | `getCursorColor`, `getSelectionColors`, `getDiagnosticOpacity` resolve correctly |
+| Exhaustiveness   | `never`-branch throws on invalid enum values in all dispatch sites |
 
 ### Test Runner
 
@@ -290,32 +300,32 @@ If an extension ships only static theme JSONs (no runtime code, no `main`/`brows
 
 ## Common Pitfalls
 
-1. **Missing italic.ts sync** — every syntax rule added to `default.ts` must also go to `italic.ts`. The #1 source of regressions.
+1. **Overbroad scopes** — scope strings must include the language ID suffix (e.g., `entity.name.class.scala`). A bare `entity.name.class` overrides ALL languages.
 
-2. **Overbroad scopes** — scope strings must include the language ID suffix (e.g., `entity.name.class.scala`). A bare `entity.name.class` overrides ALL languages.
+2. **Invalid hex in template literals** — check for stray `}` characters inside backtick strings. These produce invalid hex like `#da636280}` that VS Code silently rejects.
 
-3. **Invalid hex in template literals** — check for stray `}` characters inside backtick strings. These produce invalid hex like `#da636280}` that VS Code silently rejects.
+3. **Forgetting `npm run compile:themes`** — the `themes/*.json` files are build artifacts. After palette or workbench changes, regenerate them or the extension ships stale themes.
 
-4. **Forgetting `npm run compile:themes`** — the `themes/*.json` files are build artifacts. After palette or workbench changes, regenerate them or the extension ships stale themes.
+4. **Importing `vscode` in build-time code** — `generateThemes.ts` runs under plain Node. The `ThemeData` builder must be pure (no `vscode` imports). Keep it in a separate module (`themeData.ts`), not in `utils.ts`.
 
-5. **Importing `vscode` in build-time code** — `generateThemes.ts` runs under plain Node. The `ThemeData` builder must be pure (no `vscode` imports). Keep it in a separate module (`themeData.ts`), not in `utils.ts`.
+5. **Both variants** — when changing palette colors, update dark AND light together. A change to one without the other creates visual inconsistency.
 
-6. **Both variants** — when changing palette colors, update dark AND light together. A change to one without the other creates visual inconsistency.
+6. **Deprecated VS Code keys** — VS Code renames and removes theme keys between versions. Audit against the current official reference. Shipping deprecated keys wastes space and can mask missing current keys.
 
-7. **Deprecated VS Code keys** — VS Code renames and removes theme keys between versions. Audit against the current official reference. Shipping deprecated keys wastes space and can mask missing current keys.
+7. **Variant dispatch fallbacks** — variant-dispatching functions should `throw` on unknown variants, not silently fall back to light. Silent fallbacks hide bugs.
 
-8. **Variant dispatch fallbacks** — variant-dispatching functions should `throw` on unknown variants, not silently fall back to light. Silent fallbacks hide bugs.
+8. **Not testing config combinations** — if the theme has N configurable options, test that all N combinations produce valid output. A 12-option theme has 50 meaningful combinations.
 
-9. **Not testing config combinations** — if the theme has N configurable options, test that all N combinations produce valid output. A 12-option theme has 50 meaningful combinations.
+9. **Shipping themes/ in git** — `themes/*.json` are build artifacts. Gitignore them and regenerate on compile. This prevents stale themes from being merged.
 
-10. **Shipping themes/ in git** — `themes/*.json` are build artifacts. Gitignore them and regenerate on compile. This prevents stale themes from being merged.
+10. **Missing `validation.ts` ALLOWED entry** — when adding a new enum-valued config option, add it to the `ALLOWED` array in `src/validation.ts`. Otherwise `validateConfig()` won't catch typos for that option.
 
 ## Verification Checklist
 
 - [ ] `npm run compile` succeeds (tsc + theme generation)
 - [ ] `npm run lint` passes
-- [ ] All tests pass (structural, palette, contrast, sync, scope-safety, build-combos)
-- [ ] Syntax rules added to BOTH `default.ts` and `italic.ts`
+- [ ] All tests pass (structural, palette, contrast, sync, scope-safety, build-combos, validation, build-syntax, helpers-workbench, exhaustiveness)
+- [ ] New syntax rules added to `src/syntax/rules.ts` with appropriate flags
 - [ ] Semantic tokens use language-scoped keys (e.g., `function:rust`, not bare `function`)
 - [ ] No overbroad scopes (all scope strings end with a language suffix)
 - [ ] No stray `}` in template literals (check hex color values)

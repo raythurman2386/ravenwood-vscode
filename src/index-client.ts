@@ -52,6 +52,11 @@ export async function activate(context: ExtensionContext): Promise<void> {
       }
     }
   }
+
+  const warnings = utils.validateConfiguration();
+  if (warnings.length > 0) {
+    window.showWarningMessage(`Ravenwood: ${warnings.join('; ')}`);
+  }
 } // }}}
 
 /** No-op deactivate; subscriptions are auto-disposed via context.subscriptions. */

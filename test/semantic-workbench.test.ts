@@ -215,6 +215,47 @@ describe('Workbench style isolation', () => {
       'material without highContrast should not set contrastBorder',
     );
   });
+
+  test('highContrast flag sets contrastBorder to palette.bg5', () => {
+    const darkPalette = getPalette({}, 'dark');
+    const hcFlag = getWorkbench({ ...baseConfig, highContrast: true }, 'dark');
+    assert.equal(
+      hcFlag.contrastBorder,
+      darkPalette.bg5,
+      'contrastBorder should be palette.bg5',
+    );
+  });
+
+  test('highContrast flag sets contrastActiveBorder to palette.grey0', () => {
+    const darkPalette = getPalette({}, 'dark');
+    const hcFlag = getWorkbench({ ...baseConfig, highContrast: true }, 'dark');
+    assert.equal(
+      hcFlag.contrastActiveBorder,
+      darkPalette.grey0,
+      'contrastActiveBorder should be palette.grey0',
+    );
+  });
+
+  test('highContrast flag works on light variant too', () => {
+    const lightPalette = getPalette({}, 'light');
+    const hcFlag = getWorkbench({ ...baseConfig, highContrast: true }, 'light');
+    assert.equal(hcFlag.contrastBorder, lightPalette.bg5);
+    assert.equal(hcFlag.contrastActiveBorder, lightPalette.grey0);
+  });
+
+  test('highContrast flag does not alter non-border keys', () => {
+    const hcFlag = getWorkbench({ ...baseConfig, highContrast: true }, 'dark');
+    let diffs = 0;
+    for (const key of Object.keys(material)) {
+      if (material[key] !== hcFlag[key]) diffs++;
+    }
+    // Only contrastBorder and contrastActiveBorder should differ
+    assert.equal(
+      diffs,
+      0,
+      'highContrast should not alter any keys that material already sets',
+    );
+  });
 });
 
 // }}}

@@ -20,7 +20,7 @@ User Config → getPalette() → getWorkbench() + getSyntax() + getSemantic() �
 
 - **Palettes**: [src/palette/](src/palette/) organized by `{dark,light}/{foreground,background/{soft,medium,hard}}.ts`
 - **Workbench**: [src/workbench/](src/workbench/) has `material.ts`, `flat.ts`, `highContrast.ts` variants
-- **Syntax**: [src/syntax/](src/syntax/) chooses between `default.ts` or `italic.ts` based on config
+- **Syntax**: [src/syntax/](src/syntax/) uses a single `rules.ts` with per-rule italic flags, dispatched by `getSyntax()` based on config
 - **Semantic**: [src/semantic.ts](src/semantic.ts) defines semantic token colors
 
 ## Critical Workflows
@@ -48,6 +48,7 @@ npm run format         # Biome format --write
 
 **No automated tests exist**. Manual testing only:
 ```bash
+npm test               # 648 tests across 52 suites
 npm run browser        # Launch VS Code web for testing
 # Or press F5 in VS Code to debug extension
 ```
@@ -76,22 +77,21 @@ Every TypeScript file must include:
 
 ### Error Handling
 
-Use Promise-based file operations with proper rejection:
+Use Promise-based file operations via the shared `writeJsonFile()`:
 ```typescript
-return new Promise((resolve, reject) => {
-  fs.writeFile(path, data, (err) => err ? reject(err) : resolve("Success"));
-});
+import { writeJsonFile } from './fsUtil';
+await writeJsonFile(path, data); // creates parent dir, writes JSON with 2-space indent
 ```
 
 ## Adding Configuration Options
 
-**5-step process** (documented in [src/interface.ts](src/interface.ts)):
+**2-step process** (documented in [src/interface.ts](src/interface.ts)):
 
 1. Add property to `contributes.configuration.properties` in [package.json](package.json)
-2. Add to `Configuration` interface in [src/interface.ts](src/interface.ts)
-3. Update `getConfiguration()` in [src/utils.ts](src/utils.ts) to read the setting
-4. Update `isDefaultConfiguration()` in [src/utils.ts](src/utils.ts) to check default value
-5. Add default value in [src/hook/generateThemes.ts](src/hook/generateThemes.ts) config object
+2. Add to `Configuration` interface in [src/interface.ts](src/interface.ts) with a proper union type
+3. If enum-valued, add to the `ALLOWED` array in [src/validation.ts](src/validation.ts) so `validateConfig()` catches typos
+
+The type system (union types + `never` exhaustiveness checks) handles the rest.
 
 ## Integration Points
 

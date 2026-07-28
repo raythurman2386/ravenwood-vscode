@@ -4,14 +4,24 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-import * as fs from 'node:fs';
 import {
   type ConfigurationChangeEvent,
   type ExtensionContext,
   workspace,
 } from 'vscode';
-import type { Configuration, ThemeData } from './interface';
+import { writeJsonFile } from './fsUtil';
+import type {
+  Configuration,
+  Contrast,
+  DarkCursorColor,
+  DiagnosticOpacity,
+  LightCursorColor,
+  SelectionColor,
+  ThemeData,
+  WorkbenchStyle,
+} from './interface';
 import { getThemeData } from './themeData';
+import { validateConfig } from './validation';
 
 /** Utility class for detecting config changes, reading configuration, and regenerating theme files. */
 export default class Utils {
@@ -30,19 +40,24 @@ export default class Utils {
     // {{{
     const workspaceConfiguration = workspace.getConfiguration('ravenwood');
     return {
-      darkContrast: workspaceConfiguration.get<string>('darkContrast'),
-      lightContrast: workspaceConfiguration.get<string>('lightContrast'),
-      darkWorkbench: workspaceConfiguration.get<string>('darkWorkbench'),
-      lightWorkbench: workspaceConfiguration.get<string>('lightWorkbench'),
-      darkSelection: workspaceConfiguration.get<string>('darkSelection'),
-      lightSelection: workspaceConfiguration.get<string>('lightSelection'),
-      darkCursor: workspaceConfiguration.get<string>('darkCursor'),
-      lightCursor: workspaceConfiguration.get<string>('lightCursor'),
+      darkContrast: workspaceConfiguration.get<Contrast>('darkContrast'),
+      lightContrast: workspaceConfiguration.get<Contrast>('lightContrast'),
+      darkWorkbench:
+        workspaceConfiguration.get<WorkbenchStyle>('darkWorkbench'),
+      lightWorkbench:
+        workspaceConfiguration.get<WorkbenchStyle>('lightWorkbench'),
+      darkSelection:
+        workspaceConfiguration.get<SelectionColor>('darkSelection'),
+      lightSelection:
+        workspaceConfiguration.get<SelectionColor>('lightSelection'),
+      darkCursor: workspaceConfiguration.get<DarkCursorColor>('darkCursor'),
+      lightCursor: workspaceConfiguration.get<LightCursorColor>('lightCursor'),
       italicKeywords: workspaceConfiguration.get<boolean>('italicKeywords'),
       italicComments: workspaceConfiguration.get<boolean>('italicComments'),
-      diagnosticTextBackgroundOpacity: workspaceConfiguration.get<string>(
-        'diagnosticTextBackgroundOpacity',
-      ),
+      diagnosticTextBackgroundOpacity:
+        workspaceConfiguration.get<DiagnosticOpacity>(
+          'diagnosticTextBackgroundOpacity',
+        ),
       highContrast: workspaceConfiguration.get<boolean>('highContrast'),
     };
   } // }}}
@@ -81,11 +96,6 @@ export default class Utils {
     }
     return false;
   } // }}}
-  /** Write JSON-serialized data to a path, replacing the file if it exists. */
-  private async writeFile(path: string, data: unknown): Promise<void> {
-    // {{{
-    await fs.promises.writeFile(path, JSON.stringify(data, null, 2));
-  } // }}}
   /** Write both the dark and light theme JSON files in parallel. */
   async generate(
     darkPath: string,
@@ -94,9 +104,14 @@ export default class Utils {
   ): Promise<void> {
     // {{{
     await Promise.all([
-      this.writeFile(darkPath, data.dark),
-      this.writeFile(lightPath, data.light),
+      writeJsonFile(darkPath, data.dark),
+      writeJsonFile(lightPath, data.light),
     ]);
+  } // }}}
+  /** Return warning strings for any config value that's set but not a valid enum member. Delegates to the pure `validateConfig` helper. */
+  validateConfiguration(): string[] {
+    // {{{
+    return validateConfig(this.getConfiguration());
   } // }}}
 }
 

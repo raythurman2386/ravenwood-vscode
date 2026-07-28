@@ -36,9 +36,9 @@ The project is structured to separate color palettes from UI and syntax rules:
 
 1.  **Adding Configurations:** To add a new user-customizable option:
     - Update `contributes.configuration` in `package.json`.
-    - Add the property to the `Configuration` interface in `src/interface.ts`.
-    - Update `Utils.getConfiguration()` and `Utils.isDefaultConfiguration()` in `src/utils.ts`.
-    - Update `src/hook/generateThemes.ts` to include the default for the new option.
+    - Add the property to the `Configuration` interface in `src/interface.ts` with a proper union type.
+    - If enum-valued, add to the `ALLOWED` array in `src/validation.ts` so `validateConfig()` catches typos.
+    - The type system (union types + `never` exhaustiveness checks) handles the rest.
 2.  **Modifying Colors:** Colors are managed in `src/palette/`. Changes there will propagate through `src/workbench/` and `src/syntax/`.
 3.  **Code Style:**
     - The codebase uses `vim` fold markers (`{{{` and `}}}`) for organization.
