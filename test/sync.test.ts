@@ -4,17 +4,15 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-// Sync tests — verify default.ts and italic.ts have matching language coverage.
-// This is the #1 regression source: every rule added to default.ts must also
-// appear in italic.ts (with italic adjustments for keywords/comments).
+// Sync tests — verify the default and italic variants produced by buildSyntax
+// have matching language coverage. With the unified rules.ts design this is
+// now guaranteed by construction, but the test remains as a smoke test.
 // {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
-import type { Palette } from '../src/interface';
 import { getPalette } from '../src/palette';
-import { getDefaultSyntax } from '../src/syntax/default';
-import { getItalicSyntax } from '../src/syntax/italic';
+import { buildSyntax } from '../src/syntax/rules';
 
 const darkPalette = getPalette({}, 'dark');
 
@@ -89,18 +87,19 @@ function extractLanguages(
   return langs;
 }
 
-/** Extract rule names (stripping variant suffixes for comparison). */
-function _extractRuleNames(rules: { name: string }[]): Set<string> {
-  return new Set(rules.map((r) => r.name));
-}
-
-describe('default.ts and italic.ts are in sync', () => {
-  const defaultRules = getDefaultSyntax(darkPalette as Palette, true);
-  const italicRules = getItalicSyntax(darkPalette as Palette, true);
+describe('buildSyntax default and italic variants have matching coverage', () => {
+  const defaultRules = buildSyntax(darkPalette, false, true);
+  const italicRules = buildSyntax(darkPalette, true, true);
 
   test('both have language coverage', () => {
-    assert.ok(defaultRules.length > 100, 'default.ts should have many rules');
-    assert.ok(italicRules.length > 100, 'italic.ts should have many rules');
+    assert.ok(
+      defaultRules.length > 100,
+      'default variant should have many rules',
+    );
+    assert.ok(
+      italicRules.length > 100,
+      'italic variant should have many rules',
+    );
   });
 
   test('language coverage matches between default and italic', () => {
@@ -115,18 +114,19 @@ describe('default.ts and italic.ts are in sync', () => {
     assert.deepEqual(
       missingInItalic,
       [],
-      `Languages in default.ts but missing in italic.ts: ${missingInItalic.join(', ')}`,
+      `Languages in default variant but missing in italic variant: ${missingInItalic.join(', ')}`,
     );
     assert.deepEqual(
       missingInDefault,
       [],
-      `Languages in italic.ts but missing in default.ts: ${missingInDefault.join(', ')}`,
+      `Languages in italic variant but missing in default variant: ${missingInDefault.join(', ')}`,
     );
   });
 
   test('rule scopes match between default and italic (names may differ for italic splits)', () => {
     // The italic variant may split a default rule into two (one italic, one regular)
-    // with different names, but the scopes must all be covered.
+    // with different names, but the scopes from the default variant must all be
+    // covered by the italic variant (the Go split moves scopes rather than dropping them).
     const defaultScopes = new Set(
       defaultRules.flatMap((r) => r.scope.split(',').map((s) => s.trim())),
     );
@@ -139,7 +139,7 @@ describe('default.ts and italic.ts are in sync', () => {
     assert.deepEqual(
       missingInItalic,
       [],
-      `Scopes in default.ts but missing in italic.ts: ${missingInItalic.join(', ')}`,
+      `Scopes in default variant but missing in italic variant: ${missingInItalic.join(', ')}`,
     );
   });
 
@@ -149,12 +149,12 @@ describe('default.ts and italic.ts are in sync', () => {
     );
     assert.ok(
       italicKeywords.length > 0,
-      'italic.ts should have keyword rules with fontStyle: "italic"',
+      'italic variant should have keyword rules with fontStyle: "italic"',
     );
     for (const rule of italicKeywords) {
       assert.ok(
         rule.settings.fontStyle?.includes('italic'),
-        `italic.ts rule "${rule.name}" should have fontStyle including "italic", got: ${rule.settings.fontStyle}`,
+        `italic variant rule "${rule.name}" should have fontStyle including "italic", got: ${rule.settings.fontStyle}`,
       );
     }
   });
@@ -169,7 +169,7 @@ describe('default.ts and italic.ts are in sync', () => {
       assert.ok(
         !rule.settings.fontStyle?.includes('italic') ||
           rule.name.toLowerCase().includes('comment'),
-        `default.ts rule "${rule.name}" should not have fontStyle: italic (comments excepted)`,
+        `default variant rule "${rule.name}" should not have fontStyle: italic (comments excepted)`,
       );
     }
   });
