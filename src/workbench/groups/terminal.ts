@@ -1,0 +1,86 @@
+/*---------------------------------------------------------------
+ *  Homepage:   https://github.com/raythurman2386/ravenwood-vscode
+ *  Copyright:  2026 raythurman2386 <support@raythurman.dev>
+ *  License:    MIT
+ *--------------------------------------------------------------*/
+
+import type { Palette } from '../../interface';
+import type { SelectionColors, WorkbenchVariantColors } from '../common';
+
+export function terminalColors(
+  palette: Palette,
+  _variant: string,
+  cursorFg: string,
+  variantColors: WorkbenchVariantColors,
+  selection: SelectionColors,
+): Record<string, string> {
+  // {{{
+  const { editorSelectionBg, editorSelectionBgHl } = selection;
+  return {
+    'terminal.foreground': `${palette.fg}`,
+    'terminalCursor.foreground': `${cursorFg}`,
+    'terminal.ansiBlack': `${variantColors.terminalAnsiBlack}`,
+    'terminal.ansiBlue': `${palette.blue}`,
+    'terminal.ansiBrightBlack': `${variantColors.terminalAnsiBrightBlack}`,
+    'terminal.ansiBrightBlue': `${palette.blue}`,
+    'terminal.ansiBrightCyan': `${palette.aqua}`,
+    'terminal.ansiBrightGreen': `${palette.green}`,
+    'terminal.ansiBrightMagenta': `${palette.purple}`,
+    'terminal.ansiBrightRed': `${palette.red}`,
+    'terminal.ansiBrightWhite': `${variantColors.terminalAnsiBrightWhite}`,
+    'terminal.ansiBrightYellow': `${palette.yellow}`,
+    'terminal.ansiCyan': `${palette.aqua}`,
+    'terminal.ansiGreen': `${palette.green}`,
+    'terminal.ansiMagenta': `${palette.purple}`,
+    'terminal.ansiRed': `${palette.red}`,
+    'terminal.ansiWhite': `${variantColors.terminalAnsiWhite}`,
+    'terminal.ansiYellow': `${palette.yellow}`,
+    'terminal.background': `${palette.bg}`,
+    'terminal.border': `${palette.bg}`,
+    'terminal.selectionBackground': `${editorSelectionBg}`,
+    'terminal.selectionForeground': `${palette.fg}`,
+    'terminal.inactiveSelectionBackground': `${editorSelectionBgHl}`,
+    'terminal.findMatchBackground': `${palette.dimOrange}40`,
+    'terminal.findMatchBorder': `${palette.dimOrange}`,
+    'terminal.findMatchHighlightBackground': `${palette.dimGreen}40`,
+    'terminal.findMatchHighlightBorder': `${palette.dimGreen}`,
+    'terminal.initialHintForeground': `${palette.grey0}`,
+    'terminalCursor.background': `${palette.bg}`,
+    'terminal.dropBackground': `${palette.bg2}80`,
+    'terminal.hoverHighlightBackground': `${palette.bg2}`,
+    'terminalOverviewRuler.border': `${palette.bg}00`,
+    'terminalOverviewRuler.findMatchForeground': `${palette.dimAqua}`,
+    'terminalOverviewRuler.cursorForeground': `${cursorFg}`,
+    'terminal.tab.activeBorder': `${palette.badge}d0`,
+    'terminalCommandDecoration.defaultBackground': `${palette.bg4}`,
+    'terminalCommandDecoration.successBackground': `${palette.dimGreen}`,
+    'terminalCommandDecoration.errorBackground': `${palette.dimRed}`,
+    'terminalCommandGuide.foreground': `${palette.grey0}`,
+    'terminalStickyScroll.background': `${palette.bg1}`,
+    'terminalStickyScroll.border': `${palette.bg4}`,
+    'terminalStickyScrollHover.background': `${palette.bg2}`,
+    'terminalSymbolIcon.aliasForeground': `${palette.orange}`,
+    'terminalSymbolIcon.branchForeground': `${palette.red}`,
+    'terminalSymbolIcon.commitForeground': `${palette.yellow}`,
+    'terminalSymbolIcon.flagForeground': `${palette.aqua}`,
+    'terminalSymbolIcon.optionForeground': `${palette.blue}`,
+    'terminalSymbolIcon.optionValueForeground': `${palette.green}`,
+    'terminalSymbolIcon.methodForeground': `${palette.orange}`,
+    'terminalSymbolIcon.argumentForeground': `${palette.grey1}`,
+    'terminalSymbolIcon.inlineSuggestionForeground': `${palette.grey0}`,
+    'terminalSymbolIcon.fileForeground': `${palette.fg}`,
+    'terminalSymbolIcon.folderForeground': `${palette.fg}`,
+    'terminalSymbolIcon.pullRequestDoneForeground': `${palette.green}`,
+    'terminalSymbolIcon.pullRequestForeground': `${palette.yellow}`,
+    'terminalSymbolIcon.remoteForeground': `${palette.purple}`,
+    'terminalSymbolIcon.stashForeground': `${palette.aqua}`,
+    'terminalSymbolIcon.symbolText': `${palette.grey2}`,
+    'terminalSymbolIcon.symbolicLinkFileForeground': `${palette.purple}`,
+    'terminalSymbolIcon.symbolicLinkFolderForeground': `${palette.purple}`,
+    'terminalSymbolIcon.tagForeground': `${palette.blue}`,
+    'terminalChat.background': `${palette.bg}`,
+    'terminalChat.foreground': `${palette.fg}`,
+    'terminalChat.border': `${palette.bg5}`,
+  };
+} // }}}
+// vim: fdm=marker fmr={{{,}}}:
