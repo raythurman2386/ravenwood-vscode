@@ -6,7 +6,9 @@
 
 import {
   type ConfigurationChangeEvent,
+  commands,
   type ExtensionContext,
+  window,
   workspace,
 } from 'vscode';
 import { writeJsonFile } from './fsUtil';
@@ -61,22 +63,24 @@ export default class Utils {
       highContrast: workspaceConfiguration.get<boolean>('highContrast'),
     };
   } // }}}
-  /** Return true iff every configuration value matches its documented default. */
+  /** Return true iff every configuration value matches its documented default. Treats `undefined` (unset) as the default for each field, so a user who never touched settings is considered default. */
   isDefaultConfiguration(configuration: Configuration): boolean {
     // {{{
+    const is = <T>(value: T | undefined, def: T): boolean =>
+      value === undefined || value === def;
     return (
-      configuration.italicKeywords === false &&
-      configuration.italicComments === true &&
-      configuration.lightWorkbench === 'material' &&
-      configuration.darkWorkbench === 'material' &&
-      configuration.lightContrast === 'medium' &&
-      configuration.darkContrast === 'medium' &&
-      configuration.darkCursor === 'white' &&
-      configuration.lightCursor === 'black' &&
-      configuration.darkSelection === 'grey' &&
-      configuration.lightSelection === 'grey' &&
-      configuration.diagnosticTextBackgroundOpacity === '0%' &&
-      configuration.highContrast === false
+      is(configuration.italicKeywords, false) &&
+      is(configuration.italicComments, true) &&
+      is(configuration.lightWorkbench, 'material') &&
+      is(configuration.darkWorkbench, 'material') &&
+      is(configuration.lightContrast, 'medium') &&
+      is(configuration.darkContrast, 'medium') &&
+      is(configuration.darkCursor, 'white') &&
+      is(configuration.lightCursor, 'black') &&
+      is(configuration.darkSelection, 'grey') &&
+      is(configuration.lightSelection, 'grey') &&
+      is(configuration.diagnosticTextBackgroundOpacity, '0%') &&
+      is(configuration.highContrast, false)
     );
   } // }}}
   /** Build the full ThemeData (dark + light) for a configuration via the shared `themeData` module. */
@@ -107,6 +111,21 @@ export default class Utils {
       writeJsonFile(darkPath, data.dark),
       writeJsonFile(lightPath, data.light),
     ]);
+  } // }}}
+  /** Prompt the user to reload the window so VS Code re-reads the regenerated theme JSON files. VS Code caches theme JSON in memory, so overwriting the file on disk is not enough — a window reload is required to apply the changes. */
+  promptToReload(): void {
+    // {{{
+    const action = 'Reload window';
+    window
+      .showInformationMessage(
+        'Ravenwood: configuration changed — reload required to apply.',
+        action,
+      )
+      .then((selectedAction) => {
+        if (selectedAction === action) {
+          commands.executeCommand('workbench.action.reloadWindow');
+        }
+      });
   } // }}}
   /** Return warning strings for any config value that's set but not a valid enum member. Delegates to the pure `validateConfig` helper. */
   validateConfiguration(): string[] {

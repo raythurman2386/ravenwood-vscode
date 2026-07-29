@@ -25,6 +25,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
             lightPath,
             utils.getThemeData(utils.getConfiguration()),
           );
+          utils.promptToReload();
         } catch (err) {
           window.showErrorMessage(
             `Ravenwood failed to regenerate theme files: ${String(err)}`,
@@ -45,6 +46,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
           lightPath,
           utils.getThemeData(configuration),
         );
+        utils.promptToReload();
       } catch (err) {
         window.showErrorMessage(
           `Ravenwood failed to regenerate theme files: ${String(err)}`,
