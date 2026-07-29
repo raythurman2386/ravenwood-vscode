@@ -10,7 +10,6 @@ import Utils from './utils';
 
 /** Desktop extension entry point. Registers a config-change listener that regenerates theme JSON files. */
 export async function activate(context: ExtensionContext): Promise<void> {
-  // {{{
   const utils = new Utils();
   const darkPath = join(__dirname, '..', 'themes', 'ravenwood-dark.json');
   const lightPath = join(__dirname, '..', 'themes', 'ravenwood-light.json');
@@ -59,9 +58,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
   if (warnings.length > 0) {
     window.showWarningMessage(`Ravenwood: ${warnings.join('; ')}`);
   }
-} // }}}
+}
 
 /** No-op deactivate; subscriptions are auto-disposed via context.subscriptions. */
 export function deactivate(): void {}
-
-// vim: fdm=marker fmr={{{,}}}:

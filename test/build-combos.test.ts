@@ -7,7 +7,6 @@
 // Build combo tests — verify getThemeData works for all config combinations
 // and produces valid output. Catches crashes from variant dispatching,
 // palette selection, and workbench style logic.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -83,6 +82,3 @@ describe('Variant dispatching throws on unknown variants', () => {
     assert.throws(() => getPalette({}, 'invalid-variant' as never));
   });
 });
-
-// }}}
-// vim: fdm=marker fmr={{{,}}}:

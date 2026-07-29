@@ -7,7 +7,6 @@
 // Helper function tests — verify the workbench common helpers resolve
 // cursor, selection, and diagnostic opacity correctly. These are the
 // functions behind the user-facing config options.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -186,7 +185,3 @@ describe('getDiagnosticOpacity', () => {
     assert.equal(getDiagnosticOpacity({}), '00');
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

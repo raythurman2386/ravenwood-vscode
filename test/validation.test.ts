@@ -7,7 +7,6 @@
 // Validation tests — verify validateConfig catches invalid enum values
 // that bypass VS Code's package.json `enum` constraint (e.g., when a user
 // edits settings.json directly with a typo).
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -116,7 +115,3 @@ describe('validateConfig — boolean fields are not validated', () => {
     assert.deepEqual(validateConfig({ highContrast: true }), []);
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

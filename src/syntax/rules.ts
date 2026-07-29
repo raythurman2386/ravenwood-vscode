@@ -30,7 +30,6 @@ export interface SyntaxRuleDef {
 
 /** Canonical syntax rule definitions. Order is preserved verbatim from the merged italic/default sources; VS Code uses first-match, so order is load-bearing. */
 export const SYNTAX_RULES: SyntaxRuleDef[] = [
-  // {{{
   {
     name: 'Regular',
     scope: 'storage.type.function.arrow, keyword.other.arrow',
@@ -2745,7 +2744,6 @@ export const SYNTAX_RULES: SyntaxRuleDef[] = [
       'entity.other.attribute-name.table.toml, entity.other.attribute-name.table.array.toml',
     settings: { foreground: 'purple' },
   },
-  // }}}
 ];
 
 /** Build the final TextMate rule array honouring the `italicKeywords` / `italicComments` flags. */
@@ -2754,7 +2752,6 @@ export function buildSyntax(
   italicKeywords: boolean,
   italicComments: boolean,
 ): SyntaxRule[] {
-  // {{{
   const rules: SyntaxRule[] = [];
   for (const def of SYNTAX_RULES) {
     if (def.onlyWhenItalicKeywords && !italicKeywords) continue;
@@ -2786,22 +2783,18 @@ export function buildSyntax(
   }
 
   if (italicComments) {
-    // {{{
     rules.push({
       name: 'Comment',
       scope: 'comment, string.comment, punctuation.definition.comment',
       settings: { foreground: palette.grey1, fontStyle: 'italic' },
-    }); // }}}
+    });
   } else {
-    // {{{
     rules.push({
       name: 'Comment',
       scope: 'comment, string.comment, punctuation.definition.comment',
       settings: { foreground: palette.grey1 },
-    }); // }}}
+    });
   }
 
   return rules;
-} // }}}
-
-// vim: fdm=marker fmr={{{,}}}:
+}

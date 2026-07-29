@@ -70,19 +70,6 @@ The project uses husky and lint-staged:
 
 ### File Organization
 
-#### Vim Fold Markers
-
-The codebase uses vim fold markers for code organization. Always use this pattern:
-
-```typescript
-function myFunction() {
-  // {{{
-  // function body
-  // }}}
-}
-// vim: fdm=marker fmr={{{,}}}:
-```
-
 #### File Headers
 
 Every source file must include a copyright header:
@@ -217,8 +204,6 @@ Before submitting changes:
 
 ### Development Tips
 
-- Use `vim` fold markers (`{{{` / `}}}`) to organize code within functions
-- Add `// vim: fdm=marker fmr={{{,}}}:` at the end of each source file
 - Keep palette definitions separate from logic
 - Ensure both dark and light variants are updated together
 - Test with different configuration combinations (contrast levels, workbench styles)

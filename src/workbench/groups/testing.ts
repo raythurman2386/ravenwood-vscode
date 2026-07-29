@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function testingColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'testing.iconFailed': `${palette.red}`,
     'testing.iconErrored': `${palette.red}`,
@@ -42,5 +41,4 @@ export function testingColors(palette: Palette): Record<string, string> {
     'testing.messagePeekBorder': `${palette.bg4}`,
     'testing.messagePeekHeaderBackground': `${palette.bg1}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

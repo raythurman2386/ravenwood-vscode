@@ -50,12 +50,11 @@ async function generate(
   lightPath: string,
   data: ReturnType<typeof getThemeData>,
 ): Promise<void> {
-  // {{{
   await Promise.all([
     writeJsonFile(darkPath, data.dark),
     writeJsonFile(lightPath, data.light),
   ]);
-} // }}}
+}
 
 generate(
   join(__dirname, '..', '..', 'themes', 'ravenwood-dark.json'),
@@ -66,7 +65,7 @@ generate(
   process.exit(1);
 });
 
-// --- Realm themes (static, build-time only) ---------------------------- {{{
+// --- Realm themes (static, build-time only)
 
 interface RealmDef {
   name: string;
@@ -142,7 +141,3 @@ generateRealms().catch((err: unknown) => {
   console.error('Failed to generate realm themes:', err);
   process.exit(1);
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

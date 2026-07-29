@@ -15,7 +15,6 @@ export function editorColors(
   variantColors: WorkbenchVariantColors,
   diagnosticOpacity: string,
 ): Record<string, string> {
-  // {{{
   const { editorSelectionBg, editorSelectionBgHl } = selection;
   return {
     'editor.background': `${palette.bg}`,
@@ -275,5 +274,4 @@ export function editorColors(
     'editorChat.foreground': `${palette.fg}`,
     'editorChat.border': `${palette.bg4}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

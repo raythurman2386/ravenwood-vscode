@@ -5,7 +5,6 @@
  *--------------------------------------------------------------*/
 
 // Structural tests — verify the theme output shape is valid VS Code theme JSON.
-// {{{
 
 import assert from 'node:assert/strict';
 import * as fs from 'node:fs';
@@ -372,7 +371,3 @@ describe('Package.json theme contributions consistency', () => {
     }
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

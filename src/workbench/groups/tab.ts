@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function tabColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'editorGroup.border': `${palette.bg0}`,
     'editorGroupHeader.tabsBackground': `${palette.bg}`,
@@ -48,5 +47,4 @@ export function tabColors(palette: Palette): Record<string, string> {
     'sideBySideEditor.horizontalBorder': `${palette.bg0}`,
     'sideBySideEditor.verticalBorder': `${palette.bg0}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

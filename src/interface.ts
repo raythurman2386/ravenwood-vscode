@@ -101,5 +101,3 @@ export interface SyntaxRule {
     fontStyle?: string;
   };
 }
-
-// vim: fdm=marker fmr={{{,}}}:

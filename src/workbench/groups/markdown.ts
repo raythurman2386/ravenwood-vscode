@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function markdownColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'markdownAlert.note.foreground': `${palette.blue}`,
     'markdownAlert.tip.foreground': `${palette.green}`,
@@ -15,5 +14,4 @@ export function markdownColors(palette: Palette): Record<string, string> {
     'markdownAlert.warning.foreground': `${palette.yellow}`,
     'markdownAlert.caution.foreground': `${palette.red}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

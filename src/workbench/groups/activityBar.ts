@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function activityBarColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'activityBar.border': `${palette.bg}`,
     'activityBar.background': `${palette.bg}`,
@@ -33,5 +32,4 @@ export function activityBarColors(palette: Palette): Record<string, string> {
     'activityBarTop.activeBackground': `${palette.bg}`,
     'activityBarTop.dropBorder': `${palette.bg5}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

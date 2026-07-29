@@ -60,13 +60,6 @@ npm run browser        # Launch VS Code web for testing
 Every TypeScript file must include:
 
 1. **Copyright header** (see existing files)
-2. **Vim fold markers** around function bodies:
-   ```typescript
-   function example() { // {{{
-     // body
-   } // }}}
-   // vim: fdm=marker fmr={{{,}}}:
-   ```
 
 ### Typing & Naming
 

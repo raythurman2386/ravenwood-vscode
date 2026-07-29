@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function diffColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'diffEditor.insertedTextBackground': `${palette.dimAqua}30`,
     'diffEditor.removedTextBackground': `${palette.dimRed}30`,
@@ -51,5 +50,4 @@ export function diffColors(palette: Palette): Record<string, string> {
     'merge.commonContentBackground': `${palette.dimPurple}40`,
     'merge.commonHeaderBackground': `${palette.dimPurple}80`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

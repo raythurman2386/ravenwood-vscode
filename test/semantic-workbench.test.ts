@@ -7,7 +7,6 @@
 // Semantic + workbench tests — verify getSemanticFromPalette produces valid
 // output, all claimed language IDs have token entries, and workbench styles
 // (material/flat/highContrast) produce meaningfully different output.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -257,7 +256,3 @@ describe('Workbench style isolation', () => {
     );
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

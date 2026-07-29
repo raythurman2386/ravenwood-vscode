@@ -15,7 +15,6 @@ import { getWorkbench } from './workbench';
  * build-time generateThemes hook as well as from the runtime Utils class.
  */
 export function getThemeData(configuration: Configuration): ThemeData {
-  // {{{
   return {
     dark: {
       name: 'Ravenwood Dark',
@@ -34,6 +33,4 @@ export function getThemeData(configuration: Configuration): ThemeData {
       tokenColors: getSyntax(configuration, 'light'),
     },
   };
-} // }}}
-
-// vim: fdm=marker fmr={{{,}}}:
+}

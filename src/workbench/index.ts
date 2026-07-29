@@ -50,5 +50,3 @@ export function getWorkbench(
     throw new Error(`Unknown variant: ${variant}`);
   }
 }
-
-// vim: fdm=marker fmr={{{,}}}:

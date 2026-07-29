@@ -7,7 +7,6 @@
 // Contrast tests — verify all palette variants meet WCAG accessibility
 // thresholds for text readability. These tests guard against regressions
 // from outside contributions that might inadvertently reduce contrast.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -337,6 +336,3 @@ describe('Palette integrity — background gradient', () => {
     }
   }
 });
-
-// }}}
-// vim: fdm=marker fmr={{{,}}}:

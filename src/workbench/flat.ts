@@ -40,5 +40,3 @@ export function flatWorkbench(
     'tab.lastPinnedBorder': `${palette.bg0}`,
   });
 }
-
-// vim: fdm=marker fmr={{{,}}}:

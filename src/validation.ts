@@ -75,7 +75,6 @@ const ALLOWED: Array<{
 
 /** Return warning strings for any config value that's set but not a valid enum member. Pure — no vscode dependency. */
 export function validateConfig(configuration: Configuration): string[] {
-  // {{{
   const warnings: string[] = [];
   for (const { key, values } of ALLOWED) {
     const value = configuration[key] as string | undefined;
@@ -86,6 +85,4 @@ export function validateConfig(configuration: Configuration): string[] {
     }
   }
   return warnings;
-} // }}}
-
-// vim: fdm=marker fmr={{{,}}}:
+}

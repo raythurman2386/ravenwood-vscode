@@ -11,7 +11,6 @@ export function debugColors(
   palette: Palette,
   variantColors: WorkbenchVariantColors,
 ): Record<string, string> {
-  // {{{
   return {
     'debugToolBar.background': `${variantColors.mainBg}`,
     'debugToolBar.border': `${palette.bg5}`,
@@ -50,5 +49,4 @@ export function debugColors(
     'debugExceptionWidget.background': `${palette.bg1}`,
     'debugExceptionWidget.border': `${palette.red}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

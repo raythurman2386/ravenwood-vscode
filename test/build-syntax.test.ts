@@ -8,7 +8,6 @@
 // correct output for each italicKeywords/italicComments combination. These
 // test the flag logic directly rather than comparing output against the
 // deleted default.ts/italic.ts files.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -207,7 +206,3 @@ describe('buildSyntax — scope swapping via italicKeywordsScope', () => {
     );
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

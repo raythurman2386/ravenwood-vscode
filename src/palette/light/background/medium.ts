@@ -19,5 +19,3 @@ export default {
   grey2: '#5c6658',
   shadow: '#3c474d20',
 } satisfies Partial<Palette>;
-
-// vim: fdm=marker fmr={{{,}}}:

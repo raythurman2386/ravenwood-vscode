@@ -8,7 +8,6 @@
 // bar as the base dark/light palettes: palette validity, WCAG contrast,
 // accent hue distinctness, background gradient, dim variant integrity,
 // and realm-to-realm distinctness.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -471,7 +470,3 @@ describe('Realm-to-realm bg distinctness', () => {
     }
   }
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

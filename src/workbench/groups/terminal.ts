@@ -14,7 +14,6 @@ export function terminalColors(
   variantColors: WorkbenchVariantColors,
   selection: SelectionColors,
 ): Record<string, string> {
-  // {{{
   const { editorSelectionBg, editorSelectionBgHl } = selection;
   return {
     'terminal.foreground': `${palette.fg}`,
@@ -82,5 +81,4 @@ export function terminalColors(
     'terminalChat.foreground': `${palette.fg}`,
     'terminalChat.border': `${palette.bg5}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

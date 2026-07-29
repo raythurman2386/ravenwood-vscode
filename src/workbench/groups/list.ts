@@ -12,7 +12,6 @@ export function listColors(
   _variantColors: WorkbenchVariantColors,
   _selection: SelectionColors,
 ): Record<string, string> {
-  // {{{
   return {
     'list.activeSelectionForeground': `${palette.fg}`,
     'list.activeSelectionBackground': `${palette.bg4}80`,
@@ -47,5 +46,4 @@ export function listColors(
     'tree.tableColumnsBorder': `${palette.bg4}`,
     'tree.tableOddRowsBackground': `${palette.bg1}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

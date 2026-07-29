@@ -87,7 +87,6 @@ See `references/palette.md` for the full color tables. Key rules:
 
 ### File Organization
 
-- **Vim fold markers**: `// {{{` and `// }}}` within functions, `// vim: fdm=marker fmr={{{,}}}:` at end of file
 - **Copyright header** on every source file:
 
 ```typescript
@@ -180,7 +179,6 @@ The type system (union types + `never` exhaustiveness checks) handles dispatch-s
 - [ ] `themes/ravenwood-dark.json` and `themes/ravenwood-light.json` both regenerated
 - [ ] No stray `}` in template literals (check hex color values)
 - [ ] Copyright header on any new source file
-- [ ] Vim fold markers on any new function block
 
 ## Related Files
 

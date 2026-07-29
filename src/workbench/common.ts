@@ -267,5 +267,3 @@ export function getWorkbenchVariantColors(
     welcomePageButtonHoverBg: isDark ? `${palette.bg}a0` : `${palette.bg2}a0`,
   };
 }
-
-// vim: fdm=marker fmr={{{,}}}:

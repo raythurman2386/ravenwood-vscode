@@ -92,5 +92,3 @@ export function* configCombos(): Generator<Configuration> {
 export function buildTheme(config: Configuration = {}) {
   return getThemeData(config);
 }
-
-// vim: fdm=marker fmr={{{,}}}:

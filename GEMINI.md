@@ -41,7 +41,6 @@ The project is structured to separate color palettes from UI and syntax rules:
     - The type system (union types + `never` exhaustiveness checks) handles the rest.
 2.  **Modifying Colors:** Colors are managed in `src/palette/`. Changes there will propagate through `src/workbench/` and `src/syntax/`.
 3.  **Code Style:**
-    - The codebase uses `vim` fold markers (`{{{` and `}}}`) for organization.
     - Strict typing is enforced via TypeScript.
     - Linting and formatting are handled by Biome (via `lint-staged`).
 
