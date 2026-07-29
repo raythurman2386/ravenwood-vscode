@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.3] - 2026-07-29
+
+### Fixed
+- Update in-repo skill files with new official Ravenwood light palette (#214)
+- optimize light mode palette from everforest defaults to official Ravenwood light (#212)
+
 ## [1.2.2] - 2026-07-28
 
 ### Fixed
