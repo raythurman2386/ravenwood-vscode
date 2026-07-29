@@ -25,5 +25,3 @@ export function highContrastWorkbench(
     'sideBar.background': `${palette.bg1}`,
   });
 }
-
-// vim: fdm=marker fmr={{{,}}}:

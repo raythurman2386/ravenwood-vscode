@@ -6,7 +6,6 @@
 
 // Scope safety tests — verify no overbroad TextMate scopes that would
 // override colors for ALL languages instead of just the intended one.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -247,6 +246,3 @@ describe('No overbroad scopes', () => {
     );
   });
 });
-
-// }}}
-// vim: fdm=marker fmr={{{,}}}:

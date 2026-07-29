@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function symbolIconColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'symbolIcon.colorForeground': `${palette.fg}`,
     'symbolIcon.snippetForeground': `${palette.fg}`,
@@ -43,5 +42,4 @@ export function symbolIconColors(palette: Palette): Record<string, string> {
     'symbolIcon.objectForeground': `${palette.purple}`,
     'symbolIcon.packageForeground': `${palette.purple}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

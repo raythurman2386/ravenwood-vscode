@@ -11,7 +11,6 @@ export function notebookColors(
   palette: Palette,
   variantColors: WorkbenchVariantColors,
 ): Record<string, string> {
-  // {{{
   return {
     'notebook.cellBorderColor': `${palette.bg5}`,
     'notebook.cellStatusBarItemHoverBackground': `${variantColors.mainBg}`,
@@ -38,5 +37,4 @@ export function notebookColors(
     'notebookScrollbarSlider.hoverBackground': `${palette.bg5}`,
     'notebookScrollbarSlider.activeBackground': `${palette.grey2}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

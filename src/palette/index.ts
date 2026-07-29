@@ -27,9 +27,7 @@ export function getPalette(
   let paletteForeground: Partial<Palette>;
   if (variant === 'dark') {
     paletteForeground = darkForeground;
-    switch (
-      configuration.darkContrast // {{{
-    ) {
+    switch (configuration.darkContrast) {
       case 'hard': {
         paletteBackground = darkBackgroundHard;
         break;
@@ -50,12 +48,10 @@ export function getPalette(
         const _exhaustive: never = configuration.darkContrast;
         throw new Error(`Unhandled darkContrast: ${_exhaustive as string}`);
       }
-    } // }}}
+    }
   } else if (variant === 'light') {
     paletteForeground = lightForeground;
-    switch (
-      configuration.lightContrast // {{{
-    ) {
+    switch (configuration.lightContrast) {
       case 'hard': {
         paletteBackground = lightBackgroundHard;
         break;
@@ -76,7 +72,7 @@ export function getPalette(
         const _exhaustive: never = configuration.lightContrast;
         throw new Error(`Unhandled lightContrast: ${_exhaustive as string}`);
       }
-    } // }}}
+    }
   } else {
     throw new Error(`Unknown variant: ${variant}`);
   }
@@ -85,5 +81,3 @@ export function getPalette(
     ...paletteForeground,
   } as Palette;
 }
-
-// vim: fdm=marker fmr={{{,}}}:

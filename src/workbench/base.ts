@@ -38,7 +38,6 @@ export function getBaseWorkbenchTokens(
   configuration: Configuration,
   variant: string,
 ): Record<string, string> {
-  // {{{
   const selection = getSelectionColors(palette, configuration, variant);
   const cursorFg = getCursorColor(palette, configuration, variant);
   const diagnosticOpacity = getDiagnosticOpacity(configuration);
@@ -69,7 +68,7 @@ export function getBaseWorkbenchTokens(
     ...symbolIconColors(palette),
     ...uiColors(palette, variantColors, cursorFg, selection),
   };
-} // }}}
+}
 
 /**
  * Apply the highContrast config flag overlay when configuration.highContrast is true.
@@ -80,7 +79,6 @@ export function applyHighContrastFlag(
   configuration: Configuration,
   tokens: Record<string, string>,
 ): Record<string, string> {
-  // {{{
   if (configuration.highContrast) {
     return {
       ...tokens,
@@ -89,6 +87,4 @@ export function applyHighContrastFlag(
     };
   }
   return tokens;
-} // }}}
-
-// vim: fdm=marker fmr={{{,}}}:
+}

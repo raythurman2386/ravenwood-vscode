@@ -21,5 +21,3 @@ export function activate(context: ExtensionContext): void {
 
 /** No-op deactivate; subscriptions are auto-disposed via context.subscriptions. */
 export function deactivate(): void {}
-
-// vim: fdm=marker fmr={{{,}}}:

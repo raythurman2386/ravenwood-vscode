@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function sideBarColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'sideBar.foreground': `${palette.grey1}`,
     'sideBar.background': `${palette.bg}`,
@@ -24,5 +23,4 @@ export function sideBarColors(palette: Palette): Record<string, string> {
     'sideBarStickyScroll.border': `${palette.bg4}`,
     'sideBarStickyScroll.shadow': `${palette.shadow}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

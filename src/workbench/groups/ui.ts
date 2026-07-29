@@ -13,7 +13,6 @@ export function uiColors(
   _cursorFg: string,
   selection: SelectionColors,
 ): Record<string, string> {
-  // {{{
   const { selectionBg } = selection;
   return {
     foreground: `${palette.grey2}`,
@@ -246,5 +245,4 @@ export function uiColors(
     'quickInputList.focusForeground': `${palette.fg}`,
     'quickInputList.focusIconForeground': `${palette.fg}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

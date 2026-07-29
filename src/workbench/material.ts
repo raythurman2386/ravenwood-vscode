@@ -16,5 +16,3 @@ export function materialWorkbench(
   const tokens = getBaseWorkbenchTokens(palette, configuration, variant);
   return applyHighContrastFlag(palette, configuration, tokens);
 }
-
-// vim: fdm=marker fmr={{{,}}}:

@@ -5,7 +5,6 @@
  *--------------------------------------------------------------*/
 
 // Palette tests — verify color values match the documented Ravenwood palette.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -151,6 +150,3 @@ describe('Contrast levels adjust backgrounds only', () => {
     assert.notEqual(medium, hard, 'medium and hard bg0 should differ');
   });
 });
-
-// }}}
-// vim: fdm=marker fmr={{{,}}}:

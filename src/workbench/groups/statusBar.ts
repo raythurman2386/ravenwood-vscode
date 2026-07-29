@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function statusBarColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'statusBar.background': `${palette.bg1}`,
     'statusBar.foreground': `${palette.grey2}`,
@@ -45,5 +44,4 @@ export function statusBarColors(palette: Palette): Record<string, string> {
     'statusBarItem.warningHoverForeground': `${palette.yellow}`,
     'statusBarItem.prominentHoverForeground': `${palette.fg}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

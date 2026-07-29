@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function chatColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'chat.requestBackground': `${palette.bg1}`,
     'chat.requestBorder': `${palette.bg}00`,
@@ -70,5 +69,4 @@ export function chatColors(palette: Palette): Record<string, string> {
     'agentStatusIndicator.background': `${palette.bg1}`,
     'aiCustomizationManagement.sashBorder': `${palette.bg5}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

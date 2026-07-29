@@ -24,5 +24,3 @@ export default {
   dimPurple: '#b87b9d',
   badge: '#4ade80',
 } satisfies Partial<Palette>;
-
-// vim: fdm=marker fmr={{{,}}}:

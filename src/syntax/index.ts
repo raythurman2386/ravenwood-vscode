@@ -13,11 +13,8 @@ export function getSyntax(
   configuration: Configuration,
   variant: string,
 ): SyntaxRule[] {
-  // {{{
   const palette = getPalette(configuration, variant);
   const italicComments = configuration.italicComments ?? true;
   const italicKeywords = configuration.italicKeywords === true;
   return buildSyntax(palette, italicKeywords, italicComments);
-} // }}}
-
-// vim: fdm=marker fmr={{{,}}}:
+}

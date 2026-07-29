@@ -11,7 +11,6 @@
 // VS Code's `enum` constraint. If these branches were ever removed or
 // changed to silently return, a typo'd config value would fall through
 // unnoticed.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -96,7 +95,3 @@ describe('Cursor dispatch exhaustiveness throws on invalid values', () => {
     );
   });
 });
-
-// }}}
-
-// vim: fdm=marker fmr={{{,}}}:

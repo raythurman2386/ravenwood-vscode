@@ -37,5 +37,3 @@ const palette: Palette = {
 };
 
 export default palette;
-
-// vim: fdm=marker fmr={{{,}}}:

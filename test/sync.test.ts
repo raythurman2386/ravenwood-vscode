@@ -7,7 +7,6 @@
 // Sync tests — verify the default and italic variants produced by buildSyntax
 // have matching language coverage. With the unified rules.ts design this is
 // now guaranteed by construction, but the test remains as a smoke test.
-// {{{
 
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
@@ -174,6 +173,3 @@ describe('buildSyntax default and italic variants have matching coverage', () =>
     }
   });
 });
-
-// }}}
-// vim: fdm=marker fmr={{{,}}}:

@@ -7,7 +7,6 @@
 import type { Palette } from '../../interface';
 
 export function gitColors(palette: Palette): Record<string, string> {
-  // {{{
   return {
     'gitDecoration.addedResourceForeground': `${palette.green}a0`,
     'gitDecoration.modifiedResourceForeground': `${palette.blue}a0`,
@@ -59,5 +58,4 @@ export function gitColors(palette: Palette): Record<string, string> {
     'gitlens.decorations.branchUnpublishedForegroundColor': `${palette.blue}`,
     'gitlens.decorations.branchMissingUpstreamForegroundColor': `${palette.red}`,
   };
-} // }}}
-// vim: fdm=marker fmr={{{,}}}:
+}

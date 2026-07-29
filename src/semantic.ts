@@ -12,15 +12,13 @@ export function getSemanticFromPalette(
   palette: Palette,
 ): Record<string, string> {
   return {
-    // General {{{
+    // General
     operatorOverload: `${palette.orange}`,
     memberOperatorOverload: `${palette.orange}`,
-    // }}}
-    // JavaScript {{{
+    // JavaScript
     'variable.defaultLibrary:javascript': `${palette.purple}`,
     'property.defaultLibrary:javascript': `${palette.purple}`,
-    // }}}
-    // JSX {{{
+    // JSX
     'class:javascriptreact': `${palette.aqua}`,
     'function:javascriptreact': `${palette.green}`,
     'method:javascriptreact': `${palette.green}`,
@@ -33,8 +31,7 @@ export function getSemanticFromPalette(
     'namespace:javascriptreact': `${palette.purple}`,
     'variable.defaultLibrary:javascriptreact': `${palette.purple}`,
     'property.defaultLibrary:javascriptreact': `${palette.purple}`,
-    // }}}
-    // TypeScript {{{
+    // TypeScript
     'class:typescript': `${palette.aqua}`,
     'interface:typescript': `${palette.aqua}`,
     'enum:typescript': `${palette.purple}`,
@@ -42,8 +39,7 @@ export function getSemanticFromPalette(
     'namespace:typescript': `${palette.purple}`,
     'variable.defaultLibrary:typescript': `${palette.purple}`,
     'property.defaultLibrary:typescript': `${palette.purple}`,
-    // }}}
-    // TypeScript React {{{
+    // TypeScript React
     'class:typescriptreact': `${palette.aqua}`,
     'interface:typescriptreact': `${palette.aqua}`,
     'enum:typescriptreact': `${palette.purple}`,
@@ -51,8 +47,7 @@ export function getSemanticFromPalette(
     'namespace:typescriptreact': `${palette.purple}`,
     'variable.defaultLibrary:typescriptreact': `${palette.purple}`,
     'property.defaultLibrary:typescriptreact': `${palette.purple}`,
-    // }}}
-    // Python {{{
+    // Python
     'intrinsic:python': `${palette.purple}`,
     'module:python': `${palette.blue}`,
     'class:python': `${palette.aqua}`,
@@ -63,8 +58,7 @@ export function getSemanticFromPalette(
     'decorator:python': `${palette.yellow}`,
     'enumMember:python': `${palette.blue}`,
     'namespace:python': `${palette.purple}`,
-    // }}}
-    // Java {{{
+    // Java
     'class:java': `${palette.aqua}`,
     'interface:java': `${palette.aqua}`,
     'enum:java': `${palette.purple}`,
@@ -76,13 +70,11 @@ export function getSemanticFromPalette(
     'parameter:java': `${palette.blue}`,
     'variable:java': `${palette.fg}`,
     'property:java': `${palette.aqua}`,
-    // }}}
-    // JSON {{{
+    // JSON
     'property:json': `${palette.aqua}`,
     'string:json': `${palette.yellow}`,
     'number:json': `${palette.purple}`,
-    // }}}
-    // C# {{{
+    // C#
     'class:csharp': `${palette.aqua}`,
     'interface:csharp': `${palette.aqua}`,
     'enum:csharp': `${palette.purple}`,
@@ -94,8 +86,7 @@ export function getSemanticFromPalette(
     'parameter:csharp': `${palette.blue}`,
     'variable:csharp': `${palette.fg}`,
     'property:csharp': `${palette.aqua}`,
-    // }}}
-    // C++ {{{
+    // C++
     'class:cpp': `${palette.aqua}`,
     'struct:cpp': `${palette.aqua}`,
     'enum:cpp': `${palette.purple}`,
@@ -107,8 +98,7 @@ export function getSemanticFromPalette(
     'parameter:cpp': `${palette.blue}`,
     'variable:cpp': `${palette.fg}`,
     'field:cpp': `${palette.aqua}`,
-    // }}}
-    // C {{{
+    // C
     'function:c': `${palette.green}`,
     'method:c': `${palette.green}`,
     'variable:c': `${palette.fg}`,
@@ -116,8 +106,7 @@ export function getSemanticFromPalette(
     'macro:c': `${palette.aqua}`,
     'parameter:c': `${palette.blue}`,
     'namespace:c': `${palette.purple}`,
-    // }}}
-    // Rust {{{
+    // Rust
     'macro:rust': `${palette.aqua}`,
     'namespace:rust': `${palette.purple}`,
     'selfKeyword:rust': `${palette.purple}`,
@@ -133,8 +122,7 @@ export function getSemanticFromPalette(
     'constant:rust': `${palette.purple}`,
     'lifetime:rust': `${palette.purple}`,
     'module:rust': `${palette.purple}`,
-    // }}}
-    // Go {{{
+    // Go
     'namespace:go': `${palette.blue}`,
     'type:go': `${palette.aqua}`,
     'struct:go': `${palette.aqua}`,
@@ -146,8 +134,7 @@ export function getSemanticFromPalette(
     'field:go': `${palette.aqua}`,
     'constant:go': `${palette.purple}`,
     'typeParameter:go': `${palette.purple}`,
-    // }}}
-    // GraphQL {{{
+    // GraphQL
     'type:graphql': `${palette.aqua}`,
     'variable:graphql': `${palette.fg}`,
     'function:graphql': `${palette.green}`,
@@ -156,22 +143,19 @@ export function getSemanticFromPalette(
     'enum:graphql': `${palette.aqua}`,
     'enumMember:graphql': `${palette.blue}`,
     'namespace:graphql': `${palette.purple}`,
-    // }}}
-    // Elm {{{
+    // Elm
     'type:elm': `${palette.aqua}`,
     'typeAlias:elm': `${palette.aqua}`,
     'function:elm': `${palette.green}`,
     'module:elm': `${palette.purple}`,
-    // }}}
-    // Erlang {{{
+    // Erlang
     'module:erlang': `${palette.purple}`,
     'function:erlang': `${palette.green}`,
     'type:erlang': `${palette.aqua}`,
     'record:erlang': `${palette.aqua}`,
     'macro:erlang': `${palette.aqua}`,
     'variable:erlang': `${palette.fg}`,
-    // }}}
-    // Elixir {{{
+    // Elixir
     'module:elixir': `${palette.purple}`,
     'function:elixir': `${palette.green}`,
     'method:elixir': `${palette.green}`,
@@ -180,8 +164,7 @@ export function getSemanticFromPalette(
     'struct:elixir': `${palette.aqua}`,
     'macro:elixir': `${palette.aqua}`,
     'namespace:elixir': `${palette.purple}`,
-    // }}}
-    // F# {{{
+    // F#
     'module:fsharp': `${palette.purple}`,
     'type:fsharp': `${palette.aqua}`,
     'function:fsharp': `${palette.green}`,
@@ -191,8 +174,7 @@ export function getSemanticFromPalette(
     'property:fsharp': `${palette.aqua}`,
     'enum:fsharp': `${palette.aqua}`,
     'namespace:fsharp': `${palette.purple}`,
-    // }}}
-    // Julia {{{
+    // Julia
     'struct:julia': `${palette.aqua}`,
     'function:julia': `${palette.green}`,
     'method:julia': `${palette.green}`,
@@ -200,8 +182,7 @@ export function getSemanticFromPalette(
     'variable:julia': `${palette.fg}`,
     'module:julia': `${palette.purple}`,
     'macro:julia': `${palette.aqua}`,
-    // }}}
-    // Kotlin {{{
+    // Kotlin
     'class:kotlin': `${palette.aqua}`,
     'function:kotlin': `${palette.green}`,
     'method:kotlin': `${palette.green}`,
@@ -212,16 +193,14 @@ export function getSemanticFromPalette(
     'enumMember:kotlin': `${palette.blue}`,
     'namespace:kotlin': `${palette.purple}`,
     'typeParameter:kotlin': `${palette.purple}`,
-    // }}}
-    // LaTex {{{
+    // LaTex
     'function:latex': `${palette.green}`,
     'variable:latex': `${palette.fg}`,
     'parameter:latex': `${palette.blue}`,
     'type:latex': `${palette.aqua}`,
     'namespace:latex': `${palette.purple}`,
     'macro:latex': `${palette.aqua}`,
-    // }}}
-    // PHP {{{
+    // PHP
     'class:php': `${palette.aqua}`,
     'interface:php': `${palette.aqua}`,
     'enum:php': `${palette.aqua}`,
@@ -231,8 +210,7 @@ export function getSemanticFromPalette(
     'variable:php': `${palette.fg}`,
     'property:php': `${palette.aqua}`,
     'namespace:php': `${palette.purple}`,
-    // }}}
-    // Pug {{{
+    // Pug
     'tag:pug': `${palette.aqua}`,
     'class:pug': `${palette.aqua}`,
     'type:pug': `${palette.aqua}`,
@@ -245,8 +223,7 @@ export function getSemanticFromPalette(
     'module:pug': `${palette.purple}`,
     'constant:pug': `${palette.purple}`,
     'macro:pug': `${palette.aqua}`,
-    // }}}
-    // Proto {{{
+    // Proto
     'class:proto': `${palette.aqua}`,
     'enum:proto': `${palette.purple}`,
     'enumMember:proto': `${palette.blue}`,
@@ -257,8 +234,7 @@ export function getSemanticFromPalette(
     'property:proto': `${palette.aqua}`,
     'type:proto': `${palette.aqua}`,
     'namespace:proto': `${palette.purple}`,
-    // }}}
-    // Html {{{
+    // Html
     'tag:html': `${palette.aqua}`,
     'class:html': `${palette.aqua}`,
     'type:html': `${palette.aqua}`,
@@ -271,8 +247,7 @@ export function getSemanticFromPalette(
     'module:html': `${palette.purple}`,
     'constant:html': `${palette.purple}`,
     'macro:html': `${palette.aqua}`,
-    // }}}
-    // Xml {{{
+    // Xml
     'tag:xml': `${palette.aqua}`,
     'class:xml': `${palette.aqua}`,
     'type:xml': `${palette.aqua}`,
@@ -285,43 +260,37 @@ export function getSemanticFromPalette(
     'module:xml': `${palette.purple}`,
     'constant:xml': `${palette.purple}`,
     'macro:xml': `${palette.aqua}`,
-    // }}}
-    // Perl {{{
+    // Perl
     'package:perl': `${palette.purple}`,
     'function:perl': `${palette.green}`,
     'method:perl': `${palette.green}`,
     'variable:perl': `${palette.fg}`,
     'namespace:perl': `${palette.purple}`,
-    // }}}
-    // Shell {{{
+    // Shell
     'function:shellscript': `${palette.green}`,
     'variable:shellscript': `${palette.fg}`,
     'parameter:shellscript': `${palette.blue}`,
-    // }}}
-    // PowerShell {{{
+    // PowerShell
     'function:powershell': `${palette.green}`,
     'method:powershell': `${palette.green}`,
     'variable:powershell': `${palette.fg}`,
     'parameter:powershell': `${palette.blue}`,
     'type:powershell': `${palette.aqua}`,
     'namespace:powershell': `${palette.purple}`,
-    // }}}
-    // Clojure {{{
+    // Clojure
     'function:clojure': `${palette.green}`,
     'method:clojure': `${palette.green}`,
     'variable:clojure': `${palette.fg}`,
     'namespace:clojure': `${palette.purple}`,
     'protocol:clojure': `${palette.aqua}`,
     'record:clojure': `${palette.aqua}`,
-    // }}}
-    // CoffeeScript {{{
+    // CoffeeScript
     'class:coffeescript': `${palette.aqua}`,
     'function:coffeescript': `${palette.green}`,
     'method:coffeescript': `${palette.green}`,
     'parameter:coffeescript': `${palette.blue}`,
     'variable:coffeescript': `${palette.fg}`,
-    // }}}
-    // Dart {{{
+    // Dart
     'class:dart': `${palette.aqua}`,
     'enum:dart': `${palette.aqua}`,
     'function:dart': `${palette.green}`,
@@ -330,8 +299,7 @@ export function getSemanticFromPalette(
     'variable:dart': `${palette.fg}`,
     'property:dart': `${palette.aqua}`,
     'typeParameter:dart': `${palette.purple}`,
-    // }}}
-    // Groovy {{{
+    // Groovy
     'class:groovy': `${palette.aqua}`,
     'function:groovy': `${palette.green}`,
     'method:groovy': `${palette.green}`,
@@ -339,8 +307,7 @@ export function getSemanticFromPalette(
     'variable:groovy': `${palette.fg}`,
     'property:groovy': `${palette.aqua}`,
     'namespace:groovy': `${palette.purple}`,
-    // }}}
-    // Lua {{{
+    // Lua
     'class:lua': `${palette.aqua}`,
     'function:lua': `${palette.green}`,
     'method:lua': `${palette.green}`,
@@ -348,8 +315,7 @@ export function getSemanticFromPalette(
     'variable:lua': `${palette.fg}`,
     'table:lua': `${palette.aqua}`,
     'property:lua': `${palette.aqua}`,
-    // }}}
-    // Markdown {{{
+    // Markdown
     'heading:markdown': `${palette.aqua}`,
     'emphasis:markdown': `${palette.fg}`,
     'strong:markdown': `${palette.fg}`,
@@ -369,24 +335,21 @@ export function getSemanticFromPalette(
     'macro:markdown': `${palette.aqua}`,
     'enumMember:markdown': `${palette.blue}`,
     'class:markdown': `${palette.aqua}`,
-    // }}}
-    // R {{{
+    // R
     'class:r': `${palette.aqua}`,
     'function:r': `${palette.green}`,
     'method:r': `${palette.green}`,
     'parameter:r': `${palette.blue}`,
     'variable:r': `${palette.fg}`,
     'namespace:r': `${palette.purple}`,
-    // }}}
-    // Common Lisp {{{
+    // Common Lisp
     'function:commonlisp': `${palette.green}`,
     'method:commonlisp': `${palette.green}`,
     'variable:commonlisp': `${palette.fg}`,
     'class:commonlisp': `${palette.aqua}`,
     'package:commonlisp': `${palette.purple}`,
     'generic:commonlisp': `${palette.aqua}`,
-    // }}}
-    // reStructuredText {{{
+    // reStructuredText
     'namespace:restructuredtext': `${palette.purple}`,
     'type:restructuredtext': `${palette.aqua}`,
     'function:restructuredtext': `${palette.green}`,
@@ -394,8 +357,7 @@ export function getSemanticFromPalette(
     'variable:restructuredtext': `${palette.fg}`,
     'macro:restructuredtext': `${palette.aqua}`,
     'class:restructuredtext': `${palette.aqua}`,
-    // }}}
-    // Ruby {{{
+    // Ruby
     'class:ruby': `${palette.aqua}`,
     'module:ruby': `${palette.purple}`,
     'function:ruby': `${palette.green}`,
@@ -404,8 +366,7 @@ export function getSemanticFromPalette(
     'variable:ruby': `${palette.fg}`,
     'constant:ruby': `${palette.purple}`,
     'namespace:ruby': `${palette.purple}`,
-    // }}}
-    // Haskell {{{
+    // Haskell
     'class:haskell': `${palette.aqua}`,
     'type:haskell': `${palette.aqua}`,
     'function:haskell': `${palette.green}`,
@@ -413,8 +374,7 @@ export function getSemanticFromPalette(
     'variable:haskell': `${palette.fg}`,
     'typeParameter:haskell': `${palette.purple}`,
     'module:haskell': `${palette.purple}`,
-    // }}}
-    // OCaml {{{
+    // OCaml
     'module:ocaml': `${palette.purple}`,
     'type:ocaml': `${palette.aqua}`,
     'function:ocaml': `${palette.green}`,
@@ -423,15 +383,13 @@ export function getSemanticFromPalette(
     'variable:ocaml': `${palette.fg}`,
     'variant:ocaml': `${palette.aqua}`,
     'moduleType:ocaml': `${palette.aqua}`,
-    // }}}
-    // PureScript {{{
+    // PureScript
     'type:purescript': `${palette.aqua}`,
     'typeAlias:purescript': `${palette.aqua}`,
     'function:purescript': `${palette.green}`,
     'module:purescript': `${palette.purple}`,
     'class:purescript': `${palette.aqua}`,
-    // }}}
-    // Scala {{{
+    // Scala
     'class:scala': `${palette.aqua}`,
     'trait:scala': `${palette.aqua}`,
     'object:scala': `${palette.aqua}`,
@@ -442,14 +400,12 @@ export function getSemanticFromPalette(
     'variable:scala': `${palette.fg}`,
     'typeParameter:scala': `${palette.purple}`,
     'namespace:scala': `${palette.purple}`,
-    // }}}
-    // SQL {{{
+    // SQL
     'function:sql': `${palette.green}`,
     'variable:sql': `${palette.fg}`,
     'type:sql': `${palette.aqua}`,
     'parameter:sql': `${palette.blue}`,
-    // }}}
-    // Swift {{{
+    // Swift
     'class:swift': `${palette.aqua}`,
     'struct:swift': `${palette.aqua}`,
     'enum:swift': `${palette.aqua}`,
@@ -459,15 +415,13 @@ export function getSemanticFromPalette(
     'parameter:swift': `${palette.blue}`,
     'variable:swift': `${palette.fg}`,
     'property:swift': `${palette.aqua}`,
-    // }}}
-    // Fish {{{
+    // Fish
     'function:fish': `${palette.orange}`,
     'variable:fish': `${palette.blue}`,
     'parameter:fish': `${palette.blue}`,
     'keyword:fish': `${palette.red}`,
     'constant:fish': `${palette.purple}`,
-    // }}}
-    // CSS {{{
+    // CSS
     'property:css': `${palette.aqua}`,
     'variable:css': `${palette.fg}`,
     'function:css': `${palette.green}`,
@@ -478,8 +432,7 @@ export function getSemanticFromPalette(
     'namespace:css': `${palette.purple}`,
     'constant:css': `${palette.purple}`,
     'keyword:css': `${palette.red}`,
-    // }}}
-    // SASS {{{
+    // SASS
     'property:scss': `${palette.aqua}`,
     'variable:scss': `${palette.fg}`,
     'function:scss': `${palette.green}`,
@@ -490,8 +443,7 @@ export function getSemanticFromPalette(
     'namespace:scss': `${palette.purple}`,
     'constant:scss': `${palette.purple}`,
     'keyword:scss': `${palette.red}`,
-    // }}}
-    // Stylus {{{
+    // Stylus
     'property:stylus': `${palette.aqua}`,
     'variable:stylus': `${palette.blue}`,
     'function:stylus': `${palette.yellow}`,
@@ -503,15 +455,13 @@ export function getSemanticFromPalette(
     'constant:stylus': `${palette.purple}`,
     'keyword:stylus': `${palette.red}`,
     'macro:stylus': `${palette.purple}`,
-    // }}}
-    // Diff {{{
+    // Diff
     'type:diff': `${palette.aqua}`,
     'variable:diff': `${palette.fg}`,
     'function:diff': `${palette.green}`,
     'parameter:diff': `${palette.blue}`,
     'namespace:diff': `${palette.purple}`,
-    // }}}
-    // YAML {{{
+    // YAML
     'type:yaml': `${palette.aqua}`,
     'variable:yaml': `${palette.fg}`,
     'parameter:yaml': `${palette.blue}`,
@@ -527,8 +477,7 @@ export function getSemanticFromPalette(
     'enumMember:yaml': `${palette.blue}`,
     'class:yaml': `${palette.aqua}`,
     'macro:yaml': `${palette.aqua}`,
-    // }}}
-    // TOML {{{
+    // TOML
     'property:toml': `${palette.aqua}`,
     'string:toml': `${palette.yellow}`,
     'number:toml': `${palette.purple}`,
@@ -538,7 +487,6 @@ export function getSemanticFromPalette(
     'namespace:toml': `${palette.purple}`,
     'parameter:toml': `${palette.blue}`,
     'function:toml': `${palette.green}`,
-    // }}}
   };
 }
 
@@ -550,5 +498,3 @@ export function getSemantic(
   const palette = getPalette(configuration, variant);
   return getSemanticFromPalette(palette);
 }
-
-// vim: fdm=marker fmr={{{,}}}:
