@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.4] - 2026-07-30
+
+### Fixed
+- remove vim fold markers from all source files (#218)
+- prompt to reload after regenerating theme JSON (#217)
+
 ## [1.2.3] - 2026-07-29
 
 ### Fixed
