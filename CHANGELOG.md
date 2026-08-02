@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.7] - 2026-08-02
+
+### Other
+- chore(deps-dev): bump @types/node from 26.1.1 to 26.1.2 (#226)
+- chore(deps-dev): bump lint-staged from 17.1.0 to 17.2.0 (#225)
+- chore(deps-dev): bump @biomejs/biome from 2.5.5 to 2.5.6 (#224)
+
 ## [1.2.6] - 2026-08-01
 
 ## [1.2.5] - 2026-07-31
