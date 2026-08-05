@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.10] - 2026-08-05
+
+### Fixed
+- update outdated dev dependencies (lint-staged, tsx) (#231)
+- resolve 3 high-severity npm audit vulnerabilities
+
 ## [1.2.9] - 2026-08-04
 
 ## [1.2.8] - 2026-08-03
