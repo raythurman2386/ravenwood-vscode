@@ -72,7 +72,7 @@ index-client.ts activate()
                  └─ Promise.all([writeJsonFile(dark), writeJsonFile(light)])
         │
         ▼
-VS Code reloads themes/ravenwood-{dark,light}.json automatically
+A single, dismissible "Reload window" notification is shown after theme regeneration
 ```
 
 The `activate()` function receives an `ExtensionContext` and pushes the `onDidChangeConfiguration` subscription into `context.subscriptions`, so the listener is cleaned up on deactivate.

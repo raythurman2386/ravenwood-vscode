@@ -126,4 +126,4 @@ Whether to add an additional border around items across the UI to increase the c
 }
 ```
 
-With the above settings, Ravenwood regenerates `themes/ravenwood-dark.json` and `themes/ravenwood-light.json` on save; VS Code reloads the theme automatically. No reload prompt is shown.
+With the above settings, Ravenwood regenerates `themes/ravenwood-dark.json` and `themes/ravenwood-light.json` on save; a single, dismissible "Reload window" notification is shown after theme regeneration.
