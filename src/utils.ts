@@ -25,6 +25,8 @@ import type {
 import { getThemeData } from './themeData';
 import { validateConfig } from './validation';
 
+let promptActive = false;
+
 /** Utility class for detecting config changes, reading configuration, and regenerating theme files. */
 export default class Utils {
   /** Invoke `onConfigChange` if the event affects any `ravenwood.*` setting. */
@@ -108,6 +110,10 @@ export default class Utils {
   }
   /** Prompt the user to reload the window so VS Code re-reads the regenerated theme JSON files. VS Code caches theme JSON in memory, so overwriting the file on disk is not enough — a window reload is required to apply the changes. */
   promptToReload(): void {
+    if (promptActive) {
+      return;
+    }
+    promptActive = true;
     const action = 'Reload window';
     window
       .showInformationMessage(
@@ -115,6 +121,7 @@ export default class Utils {
         action,
       )
       .then((selectedAction: string | undefined) => {
+        promptActive = false;
         if (selectedAction === action) {
           commands.executeCommand('workbench.action.reloadWindow');
         }
