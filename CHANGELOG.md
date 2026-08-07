@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.12] - 2026-08-07
+
+### Fixed
+- reload prompt dismiss appears broken due to stacked notifications (#235)
+- resolve high-severity js-yaml vulnerability (CVE-2026-59870)
+
 ## [1.2.11] - 2026-08-06
 
 ## [1.2.10] - 2026-08-05
