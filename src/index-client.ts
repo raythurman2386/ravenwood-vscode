@@ -14,22 +14,30 @@ export async function activate(context: ExtensionContext): Promise<void> {
   const darkPath = join(__dirname, '..', 'themes', 'ravenwood-dark.json');
   const lightPath = join(__dirname, '..', 'themes', 'ravenwood-light.json');
 
+  let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+
   // Regenerate theme files when user configuration changes.
   context.subscriptions.push(
     workspace.onDidChangeConfiguration((event) => {
-      utils.detectConfigChanges(event, async () => {
-        try {
-          await utils.generate(
-            darkPath,
-            lightPath,
-            utils.getThemeData(utils.getConfiguration()),
-          );
-          utils.promptToReload();
-        } catch (err) {
-          window.showErrorMessage(
-            `Ravenwood failed to regenerate theme files: ${String(err)}`,
-          );
+      utils.detectConfigChanges(event, () => {
+        if (debounceTimer !== undefined) {
+          clearTimeout(debounceTimer);
         }
+        debounceTimer = setTimeout(async () => {
+          debounceTimer = undefined;
+          try {
+            await utils.generate(
+              darkPath,
+              lightPath,
+              utils.getThemeData(utils.getConfiguration()),
+            );
+            utils.promptToReload();
+          } catch (err) {
+            window.showErrorMessage(
+              `Ravenwood failed to regenerate theme files: ${String(err)}`,
+            );
+          }
+        }, 300);
       });
     }),
   );
