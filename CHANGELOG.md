@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.13] - 2026-08-08
+
+### Other
+- docs: reconcile contradictory reload-prompt descriptions (#236)
+
 ## [1.2.12] - 2026-08-07
 
 ### Fixed
