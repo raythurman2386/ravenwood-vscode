@@ -1,9 +1,9 @@
-name: Nightly Release
+name: Weekly Release
 
 on:
   schedule:
-    # 2:00 AM UTC every day (9:00 PM CT)
-    - cron: "0 2 * * *"
+    # 2:00 AM UTC every Monday (9:00 PM CT Sunday)
+    - cron: "0 2 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  nightly-release:
+  weekly-release:
     runs-on: ubuntu-latest
     if: github.repository == 'raythurman2386/ravenwood-vscode'
 
@@ -185,13 +185,13 @@ jobs:
           git remote set-url origin "https://x-access-token:${{ secrets.RELEASE_TOKEN }}@github.com/${{ github.repository }}.git"
           git checkout -b "$BRANCH"
           git add package.json CHANGELOG.md
-          git commit -m "release: v$NEW_VERSION — nightly auto-release"
+          git commit -m "release: v$NEW_VERSION — weekly auto-release"
           git push origin "$BRANCH"
 
           # Create PR
-          PR_BODY=$(printf 'Automated nightly release. Bumps version to %s and updates CHANGELOG.md.\n\nThis PR will be auto-merged and tagged to trigger stable_release.yml.\n\nDependency audit: see the workflow run summary for npm audit and outdated packages.' "$NEW_VERSION")
+          PR_BODY=$(printf 'Automated weekly release. Bumps version to %s and updates CHANGELOG.md.\n\nThis PR will be auto-merged and tagged to trigger stable_release.yml.\n\nDependency audit: see the workflow run summary for npm audit and outdated packages.' "$NEW_VERSION")
           PR_URL=$(gh pr create \
-            --title "release: v$NEW_VERSION — nightly auto-release" \
+            --title "release: v$NEW_VERSION — weekly auto-release" \
             --body "$PR_BODY" \
             --head "$BRANCH" \
             --base main \
@@ -211,7 +211,7 @@ jobs:
 
           # Merge the PR via squash merge
           gh pr merge "$PR_NUMBER" --squash --admin --delete-branch \
-            --subject "release: v$NEW_VERSION — nightly auto-release (#$PR_NUMBER)"
+            --subject "release: v$NEW_VERSION — weekly auto-release (#$PR_NUMBER)"
 
           # Checkout main and pull the merged changes
           git checkout main
@@ -226,7 +226,7 @@ jobs:
         env:
           NEW_VERSION: ${{ steps.bump.outputs.new_version }}
         run: |
-          echo "### Nightly Release Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Weekly Release Summary" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "**Version:** $NEW_VERSION" >> "$GITHUB_STEP_SUMMARY"
           echo "**Commits since last tag:** ${{ steps.last.outputs.commit_count }}" >> "$GITHUB_STEP_SUMMARY"
