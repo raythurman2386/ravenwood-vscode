@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.22] - 2026-08-17
+
+### Other
+- chore: moved from nightly to a weekly automated release since  issues and development have slowed down.
+
 ## [1.2.21] - 2026-08-16
 
 ## [1.2.20] - 2026-08-15
