@@ -43,6 +43,20 @@ Ravenwood exposes 12 configuration options under the `ravenwood.*` namespace. Al
 
 See [CONFIGURATION.md](CONFIGURATION.md) for the full reference with allowed values, defaults, and example `settings.json` snippets.
 
+### Agents Window (VS Code 1.135+)
+
+VS Code's **Agents Window** (`Chat: Open Agents window` / `code --agents`) only auto-loads purely declarative extensions. Ravenwood has a `main`/`browser` entry point for dynamic theme regeneration, so it is **disabled** in that window by default and the UI falls back to the built-in dark theme.
+
+Opt Ravenwood in with this user setting, then reload the Agents Window:
+
+```json
+"extensions.supportAgentsWindow": {
+  "RaymondThurman.ravenwood": true
+}
+```
+
+Ravenwood also ships Agents Window workbench colors (`agentsPanel.*`, `agentsChatInput.*`, and related tokens) so that window matches the rest of the theme once the extension is allowed to load.
+
 ## Build
 
 Contributors can build the extension from source:

@@ -12,6 +12,7 @@ import {
   getWorkbenchVariantColors,
 } from './common';
 import { activityBarColors } from './groups/activityBar';
+import { agentsWindowColors } from './groups/agents';
 import { chatColors } from './groups/chat';
 import { debugColors } from './groups/debug';
 import { diffColors } from './groups/diff';
@@ -63,6 +64,7 @@ export function getBaseWorkbenchTokens(
     ...diffColors(palette),
     ...notebookColors(palette, variantColors),
     ...chatColors(palette),
+    ...agentsWindowColors(palette),
     ...testingColors(palette),
     ...markdownColors(palette),
     ...symbolIconColors(palette),
