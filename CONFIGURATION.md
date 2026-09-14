@@ -127,3 +127,17 @@ Whether to add an additional border around items across the UI to increase the c
 ```
 
 With the above settings, Ravenwood regenerates `themes/ravenwood-dark.json` and `themes/ravenwood-light.json` on save; a single, dismissible "Reload window" notification is shown after theme regeneration.
+
+## Agents Window
+
+VS Code 1.135+ opens a separate **Agents Window** (`Chat: Open Agents window`) that uses its own built-in profile and a restricted extension allowlist. Any extension with a `main` or `browser` entry point is disabled there unless you opt it in — including Ravenwood. Without the opt-in, `workbench.colorTheme: "Ravenwood Dark"` cannot resolve and the window falls back to VS Code's default dark theme.
+
+This is a VS Code policy, not a Ravenwood setting. Add the following to user `settings.json` and reload the Agents Window:
+
+```json
+"extensions.supportAgentsWindow": {
+  "RaymondThurman.ravenwood": true
+}
+```
+
+Once enabled, Ravenwood registers its theme contributions and runs `activate()`, so dynamic regeneration works in that window too. Theme JSON includes Agents Window color tokens (`agents.*`, `agentsPanel.*`, `agentsChatInput.*`, `agentsNewSessionButton.*`, `agentsBadge.*`, `agentsVoice.*`, and related keys). Unknown color IDs are ignored on older VS Code versions.

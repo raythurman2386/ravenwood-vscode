@@ -167,10 +167,62 @@ describe('Workbench color key coverage', () => {
       'simpleChat.',
       'terminalChat.',
       'editorChat.',
+      'agentsPanel.',
+      'agentsChatInput.',
+      'agentsNewSessionButton.',
+      'agentsBadge.',
+      'agentsUnreadBadge.',
+      'agentsGradient.',
+      'agentsVoice.',
+      'agentsUpdateButton.',
+      'activeSessionView.',
+      'inactiveSessionView.',
+      'agentFeedbackEditorWidget.',
+      'agentFeedbackInputWidget.',
     ];
     for (const prefix of requiredPrefixes) {
       const found = keys.some((k) => k.startsWith(prefix));
       assert.ok(found, `missing key with prefix "${prefix}" in dark theme`);
+    }
+  });
+
+  test('Agents Window color tokens are present', () => {
+    const { dark } = buildTheme();
+    const requiredKeys = [
+      'agents.background',
+      'agentsPanel.background',
+      'agentsPanel.foreground',
+      'agentsPanel.border',
+      'agentsCard.border',
+      'agentsBottomPanel.border',
+      'agentsGradient.tintColor',
+      'agentFeedbackEditorWidget.background',
+      'agentFeedbackEditorWidget.border',
+      'agentFeedbackInputWidget.border',
+      'agentsUpdateButton.downloadingBackground',
+      'agentsUpdateButton.downloadedBackground',
+      'agentsChatInput.background',
+      'agentsChatInput.foreground',
+      'agentsChatInput.border',
+      'agentsChatInput.focusBorder',
+      'agentsChatInput.placeholderForeground',
+      'agentsNewSessionButton.background',
+      'agentsNewSessionButton.foreground',
+      'agentsNewSessionButton.border',
+      'agentsNewSessionButton.hoverBackground',
+      'agentsBadge.background',
+      'agentsBadge.foreground',
+      'agentsUnreadBadge.background',
+      'agentsUnreadBadge.foreground',
+      'activeSessionView.background',
+      'activeSessionView.foreground',
+      'inactiveSessionView.background',
+      'inactiveSessionView.foreground',
+      'agentsVoice.speakingForeground',
+      'agentsVoice.speakingBackground',
+    ];
+    for (const key of requiredKeys) {
+      assert.ok(key in dark.colors, `missing Agents Window token "${key}"`);
     }
   });
 
