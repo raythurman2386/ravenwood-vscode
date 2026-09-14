@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.28] - 2026-09-14
+
+### Added
+- Theme VS Code Agents Window workbench colors and document the `extensions.supportAgentsWindow` opt-in (#260)
+
+### Fixed
+- Bump js-yaml and morgan to patched versions to clear npm audit high (#259)
+
 ## [1.2.27] - 2026-09-14
 
 ### Other
