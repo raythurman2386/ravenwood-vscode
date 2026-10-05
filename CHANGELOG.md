@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.32] - 2026-10-05
+
+### Other
+- chore(deps-dev): clear npm audit high and apply Dependabot updates (#269)
+
 ## [1.2.31] - 2026-10-05
 
 ## [1.2.30] - 2026-09-28
