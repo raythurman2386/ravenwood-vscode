@@ -33,6 +33,7 @@ export function tabColors(palette: Palette): Record<string, string> {
     'tab.unfocusedHoverBorder': `${palette.bg5}`,
     'tab.unfocusedHoverBackground': `${palette.bg}`,
     'tab.activeBackground': `${palette.bg}`,
+    'modernEditorTab.selectedActionBackground': `${palette.bg}`,
     'tab.activeForeground': `${palette.fg}`,
     'tab.inactiveForeground': `${palette.grey0}`,
     'tab.unfocusedActiveForeground': `${palette.grey2}`,
