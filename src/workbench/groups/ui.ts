@@ -96,6 +96,7 @@ export function uiColors(
     'progressBar.background': `${palette.badge}`,
     'panel.background': `${variantColors.mainBg}`,
     'panel.border': `${variantColors.mainBg}`,
+    'modernPanel.border': `${variantColors.mainBg}`,
     'panelInput.border': `${palette.bg5}`,
     'panelTitle.activeForeground': `${palette.fg}`,
     'panelTitle.activeBorder': `${palette.badge}d0`,

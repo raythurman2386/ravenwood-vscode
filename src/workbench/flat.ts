@@ -38,5 +38,7 @@ export function flatWorkbench(
     'tab.activeBorderTop': `${palette.badge}d0`,
     'tab.unfocusedActiveBorderTop': `${palette.grey1}`,
     'tab.lastPinnedBorder': `${palette.bg0}`,
+    'modernPanel.border': `${palette.bg}`,
+    'modernEditorTab.selectedActionBackground': `${palette.bg}`,
   });
 }
