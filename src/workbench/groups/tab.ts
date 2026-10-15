@@ -5,8 +5,12 @@
  *--------------------------------------------------------------*/
 
 import type { Palette } from '../../interface';
+import type { WorkbenchVariantColors } from '../common';
 
-export function tabColors(palette: Palette): Record<string, string> {
+export function tabColors(
+  palette: Palette,
+  variantColors: WorkbenchVariantColors,
+): Record<string, string> {
   return {
     'editorGroup.border': `${palette.bg0}`,
     'editorGroupHeader.tabsBackground': `${palette.bg}`,
@@ -45,6 +49,18 @@ export function tabColors(palette: Palette): Record<string, string> {
     'tab.unfocusedActiveModifiedBorder': `${palette.dimYellow}80`,
     'tab.unfocusedInactiveModifiedBorder': `${palette.dimYellow}60`,
     'tab.lastPinnedBorder': `${palette.badge}d0`,
+    // Modern UI (workbench.experimental.modernUI) connected tabs. These IDs are
+    // only read by Modern UI editor tabs; the classic tab bar keeps tab.*.
+    'editorGroupHeader.connectedTabsBackground': `${variantColors.connectedTabsBg}`,
+    'modernEditorTab.activeBackground': `${variantColors.mainBg}`,
+    'modernEditorTab.activeForeground': `${palette.fg}`,
+    'modernEditorTab.activeActionBackground': `${variantColors.mainBg}`,
+    'modernEditorTab.activeHoverBackground': `${variantColors.mainBg}`,
+    'modernEditorTab.activeHoverActionBackground': `${variantColors.mainBg}`,
+    'modernEditorTab.inactiveBackground': `${variantColors.connectedTabsBg}`,
+    'modernEditorTab.hoverBackground': `${palette.bg2}`,
+    'modernEditorTab.hoverActionBackground': `${palette.bg2}`,
+    'modernEditorTab.hoverForeground': `${palette.fg}`,
     'sideBySideEditor.horizontalBorder': `${palette.bg0}`,
     'sideBySideEditor.verticalBorder': `${palette.bg0}`,
   };
