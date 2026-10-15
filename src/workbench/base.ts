@@ -56,7 +56,7 @@ export function getBaseWorkbenchTokens(
     ...terminalColors(palette, variant, cursorFg, variantColors, selection),
     ...gitColors(palette),
     ...listColors(palette, variantColors, selection),
-    ...tabColors(palette),
+    ...tabColors(palette, variantColors),
     ...activityBarColors(palette),
     ...sideBarColors(palette),
     ...statusBarColors(palette),

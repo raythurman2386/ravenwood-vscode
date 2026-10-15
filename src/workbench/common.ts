@@ -234,6 +234,8 @@ export interface WorkbenchVariantColors {
   terminalAnsiBrightWhite: string;
   terminalAnsiWhite: string;
   welcomePageButtonHoverBg: string;
+  /** Modern UI connected-tab strip: darker than the editor in dark variants, a step darker in light variants. */
+  connectedTabsBg: string;
 }
 
 /** Compute variant-specific tokens (terminal ANSI, validation, highlights) that depend on dark/light. */
@@ -265,5 +267,6 @@ export function getWorkbenchVariantColors(
     terminalAnsiBrightWhite: isDark ? `${palette.fg}` : `${palette.bg2}`,
     terminalAnsiWhite: isDark ? `${palette.fg}` : `${palette.grey1}`,
     welcomePageButtonHoverBg: isDark ? `${palette.bg}a0` : `${palette.bg2}a0`,
+    connectedTabsBg: isDark ? `${palette.bg0}` : `${palette.bg2}`,
   };
 }

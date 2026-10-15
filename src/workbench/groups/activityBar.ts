@@ -31,5 +31,11 @@ export function activityBarColors(palette: Palette): Record<string, string> {
     'activityBarTop.activeBorder': `${palette.badge}d0`,
     'activityBarTop.activeBackground': `${palette.bg}`,
     'activityBarTop.dropBorder': `${palette.bg5}`,
+    // Modern UI Activity Bar (default side position only).
+    'modernActivityBar.border': `${palette.bg3}`,
+    'modernActivityBarItem.activeBackground': `${palette.bg3}`,
+    'modernActivityBarItem.activeForeground': `${palette.fg}`,
+    'modernActivityBarItem.hoverBackground': `${palette.bg2}`,
+    'modernActivityBarItem.hoverForeground': `${palette.fg}`,
   };
 }
