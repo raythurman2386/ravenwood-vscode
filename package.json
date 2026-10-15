@@ -239,6 +239,7 @@
     "browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
     "prepare": "husky",
     "format": "biome format --write",
+    "pretest": "npm run compile",
     "test": "node --import tsx --test test/*.test.ts"
   },
   "lint-staged": {
