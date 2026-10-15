@@ -96,7 +96,11 @@ export function uiColors(
     'progressBar.background': `${palette.badge}`,
     'panel.background': `${variantColors.mainBg}`,
     'panel.border': `${variantColors.mainBg}`,
-    'modernPanel.border': `${variantColors.mainBg}`,
+    // Modern UI frames + resize grips: visible but subtle.
+    'surface.border': `${palette.bg3}`,
+    'editor.border': `${palette.bg3}`,
+    'modernPanel.border': `${palette.bg3}`,
+    'modernSash.gripForeground': `${palette.grey1}80`,
     'panelInput.border': `${palette.bg5}`,
     'panelTitle.activeForeground': `${palette.fg}`,
     'panelTitle.activeBorder': `${palette.badge}d0`,
