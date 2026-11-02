@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-11-02
+
+### Added
+
+- Modern UI connected tabs, frame, sash, and Activity Bar overrides for `workbench.experimental.modernUI` (#273)
+
+### Changed
+
+- bump @biomejs/biome from 2.5.15 to 2.6.4 (#279)
+- bump @types/node from 26.6.4 to 26.6.6 (#278)
+- bump @vscode/vsce from 4.0.0 to 4.1.0 (#277)
+
 ## [1.2.36] - 2026-11-02
 
 ### Fixed
