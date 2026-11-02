@@ -19,6 +19,12 @@ import { writeJsonFile } from '../fsUtil';
 import type { Configuration, Palette } from '../interface';
 import alfheim from '../palette/realms/alfheim';
 import asgard from '../palette/realms/asgard';
+import grokday, {
+  surfaces as grokdaySurfaces,
+} from '../palette/realms/grokday';
+import groknight, {
+  surfaces as groknightSurfaces,
+} from '../palette/realms/groknight';
 import helheim from '../palette/realms/helheim';
 import jotunheim from '../palette/realms/jotunheim';
 import muspelheim from '../palette/realms/muspelheim';
@@ -67,10 +73,20 @@ generate(
 
 // --- Realm themes (static, build-time only)
 
+interface RealmSurfaces {
+  sidebar: string;
+  terminal: string;
+  card: string;
+}
+
 interface RealmDef {
   name: string;
   palette: Palette;
   isDark: boolean;
+  /** Display label override; defaults to `Ravenwood <Capitalized name>`. */
+  label?: string;
+  /** Optional distinct surface hexes for sidebar/terminal/widgets (Grok realms). */
+  surfaces?: RealmSurfaces;
 }
 
 const realms: RealmDef[] = [
@@ -82,6 +98,20 @@ const realms: RealmDef[] = [
   { name: 'jotunheim', palette: jotunheim, isDark: true },
   { name: 'muspelheim', palette: muspelheim, isDark: true },
   { name: 'helheim', palette: helheim, isDark: true },
+  {
+    name: 'grokday',
+    label: 'Ravenwood GrokDay',
+    palette: grokday,
+    isDark: false,
+    surfaces: grokdaySurfaces,
+  },
+  {
+    name: 'groknight',
+    label: 'Ravenwood GrokNight',
+    palette: groknight,
+    isDark: true,
+    surfaces: groknightSurfaces,
+  },
 ];
 
 /** Default Configuration for static realm themes (material, grey selection, fg cursor, 0% diagnostic, italic keywords). */
@@ -102,17 +132,45 @@ const realmConfig: Configuration = {
 
 function buildRealmTheme(realm: RealmDef): object {
   const variant = realm.isDark ? 'dark' : 'light';
-  const workbench = materialWorkbench(realm.palette, realmConfig, variant);
+  const workbench = {
+    ...materialWorkbench(realm.palette, realmConfig, variant),
+    ...surfaceOverrides(realm.surfaces),
+  };
   const syntax = buildSyntax(realm.palette, true, true);
   const semantic = getSemanticFromPalette(realm.palette);
 
   return {
-    name: `Ravenwood ${capitalize(realm.name)}`,
+    name: realm.label ?? `Ravenwood ${capitalize(realm.name)}`,
     type: realm.isDark ? 'dark' : 'light',
     semanticHighlighting: true,
     semanticTokenColors: semantic,
     colors: workbench,
     tokenColors: syntax,
+  };
+}
+
+/** Map distinct sidebar/terminal/card surfaces onto workbench keys that otherwise all use palette.bg. */
+function surfaceOverrides(
+  surfaces: RealmSurfaces | undefined,
+): Record<string, string> {
+  if (!surfaces) return {};
+  const { sidebar, terminal, card } = surfaces;
+  return {
+    'sideBar.background': sidebar,
+    'sideBar.border': sidebar,
+    'sideBarTitle.background': sidebar,
+    'sideBarTitle.border': sidebar,
+    'sideBarSectionHeader.border': sidebar,
+    'sideBarActivityBarTop.border': sidebar,
+    'activityBar.background': sidebar,
+    'activityBar.border': sidebar,
+    'activityBar.activeBackground': sidebar,
+    'panel.background': terminal,
+    'panel.border': terminal,
+    'terminal.background': terminal,
+    'terminal.border': terminal,
+    'terminalCursor.background': terminal,
+    'editorWidget.background': card,
   };
 }
 

@@ -2,7 +2,7 @@
   "name": "ravenwood",
   "displayName": "Ravenwood",
   "description": "A refined emerald forest theme for VSCode",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "publisher": "RaymondThurman",
   "author": "raythurman2386",
   "homepage": "https://github.com/raythurman2386/ravenwood-vscode",
@@ -93,6 +93,16 @@
         "label": "Ravenwood Helheim",
         "uiTheme": "vs-dark",
         "path": "./themes/ravenwood-helheim.json"
+      },
+      {
+        "label": "Ravenwood GrokDay",
+        "uiTheme": "vs",
+        "path": "./themes/ravenwood-grokday.json"
+      },
+      {
+        "label": "Ravenwood GrokNight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ravenwood-groknight.json"
       }
     ],
     "configuration": {

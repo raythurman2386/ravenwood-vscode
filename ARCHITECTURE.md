@@ -15,7 +15,7 @@ src/
 ├── fsUtil.ts            Shared writeJsonFile() — used by utils.ts and generateThemes.ts
 ├── semantic.ts          LSP semantic token colors
 ├── hook/
-│   └── generateThemes.ts   Build-time script that writes default themes/*.json + 8 realm themes
+│   └── generateThemes.ts   Build-time script that writes default themes/*.json + 10 realm themes
 ├── palette/
 │   ├── index.ts            getPalette — picks foreground + background by variant × contrast
 │   ├── dark/
@@ -32,7 +32,9 @@ src/
 │       ├── nidavellir.ts      Dark — forge/industry (amber, molten gold, steel)
 │       ├── jotunheim.ts       Dark — cold/vast (ice blues, frost whites)
 │       ├── muspelheim.ts      Dark — fire/primordial (deep reds, magma, black)
-│       └── helheim.ts         Dark — desolate/muted (muted purples, greys)
+│       ├── helheim.ts         Dark — desolate/muted (muted purples, greys)
+│       ├── grokday.ts         Light — GoForge neutrals + emerald accents
+│       └── groknight.ts       Dark — GoForge neutrals + emerald accents
 ├── workbench/
 │   ├── index.ts            getWorkbench — dispatches by workbench style
 │   ├── common.ts           shared helpers (selection, cursor, diagnostic, variant colors)
@@ -91,7 +93,7 @@ On activation, `Utils.validateConfiguration()` calls the pure `validateConfig()`
 
 ### Realm Themes
 
-After generating the base Dark/Light themes, `generateThemes.ts` also generates 8 static realm theme JSONs. Each realm palette lives in `src/palette/realms/<name>.ts` and conforms to the same `Palette` interface used by the base themes. The realm themes are built using the existing `materialWorkbench()`, `buildSyntax()`, and `getSemanticFromPalette()` functions directly — bypassing the `getPalette(config, variant)` dispatcher since realms have no user-configurable options.
+After generating the base Dark/Light themes, `generateThemes.ts` also generates 10 static realm theme JSONs (8 Norse realms plus GrokDay/GrokNight). GrokDay/GrokNight also export `surfaces` (sidebar, terminal, card) that `generateThemes.ts` applies on top of the material workbench, since those keys otherwise all follow `palette.bg`. Each realm palette lives in `src/palette/realms/<name>.ts` and conforms to the same `Palette` interface used by the base themes. The realm themes are built using the existing `materialWorkbench()`, `buildSyntax()`, and `getSemanticFromPalette()` functions directly — bypassing the `getPalette(config, variant)` dispatcher since realms have no user-configurable options.
 
 Realm themes are **static artistic statements**: fixed material workbench style, grey selection, fg cursor, 0% diagnostic opacity, italic keywords + comments. They use the same 971 workbench color keys and full semantic token coverage as the base themes, but are not affected by runtime configuration changes. The `getSemanticFromPalette()` function in `src/semantic.ts` is the palette-direct variant of `getSemantic()` — it accepts a `Palette` directly instead of a `(Configuration, variant)` pair.
 

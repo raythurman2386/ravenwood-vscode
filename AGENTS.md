@@ -39,7 +39,7 @@ npm run format        # Biome format --write
 npm test              # Node built-in test runner (node:test + tsx)
 ```
 
-648 tests across 52 suites: structural (theme JSON shape, hex validation, workbench key coverage, realm JSON validation, package.json consistency), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (buildSyntax default/italic variant coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output), realms (8 realm palettes: validity, contrast, accent distinctness, bg gradient, dim integrity, realm-to-realm distinctness), semantic-workbench (getSemanticFromPalette, language coverage, workbench style isolation), validation (validateConfig catches typos), build-syntax (per-rule flag behavior: italicizeKeywords, onlyWhenItalicKeywords, italicKeywordsScope, italicComments), helpers-workbench (getCursorColor, getSelectionColors, getDiagnosticOpacity), exhaustiveness (never-branch throws on invalid enum values), highContrast flag values.
+648 tests across 52 suites: structural (theme JSON shape, hex validation, workbench key coverage, realm JSON validation, package.json consistency), palette (color values match documented specs), contrast (WCAG accessibility checks), sync (buildSyntax default/italic variant coverage in sync), scope-safety (no overbroad TextMate scopes), build-combos (all 50 config combinations produce valid output), realms (10 realm palettes: validity, contrast, accent distinctness, bg gradient, dim integrity, realm-to-realm distinctness), semantic-workbench (getSemanticFromPalette, language coverage, workbench style isolation), validation (validateConfig catches typos), build-syntax (per-rule flag behavior: italicizeKeywords, onlyWhenItalicKeywords, italicKeywordsScope, italicComments), helpers-workbench (getCursorColor, getSelectionColors, getDiagnosticOpacity), exhaustiveness (never-branch throws on invalid enum values), highContrast flag values.
 
 No automated browser/integration tests. Manual testing:
 
@@ -162,7 +162,7 @@ Colors are defined in `src/palette/`:
 - `src/palette/dark/foreground.ts` - Dark foreground colors
 - `src/palette/light/background/{soft,medium,hard}.ts` - Light variant backgrounds
 - `src/palette/light/foreground.ts` - Light foreground colors
-- `src/palette/realms/` - 8 realm palettes (Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, Helheim)
+- `src/palette/realms/` - 10 realm palettes (Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, Helheim, GrokDay, GrokNight)
 - `src/palette/index.ts` - Palette retrieval logic
 
 Each palette exports a `Palette` interface with colors like `bg0`, `bg1`, `fg`, `red`, `orange`, `yellow`, `green`, `aqua`, `blue`, `purple`, and their dim variants.
