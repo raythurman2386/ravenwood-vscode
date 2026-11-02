@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2026-11-02
+
+### Fixed
+
+- Modern UI dark connected-tab strip uses editor background instead of bg0 (#282)
+
 ## [1.3.0] - 2026-11-02
 
 ### Added
