@@ -252,7 +252,7 @@
     "@types/node": "^26.6.4",
     "@types/vscode": "^1.97.0",
     "@vscode/test-web": "^0.0.81",
-    "@vscode/vsce": "^4.0.0",
+    "@vscode/vsce": "^4.1.0",
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
     "rimraf": "6.1.3",
