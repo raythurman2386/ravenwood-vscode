@@ -64,6 +64,23 @@ describe('Modern UI tokens', () => {
     });
   }
 
+  test('dark: connected strip matches the editor, not bg0', () => {
+    const palette = getPalette({}, 'dark') as Palette;
+    const colors = getWorkbench({ darkWorkbench: 'material' }, 'dark');
+    assert.equal(
+      colors['editorGroupHeader.connectedTabsBackground'],
+      palette.bg,
+    );
+    assert.equal(
+      colors['editorGroupHeader.connectedTabsBackground'],
+      colors['editorGroupHeader.tabsBackground'],
+    );
+    assert.notEqual(
+      colors['editorGroupHeader.connectedTabsBackground'],
+      palette.bg0,
+    );
+  });
+
   test('alfheim: inactive tab text on connected strip is at least 3:1', () => {
     const colors = materialWorkbench(alfheim as Palette, {}, 'light');
     const ratio = contrastRatio(
