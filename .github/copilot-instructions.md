@@ -95,14 +95,14 @@ The type system (union types + `never` exhaustiveness checks) handles the rest.
 
 ## Key Files Reference
 
-| File | Purpose |
-|------|---------|
-| [src/utils.ts](src/utils.ts) | Config detection, theme regeneration, newly-installed check |
-| [src/interface.ts](src/interface.ts) | `Configuration` and `Palette` TypeScript interfaces |
-| [src/palette/index.ts](src/palette/index.ts) | `getPalette(config, variant)` - selects colors by contrast level |
-| [src/workbench/index.ts](src/workbench/index.ts) | `getWorkbench(config, variant)` - selects workbench style |
-| [src/syntax/index.ts](src/syntax/index.ts) | `getSyntax(config, variant)` - syntax highlighting rules |
-| [src/hook/generateThemes.ts](src/hook/generateThemes.ts) | Build-time theme generator (standalone script) |
+| File                                                     | Purpose                                                          |
+| -------------------------------------------------------- | ---------------------------------------------------------------- |
+| [src/utils.ts](src/utils.ts)                             | Config detection, theme regeneration, newly-installed check      |
+| [src/interface.ts](src/interface.ts)                     | `Configuration` and `Palette` TypeScript interfaces              |
+| [src/palette/index.ts](src/palette/index.ts)             | `getPalette(config, variant)` - selects colors by contrast level |
+| [src/workbench/index.ts](src/workbench/index.ts)         | `getWorkbench(config, variant)` - selects workbench style        |
+| [src/syntax/index.ts](src/syntax/index.ts)               | `getSyntax(config, variant)` - syntax highlighting rules         |
+| [src/hook/generateThemes.ts](src/hook/generateThemes.ts) | Build-time theme generator (standalone script)                   |
 
 ## Common Pitfalls
 

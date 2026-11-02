@@ -14,15 +14,18 @@ Thank you for your interest in Ravenwood! I welcome all contributions, from bug 
 If you'd like to contribute code:
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/raythurman2386/ravenwood-vscode.git
     cd ravenwood-vscode
     ```
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 3.  **Run the build:**
+
     ```bash
     npm run compile
     ```

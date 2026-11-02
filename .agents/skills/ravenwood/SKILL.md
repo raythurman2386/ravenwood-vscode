@@ -38,29 +38,29 @@ User Config → getPalette() → getWorkbench() + getSyntax() + getSemantic() �
 
 ### Module Layout
 
-| Path | Purpose |
-|------|---------|
-| `src/interface.ts` | TypeScript interfaces: `Configuration` (union-typed), `Palette`, `ThemeData`, `SyntaxRule` |
-| `src/themeData.ts` | Pure `getThemeData()` builder — shared by runtime + build-time |
-| `src/utils.ts` | `Utils` class — config detection, file writing, regeneration, validation |
-| `src/validation.ts` | Pure `validateConfig()` — checks enum values, no vscode dependency |
-| `src/fsUtil.ts` | Shared `writeJsonFile()` — used by utils.ts and generateThemes.ts |
-| `src/semantic.ts` | LSP semantic token color mappings (`getSemantic` + `getSemanticFromPalette`) |
-| `src/hook/generateThemes.ts` | Build-time script → writes `themes/*.json` (Dark/Light + 8 realm themes) |
-| `src/palette/index.ts` | `getPalette()` — dispatches by variant × contrast |
-| `src/palette/dark/foreground.ts` | Dark foreground + accent colors |
-| `src/palette/dark/background/{soft,medium,hard}.ts` | Dark bg0–bg5, shadow per contrast |
-| `src/palette/light/foreground.ts` | Light foreground + accent colors |
-| `src/palette/light/background/{soft,medium,hard}.ts` | Light bg0–bg5, shadow per contrast |
-| `src/palette/realms/*.ts` | 8 realm palettes — static themes generated at build time |
-| `src/workbench/index.ts` | `getWorkbench()` — dispatches by style |
-| `src/workbench/base.ts` | Shared ~95% token map + highContrast flag overlay |
-| `src/workbench/common.ts` | Selection, cursor, diagnostic, variant color helpers |
-| `src/workbench/material.ts` | Material style (default — no overrides) |
-| `src/workbench/flat.ts` | Flat style — overrides list/sidebar/tab backgrounds |
-| `src/workbench/highContrast.ts` | High-contrast style — overrides + `applyHighContrastFlag()` |
-| `src/syntax/index.ts` | `getSyntax()` — dispatches to `buildSyntax` with italic flags |
-| `src/syntax/rules.ts` | Canonical `SYNTAX_RULES` array + `buildSyntax()` — single source of truth |
+| Path                                                 | Purpose                                                                                    |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `src/interface.ts`                                   | TypeScript interfaces: `Configuration` (union-typed), `Palette`, `ThemeData`, `SyntaxRule` |
+| `src/themeData.ts`                                   | Pure `getThemeData()` builder — shared by runtime + build-time                             |
+| `src/utils.ts`                                       | `Utils` class — config detection, file writing, regeneration, validation                   |
+| `src/validation.ts`                                  | Pure `validateConfig()` — checks enum values, no vscode dependency                         |
+| `src/fsUtil.ts`                                      | Shared `writeJsonFile()` — used by utils.ts and generateThemes.ts                          |
+| `src/semantic.ts`                                    | LSP semantic token color mappings (`getSemantic` + `getSemanticFromPalette`)               |
+| `src/hook/generateThemes.ts`                         | Build-time script → writes `themes/*.json` (Dark/Light + 8 realm themes)                   |
+| `src/palette/index.ts`                               | `getPalette()` — dispatches by variant × contrast                                          |
+| `src/palette/dark/foreground.ts`                     | Dark foreground + accent colors                                                            |
+| `src/palette/dark/background/{soft,medium,hard}.ts`  | Dark bg0–bg5, shadow per contrast                                                          |
+| `src/palette/light/foreground.ts`                    | Light foreground + accent colors                                                           |
+| `src/palette/light/background/{soft,medium,hard}.ts` | Light bg0–bg5, shadow per contrast                                                         |
+| `src/palette/realms/*.ts`                            | 8 realm palettes — static themes generated at build time                                   |
+| `src/workbench/index.ts`                             | `getWorkbench()` — dispatches by style                                                     |
+| `src/workbench/base.ts`                              | Shared ~95% token map + highContrast flag overlay                                          |
+| `src/workbench/common.ts`                            | Selection, cursor, diagnostic, variant color helpers                                       |
+| `src/workbench/material.ts`                          | Material style (default — no overrides)                                                    |
+| `src/workbench/flat.ts`                              | Flat style — overrides list/sidebar/tab backgrounds                                        |
+| `src/workbench/highContrast.ts`                      | High-contrast style — overrides + `applyHighContrastFlag()`                                |
+| `src/syntax/index.ts`                                | `getSyntax()` — dispatches to `buildSyntax` with italic flags                              |
+| `src/syntax/rules.ts`                                | Canonical `SYNTAX_RULES` array + `buildSyntax()` — single source of truth                  |
 
 ## Color Palette
 
