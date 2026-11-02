@@ -106,12 +106,12 @@ Every source file must include a copyright header:
 - Example:
 
 ```typescript
-import * as fs from "fs";
-import { join } from "path";
-import { ConfigurationChangeEvent, workspace, window, commands } from "vscode";
-import { Configuration } from "./interface";
-import { getWorkbench } from "./workbench";
-import { getSyntax } from "./syntax";
+import * as fs from 'fs';
+import { join } from 'path';
+import { ConfigurationChangeEvent, workspace, window, commands } from 'vscode';
+import { Configuration } from './interface';
+import { getWorkbench } from './workbench';
+import { getSyntax } from './syntax';
 ```
 
 ### Formatting
@@ -180,8 +180,8 @@ Each palette exports a `Palette` interface with colors like `bg0`, `bg1`, `fg`, 
 | ---------------------------- | ------------------------------------------------------------ |
 | `src/utils.ts`               | Core utility class for config detection and theme generation |
 | `src/themeData.ts`           | Pure ThemeData builder (shared by runtime + build-time)      |
-| `src/validation.ts`          | Pure validateConfig() — checks enum values, no vscode dep   |
-| `src/fsUtil.ts`              | Shared writeJsonFile() — used by utils.ts and generateThemes  |
+| `src/validation.ts`          | Pure validateConfig() — checks enum values, no vscode dep    |
+| `src/fsUtil.ts`              | Shared writeJsonFile() — used by utils.ts and generateThemes |
 | `src/interface.ts`           | TypeScript interfaces + union types (Configuration, Palette) |
 | `src/hook/generateThemes.ts` | Build-time theme generation script                           |
 | `src/palette/index.ts`       | Color palette retrieval                                      |

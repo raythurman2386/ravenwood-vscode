@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.36] - 2026-11-02
 
 ### Fixed
+
 - override @azure/msal-node to ^7.1.1 (GHSA-xcx6-jx8p-x3h5) (#276)
 
 ## [1.2.35] - 2026-10-26
@@ -12,6 +13,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.34] - 2026-10-19
 
 ### Added
+
 - add modernPanel.border and modernEditorTab.selectedActionBackground tokens (#272)
 
 ## [1.2.33] - 2026-10-12
@@ -19,6 +21,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.32] - 2026-10-05
 
 ### Other
+
 - chore(deps-dev): clear npm audit high and apply Dependabot updates (#269)
 
 ## [1.2.31] - 2026-10-05
@@ -30,14 +33,17 @@ All notable changes to this project will be documented in this file.
 ## [1.2.28] - 2026-09-14
 
 ### Added
+
 - Theme VS Code Agents Window workbench colors and document the `extensions.supportAgentsWindow` opt-in (#260)
 
 ### Fixed
+
 - Bump js-yaml and morgan to patched versions to clear npm audit high (#259)
 
 ## [1.2.27] - 2026-09-14
 
 ### Other
+
 - chore(deps-dev): bump @biomejs/biome from 2.5.6 to 2.5.12 (#255)
 - chore(deps-dev): bump tsx from 4.23.5 to 4.23.13 (#254)
 - chore(deps-dev): bump lint-staged from 17.3.0 to 17.4.1 (#253)
@@ -46,6 +52,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.26] - 2026-09-06
 
 ### Fixed
+
 - Bump fast-uri and qs to patched versions to clear npm audit vulnerabilities.
 
 ## [1.2.25] - 2026-09-07
@@ -57,7 +64,8 @@ All notable changes to this project will be documented in this file.
 ## [1.2.22] - 2026-08-17
 
 ### Other
-- chore: moved from nightly to a weekly automated release since  issues and development have slowed down.
+
+- chore: moved from nightly to a weekly automated release since issues and development have slowed down.
 
 ## [1.2.21] - 2026-08-16
 
@@ -78,11 +86,13 @@ All notable changes to this project will be documented in this file.
 ## [1.2.13] - 2026-08-08
 
 ### Other
+
 - docs: reconcile contradictory reload-prompt descriptions (#236)
 
 ## [1.2.12] - 2026-08-07
 
 ### Fixed
+
 - reload prompt dismiss appears broken due to stacked notifications (#235)
 - resolve high-severity js-yaml vulnerability (CVE-2026-59870)
 
@@ -91,6 +101,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.10] - 2026-08-05
 
 ### Fixed
+
 - update outdated dev dependencies (lint-staged, tsx) (#231)
 - resolve 3 high-severity npm audit vulnerabilities
 
@@ -101,6 +112,7 @@ All notable changes to this project will be documented in this file.
 ## [1.2.7] - 2026-08-02
 
 ### Other
+
 - chore(deps-dev): bump @types/node from 26.1.1 to 26.1.2 (#226)
 - chore(deps-dev): bump lint-staged from 17.1.0 to 17.2.0 (#225)
 - chore(deps-dev): bump @biomejs/biome from 2.5.5 to 2.5.6 (#224)
@@ -112,18 +124,21 @@ All notable changes to this project will be documented in this file.
 ## [1.2.4] - 2026-07-30
 
 ### Fixed
+
 - remove vim fold markers from all source files (#218)
 - prompt to reload after regenerating theme JSON (#217)
 
 ## [1.2.3] - 2026-07-29
 
 ### Fixed
+
 - Update in-repo skill files with new official Ravenwood light palette (#214)
 - optimize light mode palette from everforest defaults to official Ravenwood light (#212)
 
 ## [1.2.2] - 2026-07-28
 
 ### Fixed
+
 - Extract base.ts 1110-line monolith into grouped sub-builders + fix hardcoded opacity (#206)
 - Architecture: union-type Configuration, deduplicate syntax rules, add test coverage (#208)
 - migrate isNewlyInstalled to globalState (#203)
@@ -131,11 +146,13 @@ All notable changes to this project will be documented in this file.
 - visible borders under terminal header and in sidebar on base dark theme (#198)
 
 ### Other
+
 - ci: add npm audit step to CI workflow (#210)
 
 ## [1.2.1] - 2026-07-27
 
 ### Fixed
+
 - semantic: add semantic token rules for Stylus (#118)
 - semantic: add semantic token rules for SASS (#117)
 
@@ -212,6 +229,7 @@ All notable changes to this project will be documented in this file.
 ## [1.1.1] - 2026-07-25
 
 ### Fixed
+
 - syntax: expand Common Lisp TextMate scopes (currently 4 rules) (#59)
 - syntax: expand Elixir TextMate scopes (currently 3 rules) (#58)
 
@@ -317,7 +335,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- **Expanded VS Code Theming Coverage**: Added ~240 workbench color keys covering major UI surfaces added in VS Code 1.95–1.125. *(Note: this release did not achieve full coverage — ~72% of official keys were present. Full 100% coverage was achieved in 1.1.0.)*
+- **Expanded VS Code Theming Coverage**: Added ~240 workbench color keys covering major UI surfaces added in VS Code 1.95–1.125. _(Note: this release did not achieve full coverage — ~72% of official keys were present. Full 100% coverage was achieved in 1.1.0.)_
   - **Chat / Agent / AI**: `chatParticipant.*`, `chatStatus.*`, `chatSession.*`, `chatEdit.*`, `agent.*`, `agentDashboard.*`, `simpleChat.*`, `terminalChat.*`, `editorChat.*`
   - **Editor**: `editorStickyScroll.*`, `editor.foldBackground`, `editor.selectionForeground`, `editorCursor.background`, `editorPane.background`, `editorOverviewRuler.background`
   - **Terminal**: `terminal.background`, `terminal.border`, `terminal.selection*`, `terminal.findMatch*`, `terminalCommandGuide.*`, `terminalStickyScroll.*`, `terminal.hoverHighlightBackground`
@@ -353,6 +371,7 @@ All notable changes to this project will be documented in this file.
 - **Test Suite**: Grew from 81 to 254 tests across 19 suites, covering structural integrity, palette accuracy, WCAG contrast, scope safety, syntax sync, and build combinations
 
 ### Fixed
+
 - expand Stylus TextMate scopes (currently 2 rules) (#47)
 - expand PHP TextMate scopes (#43)
 - syntax: expand Clojure TextMate scopes (currently 3 rules) (#44)
@@ -376,11 +395,13 @@ All notable changes to this project will be documented in this file.
 - semantic: add semantic token rules for Julia (#25)
 
 ### Other
+
 - removed agent skills from being packaged in the vsix build
 
 ## [0.3.4] - 2026-07-23
 
 ### Fixed
+
 - semantic: add semantic token rules for F# (#26) (#87)
 - use gh release create --generate-notes instead of custom script
 - create GitHub Releases on tag push (was publishing to marketplaces only)
@@ -388,23 +409,28 @@ All notable changes to this project will be documented in this file.
 - syntax: expand SASS/SCSS TextMate scopes (currently 5 rules) (#80) (#85)
 
 ### Other
+
 - test: add 81-test suite (structural, palette, sync, scope-safety, build-combos) + wire into CI
 - docs: pass — remove colorblind statement, fix outdated toolchain refs, update language coverage
 
 ## [0.3.3] - 2026-07-22
 
 ### Added
+
 - add .agents/skills/ravenwood for cross-agent context + dependency audit in nightly release
 
 ### Other
+
 - docs: reference .agents/skills/ravenwood in AGENTS.md
 
 ## [0.3.2] - 2026-07-22
 
 ### Fixed
+
 - semantic: add semantic token rules for Elm (#31) (#81)
 
 ### Other
+
 - ci: remove sensitive comment from nightly release workflow
 - ci: use RELEASE_TOKEN (PAT) for nightly release merge and push
 - ci: fix nightly release — use PR merge with admin bypass for branch protection

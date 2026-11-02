@@ -6,7 +6,16 @@ author: Hermes Agent
 license: MIT
 metadata:
   hermes:
-    tags: [vscode, theme, extension, color-palette, textmate, semantic-tokens, publishing]
+    tags:
+      [
+        vscode,
+        theme,
+        extension,
+        color-palette,
+        textmate,
+        semantic-tokens,
+        publishing,
+      ]
     related_skills: [ravenwood]
 ---
 
@@ -35,7 +44,7 @@ Don't use for: porting the Ravenwood color scheme to non-VS-Code apps — use th
 Palette (color source) → Token Mappers → Theme JSON → package.json contributes.themes
 ```
 
-Separate the *palette* (raw colors) from the *token mappers* (functions that map palette colors to VS Code color keys). This lets you:
+Separate the _palette_ (raw colors) from the _token mappers_ (functions that map palette colors to VS Code color keys). This lets you:
 
 - Swap palettes without changing token mapping logic
 - Generate multiple themes from the same mapping functions
@@ -104,16 +113,33 @@ npm run package    # vsce package → .vsix
 ```typescript
 interface Palette {
   // Backgrounds (11 keys)
-  bg0: string; bg1: string; bg: string; bg2: string;
-  bg3: string; bg4: string; bg5: string;
-  grey0: string; grey1: string; grey2: string;
+  bg0: string;
+  bg1: string;
+  bg: string;
+  bg2: string;
+  bg3: string;
+  bg4: string;
+  bg5: string;
+  grey0: string;
+  grey1: string;
+  grey2: string;
   shadow: string;
   // Foreground + accents (16 keys)
   fg: string;
-  red: string; orange: string; yellow: string;
-  green: string; aqua: string; blue: string; purple: string;
-  dimRed: string; dimOrange: string; dimYellow: string;
-  dimGreen: string; dimAqua: string; dimBlue: string; dimPurple: string;
+  red: string;
+  orange: string;
+  yellow: string;
+  green: string;
+  aqua: string;
+  blue: string;
+  purple: string;
+  dimRed: string;
+  dimOrange: string;
+  dimYellow: string;
+  dimGreen: string;
+  dimAqua: string;
+  dimBlue: string;
+  dimPurple: string;
   badge: string;
 }
 ```
@@ -160,8 +186,14 @@ Share ~95% of the token map in `base.ts`, then each style overrides only what it
 
 ```typescript
 // base.ts — shared tokens
-export function getBaseWorkbenchTokens(palette, config, variant): Record<string, string> {
-  return { /* ~950 keys */ };
+export function getBaseWorkbenchTokens(
+  palette,
+  config,
+  variant,
+): Record<string, string> {
+  return {
+    /* ~950 keys */
+  };
 }
 
 // material.ts — default style, no overrides
@@ -185,15 +217,15 @@ Some colors depend on dark vs light (terminal ANSI, validation backgrounds, high
 
 ### Scope Mapping Convention
 
-| Semantic role   | Palette color | Example scopes                          |
-|-----------------|---------------|-----------------------------------------|
-| Keyword         | red           | `keyword`, `storage.type`               |
-| Function        | green         | `entity.name.function`                  |
+| Semantic role   | Palette color | Example scopes                           |
+| --------------- | ------------- | ---------------------------------------- |
+| Keyword         | red           | `keyword`, `storage.type`                |
+| Function        | green         | `entity.name.function`                   |
 | String/constant | yellow        | `string`, `constant.numeric`             |
 | Type/class      | aqua          | `entity.name.type`, `support.class`      |
 | Operator        | orange        | `keyword.operator`                       |
 | Variable        | blue          | `variable`, `variable.parameter`         |
-| Special/builtin | purple        | `constant.language`, `variable.language`|
+| Special/builtin | purple        | `constant.language`, `variable.language` |
 | Comment         | grey0         | `comment`                                |
 
 ### Per-Rule Italic Flags
@@ -218,7 +250,9 @@ This replaces the previous two-file design (`default.ts` + `italic.ts`) that req
 Map LSP token types to palette colors using language-scoped keys:
 
 ```typescript
-export function getSemanticFromPalette(palette: Palette): Record<string, string> {
+export function getSemanticFromPalette(
+  palette: Palette,
+): Record<string, string> {
   return {
     'function:rust': palette.green,
     'struct:rust': palette.aqua,
@@ -249,18 +283,18 @@ Common options: contrast levels (soft/medium/hard), workbench style (material/fl
 
 ### Test Suite Structure
 
-| Suite            | What it checks                                              |
-|------------------|------------------------------------------------------------|
-| Structural       | Theme JSON has correct top-level keys, hex validation, workbench key coverage count, dark/light parity |
-| Palette          | Color values match documented specs, dim variants exist and are darker+less saturated than parents |
-| Contrast (WCAG)  | Primary text meets AAA (≥7), grey text meets AA-large (≥3), badge contrast, foreground tint (not pure white/black), background tint (not neutral grey), background gradient smoothness |
-| Sync             | `buildSyntax` default and italic variants have matching language coverage and scopes |
-| Scope-safety     | All language-specific scopes have a language suffix (no overbroad scopes) |
-| Build-combos     | All N configuration combinations produce valid theme output |
-| Validation       | `validateConfig()` catches typos and invalid enum values |
-| Build-syntax     | Per-rule flag behavior: `italicizeKeywords`, `onlyWhenItalicKeywords`, `italicKeywordsScope`, `italicComments` |
-| Helpers-workbench | `getCursorColor`, `getSelectionColors`, `getDiagnosticOpacity` resolve correctly |
-| Exhaustiveness   | `never`-branch throws on invalid enum values in all dispatch sites |
+| Suite             | What it checks                                                                                                                                                                         |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Structural        | Theme JSON has correct top-level keys, hex validation, workbench key coverage count, dark/light parity                                                                                 |
+| Palette           | Color values match documented specs, dim variants exist and are darker+less saturated than parents                                                                                     |
+| Contrast (WCAG)   | Primary text meets AAA (≥7), grey text meets AA-large (≥3), badge contrast, foreground tint (not pure white/black), background tint (not neutral grey), background gradient smoothness |
+| Sync              | `buildSyntax` default and italic variants have matching language coverage and scopes                                                                                                   |
+| Scope-safety      | All language-specific scopes have a language suffix (no overbroad scopes)                                                                                                              |
+| Build-combos      | All N configuration combinations produce valid theme output                                                                                                                            |
+| Validation        | `validateConfig()` catches typos and invalid enum values                                                                                                                               |
+| Build-syntax      | Per-rule flag behavior: `italicizeKeywords`, `onlyWhenItalicKeywords`, `italicKeywordsScope`, `italicComments`                                                                         |
+| Helpers-workbench | `getCursorColor`, `getSelectionColors`, `getDiagnosticOpacity` resolve correctly                                                                                                       |
+| Exhaustiveness    | `never`-branch throws on invalid enum values in all dispatch sites                                                                                                                     |
 
 ### Test Runner
 
