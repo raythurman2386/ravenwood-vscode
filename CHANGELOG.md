@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.36] - 2026-11-02
+
+### Fixed
+- override @azure/msal-node to ^7.1.1 (GHSA-xcx6-jx8p-x3h5) (#276)
+
 ## [1.2.35] - 2026-10-26
 
 ## [1.2.34] - 2026-10-19
