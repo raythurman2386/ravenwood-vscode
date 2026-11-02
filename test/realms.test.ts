@@ -4,7 +4,7 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-// Realm tests — verify all 8 static realm palettes meet the same quality
+// Realm tests — verify all 10 static realm palettes meet the same quality
 // bar as the base dark/light palettes: palette validity, WCAG contrast,
 // accent hue distinctness, background gradient, dim variant integrity,
 // and realm-to-realm distinctness.
@@ -14,6 +14,8 @@ import { describe, test } from 'node:test';
 import type { Palette } from '../src/interface';
 import alfheim from '../src/palette/realms/alfheim';
 import asgard from '../src/palette/realms/asgard';
+import grokday from '../src/palette/realms/grokday';
+import groknight from '../src/palette/realms/groknight';
 import helheim from '../src/palette/realms/helheim';
 import jotunheim from '../src/palette/realms/jotunheim';
 import muspelheim from '../src/palette/realms/muspelheim';
@@ -100,6 +102,8 @@ interface RealmDef {
   isDark: boolean;
   heroColor: string;
   bgHueRange: [number, number];
+  /** Intentionally neutral-grey surfaces (Helheim, GoForge-locked Grok realms): bg hue/tint checks are skipped. */
+  achromatic?: boolean;
 }
 
 const realms: RealmDef[] = [
@@ -158,6 +162,23 @@ const realms: RealmDef[] = [
     isDark: true,
     heroColor: 'grey',
     bgHueRange: [0, 30],
+    achromatic: true,
+  },
+  {
+    name: 'grokday',
+    palette: grokday,
+    isDark: false,
+    heroColor: 'emerald',
+    bgHueRange: [0, 360],
+    achromatic: true,
+  },
+  {
+    name: 'groknight',
+    palette: groknight,
+    isDark: true,
+    heroColor: 'emerald',
+    bgHueRange: [0, 360],
+    achromatic: true,
   },
 ];
 
@@ -377,8 +398,8 @@ describe('Realm background identity', () => {
   for (const realm of realms) {
     test(`${realm.name}: bg is not neutral grey`, () => {
       const sat = saturation(realm.palette.bg);
-      // Helheim is intentionally achromatic (the desolate realm) — skip
-      if (realm.name === 'helheim') return;
+      // Achromatic realms (Helheim, GrokDay/GrokNight) are intentionally grey — skip
+      if (realm.achromatic) return;
       // Alfheim is a light pastel theme with intentionally low saturation
       const threshold = realm.name === 'alfheim' ? 0.02 : 0.05;
       assert.ok(
@@ -388,8 +409,8 @@ describe('Realm background identity', () => {
     });
 
     test(`${realm.name}: bg hue is in expected range for realm identity`, () => {
-      // Skip hue check for helheim — it's intentionally achromatic
-      if (realm.name === 'helheim') return;
+      // Skip hue check for achromatic realms — hue is meaningless
+      if (realm.achromatic) return;
       const hue = toHue(realm.palette.bg);
       const [min, max] = realm.bgHueRange;
       assert.ok(
@@ -426,7 +447,7 @@ describe('Realm distinctness from base dark', () => {
 
   for (const realm of realms) {
     if (!realm.isDark) continue;
-    if (realm.name === 'helheim') continue; // helheim is intentionally grey
+    if (realm.achromatic) continue; // achromatic realms are intentionally grey
 
     test(`${realm.name}: bg hue differs from base dark by ≥30°`, () => {
       const hue = toHue(realm.palette.bg);
@@ -454,8 +475,8 @@ describe('Realm-to-realm bg distinctness', () => {
       const pairKey = `${r1.name}:${r2.name}`;
 
       test(`${r1.name} vs ${r2.name}: bg hues are distinct`, () => {
-        // Skip if either is helheim (achromatic — hue is meaningless)
-        if (r1.name === 'helheim' || r2.name === 'helheim') return;
+        // Skip if either is achromatic (hue is meaningless)
+        if (r1.achromatic || r2.achromatic) return;
         const h1 = toHue(r1.palette.bg);
         const h2 = toHue(r2.palette.bg);
         const dist = hueDistance(h1, h2);

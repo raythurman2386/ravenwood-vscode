@@ -287,6 +287,8 @@ const realmThemes = [
   { name: 'jotunheim', label: 'Ravenwood Jotunheim', type: 'dark' },
   { name: 'muspelheim', label: 'Ravenwood Muspelheim', type: 'dark' },
   { name: 'helheim', label: 'Ravenwood Helheim', type: 'dark' },
+  { name: 'grokday', label: 'Ravenwood GrokDay', type: 'light' },
+  { name: 'groknight', label: 'Ravenwood GrokNight', type: 'dark' },
 ];
 
 describe('Realm theme JSON structure', () => {

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-11-02
+
+### Added
+
+- **Ravenwood GrokDay** (light) and **Ravenwood GrokNight** (dark) static themes. They use the GoForge t1734u neutrals, surfaces, and status colors, with Ravenwood emerald for badges, buttons, and focus accents. Sidebar, terminal/panel, and widget surfaces use their own locked hexes.
+
 ## [1.4.0] - 2026-11-02
 
 ### Fixed

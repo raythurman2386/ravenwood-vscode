@@ -15,6 +15,7 @@ Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the
 - **Full Workbench Color Coverage:** 100% of official VS Code workbench theme color keys (910/910) — every UI surface themed, from command center and editor borders to terminal symbol icons and SCM graph.
 - **Dynamic Regeneration:** Theme files regenerate automatically when configuration changes — a single, dismissible "Reload window" notification is shown after theme regeneration.
 - **Realm Themes:** 8 additional static themes inspired by Norse cosmology — Asgard, Vanaheim, Alfheim, Svartalfheim, Nidavellir, Jotunheim, Muspelheim, and Helheim. Each realm is a fixed artistic statement with its own color identity, generated at build time alongside the base Dark/Light themes.
+- **Grok Themes:** **Ravenwood GrokDay** (light) and **Ravenwood GrokNight** (dark) — neutral grey surfaces, text, and status colors matching GoForge, with Ravenwood emerald accents for badges, buttons, and focus.
 
 ## Requirements
 
@@ -26,7 +27,7 @@ Ravenwood is a refined emerald forest theme for Visual Studio Code, based on the
 2. Search for `Ravenwood`
 3. Click **Install**
 4. Click **Reload**
-5. File -> Preferences -> Color Theme -> **Ravenwood Dark** (or **Ravenwood Light**, or any of the 8 realm themes: **Ravenwood Asgard**, **Ravenwood Vanaheim**, **Ravenwood Alfheim**, **Ravenwood Svartalfheim**, **Ravenwood Nidavellir**, **Ravenwood Jotunheim**, **Ravenwood Muspelheim**, **Ravenwood Helheim**)
+5. File -> Preferences -> Color Theme -> **Ravenwood Dark** (or **Ravenwood Light**, or any of the 8 realm themes: **Ravenwood Asgard**, **Ravenwood Vanaheim**, **Ravenwood Alfheim**, **Ravenwood Svartalfheim**, **Ravenwood Nidavellir**, **Ravenwood Jotunheim**, **Ravenwood Muspelheim**, **Ravenwood Helheim**, or the Grok themes **Ravenwood GrokDay** and **Ravenwood GrokNight**)
 
 ## Configuration
 
